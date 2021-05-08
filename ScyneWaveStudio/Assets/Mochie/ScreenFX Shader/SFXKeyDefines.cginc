@@ -1,0 +1,50 @@
+#ifndef SFX_KEYWORD_DEFINES
+#define SFX_KEYWORD_DEFINES
+
+#define X_FEATURES defined(SFXX)
+
+#define MAIN_PASS defined(MAIN)
+
+#define TRIPLANAR_PASS defined(TRIPLANAR)
+
+#define ZOOM_PASS defined(ZOOM)
+
+#define COLOR_ENABLED defined(_COLORCOLOR_ON)
+
+#define SHAKE_ENABLED defined(FXAA)
+
+#define DISTORTION_ENABLED defined(EFFECT_BUMP)
+
+#define DISTORTION_WORLD_ENABLED defined(_TERRAIN_NORMAL_MAP)
+
+#define BLUR_PIXEL_ENABLED defined(BLOOM)
+
+#define BLUR_DITHER_ENABLED defined(GRAIN)
+
+#define BLUR_RADIAL_ENABLED defined(_SUNDISK_SIMPLE)
+
+#define BLUR_Y_ENABLED defined(BLOOM_LENS_DIRT)
+
+#define BLUR_ENABLED defined(BLOOM) || defined(GRAIN) || defined(_SUNDISK_SIMPLE)
+
+#define CHROM_ABB_ENABLED defined(CHROMATIC_ABBERATION_LOW)
+
+#define DOF_ENABLED defined(DEPTH_OF_FIELD)
+
+#define ZOOM_ENABLED defined(_DETAIL_MULX2)
+
+#define ZOOM_RGB_ENABLED defined(_MAPPING_6_FRAMES_LAYOUT)
+
+#define IMAGE_OVERLAY_ENABLED defined(_COLOROVERLAY_ON)
+
+#define IMAGE_OVERLAY_DISTORTION_ENABLED defined(_PARALLAXMAP)
+
+#define FOG_ENABLED defined(_FADING_ON)
+
+#define TRIPLANAR_ENABLED defined(PIXELSNAP_ON)
+
+#define OUTLINE_ENABLED defined(_COLORADDSUBDIFF_ON)
+
+#define NOISE_ENABLED defined(_REQUIRE_UV2)
+
+#endif

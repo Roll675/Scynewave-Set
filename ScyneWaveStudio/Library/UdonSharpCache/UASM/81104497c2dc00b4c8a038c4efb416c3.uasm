@@ -1,0 +1,2129 @@
+.data_start
+
+    .export managerName
+    .export rootTVNode
+    .export player
+    .export isVisible
+
+    __refl_const_intnl_udonTypeID: %SystemInt64, null
+    __refl_const_intnl_udonTypeName: %SystemString, null
+    player: %VRCSDK3VideoComponentsBaseBaseVRCVideoPlayer, null
+    isVisible: %SystemBoolean, null
+    managerName: %SystemString, null
+    rootTVNode: %UnityEngineTransform, null
+    speakers: %UnityEngineAudioSourceArray, null
+    init: %SystemBoolean, null
+    skipLog: %SystemBoolean, null
+    screens: %UnityEngineGameObjectArray, null
+    volumeModifier: %UnityEngineUISlider, null
+    audioModeModifier: %UnityEngineUIToggle, null
+    muteModifier: %UnityEngineUIToggle, null
+    tv: %VRCUdonUdonBehaviour, null
+    onVideoErrorVideoError: %VRCSDK3ComponentsVideoVideoError, null
+    lastError: %VRCSDK3ComponentsVideoVideoError, null
+    __0_this_intnl_ArchiTechVideoManager: %VRCUdonUdonBehaviour, this
+    __2_speaker_AudioSource: %UnityEngineAudioSource, null
+    __1_speaker_AudioSource: %UnityEngineAudioSource, null
+    __0_speaker_AudioSource: %UnityEngineAudioSource, null
+    __0_added_Boolean: %SystemBoolean, null
+    __0_mp_muted_Boolean: %SystemBoolean, null
+    __0_item_Component: %UnityEngineComponent, null
+    __1_t_Component: %UnityEngineComponent, null
+    __0_t_Component: %UnityEngineComponent, null
+    __0_element_Component: %UnityEngineComponent, null
+    __0_mp_n_Component: %UnityEngineComponent, null
+    __0_newArray_ComponentArray: %UnityEngineComponentArray, null
+    __0_stack_ComponentArray: %UnityEngineComponentArray, null
+    __1_elements_ComponentArray: %UnityEngineComponentArray, null
+    __0_found_ComponentArray: %UnityEngineComponentArray, null
+    __0_clean_ComponentArray: %UnityEngineComponentArray, null
+    __0_elements_ComponentArray: %UnityEngineComponentArray, null
+    __0__speakers_ComponentArray: %UnityEngineComponentArray, null
+    __0__screens_ComponentArray: %UnityEngineComponentArray, null
+    __0_mp_arr_ComponentArray: %UnityEngineComponentArray, null
+    __1_mp_stack_ComponentArray: %UnityEngineComponentArray, null
+    __0_mp_stack_ComponentArray: %UnityEngineComponentArray, null
+    __0_obj_GameObject: %UnityEngineGameObject, null
+    __2_screen_GameObject: %UnityEngineGameObject, null
+    __1_screen_GameObject: %UnityEngineGameObject, null
+    __0_screen_GameObject: %UnityEngineGameObject, null
+    __0_mp_objects_GameObjectArray: %UnityEngineGameObjectArray, null
+    __5_i_Int32: %SystemInt32, null
+    __1_index_Int32: %SystemInt32, null
+    __4_i_Int32: %SystemInt32, null
+    __0_last_Int32: %SystemInt32, null
+    __3_i_Int32: %SystemInt32, null
+    __2_i_Int32: %SystemInt32, null
+    __0_found_Int32: %SystemInt32, null
+    __1_i_Int32: %SystemInt32, null
+    __0_index_Int32: %SystemInt32, null
+    __0_i_Int32: %SystemInt32, null
+    __0_count_Int32: %SystemInt32, null
+    __0_mp_add_Int32: %SystemInt32, null
+    __0_blend_Single: %SystemSingle, null
+    __1_mp_value_String: %SystemString, null
+    __0_mp_value_String: %SystemString, null
+    __0_cur_Transform: %UnityEngineTransform, null
+    __0_ui_Transform: %UnityEngineTransform, null
+    __0_mp_root_Transform: %UnityEngineTransform, null
+    __1_mp_T_Type: %SystemType, null
+    __0_mp_T_Type: %SystemType, null
+    __0_mp_manager_TVManager: %VRCUdonUdonBehaviour, null
+    __0_mp_error_VideoError: %VRCSDK3ComponentsVideoVideoError, null
+    __0_const_intnl_UnityEngineAudioSource: %UnityEngineAudioSource, null
+    __1_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __0_const_intnl_UnityEngineGameObject: %UnityEngineGameObject, null
+    __2_const_intnl_SystemInt32: %SystemInt32, null
+    __1_const_intnl_SystemInt32: %SystemInt32, null
+    __0_const_intnl_SystemInt32: %SystemInt32, null
+    __0_const_intnl_SystemObject: %SystemObject, null
+    __1_const_intnl_SystemSingle: %SystemSingle, null
+    __0_const_intnl_SystemSingle: %SystemSingle, null
+    __23_const_intnl_SystemString: %SystemString, null
+    __22_const_intnl_SystemString: %SystemString, null
+    __21_const_intnl_SystemString: %SystemString, null
+    __20_const_intnl_SystemString: %SystemString, null
+    __19_const_intnl_SystemString: %SystemString, null
+    __18_const_intnl_SystemString: %SystemString, null
+    __17_const_intnl_SystemString: %SystemString, null
+    __16_const_intnl_SystemString: %SystemString, null
+    __15_const_intnl_SystemString: %SystemString, null
+    __14_const_intnl_SystemString: %SystemString, null
+    __13_const_intnl_SystemString: %SystemString, null
+    __12_const_intnl_SystemString: %SystemString, null
+    __11_const_intnl_SystemString: %SystemString, null
+    __10_const_intnl_SystemString: %SystemString, null
+    __9_const_intnl_SystemString: %SystemString, null
+    __8_const_intnl_SystemString: %SystemString, null
+    __7_const_intnl_SystemString: %SystemString, null
+    __6_const_intnl_SystemString: %SystemString, null
+    __5_const_intnl_SystemString: %SystemString, null
+    __4_const_intnl_SystemString: %SystemString, null
+    __3_const_intnl_SystemString: %SystemString, null
+    __2_const_intnl_SystemString: %SystemString, null
+    __1_const_intnl_SystemString: %SystemString, null
+    __0_const_intnl_SystemString: %SystemString, null
+    __0_const_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __5_const_intnl_SystemType: %SystemType, null
+    __4_const_intnl_SystemType: %SystemType, null
+    __3_const_intnl_SystemType: %SystemType, null
+    __2_const_intnl_SystemType: %SystemType, null
+    __1_const_intnl_SystemType: %SystemType, null
+    __0_const_intnl_SystemType: %SystemType, null
+    __25_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __24_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __23_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __22_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __21_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __20_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __19_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __18_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __17_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __16_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __15_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __14_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __13_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __12_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __11_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __10_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __9_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __8_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __7_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __6_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __5_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __4_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __3_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __2_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __1_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __0_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __0_intnl_UnityEngineAudioSource: %UnityEngineAudioSource, null
+    __32_intnl_SystemBoolean: %SystemBoolean, null
+    __31_intnl_SystemBoolean: %SystemBoolean, null
+    __30_intnl_SystemBoolean: %SystemBoolean, null
+    __29_intnl_SystemBoolean: %SystemBoolean, null
+    __28_intnl_SystemBoolean: %SystemBoolean, null
+    __27_intnl_SystemBoolean: %SystemBoolean, null
+    __26_intnl_SystemBoolean: %SystemBoolean, null
+    __25_intnl_SystemBoolean: %SystemBoolean, null
+    __24_intnl_SystemBoolean: %SystemBoolean, null
+    __23_intnl_SystemBoolean: %SystemBoolean, null
+    __22_intnl_SystemBoolean: %SystemBoolean, null
+    __21_intnl_SystemBoolean: %SystemBoolean, null
+    __20_intnl_SystemBoolean: %SystemBoolean, null
+    __19_intnl_SystemBoolean: %SystemBoolean, null
+    __18_intnl_SystemBoolean: %SystemBoolean, null
+    __17_intnl_SystemBoolean: %SystemBoolean, null
+    __16_intnl_SystemBoolean: %SystemBoolean, null
+    __15_intnl_SystemBoolean: %SystemBoolean, null
+    __14_intnl_SystemBoolean: %SystemBoolean, null
+    __13_intnl_SystemBoolean: %SystemBoolean, null
+    __12_intnl_SystemBoolean: %SystemBoolean, null
+    __11_intnl_SystemBoolean: %SystemBoolean, null
+    __10_intnl_SystemBoolean: %SystemBoolean, null
+    __9_intnl_SystemBoolean: %SystemBoolean, null
+    __8_intnl_SystemBoolean: %SystemBoolean, null
+    __7_intnl_SystemBoolean: %SystemBoolean, null
+    __6_intnl_SystemBoolean: %SystemBoolean, null
+    __5_intnl_SystemBoolean: %SystemBoolean, null
+    __4_intnl_SystemBoolean: %SystemBoolean, null
+    __3_intnl_SystemBoolean: %SystemBoolean, null
+    __2_intnl_SystemBoolean: %SystemBoolean, null
+    __1_intnl_SystemBoolean: %SystemBoolean, null
+    __0_intnl_SystemBoolean: %SystemBoolean, null
+    __10_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __9_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __8_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __7_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __6_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __5_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __4_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __3_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __2_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __1_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __0_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __0_intnl_returnValSymbol_Component: %UnityEngineComponent, null
+    __2_intnl_UnityEngineComponentArray: %UnityEngineComponentArray, null
+    __1_intnl_UnityEngineComponentArray: %UnityEngineComponentArray, null
+    __0_intnl_UnityEngineComponentArray: %UnityEngineComponentArray, null
+    __3_intnl_returnValSymbol_ComponentArray: %UnityEngineComponentArray, null
+    __2_intnl_returnValSymbol_ComponentArray: %UnityEngineComponentArray, null
+    __1_intnl_returnValSymbol_ComponentArray: %UnityEngineComponentArray, null
+    __0_intnl_returnValSymbol_ComponentArray: %UnityEngineComponentArray, null
+    __1_intnl_UnityEngineGameObject: %UnityEngineGameObject, null
+    __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null
+    __31_intnl_SystemInt32: %SystemInt32, null
+    __30_intnl_SystemInt32: %SystemInt32, null
+    __29_intnl_SystemInt32: %SystemInt32, null
+    __28_intnl_SystemInt32: %SystemInt32, null
+    __27_intnl_SystemInt32: %SystemInt32, null
+    __26_intnl_SystemInt32: %SystemInt32, null
+    __25_intnl_SystemInt32: %SystemInt32, null
+    __24_intnl_SystemInt32: %SystemInt32, null
+    __23_intnl_SystemInt32: %SystemInt32, null
+    __22_intnl_SystemInt32: %SystemInt32, null
+    __21_intnl_SystemInt32: %SystemInt32, null
+    __20_intnl_SystemInt32: %SystemInt32, null
+    __19_intnl_SystemInt32: %SystemInt32, null
+    __18_intnl_SystemInt32: %SystemInt32, null
+    __17_intnl_SystemInt32: %SystemInt32, null
+    __16_intnl_SystemInt32: %SystemInt32, null
+    __15_intnl_SystemInt32: %SystemInt32, null
+    __14_intnl_SystemInt32: %SystemInt32, null
+    __13_intnl_SystemInt32: %SystemInt32, null
+    __12_intnl_SystemInt32: %SystemInt32, null
+    __11_intnl_SystemInt32: %SystemInt32, null
+    __10_intnl_SystemInt32: %SystemInt32, null
+    __9_intnl_SystemInt32: %SystemInt32, null
+    __8_intnl_SystemInt32: %SystemInt32, null
+    __7_intnl_SystemInt32: %SystemInt32, null
+    __6_intnl_SystemInt32: %SystemInt32, null
+    __5_intnl_SystemInt32: %SystemInt32, null
+    __4_intnl_SystemInt32: %SystemInt32, null
+    __3_intnl_SystemInt32: %SystemInt32, null
+    __2_intnl_SystemInt32: %SystemInt32, null
+    __1_intnl_SystemInt32: %SystemInt32, null
+    __0_intnl_SystemInt32: %SystemInt32, null
+    __1_intnl_SystemSingle: %SystemSingle, null
+    __0_intnl_SystemSingle: %SystemSingle, null
+    __21_intnl_SystemString: %SystemString, null
+    __20_intnl_SystemString: %SystemString, null
+    __19_intnl_SystemString: %SystemString, null
+    __18_intnl_SystemString: %SystemString, null
+    __17_intnl_SystemString: %SystemString, null
+    __16_intnl_SystemString: %SystemString, null
+    __15_intnl_SystemString: %SystemString, null
+    __14_intnl_SystemString: %SystemString, null
+    __13_intnl_SystemString: %SystemString, null
+    __12_intnl_SystemString: %SystemString, null
+    __11_intnl_SystemString: %SystemString, null
+    __10_intnl_SystemString: %SystemString, null
+    __9_intnl_SystemString: %SystemString, null
+    __8_intnl_SystemString: %SystemString, null
+    __7_intnl_SystemString: %SystemString, null
+    __6_intnl_SystemString: %SystemString, null
+    __5_intnl_SystemString: %SystemString, null
+    __4_intnl_SystemString: %SystemString, null
+    __3_intnl_SystemString: %SystemString, null
+    __2_intnl_SystemString: %SystemString, null
+    __1_intnl_SystemString: %SystemString, null
+    __0_intnl_SystemString: %SystemString, null
+    __13_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __12_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __11_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __10_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __9_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __8_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __7_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __6_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __5_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __4_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __3_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __2_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __1_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __0_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __0_intnl_returnTarget_UInt32: %SystemUInt32, null
+
+.data_end
+
+        
+         #  using UdonSharp;
+        
+         #  using UnityEngine;
+        
+         #  using UnityEngine.UI;
+        
+         #  using VRC.SDKBase;
+        
+         #  using VRC.SDK3.Components;
+        
+         #  using VRC.SDK3.Video.Components.AVPro;
+        
+         #  using VRC.SDK3.Components.Video;
+        
+         #  using VRC.SDK3.Video.Components.Base;
+        
+         #  using VRC.Udon;
+        
+         #  namespace ArchiTech
+        
+         #  [RequireComponent(typeof(BaseVRCVideoPlayer))]
+        
+         #  public class VideoManager : UdonSharpBehaviour
+.code_start
+        
+         #  public string managerName;
+        
+         #  public Transform rootTVNode;
+        
+         #  [HideInInspector] public BaseVRCVideoPlayer player;
+        
+         #  [HideInInspector] public bool isVisible;
+        
+         #  private GameObject[] screens;
+        
+         #  private TVManager tv;
+        
+         #  [System.NonSerialized] public AudioSource[] speakers;
+        
+         #  private Slider volumeModifier;
+        
+         #  private Toggle muteModifier;
+        
+         #  private Toggle audioModeModifier;
+        
+         #  private VideoError lastError;
+        
+         #  private bool skipLog = false;
+        
+         #  private bool init = false;
+        
+         #  private void log(string value)
+    log:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!skipLog) Debug.Log("[<color=#00ffcc>VideoManager</color>] " + value);
+        PUSH, skipLog
+        PUSH, __0_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __0_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000060
+        PUSH, __0_const_intnl_SystemString
+        PUSH, __0_mp_value_String
+        PUSH, __0_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __0_intnl_SystemString
+        EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void err(string value)
+    err:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!skipLog) Debug.LogError("[<color=#00ffcc>VideoManager</color>] " + value);
+        PUSH, skipLog
+        PUSH, __1_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __1_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000000D4
+        PUSH, __0_const_intnl_SystemString
+        PUSH, __1_mp_value_String
+        PUSH, __1_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __1_intnl_SystemString
+        EXTERN, "UnityEngineDebug.__LogError__SystemObject__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void assignRefs()
+    assignRefs:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  log("Starting " + rootTVNode.name + " - " + managerName);
+        PUSH, rootTVNode
+        PUSH, __2_intnl_SystemString
+        EXTERN, "UnityEngineTransform.__get_name__SystemString"
+        PUSH, __1_const_intnl_SystemString
+        PUSH, __2_intnl_SystemString
+        PUSH, __3_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __3_intnl_SystemString
+        PUSH, __2_const_intnl_SystemString
+        PUSH, __4_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __4_intnl_SystemString
+        PUSH, managerName
+        PUSH, __0_mp_value_String
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __0_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  var ui = rootTVNode.Find("VideoPlayer").Find("UI").Find("Offset");
+        PUSH, rootTVNode
+        PUSH, __3_const_intnl_SystemString
+        PUSH, __0_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineTransform.__Find__SystemString__UnityEngineTransform"
+        PUSH, __0_intnl_UnityEngineTransform
+        PUSH, __4_const_intnl_SystemString
+        PUSH, __1_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineTransform.__Find__SystemString__UnityEngineTransform"
+        PUSH, __1_intnl_UnityEngineTransform
+        PUSH, __5_const_intnl_SystemString
+        PUSH, __2_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineTransform.__Find__SystemString__UnityEngineTransform"
+        PUSH, __2_intnl_UnityEngineTransform
+        PUSH, __0_ui_Transform
+        COPY
+        
+         #  volumeModifier = ui.Find("VolumeModifier").GetComponent<Slider>();
+        PUSH, __0_ui_Transform
+        PUSH, __6_const_intnl_SystemString
+        PUSH, __3_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineTransform.__Find__SystemString__UnityEngineTransform"
+        PUSH, __3_intnl_UnityEngineTransform
+        PUSH, __4_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineComponent.__get_transform__UnityEngineTransform" # GetComponent strongbox mismatch fix
+        PUSH, __4_intnl_UnityEngineTransform
+        PUSH, __0_const_intnl_SystemType
+        PUSH, volumeModifier
+        EXTERN, "UnityEngineUISlider.__GetComponent__T"
+        
+         #  audioModeModifier = ui.Find("AudioModeModifier").GetComponent<Toggle>();
+        PUSH, __0_ui_Transform
+        PUSH, __7_const_intnl_SystemString
+        PUSH, __5_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineTransform.__Find__SystemString__UnityEngineTransform"
+        PUSH, __5_intnl_UnityEngineTransform
+        PUSH, __6_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineComponent.__get_transform__UnityEngineTransform" # GetComponent strongbox mismatch fix
+        PUSH, __6_intnl_UnityEngineTransform
+        PUSH, __1_const_intnl_SystemType
+        PUSH, audioModeModifier
+        EXTERN, "UnityEngineUIToggle.__GetComponent__T"
+        
+         #  muteModifier = ui.Find("MuteModifier").GetComponent<Toggle>();
+        PUSH, __0_ui_Transform
+        PUSH, __8_const_intnl_SystemString
+        PUSH, __7_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineTransform.__Find__SystemString__UnityEngineTransform"
+        PUSH, __7_intnl_UnityEngineTransform
+        PUSH, __8_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineComponent.__get_transform__UnityEngineTransform" # GetComponent strongbox mismatch fix
+        PUSH, __8_intnl_UnityEngineTransform
+        PUSH, __1_const_intnl_SystemType
+        PUSH, muteModifier
+        EXTERN, "UnityEngineUIToggle.__GetComponent__T"
+        
+         #  player = (BaseVRCVideoPlayer)GetComponent(typeof(VRCAVProVideoPlayer));
+        PUSH, __0_this_intnl_ArchiTechVideoManager
+        PUSH, __2_const_intnl_SystemType
+        PUSH, __0_intnl_UnityEngineComponent
+        EXTERN, "UnityEngineComponent.__GetComponent__SystemType__UnityEngineComponent"
+        PUSH, __0_intnl_UnityEngineComponent
+        PUSH, player
+        COPY
+        
+         #  skipLog = true;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, skipLog
+        COPY
+        
+         #  var _screens = traverseFor(typeof(VRCAVProVideoScreen), rootTVNode);
+        PUSH, __3_const_intnl_SystemType
+        PUSH, __1_mp_T_Type
+        COPY
+        PUSH, rootTVNode
+        PUSH, __0_mp_root_Transform
+        COPY
+        PUSH, rootTVNode
+        PUSH, __9_intnl_UnityEngineTransform
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __1_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00001C44
+        PUSH, __1_intnl_returnValSymbol_ComponentArray
+        PUSH, __0__screens_ComponentArray
+        COPY
+        
+         #  var count = 0;
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_count_Int32
+        COPY
+        
+         #  for (int i = 0; i < _screens.Length; i++)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_i_Int32
+        COPY
+        PUSH, __0__screens_ComponentArray
+        PUSH, __0_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __0_i_Int32
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __2_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __2_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000554
+        
+         #  {
+        
+         #  if (_screens[i] == null) continue;
+        PUSH, __0__screens_ComponentArray
+        PUSH, __0_i_Int32
+        PUSH, __1_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __1_intnl_UnityEngineComponent
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __3_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __3_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000464
+        JUMP, 0x00000518
+        
+         #  if (_screens[i].gameObject.name == managerName) count++;
+        PUSH, __0__screens_ComponentArray
+        PUSH, __0_i_Int32
+        PUSH, __2_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __2_intnl_UnityEngineComponent
+        PUSH, __0_intnl_UnityEngineGameObject
+        EXTERN, "UnityEngineComponent.__get_gameObject__UnityEngineGameObject"
+        PUSH, __0_intnl_UnityEngineGameObject
+        PUSH, __5_intnl_SystemString
+        EXTERN, "UnityEngineGameObject.__get_name__SystemString"
+        PUSH, __5_intnl_SystemString
+        PUSH, managerName
+        PUSH, __4_intnl_SystemBoolean
+        EXTERN, "SystemString.__op_Equality__SystemString_SystemString__SystemBoolean"
+        PUSH, __4_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000518
+        PUSH, __0_count_Int32
+        PUSH, __1_intnl_SystemInt32
+        COPY
+        PUSH, __0_count_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_count_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, __0_i_Int32
+        PUSH, __1_intnl_SystemInt32
+        COPY
+        PUSH, __0_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_i_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x000003C4
+        
+         #  screens = new GameObject[count];
+        PUSH, __0_count_Int32
+        PUSH, screens
+        EXTERN, "UnityEngineGameObjectArray.__ctor__SystemInt32__UnityEngineGameObjectArray"
+        
+         #  count = 0;
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_count_Int32
+        COPY
+        
+         #  for (int i = 0; i < _screens.Length; i++)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_i_Int32
+        COPY
+        PUSH, __0__screens_ComponentArray
+        PUSH, __0_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __0_i_Int32
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __2_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __2_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000077C
+        
+         #  {
+        
+         #  if (_screens[i] == null) continue;
+        PUSH, __0__screens_ComponentArray
+        PUSH, __0_i_Int32
+        PUSH, __1_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __1_intnl_UnityEngineComponent
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __3_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __3_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000634
+        JUMP, 0x00000740
+        
+         #  if (_screens[i].gameObject.name == managerName)
+        PUSH, __0__screens_ComponentArray
+        PUSH, __0_i_Int32
+        PUSH, __2_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __2_intnl_UnityEngineComponent
+        PUSH, __0_intnl_UnityEngineGameObject
+        EXTERN, "UnityEngineComponent.__get_gameObject__UnityEngineGameObject"
+        PUSH, __0_intnl_UnityEngineGameObject
+        PUSH, __5_intnl_SystemString
+        EXTERN, "UnityEngineGameObject.__get_name__SystemString"
+        PUSH, __5_intnl_SystemString
+        PUSH, managerName
+        PUSH, __4_intnl_SystemBoolean
+        EXTERN, "SystemString.__op_Equality__SystemString_SystemString__SystemBoolean"
+        PUSH, __4_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000740
+        
+         #  {
+        
+         #  screens[count] = _screens[i].gameObject;
+        PUSH, __0__screens_ComponentArray
+        PUSH, __0_i_Int32
+        PUSH, __3_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __3_intnl_UnityEngineComponent
+        PUSH, __1_intnl_UnityEngineGameObject
+        EXTERN, "UnityEngineComponent.__get_gameObject__UnityEngineGameObject"
+        PUSH, screens
+        PUSH, __0_count_Int32
+        PUSH, __1_intnl_UnityEngineGameObject
+        EXTERN, "SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid"
+        
+         #  count++;
+        PUSH, __0_count_Int32
+        PUSH, __1_intnl_SystemInt32
+        COPY
+        PUSH, __0_count_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_count_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, __0_i_Int32
+        PUSH, __1_intnl_SystemInt32
+        COPY
+        PUSH, __0_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_i_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00000594
+        
+         #  skipLog = false;
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, skipLog
+        COPY
+        
+         #  if (count == 0) err("Unable to find any screen objects for manager: " + managerName);
+        PUSH, __0_count_Int32
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __2_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __2_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000007F8
+        PUSH, __9_const_intnl_SystemString
+        PUSH, managerName
+        PUSH, __1_mp_value_String
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __2_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x0000007C
+        JUMP, 0x00000860
+        
+         #  else log("Found " + count + " matching screens");
+        PUSH, __0_count_Int32
+        PUSH, __5_intnl_SystemString
+        EXTERN, "SystemInt32.__ToString__SystemString"
+        PUSH, __10_const_intnl_SystemString
+        PUSH, __5_intnl_SystemString
+        PUSH, __6_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __6_intnl_SystemString
+        PUSH, __11_const_intnl_SystemString
+        PUSH, __0_mp_value_String
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __3_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  skipLog = true;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, skipLog
+        COPY
+        
+         #  var _speakers = traverseFor(typeof(VRCAVProVideoSpeaker), rootTVNode);
+        PUSH, __4_const_intnl_SystemType
+        PUSH, __1_mp_T_Type
+        COPY
+        PUSH, rootTVNode
+        PUSH, __0_mp_root_Transform
+        COPY
+        PUSH, rootTVNode
+        PUSH, __10_intnl_UnityEngineTransform
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __4_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00001C44
+        PUSH, __1_intnl_returnValSymbol_ComponentArray
+        PUSH, __0__speakers_ComponentArray
+        COPY
+        
+         #  count = 0;
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_count_Int32
+        COPY
+        
+         #  for (int i = 0; i < _speakers.Length; i++)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_i_Int32
+        COPY
+        PUSH, __0__speakers_ComponentArray
+        PUSH, __0_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __0_i_Int32
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __3_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __3_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000A8C
+        
+         #  {
+        
+         #  if (_speakers[i] == null) continue;
+        PUSH, __0__speakers_ComponentArray
+        PUSH, __0_i_Int32
+        PUSH, __1_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __1_intnl_UnityEngineComponent
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __4_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __4_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000099C
+        JUMP, 0x00000A50
+        
+         #  if (_speakers[i].gameObject.name == managerName) count++;
+        PUSH, __0__speakers_ComponentArray
+        PUSH, __0_i_Int32
+        PUSH, __2_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __2_intnl_UnityEngineComponent
+        PUSH, __0_intnl_UnityEngineGameObject
+        EXTERN, "UnityEngineComponent.__get_gameObject__UnityEngineGameObject"
+        PUSH, __0_intnl_UnityEngineGameObject
+        PUSH, __7_intnl_SystemString
+        EXTERN, "UnityEngineGameObject.__get_name__SystemString"
+        PUSH, __7_intnl_SystemString
+        PUSH, managerName
+        PUSH, __5_intnl_SystemBoolean
+        EXTERN, "SystemString.__op_Equality__SystemString_SystemString__SystemBoolean"
+        PUSH, __5_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000A50
+        PUSH, __0_count_Int32
+        PUSH, __1_intnl_SystemInt32
+        COPY
+        PUSH, __0_count_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_count_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, __0_i_Int32
+        PUSH, __1_intnl_SystemInt32
+        COPY
+        PUSH, __0_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_i_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x000008FC
+        
+         #  speakers = new AudioSource[count];
+        PUSH, __0_count_Int32
+        PUSH, speakers
+        EXTERN, "UnityEngineAudioSourceArray.__ctor__SystemInt32__UnityEngineAudioSourceArray"
+        
+         #  count = 0;
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_count_Int32
+        COPY
+        
+         #  for (int i = 0; i < _speakers.Length; i++)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_i_Int32
+        COPY
+        PUSH, __0__speakers_ComponentArray
+        PUSH, __0_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __0_i_Int32
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __3_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __3_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000CEC
+        
+         #  {
+        
+         #  if (_speakers[i] == null) continue;
+        PUSH, __0__speakers_ComponentArray
+        PUSH, __0_i_Int32
+        PUSH, __1_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __1_intnl_UnityEngineComponent
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __4_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __4_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000B6C
+        JUMP, 0x00000CB0
+        
+         #  if (_speakers[i].gameObject.name == managerName)
+        PUSH, __0__speakers_ComponentArray
+        PUSH, __0_i_Int32
+        PUSH, __2_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __2_intnl_UnityEngineComponent
+        PUSH, __0_intnl_UnityEngineGameObject
+        EXTERN, "UnityEngineComponent.__get_gameObject__UnityEngineGameObject"
+        PUSH, __0_intnl_UnityEngineGameObject
+        PUSH, __7_intnl_SystemString
+        EXTERN, "UnityEngineGameObject.__get_name__SystemString"
+        PUSH, __7_intnl_SystemString
+        PUSH, managerName
+        PUSH, __5_intnl_SystemBoolean
+        EXTERN, "SystemString.__op_Equality__SystemString_SystemString__SystemBoolean"
+        PUSH, __5_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000CB0
+        
+         #  {
+        
+         #  speakers[count] = _speakers[i].gameObject.GetComponent<AudioSource>();
+        PUSH, __0__speakers_ComponentArray
+        PUSH, __0_i_Int32
+        PUSH, __3_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __3_intnl_UnityEngineComponent
+        PUSH, __1_intnl_UnityEngineGameObject
+        EXTERN, "UnityEngineComponent.__get_gameObject__UnityEngineGameObject"
+        PUSH, __1_intnl_UnityEngineGameObject
+        PUSH, __11_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineGameObject.__get_transform__UnityEngineTransform"
+        PUSH, __11_intnl_UnityEngineTransform
+        PUSH, __5_const_intnl_SystemType
+        PUSH, __0_intnl_UnityEngineAudioSource
+        EXTERN, "UnityEngineAudioSource.__GetComponent__T"
+        PUSH, speakers
+        PUSH, __0_count_Int32
+        PUSH, __0_intnl_UnityEngineAudioSource
+        EXTERN, "SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid"
+        
+         #  count++;
+        PUSH, __0_count_Int32
+        PUSH, __1_intnl_SystemInt32
+        COPY
+        PUSH, __0_count_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_count_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, __0_i_Int32
+        PUSH, __1_intnl_SystemInt32
+        COPY
+        PUSH, __0_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_i_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00000ACC
+        
+         #  skipLog = false;
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, skipLog
+        COPY
+        
+         #  if (count == 0) err("Unable to find any speaker objects for manager: " + managerName);
+        PUSH, __0_count_Int32
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __3_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __3_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000D68
+        PUSH, __12_const_intnl_SystemString
+        PUSH, managerName
+        PUSH, __1_mp_value_String
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __5_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x0000007C
+        JUMP, 0x00000DD0
+        
+         #  else log("Found " + count + " matching speakers");
+        PUSH, __0_count_Int32
+        PUSH, __7_intnl_SystemString
+        EXTERN, "SystemInt32.__ToString__SystemString"
+        PUSH, __10_const_intnl_SystemString
+        PUSH, __7_intnl_SystemString
+        PUSH, __8_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __8_intnl_SystemString
+        PUSH, __13_const_intnl_SystemString
+        PUSH, __0_mp_value_String
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __6_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  void Start()
+    .export _start
+        
+    _start:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  assignRefs(); // grab ALL the things
+        PUSH, __7_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000000F0
+        
+         #  UpdateVolume(); // ensure the speakers volume matches the volume slider value
+        PUSH, __8_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F1C
+        
+         #  Mute(true); // mute speakers by default
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, __0_mp_muted_Boolean
+        COPY
+        PUSH, __9_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00001234
+        
+         #  foreach (var screen in screens)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __2_intnl_SystemInt32
+        COPY
+        PUSH, screens
+        PUSH, __3_intnl_SystemInt32
+        EXTERN, "UnityEngineGameObjectArray.__get_Length__SystemInt32"
+        PUSH, __2_intnl_SystemInt32
+        PUSH, __3_intnl_SystemInt32
+        PUSH, __6_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __6_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000EEC
+        PUSH, screens
+        PUSH, __2_intnl_SystemInt32
+        PUSH, __0_screen_GameObject
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  screen.SetActive(false);
+        PUSH, __0_screen_GameObject
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __2_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __2_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00000E5C
+        
+         #  init = true;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, init
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void UpdateVolume()
+    .export UpdateVolume
+        
+    UpdateVolume:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  foreach (var speaker in speakers)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __4_intnl_SystemInt32
+        COPY
+        PUSH, speakers
+        PUSH, __5_intnl_SystemInt32
+        EXTERN, "UnityEngineAudioSourceArray.__get_Length__SystemInt32"
+        PUSH, __4_intnl_SystemInt32
+        PUSH, __5_intnl_SystemInt32
+        PUSH, __7_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __7_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001028
+        PUSH, speakers
+        PUSH, __4_intnl_SystemInt32
+        PUSH, __0_speaker_AudioSource
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  {
+        
+         #  if (speaker == null) continue;
+        PUSH, __0_speaker_AudioSource
+        PUSH, __0_const_intnl_UnityEngineAudioSource
+        PUSH, __8_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __8_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000FD0
+        JUMP, 0x00001000
+        
+         #  speaker.volume = volumeModifier.value;
+        PUSH, volumeModifier
+        PUSH, __0_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __0_speaker_AudioSource
+        PUSH, __0_intnl_SystemSingle
+        EXTERN, "UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid"
+        PUSH, __4_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __4_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00000F48
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void UpdateAudioMode()
+    .export UpdateAudioMode
+        
+    UpdateAudioMode:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  var blend = audioModeModifier.isOn ? 1.0f : 0.0f;
+        PUSH, audioModeModifier
+        PUSH, __9_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__get_isOn__SystemBoolean"
+        PUSH, __9_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001088
+        PUSH, __0_const_intnl_SystemSingle
+        PUSH, __1_intnl_SystemSingle
+        COPY
+        JUMP, 0x0000109C
+        PUSH, __1_const_intnl_SystemSingle
+        PUSH, __1_intnl_SystemSingle
+        COPY
+        PUSH, __1_intnl_SystemSingle
+        PUSH, __0_blend_Single
+        COPY
+        
+         #  foreach (var speaker in speakers)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __6_intnl_SystemInt32
+        COPY
+        PUSH, speakers
+        PUSH, __7_intnl_SystemInt32
+        EXTERN, "UnityEngineAudioSourceArray.__get_Length__SystemInt32"
+        PUSH, __6_intnl_SystemInt32
+        PUSH, __7_intnl_SystemInt32
+        PUSH, __10_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __10_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000011A4
+        PUSH, speakers
+        PUSH, __6_intnl_SystemInt32
+        PUSH, __1_speaker_AudioSource
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  {
+        
+         #  if (speaker == null) continue;
+        PUSH, __1_speaker_AudioSource
+        PUSH, __0_const_intnl_UnityEngineAudioSource
+        PUSH, __11_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __11_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001164
+        JUMP, 0x0000117C
+        
+         #  speaker.spatialBlend = blend;
+        PUSH, __1_speaker_AudioSource
+        PUSH, __0_blend_Single
+        EXTERN, "UnityEngineAudioSource.__set_spatialBlend__SystemSingle__SystemVoid"
+        PUSH, __6_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __6_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x000010DC
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void UpdateMute() => Mute(muteModifier.isOn);
+    .export UpdateMute
+        
+    UpdateMute:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, muteModifier
+        PUSH, __0_mp_muted_Boolean
+        EXTERN, "UnityEngineUIToggle.__get_isOn__SystemBoolean"
+        PUSH, __10_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00001234
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void SetTV(TVManager manager) => tv = manager;
+    .export SetTV
+        
+    SetTV:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __0_mp_manager_TVManager
+        PUSH, tv
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void Mute(bool muted)
+    .export Mute
+        
+    Mute:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  foreach (var speaker in speakers)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __8_intnl_SystemInt32
+        COPY
+        PUSH, speakers
+        PUSH, __9_intnl_SystemInt32
+        EXTERN, "UnityEngineAudioSourceArray.__get_Length__SystemInt32"
+        PUSH, __8_intnl_SystemInt32
+        PUSH, __9_intnl_SystemInt32
+        PUSH, __12_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __12_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001328
+        PUSH, speakers
+        PUSH, __8_intnl_SystemInt32
+        PUSH, __2_speaker_AudioSource
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  {
+        
+         #  if (speaker == null) continue;
+        PUSH, __2_speaker_AudioSource
+        PUSH, __0_const_intnl_UnityEngineAudioSource
+        PUSH, __13_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __13_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000012E8
+        JUMP, 0x00001300
+        
+         #  speaker.mute = muted;
+        PUSH, __2_speaker_AudioSource
+        PUSH, __0_mp_muted_Boolean
+        EXTERN, "UnityEngineAudioSource.__set_mute__SystemBoolean__SystemVoid"
+        PUSH, __8_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __8_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00001260
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void Show()
+    .export Show
+        
+    Show:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  foreach (var screen in screens)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __10_intnl_SystemInt32
+        COPY
+        PUSH, screens
+        PUSH, __11_intnl_SystemInt32
+        EXTERN, "UnityEngineGameObjectArray.__get_Length__SystemInt32"
+        PUSH, __10_intnl_SystemInt32
+        PUSH, __11_intnl_SystemInt32
+        PUSH, __14_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __14_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001400
+        PUSH, screens
+        PUSH, __10_intnl_SystemInt32
+        PUSH, __1_screen_GameObject
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  screen.SetActive(true);
+        PUSH, __1_screen_GameObject
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __10_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __10_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00001370
+        
+         #  Mute(false);
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, __0_mp_muted_Boolean
+        COPY
+        PUSH, __11_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00001234
+        
+         #  UpdateVolume();
+        PUSH, __12_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F1C
+        
+         #  UpdateAudioMode();
+        PUSH, __13_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00001044
+        
+         #  isVisible = true;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, isVisible
+        COPY
+        
+         #  log(rootTVNode.name + " [" + managerName + "] activated");
+        PUSH, rootTVNode
+        PUSH, __9_intnl_SystemString
+        EXTERN, "UnityEngineTransform.__get_name__SystemString"
+        PUSH, __9_intnl_SystemString
+        PUSH, __14_const_intnl_SystemString
+        PUSH, __10_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __10_intnl_SystemString
+        PUSH, managerName
+        PUSH, __11_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __11_intnl_SystemString
+        PUSH, __15_const_intnl_SystemString
+        PUSH, __0_mp_value_String
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __14_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void Hide()
+    .export Hide
+        
+    Hide:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  Mute(true);
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, __0_mp_muted_Boolean
+        COPY
+        PUSH, __15_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00001234
+        
+         #  player.Stop();
+        PUSH, player
+        EXTERN, "VRCSDK3VideoComponentsBaseBaseVRCVideoPlayer.__Stop__SystemVoid"
+        
+         #  foreach (var screen in screens)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __12_intnl_SystemInt32
+        COPY
+        PUSH, screens
+        PUSH, __13_intnl_SystemInt32
+        EXTERN, "UnityEngineGameObjectArray.__get_Length__SystemInt32"
+        PUSH, __12_intnl_SystemInt32
+        PUSH, __13_intnl_SystemInt32
+        PUSH, __15_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __15_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000015EC
+        PUSH, screens
+        PUSH, __12_intnl_SystemInt32
+        PUSH, __2_screen_GameObject
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  screen.SetActive(false);
+        PUSH, __2_screen_GameObject
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __12_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __12_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x0000155C
+        
+         #  isVisible = false;
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, isVisible
+        COPY
+        
+         #  log(rootTVNode.name + " [" + managerName + "] deactivated");
+        PUSH, rootTVNode
+        PUSH, __12_intnl_SystemString
+        EXTERN, "UnityEngineTransform.__get_name__SystemString"
+        PUSH, __12_intnl_SystemString
+        PUSH, __14_const_intnl_SystemString
+        PUSH, __13_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __13_intnl_SystemString
+        PUSH, managerName
+        PUSH, __14_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __14_intnl_SystemString
+        PUSH, __16_const_intnl_SystemString
+        PUSH, __0_mp_value_String
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __16_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  new void OnVideoStart() => tv.VideoStart();
+    .export _onVideoStart
+        
+    _onVideoStart:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, tv
+        PUSH, __17_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  new void OnVideoError(VideoError error) => tv.VideoError(error);
+    .export _onVideoError
+        
+    _onVideoError:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, onVideoErrorVideoError
+        PUSH, __0_mp_error_VideoError
+        COPY
+        PUSH, tv
+        PUSH, __18_const_intnl_SystemString
+        PUSH, __0_mp_error_VideoError
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, tv
+        PUSH, __19_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private Component[] traverseAllFor(System.Type T, GameObject[] objects)
+    traverseAllFor:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  var elements = new Component[objects.Length];
+        PUSH, __0_mp_objects_GameObjectArray
+        PUSH, __14_intnl_SystemInt32
+        EXTERN, "UnityEngineGameObjectArray.__get_Length__SystemInt32"
+        PUSH, __14_intnl_SystemInt32
+        PUSH, __0_intnl_UnityEngineComponentArray
+        EXTERN, "UnityEngineComponentArray.__ctor__SystemInt32__UnityEngineComponentArray"
+        PUSH, __0_intnl_UnityEngineComponentArray
+        PUSH, __0_elements_ComponentArray
+        COPY
+        
+         #  var index = 0;
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_index_Int32
+        COPY
+        
+         #  foreach (GameObject obj in objects)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __15_intnl_SystemInt32
+        COPY
+        PUSH, __0_mp_objects_GameObjectArray
+        PUSH, __16_intnl_SystemInt32
+        EXTERN, "UnityEngineGameObjectArray.__get_Length__SystemInt32"
+        PUSH, __15_intnl_SystemInt32
+        PUSH, __16_intnl_SystemInt32
+        PUSH, __16_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __16_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001A88
+        PUSH, __0_mp_objects_GameObjectArray
+        PUSH, __15_intnl_SystemInt32
+        PUSH, __0_obj_GameObject
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  {
+        
+         #  if (obj == null) continue;
+        PUSH, __0_obj_GameObject
+        PUSH, __0_const_intnl_UnityEngineGameObject
+        PUSH, __17_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __17_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000184C
+        JUMP, 0x00001A60
+        
+         #  Component[] found = traverseFor(T, obj.transform);
+        PUSH, __0_obj_GameObject
+        PUSH, __0_mp_root_Transform
+        EXTERN, "UnityEngineGameObject.__get_transform__UnityEngineTransform"
+        PUSH, __0_mp_T_Type
+        PUSH, __1_mp_T_Type
+        COPY
+        PUSH, __17_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00001C44
+        PUSH, __1_intnl_returnValSymbol_ComponentArray
+        PUSH, __0_found_ComponentArray
+        COPY
+        
+         #  foreach (Component element in found)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __17_intnl_SystemInt32
+        COPY
+        PUSH, __0_found_ComponentArray
+        PUSH, __18_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __17_intnl_SystemInt32
+        PUSH, __18_intnl_SystemInt32
+        PUSH, __18_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __18_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001A60
+        PUSH, __0_found_ComponentArray
+        PUSH, __17_intnl_SystemInt32
+        PUSH, __0_element_Component
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  {
+        
+         #  if (element == null) continue;
+        PUSH, __0_element_Component
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __19_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __19_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001950
+        JUMP, 0x00001A38
+        
+         #  if (index >= elements.Length)
+        PUSH, __0_elements_ComponentArray
+        PUSH, __19_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __0_index_Int32
+        PUSH, __19_intnl_SystemInt32
+        PUSH, __20_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __20_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000019E4
+        
+         #  elements = expand(elements, 16);
+        PUSH, __0_elements_ComponentArray
+        PUSH, __0_mp_arr_ComponentArray
+        COPY
+        PUSH, __2_const_intnl_SystemInt32
+        PUSH, __0_mp_add_Int32
+        COPY
+        PUSH, __18_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x0000267C
+        PUSH, __3_intnl_returnValSymbol_ComponentArray
+        PUSH, __0_elements_ComponentArray
+        COPY
+        
+         #  elements[index] = element;
+        PUSH, __0_elements_ComponentArray
+        PUSH, __0_index_Int32
+        PUSH, __0_element_Component
+        EXTERN, "SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid"
+        
+         #  index++;
+        PUSH, __0_index_Int32
+        PUSH, __20_intnl_SystemInt32
+        COPY
+        PUSH, __0_index_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_index_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, __17_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __17_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x000018C8
+        PUSH, __15_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __15_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x000017C4
+        
+         #  var clean = new Component[index];
+        PUSH, __0_index_Int32
+        PUSH, __1_intnl_UnityEngineComponentArray
+        EXTERN, "UnityEngineComponentArray.__ctor__SystemInt32__UnityEngineComponentArray"
+        PUSH, __1_intnl_UnityEngineComponentArray
+        PUSH, __0_clean_ComponentArray
+        COPY
+        
+         #  for (int i = 0; i < clean.Length; i++)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __1_i_Int32
+        COPY
+        PUSH, __0_clean_ComponentArray
+        PUSH, __15_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __1_i_Int32
+        PUSH, __15_intnl_SystemInt32
+        PUSH, __16_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __16_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001B8C
+        
+         #  {
+        
+         #  clean[i] = elements[i];
+        PUSH, __0_elements_ComponentArray
+        PUSH, __1_i_Int32
+        PUSH, __4_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __0_clean_ComponentArray
+        PUSH, __1_i_Int32
+        PUSH, __4_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid"
+        PUSH, __1_i_Int32
+        PUSH, __16_intnl_SystemInt32
+        COPY
+        PUSH, __1_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __1_i_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00001AC8
+        
+         #  elements = clean;
+        PUSH, __0_clean_ComponentArray
+        PUSH, __0_elements_ComponentArray
+        COPY
+        
+         #  log("Total found: " + elements.Length);
+        PUSH, __0_elements_ComponentArray
+        PUSH, __15_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __15_intnl_SystemInt32
+        PUSH, __15_intnl_SystemString
+        EXTERN, "SystemInt32.__ToString__SystemString"
+        PUSH, __20_const_intnl_SystemString
+        PUSH, __15_intnl_SystemString
+        PUSH, __0_mp_value_String
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __19_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  return elements;
+        PUSH, __0_elements_ComponentArray
+        PUSH, __0_intnl_returnValSymbol_ComponentArray
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private Component[] traverseFor(System.Type T, Transform root)
+    traverseFor:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  log("Traversing node " + root.name + " for " + T);
+        PUSH, __0_mp_root_Transform
+        PUSH, __16_intnl_SystemString
+        EXTERN, "UnityEngineTransform.__get_name__SystemString"
+        PUSH, __21_const_intnl_SystemString
+        PUSH, __16_intnl_SystemString
+        PUSH, __17_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __17_intnl_SystemString
+        PUSH, __22_const_intnl_SystemString
+        PUSH, __18_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __1_mp_T_Type
+        PUSH, __19_intnl_SystemString
+        EXTERN, "SystemType.__ToString__SystemString"
+        PUSH, __18_intnl_SystemString
+        PUSH, __19_intnl_SystemString
+        PUSH, __0_mp_value_String
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __20_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  Component[] elements = new Component[16];
+        PUSH, __2_const_intnl_SystemInt32
+        PUSH, __1_elements_ComponentArray
+        EXTERN, "UnityEngineComponentArray.__ctor__SystemInt32__UnityEngineComponentArray"
+        
+         #  Component[] stack = new Component[16];
+        PUSH, __2_const_intnl_SystemInt32
+        PUSH, __0_stack_ComponentArray
+        EXTERN, "UnityEngineComponentArray.__ctor__SystemInt32__UnityEngineComponentArray"
+        
+         #  stack[0] = root;
+        PUSH, __0_stack_ComponentArray
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_mp_root_Transform
+        EXTERN, "SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid"
+        
+         #  var found = 0;
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_found_Int32
+        COPY
+        
+         #  while (stack[0] != null)
+        PUSH, __0_stack_ComponentArray
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __5_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __5_intnl_UnityEngineComponent
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __21_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __21_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00002010
+        
+         #  {
+        
+         #  var cur = (Transform)pop(stack);
+        PUSH, __0_stack_ComponentArray
+        PUSH, __1_mp_stack_ComponentArray
+        COPY
+        PUSH, __21_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00002400
+        PUSH, __0_intnl_returnValSymbol_Component
+        PUSH, __12_intnl_UnityEngineTransform
+        COPY
+        PUSH, __12_intnl_UnityEngineTransform
+        PUSH, __0_cur_Transform
+        COPY
+        
+         #  if (cur != null)
+        PUSH, __0_cur_Transform
+        PUSH, __0_const_intnl_UnityEngineTransform
+        PUSH, __22_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __22_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00002008
+        
+         #  {
+        
+         #  var t = cur.GetComponent(T);
+        PUSH, __0_cur_Transform
+        PUSH, __1_mp_T_Type
+        PUSH, __6_intnl_UnityEngineComponent
+        EXTERN, "UnityEngineTransform.__GetComponent__SystemType__UnityEngineComponent"
+        PUSH, __6_intnl_UnityEngineComponent
+        PUSH, __0_t_Component
+        COPY
+        
+         #  if (t != null)
+        PUSH, __0_t_Component
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __23_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __23_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001EF8
+        
+         #  {
+        
+         #  found++;
+        PUSH, __0_found_Int32
+        PUSH, __21_intnl_SystemInt32
+        COPY
+        PUSH, __0_found_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_found_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        
+         #  elements = push(elements, t);
+        PUSH, __1_elements_ComponentArray
+        PUSH, __0_mp_stack_ComponentArray
+        COPY
+        PUSH, __0_t_Component
+        PUSH, __0_mp_n_Component
+        COPY
+        PUSH, __22_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000020EC
+        PUSH, __2_intnl_returnValSymbol_ComponentArray
+        PUSH, __1_elements_ComponentArray
+        COPY
+        
+         #  for (int i = cur.childCount - 1; i >= 0; i--)
+        PUSH, __0_cur_Transform
+        PUSH, __21_intnl_SystemInt32
+        EXTERN, "UnityEngineTransform.__get_childCount__SystemInt32"
+        PUSH, __21_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __2_i_Int32
+        EXTERN, "SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, __2_i_Int32
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __24_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __24_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00002008
+        
+         #  stack = push(stack, cur.GetChild(i));
+        PUSH, __0_cur_Transform
+        PUSH, __2_i_Int32
+        PUSH, __13_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineTransform.__GetChild__SystemInt32__UnityEngineTransform"
+        PUSH, __0_stack_ComponentArray
+        PUSH, __0_mp_stack_ComponentArray
+        COPY
+        PUSH, __13_intnl_UnityEngineTransform
+        PUSH, __0_mp_n_Component
+        COPY
+        PUSH, __23_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000020EC
+        PUSH, __2_intnl_returnValSymbol_ComponentArray
+        PUSH, __0_stack_ComponentArray
+        COPY
+        PUSH, __2_i_Int32
+        PUSH, __22_intnl_SystemInt32
+        COPY
+        PUSH, __2_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __2_i_Int32
+        EXTERN, "SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00001F30
+        JUMP, 0x00001D48
+        
+         #  if (found > 0) log("Found " + found + " matching component(s)");
+        PUSH, __0_found_Int32
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __22_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __22_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000020A8
+        PUSH, __0_found_Int32
+        PUSH, __20_intnl_SystemString
+        EXTERN, "SystemInt32.__ToString__SystemString"
+        PUSH, __10_const_intnl_SystemString
+        PUSH, __20_intnl_SystemString
+        PUSH, __21_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __21_intnl_SystemString
+        PUSH, __23_const_intnl_SystemString
+        PUSH, __0_mp_value_String
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __24_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  return elements;
+        PUSH, __1_elements_ComponentArray
+        PUSH, __1_intnl_returnValSymbol_ComponentArray
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private Component[] push(Component[] stack, Component n)
+    push:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  var added = false;
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, __0_added_Boolean
+        COPY
+        
+         #  for (int i = 0; i < stack.Length; i++)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __3_i_Int32
+        COPY
+        PUSH, __0_mp_stack_ComponentArray
+        PUSH, __23_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __3_i_Int32
+        PUSH, __23_intnl_SystemInt32
+        PUSH, __25_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __25_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00002224
+        
+         #  {
+        
+         #  if (stack[i] == null)
+        PUSH, __0_mp_stack_ComponentArray
+        PUSH, __3_i_Int32
+        PUSH, __7_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __7_intnl_UnityEngineComponent
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __26_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __26_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000021E8
+        
+         #  {
+        
+         #  stack[i] = n;
+        PUSH, __0_mp_stack_ComponentArray
+        PUSH, __3_i_Int32
+        PUSH, __0_mp_n_Component
+        EXTERN, "SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid"
+        
+         #  added = true;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, __0_added_Boolean
+        COPY
+        
+         #  break;
+        JUMP, 0x00002224
+        PUSH, __3_i_Int32
+        PUSH, __24_intnl_SystemInt32
+        COPY
+        PUSH, __3_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __3_i_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00002114
+        
+         #  if (!added)
+        PUSH, __0_added_Boolean
+        PUSH, __25_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __25_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000023BC
+        
+         #  {
+        
+         #  stack = expand(stack, 16);
+        PUSH, __0_mp_stack_ComponentArray
+        PUSH, __0_mp_arr_ComponentArray
+        COPY
+        PUSH, __2_const_intnl_SystemInt32
+        PUSH, __0_mp_add_Int32
+        COPY
+        PUSH, __25_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x0000267C
+        PUSH, __3_intnl_returnValSymbol_ComponentArray
+        PUSH, __0_mp_stack_ComponentArray
+        COPY
+        
+         #  for (int i = 0; i < stack.Length; i++)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __3_i_Int32
+        COPY
+        PUSH, __0_mp_stack_ComponentArray
+        PUSH, __23_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __3_i_Int32
+        PUSH, __23_intnl_SystemInt32
+        PUSH, __26_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __26_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000023BC
+        
+         #  {
+        
+         #  if (stack[i] == null)
+        PUSH, __0_mp_stack_ComponentArray
+        PUSH, __3_i_Int32
+        PUSH, __7_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __7_intnl_UnityEngineComponent
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __27_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __27_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00002380
+        
+         #  {
+        
+         #  stack[i] = n;
+        PUSH, __0_mp_stack_ComponentArray
+        PUSH, __3_i_Int32
+        PUSH, __0_mp_n_Component
+        EXTERN, "SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid"
+        
+         #  added = true;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, __0_added_Boolean
+        COPY
+        
+         #  break;
+        JUMP, 0x000023BC
+        PUSH, __3_i_Int32
+        PUSH, __24_intnl_SystemInt32
+        COPY
+        PUSH, __3_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __3_i_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x000022AC
+        
+         #  return stack;
+        PUSH, __0_mp_stack_ComponentArray
+        PUSH, __2_intnl_returnValSymbol_ComponentArray
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private Component pop(Component[] stack)
+    pop:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  var last = -1;
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __25_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_UnaryMinus__SystemInt32__SystemInt32"
+        PUSH, __25_intnl_SystemInt32
+        PUSH, __0_last_Int32
+        COPY
+        
+         #  for (int i = 0; i < stack.Length; i++)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __4_i_Int32
+        COPY
+        PUSH, __1_mp_stack_ComponentArray
+        PUSH, __26_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __4_i_Int32
+        PUSH, __26_intnl_SystemInt32
+        PUSH, __28_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __28_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00002574
+        
+         #  {
+        
+         #  var item = stack[i];
+        PUSH, __1_mp_stack_ComponentArray
+        PUSH, __4_i_Int32
+        PUSH, __8_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __8_intnl_UnityEngineComponent
+        PUSH, __0_item_Component
+        COPY
+        
+         #  if (item != null) last = i;
+        PUSH, __0_item_Component
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __29_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __29_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00002500
+        PUSH, __4_i_Int32
+        PUSH, __0_last_Int32
+        COPY
+        
+         #  if (item == null) break;
+        PUSH, __0_item_Component
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __30_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __30_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00002538
+        JUMP, 0x00002574
+        PUSH, __4_i_Int32
+        PUSH, __27_intnl_SystemInt32
+        COPY
+        PUSH, __4_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __4_i_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00002440
+        
+         #  if (last == -1) return null;
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __26_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_UnaryMinus__SystemInt32__SystemInt32"
+        PUSH, __0_last_Int32
+        PUSH, __26_intnl_SystemInt32
+        PUSH, __28_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __28_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000025E4
+        PUSH, __0_const_intnl_SystemObject
+        PUSH, __0_intnl_returnValSymbol_Component
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  var t = stack[last];
+        PUSH, __1_mp_stack_ComponentArray
+        PUSH, __0_last_Int32
+        PUSH, __8_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __8_intnl_UnityEngineComponent
+        PUSH, __1_t_Component
+        COPY
+        
+         #  stack[last] = null;
+        PUSH, __1_mp_stack_ComponentArray
+        PUSH, __0_last_Int32
+        PUSH, __0_const_intnl_SystemObject
+        EXTERN, "SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid"
+        
+         #  return t;
+        PUSH, __1_t_Component
+        PUSH, __0_intnl_returnValSymbol_Component
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private Component[] expand(Component[] arr, int add)
+    expand:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  var newArray = new Component[arr.Length + add];
+        PUSH, __0_mp_arr_ComponentArray
+        PUSH, __28_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __28_intnl_SystemInt32
+        PUSH, __0_mp_add_Int32
+        PUSH, __29_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, __29_intnl_SystemInt32
+        PUSH, __2_intnl_UnityEngineComponentArray
+        EXTERN, "UnityEngineComponentArray.__ctor__SystemInt32__UnityEngineComponentArray"
+        PUSH, __2_intnl_UnityEngineComponentArray
+        PUSH, __0_newArray_ComponentArray
+        COPY
+        
+         #  var index = 0;
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __1_index_Int32
+        COPY
+        
+         #  for (int i = 0; i < arr.Length; i++)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __5_i_Int32
+        COPY
+        PUSH, __0_mp_arr_ComponentArray
+        PUSH, __30_intnl_SystemInt32
+        EXTERN, "UnityEngineComponentArray.__get_Length__SystemInt32"
+        PUSH, __5_i_Int32
+        PUSH, __30_intnl_SystemInt32
+        PUSH, __31_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __31_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00002858
+        
+         #  {
+        
+         #  if (arr[i] == null) continue;
+        PUSH, __0_mp_arr_ComponentArray
+        PUSH, __5_i_Int32
+        PUSH, __9_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __9_intnl_UnityEngineComponent
+        PUSH, __0_const_intnl_UnityEngineComponent
+        PUSH, __32_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __32_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000027A8
+        JUMP, 0x0000281C
+        
+         #  newArray[index] = arr[i];
+        PUSH, __0_mp_arr_ComponentArray
+        PUSH, __5_i_Int32
+        PUSH, __10_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __0_newArray_ComponentArray
+        PUSH, __1_index_Int32
+        PUSH, __10_intnl_UnityEngineComponent
+        EXTERN, "SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid"
+        
+         #  index++;
+        PUSH, __1_index_Int32
+        PUSH, __31_intnl_SystemInt32
+        COPY
+        PUSH, __1_index_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __1_index_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, __5_i_Int32
+        PUSH, __31_intnl_SystemInt32
+        COPY
+        PUSH, __5_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __5_i_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00002708
+        
+         #  return newArray;
+        PUSH, __0_newArray_ComponentArray
+        PUSH, __3_intnl_returnValSymbol_ComponentArray
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+.code_end

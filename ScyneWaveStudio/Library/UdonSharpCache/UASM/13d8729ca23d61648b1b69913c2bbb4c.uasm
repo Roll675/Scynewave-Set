@@ -1,0 +1,3209 @@
+.data_start
+
+    .export listContainer
+    .export template
+    .export tv
+    .export autoplayList
+    .export continueWhereLeftOff
+    .export autoplayOnVideoError
+    .export urls
+    .export titles
+    .export showUrls
+
+    __refl_const_intnl_udonTypeID: %SystemInt64, null
+    __refl_const_intnl_udonTypeName: %SystemString, null
+    showUrls: %SystemBoolean, null
+    autoplayOnVideoError: %SystemBoolean, null
+    continueWhereLeftOff: %SystemBoolean, null
+    autoplayList: %SystemBoolean, null
+    template: %UnityEngineGameObject, null
+    listContainer: %UnityEngineRectTransform, null
+    titles: %SystemStringArray, null
+    tv: %VRCUdonUdonBehaviour, null
+    urls: %VRCSDKBaseVRCUrlArray, null
+    skipLog: %SystemBoolean, null
+    init: %SystemBoolean, null
+    isLoading: %SystemBoolean, null
+    nextAutoplayVideo: %SystemByte, null
+    loadingBarDamp: %SystemSingle, null
+    loading: %UnityEngineUISlider, null
+    OUT_OnVideoPlayerError_VideoError_Error: %VRCSDK3ComponentsVideoVideoError, null
+    __0_this_intnl_ArchiTechSimplePlaylist: %VRCUdonUdonBehaviour, this
+    __0_lastAutoplayVideo_Byte: %SystemByte, null
+    __0_mp_entry_Byte: %SystemByte, null
+    __0_i_Int32: %SystemInt32, null
+    __0_currentUrl_String: %SystemString, null
+    __2_mp_value_String: %SystemString, null
+    __1_mp_value_String: %SystemString, null
+    __0_mp_value_String: %SystemString, null
+    __1_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemByte: %SystemByte, null
+    __99_const_intnl_SystemInt32: %SystemInt32, null
+    __98_const_intnl_SystemInt32: %SystemInt32, null
+    __97_const_intnl_SystemInt32: %SystemInt32, null
+    __96_const_intnl_SystemInt32: %SystemInt32, null
+    __95_const_intnl_SystemInt32: %SystemInt32, null
+    __94_const_intnl_SystemInt32: %SystemInt32, null
+    __93_const_intnl_SystemInt32: %SystemInt32, null
+    __92_const_intnl_SystemInt32: %SystemInt32, null
+    __91_const_intnl_SystemInt32: %SystemInt32, null
+    __90_const_intnl_SystemInt32: %SystemInt32, null
+    __89_const_intnl_SystemInt32: %SystemInt32, null
+    __88_const_intnl_SystemInt32: %SystemInt32, null
+    __87_const_intnl_SystemInt32: %SystemInt32, null
+    __86_const_intnl_SystemInt32: %SystemInt32, null
+    __85_const_intnl_SystemInt32: %SystemInt32, null
+    __84_const_intnl_SystemInt32: %SystemInt32, null
+    __83_const_intnl_SystemInt32: %SystemInt32, null
+    __82_const_intnl_SystemInt32: %SystemInt32, null
+    __81_const_intnl_SystemInt32: %SystemInt32, null
+    __80_const_intnl_SystemInt32: %SystemInt32, null
+    __79_const_intnl_SystemInt32: %SystemInt32, null
+    __78_const_intnl_SystemInt32: %SystemInt32, null
+    __77_const_intnl_SystemInt32: %SystemInt32, null
+    __76_const_intnl_SystemInt32: %SystemInt32, null
+    __75_const_intnl_SystemInt32: %SystemInt32, null
+    __74_const_intnl_SystemInt32: %SystemInt32, null
+    __73_const_intnl_SystemInt32: %SystemInt32, null
+    __72_const_intnl_SystemInt32: %SystemInt32, null
+    __71_const_intnl_SystemInt32: %SystemInt32, null
+    __70_const_intnl_SystemInt32: %SystemInt32, null
+    __69_const_intnl_SystemInt32: %SystemInt32, null
+    __68_const_intnl_SystemInt32: %SystemInt32, null
+    __67_const_intnl_SystemInt32: %SystemInt32, null
+    __66_const_intnl_SystemInt32: %SystemInt32, null
+    __65_const_intnl_SystemInt32: %SystemInt32, null
+    __64_const_intnl_SystemInt32: %SystemInt32, null
+    __63_const_intnl_SystemInt32: %SystemInt32, null
+    __62_const_intnl_SystemInt32: %SystemInt32, null
+    __61_const_intnl_SystemInt32: %SystemInt32, null
+    __60_const_intnl_SystemInt32: %SystemInt32, null
+    __59_const_intnl_SystemInt32: %SystemInt32, null
+    __58_const_intnl_SystemInt32: %SystemInt32, null
+    __57_const_intnl_SystemInt32: %SystemInt32, null
+    __56_const_intnl_SystemInt32: %SystemInt32, null
+    __55_const_intnl_SystemInt32: %SystemInt32, null
+    __54_const_intnl_SystemInt32: %SystemInt32, null
+    __53_const_intnl_SystemInt32: %SystemInt32, null
+    __52_const_intnl_SystemInt32: %SystemInt32, null
+    __51_const_intnl_SystemInt32: %SystemInt32, null
+    __50_const_intnl_SystemInt32: %SystemInt32, null
+    __49_const_intnl_SystemInt32: %SystemInt32, null
+    __48_const_intnl_SystemInt32: %SystemInt32, null
+    __47_const_intnl_SystemInt32: %SystemInt32, null
+    __46_const_intnl_SystemInt32: %SystemInt32, null
+    __45_const_intnl_SystemInt32: %SystemInt32, null
+    __44_const_intnl_SystemInt32: %SystemInt32, null
+    __43_const_intnl_SystemInt32: %SystemInt32, null
+    __42_const_intnl_SystemInt32: %SystemInt32, null
+    __41_const_intnl_SystemInt32: %SystemInt32, null
+    __40_const_intnl_SystemInt32: %SystemInt32, null
+    __39_const_intnl_SystemInt32: %SystemInt32, null
+    __38_const_intnl_SystemInt32: %SystemInt32, null
+    __37_const_intnl_SystemInt32: %SystemInt32, null
+    __36_const_intnl_SystemInt32: %SystemInt32, null
+    __35_const_intnl_SystemInt32: %SystemInt32, null
+    __34_const_intnl_SystemInt32: %SystemInt32, null
+    __33_const_intnl_SystemInt32: %SystemInt32, null
+    __32_const_intnl_SystemInt32: %SystemInt32, null
+    __31_const_intnl_SystemInt32: %SystemInt32, null
+    __30_const_intnl_SystemInt32: %SystemInt32, null
+    __29_const_intnl_SystemInt32: %SystemInt32, null
+    __28_const_intnl_SystemInt32: %SystemInt32, null
+    __27_const_intnl_SystemInt32: %SystemInt32, null
+    __26_const_intnl_SystemInt32: %SystemInt32, null
+    __25_const_intnl_SystemInt32: %SystemInt32, null
+    __24_const_intnl_SystemInt32: %SystemInt32, null
+    __23_const_intnl_SystemInt32: %SystemInt32, null
+    __22_const_intnl_SystemInt32: %SystemInt32, null
+    __21_const_intnl_SystemInt32: %SystemInt32, null
+    __20_const_intnl_SystemInt32: %SystemInt32, null
+    __19_const_intnl_SystemInt32: %SystemInt32, null
+    __18_const_intnl_SystemInt32: %SystemInt32, null
+    __17_const_intnl_SystemInt32: %SystemInt32, null
+    __16_const_intnl_SystemInt32: %SystemInt32, null
+    __15_const_intnl_SystemInt32: %SystemInt32, null
+    __14_const_intnl_SystemInt32: %SystemInt32, null
+    __13_const_intnl_SystemInt32: %SystemInt32, null
+    __12_const_intnl_SystemInt32: %SystemInt32, null
+    __11_const_intnl_SystemInt32: %SystemInt32, null
+    __10_const_intnl_SystemInt32: %SystemInt32, null
+    __9_const_intnl_SystemInt32: %SystemInt32, null
+    __8_const_intnl_SystemInt32: %SystemInt32, null
+    __7_const_intnl_SystemInt32: %SystemInt32, null
+    __6_const_intnl_SystemInt32: %SystemInt32, null
+    __5_const_intnl_SystemInt32: %SystemInt32, null
+    __4_const_intnl_SystemInt32: %SystemInt32, null
+    __3_const_intnl_SystemInt32: %SystemInt32, null
+    __2_const_intnl_SystemInt32: %SystemInt32, null
+    __1_const_intnl_SystemInt32: %SystemInt32, null
+    __0_const_intnl_SystemInt32: %SystemInt32, null
+    __0_const_intnl_SystemObject: %SystemObject, null
+    __5_const_intnl_SystemSingle: %SystemSingle, null
+    __4_const_intnl_SystemSingle: %SystemSingle, null
+    __3_const_intnl_SystemSingle: %SystemSingle, null
+    __2_const_intnl_SystemSingle: %SystemSingle, null
+    __1_const_intnl_SystemSingle: %SystemSingle, null
+    __0_const_intnl_SystemSingle: %SystemSingle, null
+    __0_const_intnl_UnityEngineUISlider: %UnityEngineUISlider, null
+    __18_const_intnl_SystemString: %SystemString, null
+    __17_const_intnl_SystemString: %SystemString, null
+    __16_const_intnl_SystemString: %SystemString, null
+    __15_const_intnl_SystemString: %SystemString, null
+    __14_const_intnl_SystemString: %SystemString, null
+    __13_const_intnl_SystemString: %SystemString, null
+    __12_const_intnl_SystemString: %SystemString, null
+    __11_const_intnl_SystemString: %SystemString, null
+    __10_const_intnl_SystemString: %SystemString, null
+    __9_const_intnl_SystemString: %SystemString, null
+    __8_const_intnl_SystemString: %SystemString, null
+    __7_const_intnl_SystemString: %SystemString, null
+    __6_const_intnl_SystemString: %SystemString, null
+    __5_const_intnl_SystemString: %SystemString, null
+    __4_const_intnl_SystemString: %SystemString, null
+    __3_const_intnl_SystemString: %SystemString, null
+    __2_const_intnl_SystemString: %SystemString, null
+    __1_const_intnl_SystemString: %SystemString, null
+    __0_const_intnl_SystemString: %SystemString, null
+    __0_const_intnl_SystemType: %SystemType, null
+    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver: %VRCUdonUdonBehaviour, null
+    __117_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __116_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __115_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __114_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __113_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __112_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __111_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __110_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __109_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __108_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __107_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __106_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __105_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __104_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __103_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __102_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __101_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __100_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __99_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __98_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __97_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __96_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __95_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __94_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __93_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __92_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __91_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __90_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __89_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __88_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __87_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __86_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __85_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __84_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __83_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __82_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __81_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __80_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __79_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __78_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __77_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __76_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __75_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __74_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __73_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __72_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __71_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __70_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __69_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __68_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __67_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __66_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __65_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __64_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __63_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __62_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __61_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __60_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __59_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __58_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __57_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __56_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __55_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __54_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __53_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __52_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __51_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __50_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __49_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __48_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __47_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __46_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __45_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __44_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __43_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __42_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __41_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __40_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __39_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __38_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __37_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __36_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __35_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __34_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __33_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __32_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __31_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __30_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __29_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __28_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __27_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __26_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __25_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __24_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __23_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __22_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __21_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __20_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __19_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __18_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __17_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __16_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __15_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __14_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __13_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __12_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __11_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __10_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __9_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __8_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __7_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __6_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __5_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __4_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __3_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __2_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __1_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __0_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __0_const_intnl_VRCSDK3ComponentsVideoVideoError: %VRCSDK3ComponentsVideoVideoError, null
+    __36_intnl_SystemBoolean: %SystemBoolean, null
+    __35_intnl_SystemBoolean: %SystemBoolean, null
+    __34_intnl_SystemBoolean: %SystemBoolean, null
+    __33_intnl_SystemBoolean: %SystemBoolean, null
+    __32_intnl_SystemBoolean: %SystemBoolean, null
+    __31_intnl_SystemBoolean: %SystemBoolean, null
+    __30_intnl_SystemBoolean: %SystemBoolean, null
+    __29_intnl_SystemBoolean: %SystemBoolean, null
+    __28_intnl_SystemBoolean: %SystemBoolean, null
+    __27_intnl_SystemBoolean: %SystemBoolean, null
+    __26_intnl_SystemBoolean: %SystemBoolean, null
+    __25_intnl_SystemBoolean: %SystemBoolean, null
+    __24_intnl_SystemBoolean: %SystemBoolean, null
+    __23_intnl_SystemBoolean: %SystemBoolean, null
+    __22_intnl_SystemBoolean: %SystemBoolean, null
+    __21_intnl_SystemBoolean: %SystemBoolean, null
+    __20_intnl_SystemBoolean: %SystemBoolean, null
+    __19_intnl_SystemBoolean: %SystemBoolean, null
+    __18_intnl_SystemBoolean: %SystemBoolean, null
+    __17_intnl_SystemBoolean: %SystemBoolean, null
+    __16_intnl_SystemBoolean: %SystemBoolean, null
+    __15_intnl_SystemBoolean: %SystemBoolean, null
+    __14_intnl_SystemBoolean: %SystemBoolean, null
+    __13_intnl_SystemBoolean: %SystemBoolean, null
+    __12_intnl_SystemBoolean: %SystemBoolean, null
+    __11_intnl_SystemBoolean: %SystemBoolean, null
+    __10_intnl_SystemBoolean: %SystemBoolean, null
+    __9_intnl_SystemBoolean: %SystemBoolean, null
+    __8_intnl_SystemBoolean: %SystemBoolean, null
+    __7_intnl_SystemBoolean: %SystemBoolean, null
+    __6_intnl_SystemBoolean: %SystemBoolean, null
+    __5_intnl_SystemBoolean: %SystemBoolean, null
+    __4_intnl_SystemBoolean: %SystemBoolean, null
+    __3_intnl_SystemBoolean: %SystemBoolean, null
+    __2_intnl_SystemBoolean: %SystemBoolean, null
+    __1_intnl_SystemBoolean: %SystemBoolean, null
+    __0_intnl_SystemBoolean: %SystemBoolean, null
+    __0_intnl_returnValSymbol_Boolean: %SystemBoolean, null
+    __5_intnl_SystemByte: %SystemByte, null
+    __4_intnl_SystemByte: %SystemByte, null
+    __3_intnl_SystemByte: %SystemByte, null
+    __2_intnl_SystemByte: %SystemByte, null
+    __1_intnl_SystemByte: %SystemByte, null
+    __0_intnl_SystemByte: %SystemByte, null
+    __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null
+    __20_intnl_SystemInt32: %SystemInt32, null
+    __19_intnl_SystemInt32: %SystemInt32, null
+    __18_intnl_SystemInt32: %SystemInt32, null
+    __17_intnl_SystemInt32: %SystemInt32, null
+    __16_intnl_SystemInt32: %SystemInt32, null
+    __15_intnl_SystemInt32: %SystemInt32, null
+    __14_intnl_SystemInt32: %SystemInt32, null
+    __13_intnl_SystemInt32: %SystemInt32, null
+    __12_intnl_SystemInt32: %SystemInt32, null
+    __11_intnl_SystemInt32: %SystemInt32, null
+    __10_intnl_SystemInt32: %SystemInt32, null
+    __9_intnl_SystemInt32: %SystemInt32, null
+    __8_intnl_SystemInt32: %SystemInt32, null
+    __7_intnl_SystemInt32: %SystemInt32, null
+    __6_intnl_SystemInt32: %SystemInt32, null
+    __5_intnl_SystemInt32: %SystemInt32, null
+    __4_intnl_SystemInt32: %SystemInt32, null
+    __3_intnl_SystemInt32: %SystemInt32, null
+    __2_intnl_SystemInt32: %SystemInt32, null
+    __1_intnl_SystemInt32: %SystemInt32, null
+    __0_intnl_SystemInt32: %SystemInt32, null
+    __2_intnl_SystemObject: %SystemObject, null
+    __1_intnl_SystemObject: %SystemObject, null
+    __0_intnl_SystemObject: %SystemObject, null
+    __5_intnl_SystemSingle: %SystemSingle, null
+    __4_intnl_SystemSingle: %SystemSingle, null
+    __3_intnl_SystemSingle: %SystemSingle, null
+    __2_intnl_SystemSingle: %SystemSingle, null
+    __1_intnl_SystemSingle: %SystemSingle, null
+    __0_intnl_SystemSingle: %SystemSingle, null
+    __27_intnl_SystemString: %SystemString, null
+    __6_intnl_interpolatedStr_String: %SystemString, null
+    __26_intnl_SystemString: %SystemString, null
+    __5_intnl_interpolatedStr_String: %SystemString, null
+    __25_intnl_SystemString: %SystemString, null
+    __4_intnl_interpolatedStr_String: %SystemString, null
+    __24_intnl_SystemString: %SystemString, null
+    __23_intnl_SystemString: %SystemString, null
+    __22_intnl_SystemString: %SystemString, null
+    __3_intnl_interpolatedStr_String: %SystemString, null
+    __21_intnl_SystemString: %SystemString, null
+    __20_intnl_SystemString: %SystemString, null
+    __19_intnl_SystemString: %SystemString, null
+    __18_intnl_SystemString: %SystemString, null
+    __17_intnl_SystemString: %SystemString, null
+    __2_intnl_interpolatedStr_String: %SystemString, null
+    __16_intnl_SystemString: %SystemString, null
+    __15_intnl_SystemString: %SystemString, null
+    __14_intnl_SystemString: %SystemString, null
+    __13_intnl_SystemString: %SystemString, null
+    __1_intnl_interpolatedStr_String: %SystemString, null
+    __12_intnl_SystemString: %SystemString, null
+    __11_intnl_SystemString: %SystemString, null
+    __10_intnl_SystemString: %SystemString, null
+    __9_intnl_SystemString: %SystemString, null
+    __8_intnl_SystemString: %SystemString, null
+    __7_intnl_SystemString: %SystemString, null
+    __6_intnl_SystemString: %SystemString, null
+    __5_intnl_SystemString: %SystemString, null
+    __4_intnl_SystemString: %SystemString, null
+    __3_intnl_SystemString: %SystemString, null
+    __2_intnl_SystemString: %SystemString, null
+    __1_intnl_SystemString: %SystemString, null
+    __0_intnl_SystemString: %SystemString, null
+    __0_intnl_interpolatedStr_String: %SystemString, null
+    __1_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __0_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __0_intnl_returnTarget_UInt32: %SystemUInt32, null
+    __1_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+    __13_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __12_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __11_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __10_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __9_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __8_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __7_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __6_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __5_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __4_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __3_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __2_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __1_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+    __0_intnl_VRCSDKBaseVRCUrl: %VRCSDKBaseVRCUrl, null
+
+.data_end
+
+        
+         #  using UdonSharp;
+        
+         #  using UnityEngine;
+        
+         #  using VRC.SDKBase;
+        
+         #  using VRC.Udon;
+        
+         #  using UnityEngine.UI;
+        
+         #  using VRC.SDK3.Components.Video;
+        
+         #  namespace ArchiTech
+        
+         #  public class SimplePlaylist : UdonSharpBehaviour
+.code_start
+        
+         #  [HideInInspector] public RectTransform listContainer;
+        
+         #  [HideInInspector] public GameObject template;
+        
+         #  [HideInInspector] public TVManagerV2 tv;
+        
+         #  [HideInInspector] public bool autoplayList = false;
+        
+         #  [HideInInspector] public bool continueWhereLeftOff = true;
+        
+         #  [HideInInspector] public bool autoplayOnVideoError = true;
+        
+         #  [HideInInspector] public VRCUrl[] urls;
+        
+         #  [HideInInspector] public string[] titles;
+        
+         #  [HideInInspector] public bool showUrls;
+        
+         #  private byte nextAutoplayVideo = 0;
+        
+         #  private VideoError OUT_OnVideoPlayerError_VideoError_Error;
+        
+         #  private bool isLoading = false;
+        
+         #  private Slider loading;
+        
+         #  private float loadingBarDamp;
+        
+         #  private bool init = false;
+        
+         #  private bool skipLog = false;
+        
+         #  private void initialize()
+    initialize:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (init) return;
+        PUSH, init
+        JUMP_IF_FALSE, 0x0000002C
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  if (titles.Length != urls.Length)
+        PUSH, titles
+        PUSH, __0_intnl_SystemInt32
+        EXTERN, "SystemStringArray.__get_Length__SystemInt32"
+        PUSH, urls
+        PUSH, __1_intnl_SystemInt32
+        EXTERN, "VRCSDKBaseVRCUrlArray.__get_Length__SystemInt32"
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __1_intnl_SystemInt32
+        PUSH, __0_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __0_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000208
+        
+         #  {
+        
+         #  warn($"Titles count ({titles.Length}) doesn't match Urls count ({urls.Length}). Disregard this warning if that is intentional.");
+        PUSH, __0_const_intnl_SystemString
+        PUSH, __0_intnl_interpolatedStr_String
+        COPY
+        PUSH, titles
+        PUSH, __2_intnl_SystemInt32
+        EXTERN, "SystemStringArray.__get_Length__SystemInt32"
+        PUSH, __2_intnl_SystemInt32
+        PUSH, __0_intnl_SystemString
+        EXTERN, "SystemInt32.__ToString__SystemString"
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __0_intnl_SystemString
+        PUSH, __1_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __1_intnl_SystemString
+        PUSH, __0_intnl_interpolatedStr_String
+        COPY
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __1_const_intnl_SystemString
+        PUSH, __2_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __2_intnl_SystemString
+        PUSH, __0_intnl_interpolatedStr_String
+        COPY
+        PUSH, urls
+        PUSH, __3_intnl_SystemInt32
+        EXTERN, "VRCSDKBaseVRCUrlArray.__get_Length__SystemInt32"
+        PUSH, __3_intnl_SystemInt32
+        PUSH, __3_intnl_SystemString
+        EXTERN, "SystemInt32.__ToString__SystemString"
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __3_intnl_SystemString
+        PUSH, __4_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __4_intnl_SystemString
+        PUSH, __0_intnl_interpolatedStr_String
+        COPY
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __2_const_intnl_SystemString
+        PUSH, __5_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __5_intnl_SystemString
+        PUSH, __0_intnl_interpolatedStr_String
+        COPY
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __1_mp_value_String
+        COPY
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __6_intnl_SystemString
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __0_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x0000323C
+        
+         #  if (tv == null) err("The TV reference was not provided. Please make sure the playlist knows what TV to connect to.");
+        PUSH, tv
+        PUSH, __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver
+        PUSH, __1_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __1_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000025C
+        PUSH, __3_const_intnl_SystemString
+        PUSH, __2_mp_value_String
+        COPY
+        PUSH, __1_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000032D8
+        
+         #  template.SetActive(false);
+        PUSH, template
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  if (autoplayList)
+        PUSH, autoplayList
+        JUMP_IF_FALSE, 0x000002EC
+        
+         #  {
+        
+         #  tv.autoplayURL = urls[nextAutoplayVideo];
+        PUSH, nextAutoplayVideo
+        PUSH, __2_intnl_SystemInt32
+        EXTERN, "SystemConvert.__ToInt32__SystemByte__SystemInt32"
+        PUSH, urls
+        PUSH, __2_intnl_SystemInt32
+        PUSH, __0_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCSDKBaseVRCUrlArray.__Get__SystemInt32__VRCSDKBaseVRCUrl"
+        PUSH, tv
+        PUSH, __4_const_intnl_SystemString
+        PUSH, __0_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  pickNext();
+        PUSH, __2_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000011E4
+        
+         #  tv._RegisterUdonSharpEventReceiver(this);
+        PUSH, tv
+        PUSH, __5_const_intnl_SystemString
+        PUSH, __0_this_intnl_ArchiTechSimplePlaylist
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, tv
+        PUSH, __6_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        
+         #  init = true;
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, init
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  void Start()
+    .export _start
+        
+    _start:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  initialize();
+        PUSH, __3_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  void LateUpdate()
+    .export _lateUpdate
+        
+    _lateUpdate:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (isLoading && loading != null)
+        PUSH, isLoading
+        PUSH, __2_intnl_SystemBoolean
+        COPY
+        PUSH, __2_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000003F8
+        PUSH, loading
+        PUSH, __0_const_intnl_UnityEngineUISlider
+        PUSH, __3_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __2_intnl_SystemBoolean
+        PUSH, __3_intnl_SystemBoolean
+        PUSH, __4_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean"
+        PUSH, __4_intnl_SystemBoolean
+        PUSH, __2_intnl_SystemBoolean
+        COPY
+        PUSH, __2_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000574
+        
+         #  {
+        
+         #  if (loading.value > 0.95f) return;
+        PUSH, loading
+        PUSH, __0_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __0_intnl_SystemSingle
+        PUSH, __0_const_intnl_SystemSingle
+        PUSH, __5_intnl_SystemBoolean
+        EXTERN, "SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean"
+        PUSH, __5_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000464
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  if (loading.value > 0.8f)
+        PUSH, loading
+        PUSH, __1_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __1_intnl_SystemSingle
+        PUSH, __1_const_intnl_SystemSingle
+        PUSH, __6_intnl_SystemBoolean
+        EXTERN, "SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean"
+        PUSH, __6_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000514
+        
+         #  loading.value = Mathf.SmoothDamp(loading.value, 1f, ref loadingBarDamp, 0.4f);
+        PUSH, loading
+        PUSH, __2_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __2_intnl_SystemSingle
+        PUSH, __2_const_intnl_SystemSingle
+        PUSH, loadingBarDamp
+        PUSH, __3_const_intnl_SystemSingle
+        PUSH, __3_intnl_SystemSingle
+        EXTERN, "UnityEngineMathf.__SmoothDamp__SystemSingle_SystemSingle_SystemSingleRef_SystemSingle__SystemSingle"
+        PUSH, loading
+        PUSH, __3_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        JUMP, 0x00000574
+        
+         #  else
+        
+         #  loading.value = Mathf.SmoothDamp(loading.value, 1f, ref loadingBarDamp, 0.3f);
+        PUSH, loading
+        PUSH, __4_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __4_intnl_SystemSingle
+        PUSH, __2_const_intnl_SystemSingle
+        PUSH, loadingBarDamp
+        PUSH, __4_const_intnl_SystemSingle
+        PUSH, __5_intnl_SystemSingle
+        EXTERN, "UnityEngineMathf.__SmoothDamp__SystemSingle_SystemSingle_SystemSingleRef_SystemSingle__SystemSingle"
+        PUSH, loading
+        PUSH, __5_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _OnMediaEnd()
+    .export _OnMediaEnd
+        
+    _OnMediaEnd:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (autoplayList && isTVOwner()) _SwitchTo(nextAutoplayVideo);
+        PUSH, autoplayList
+        PUSH, __7_intnl_SystemBoolean
+        COPY
+        PUSH, __7_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000005F8
+        PUSH, __4_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00001680
+        PUSH, __7_intnl_SystemBoolean
+        PUSH, __0_intnl_returnValSymbol_Boolean
+        PUSH, __8_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean"
+        PUSH, __8_intnl_SystemBoolean
+        PUSH, __7_intnl_SystemBoolean
+        COPY
+        PUSH, __7_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000640
+        PUSH, nextAutoplayVideo
+        PUSH, __0_mp_entry_Byte
+        COPY
+        PUSH, nextAutoplayVideo
+        PUSH, __0_intnl_SystemByte
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __5_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _OnMediaChange()
+    .export _OnMediaChange
+        
+    _OnMediaChange:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (autoplayList && !continueWhereLeftOff && tv.localUrl.Get() != urls[nextAutoplayVideo].Get()) nextAutoplayVideo = 0;
+        PUSH, autoplayList
+        PUSH, __10_intnl_SystemBoolean
+        COPY
+        PUSH, __10_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000006CC
+        PUSH, continueWhereLeftOff
+        PUSH, __11_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __10_intnl_SystemBoolean
+        PUSH, __11_intnl_SystemBoolean
+        PUSH, __12_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean"
+        PUSH, __12_intnl_SystemBoolean
+        PUSH, __10_intnl_SystemBoolean
+        COPY
+        PUSH, __10_intnl_SystemBoolean
+        PUSH, __9_intnl_SystemBoolean
+        COPY
+        PUSH, __9_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000007E0
+        PUSH, tv
+        PUSH, __7_const_intnl_SystemString
+        PUSH, __0_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __0_intnl_SystemObject
+        PUSH, __2_intnl_VRCSDKBaseVRCUrl
+        COPY
+        PUSH, __2_intnl_VRCSDKBaseVRCUrl
+        PUSH, __7_intnl_SystemString
+        EXTERN, "VRCSDKBaseVRCUrl.__Get__SystemString"
+        PUSH, nextAutoplayVideo
+        PUSH, __4_intnl_SystemInt32
+        EXTERN, "SystemConvert.__ToInt32__SystemByte__SystemInt32"
+        PUSH, urls
+        PUSH, __4_intnl_SystemInt32
+        PUSH, __3_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCSDKBaseVRCUrlArray.__Get__SystemInt32__VRCSDKBaseVRCUrl"
+        PUSH, __3_intnl_VRCSDKBaseVRCUrl
+        PUSH, __8_intnl_SystemString
+        EXTERN, "VRCSDKBaseVRCUrl.__Get__SystemString"
+        PUSH, __7_intnl_SystemString
+        PUSH, __8_intnl_SystemString
+        PUSH, __13_intnl_SystemBoolean
+        EXTERN, "SystemString.__op_Inequality__SystemString_SystemString__SystemBoolean"
+        PUSH, __9_intnl_SystemBoolean
+        PUSH, __13_intnl_SystemBoolean
+        PUSH, __14_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean"
+        PUSH, __14_intnl_SystemBoolean
+        PUSH, __9_intnl_SystemBoolean
+        COPY
+        PUSH, __9_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000808
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, nextAutoplayVideo
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _OnVideoPlayerError()
+    .export _OnVideoPlayerError
+        
+    _OnVideoPlayerError:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!autoplayOnVideoError || OUT_OnVideoPlayerError_VideoError_Error == VideoError.RateLimited) return; // TV auto-reloads on ratelimited, don't skip current video.
+        PUSH, autoplayOnVideoError
+        PUSH, __16_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __16_intnl_SystemBoolean
+        PUSH, __15_intnl_SystemBoolean
+        COPY
+        PUSH, __15_intnl_SystemBoolean
+        PUSH, __17_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __17_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000008CC
+        PUSH, OUT_OnVideoPlayerError_VideoError_Error
+        PUSH, __0_const_intnl_VRCSDK3ComponentsVideoVideoError
+        PUSH, __18_intnl_SystemBoolean
+        EXTERN, "SystemObject.__Equals__SystemObject_SystemObject__SystemBoolean"
+        PUSH, __15_intnl_SystemBoolean
+        PUSH, __18_intnl_SystemBoolean
+        PUSH, __19_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_ConditionalOr__SystemBoolean_SystemBoolean__SystemBoolean"
+        PUSH, __19_intnl_SystemBoolean
+        PUSH, __15_intnl_SystemBoolean
+        COPY
+        PUSH, __15_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000008F0
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  if (autoplayList && tv.localUrl.Get() == urls[nextAutoplayVideo].Get())
+        PUSH, autoplayList
+        PUSH, __20_intnl_SystemBoolean
+        COPY
+        PUSH, __20_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000A04
+        PUSH, tv
+        PUSH, __7_const_intnl_SystemString
+        PUSH, __1_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __1_intnl_SystemObject
+        PUSH, __5_intnl_VRCSDKBaseVRCUrl
+        COPY
+        PUSH, __5_intnl_VRCSDKBaseVRCUrl
+        PUSH, __9_intnl_SystemString
+        EXTERN, "VRCSDKBaseVRCUrl.__Get__SystemString"
+        PUSH, nextAutoplayVideo
+        PUSH, __5_intnl_SystemInt32
+        EXTERN, "SystemConvert.__ToInt32__SystemByte__SystemInt32"
+        PUSH, urls
+        PUSH, __5_intnl_SystemInt32
+        PUSH, __6_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCSDKBaseVRCUrlArray.__Get__SystemInt32__VRCSDKBaseVRCUrl"
+        PUSH, __6_intnl_VRCSDKBaseVRCUrl
+        PUSH, __10_intnl_SystemString
+        EXTERN, "VRCSDKBaseVRCUrl.__Get__SystemString"
+        PUSH, __9_intnl_SystemString
+        PUSH, __10_intnl_SystemString
+        PUSH, __21_intnl_SystemBoolean
+        EXTERN, "SystemString.__op_Equality__SystemString_SystemString__SystemBoolean"
+        PUSH, __20_intnl_SystemBoolean
+        PUSH, __21_intnl_SystemBoolean
+        PUSH, __22_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean"
+        PUSH, __22_intnl_SystemBoolean
+        PUSH, __20_intnl_SystemBoolean
+        COPY
+        PUSH, __20_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000AA4
+        
+         #  {
+        
+         #  pickNext();
+        PUSH, __6_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000011E4
+        
+         #  tv._QueueMedia(urls[nextAutoplayVideo]);
+        PUSH, nextAutoplayVideo
+        PUSH, __6_intnl_SystemInt32
+        EXTERN, "SystemConvert.__ToInt32__SystemByte__SystemInt32"
+        PUSH, urls
+        PUSH, __6_intnl_SystemInt32
+        PUSH, __7_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCSDKBaseVRCUrlArray.__Get__SystemInt32__VRCSDKBaseVRCUrl"
+        PUSH, tv
+        PUSH, __8_const_intnl_SystemString
+        PUSH, __7_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, tv
+        PUSH, __9_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        
+         #  pickNext();
+        PUSH, __7_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000011E4
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _OnLoading()
+    .export _OnLoading
+        
+    _OnLoading:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  isLoading = true;
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, isLoading
+        COPY
+        
+         #  if (loading != null) loading.value = 0f;
+        PUSH, loading
+        PUSH, __0_const_intnl_UnityEngineUISlider
+        PUSH, __23_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __23_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000B1C
+        PUSH, loading
+        PUSH, __5_const_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  var currentUrl = tv.localUrl.Get();
+        PUSH, tv
+        PUSH, __7_const_intnl_SystemString
+        PUSH, __2_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __2_intnl_SystemObject
+        PUSH, __9_intnl_VRCSDKBaseVRCUrl
+        COPY
+        PUSH, __9_intnl_VRCSDKBaseVRCUrl
+        PUSH, __11_intnl_SystemString
+        EXTERN, "VRCSDKBaseVRCUrl.__Get__SystemString"
+        PUSH, __11_intnl_SystemString
+        PUSH, __0_currentUrl_String
+        COPY
+        
+         #  for (int i = 0; i < urls.Length; i++)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_i_Int32
+        COPY
+        PUSH, urls
+        PUSH, __7_intnl_SystemInt32
+        EXTERN, "VRCSDKBaseVRCUrlArray.__get_Length__SystemInt32"
+        PUSH, __0_i_Int32
+        PUSH, __7_intnl_SystemInt32
+        PUSH, __24_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __24_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000CDC
+        
+         #  {
+        
+         #  if (urls[i].Get() == currentUrl)
+        PUSH, urls
+        PUSH, __0_i_Int32
+        PUSH, __10_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCSDKBaseVRCUrlArray.__Get__SystemInt32__VRCSDKBaseVRCUrl"
+        PUSH, __10_intnl_VRCSDKBaseVRCUrl
+        PUSH, __12_intnl_SystemString
+        EXTERN, "VRCSDKBaseVRCUrl.__Get__SystemString"
+        PUSH, __12_intnl_SystemString
+        PUSH, __0_currentUrl_String
+        PUSH, __25_intnl_SystemBoolean
+        EXTERN, "SystemString.__op_Equality__SystemString_SystemString__SystemBoolean"
+        PUSH, __25_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000CA0
+        
+         #  {
+        
+         #  loading = listContainer.GetChild(i).GetComponentInChildren<Slider>();
+        PUSH, listContainer
+        PUSH, __0_i_Int32
+        PUSH, __0_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineRectTransform.__GetChild__SystemInt32__UnityEngineTransform"
+        PUSH, __0_intnl_UnityEngineTransform
+        PUSH, __1_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineComponent.__get_transform__UnityEngineTransform" # GetComponent strongbox mismatch fix
+        PUSH, __1_intnl_UnityEngineTransform
+        PUSH, __0_const_intnl_SystemType
+        PUSH, loading
+        EXTERN, "UnityEngineUISlider.__GetComponentInChildren__T"
+        
+         #  break;
+        JUMP, 0x00000CDC
+        PUSH, __0_i_Int32
+        PUSH, __8_intnl_SystemInt32
+        COPY
+        PUSH, __0_i_Int32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_i_Int32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00000B90
+        
+         #  if (loading != null) loading.value = 0f;
+        PUSH, loading
+        PUSH, __0_const_intnl_UnityEngineUISlider
+        PUSH, __24_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __24_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000D24
+        PUSH, loading
+        PUSH, __5_const_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _OnLoadingEnd()
+    .export _OnLoadingEnd
+        
+    _OnLoadingEnd:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  isLoading = false;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, isLoading
+        COPY
+        
+         #  if (loading != null) loading.value = 1f;
+        PUSH, loading
+        PUSH, __0_const_intnl_UnityEngineUISlider
+        PUSH, __26_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __26_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000D9C
+        PUSH, loading
+        PUSH, __2_const_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _OnLoadingStop()
+    .export _OnLoadingStop
+        
+    _OnLoadingStop:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  isLoading = false;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, isLoading
+        COPY
+        
+         #  if (loading != null) loading.value = 0f;
+        PUSH, loading
+        PUSH, __0_const_intnl_UnityEngineUISlider
+        PUSH, __27_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __27_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000E14
+        PUSH, loading
+        PUSH, __5_const_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _Next()
+    .export _Next
+        
+    _Next:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  increment();
+        PUSH, __8_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000014A0
+        
+         #  _SwitchTo(nextAutoplayVideo);
+        PUSH, nextAutoplayVideo
+        PUSH, __0_mp_entry_Byte
+        COPY
+        PUSH, nextAutoplayVideo
+        PUSH, __1_intnl_SystemByte
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __9_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _Previous()
+    .export _Previous
+        
+    _Previous:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  nextAutoplayVideo--;
+        PUSH, nextAutoplayVideo
+        PUSH, __2_intnl_SystemByte
+        COPY
+        PUSH, nextAutoplayVideo
+        PUSH, __0_const_intnl_SystemByte
+        PUSH, __9_intnl_SystemInt32
+        EXTERN, "SystemByte.__op_Subtraction__SystemByte_SystemByte__SystemInt32"
+        PUSH, __9_intnl_SystemInt32
+        PUSH, nextAutoplayVideo
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        
+         #  decrement();
+        PUSH, __10_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00001580
+        
+         #  _SwitchTo(nextAutoplayVideo);
+        PUSH, nextAutoplayVideo
+        PUSH, __0_mp_entry_Byte
+        COPY
+        PUSH, nextAutoplayVideo
+        PUSH, __3_intnl_SystemByte
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __11_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo(byte entry)
+    .export _SwitchTo
+        
+    _SwitchTo:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (isLoading) return; // wait untill the current video loading finishes/fails
+        PUSH, isLoading
+        JUMP_IF_FALSE, 0x00000F68
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  if (entry >= urls.Length)
+        PUSH, urls
+        PUSH, __10_intnl_SystemInt32
+        EXTERN, "VRCSDKBaseVRCUrlArray.__get_Length__SystemInt32"
+        PUSH, __0_mp_entry_Byte
+        PUSH, __11_intnl_SystemInt32
+        EXTERN, "SystemConvert.__ToInt32__SystemByte__SystemInt32"
+        PUSH, __11_intnl_SystemInt32
+        PUSH, __10_intnl_SystemInt32
+        PUSH, __28_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __28_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000109C
+        
+         #  err($"Playlist Item {entry} doesn't exist.");
+        PUSH, __10_const_intnl_SystemString
+        PUSH, __1_intnl_interpolatedStr_String
+        COPY
+        PUSH, __0_mp_entry_Byte
+        PUSH, __13_intnl_SystemString
+        EXTERN, "SystemByte.__ToString__SystemString"
+        PUSH, __1_intnl_interpolatedStr_String
+        PUSH, __13_intnl_SystemString
+        PUSH, __14_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __14_intnl_SystemString
+        PUSH, __1_intnl_interpolatedStr_String
+        COPY
+        PUSH, __1_intnl_interpolatedStr_String
+        PUSH, __11_const_intnl_SystemString
+        PUSH, __15_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __15_intnl_SystemString
+        PUSH, __1_intnl_interpolatedStr_String
+        COPY
+        PUSH, __1_intnl_interpolatedStr_String
+        PUSH, __2_mp_value_String
+        COPY
+        PUSH, __1_intnl_interpolatedStr_String
+        PUSH, __16_intnl_SystemString
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __12_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000032D8
+        JUMP, 0x000011C8
+        
+         #  else
+        
+         #  {
+        
+         #  nextAutoplayVideo = entry;
+        PUSH, __0_mp_entry_Byte
+        PUSH, nextAutoplayVideo
+        COPY
+        
+         #  log($"Switching to playlist item {nextAutoplayVideo}");
+        PUSH, __12_const_intnl_SystemString
+        PUSH, __2_intnl_interpolatedStr_String
+        COPY
+        PUSH, nextAutoplayVideo
+        PUSH, __17_intnl_SystemString
+        EXTERN, "SystemByte.__ToString__SystemString"
+        PUSH, __2_intnl_interpolatedStr_String
+        PUSH, __17_intnl_SystemString
+        PUSH, __18_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __18_intnl_SystemString
+        PUSH, __2_intnl_interpolatedStr_String
+        COPY
+        PUSH, __2_intnl_interpolatedStr_String
+        PUSH, __0_mp_value_String
+        COPY
+        PUSH, __2_intnl_interpolatedStr_String
+        PUSH, __19_intnl_SystemString
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __13_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000031A0
+        
+         #  tv._ChangeMediaTo(urls[nextAutoplayVideo]);
+        PUSH, nextAutoplayVideo
+        PUSH, __12_intnl_SystemInt32
+        EXTERN, "SystemConvert.__ToInt32__SystemByte__SystemInt32"
+        PUSH, urls
+        PUSH, __12_intnl_SystemInt32
+        PUSH, __11_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCSDKBaseVRCUrlArray.__Get__SystemInt32__VRCSDKBaseVRCUrl"
+        PUSH, tv
+        PUSH, __13_const_intnl_SystemString
+        PUSH, __11_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, tv
+        PUSH, __14_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        
+         #  pickNext();
+        PUSH, __14_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000011E4
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void pickNext()
+    pickNext:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  var lastAutoplayVideo = nextAutoplayVideo;
+        PUSH, nextAutoplayVideo
+        PUSH, __0_lastAutoplayVideo_Byte
+        COPY
+        
+         #  do
+        
+         #  {
+        
+         #  if (lastAutoplayVideo != nextAutoplayVideo)
+        PUSH, __0_lastAutoplayVideo_Byte
+        PUSH, nextAutoplayVideo
+        PUSH, __29_intnl_SystemBoolean
+        EXTERN, "SystemByte.__op_Inequality__SystemByte_SystemByte__SystemBoolean"
+        PUSH, __29_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000012F4
+        
+         #  log($"Item {nextAutoplayVideo} is missing, skipping");
+        PUSH, __15_const_intnl_SystemString
+        PUSH, __3_intnl_interpolatedStr_String
+        COPY
+        PUSH, nextAutoplayVideo
+        PUSH, __20_intnl_SystemString
+        EXTERN, "SystemByte.__ToString__SystemString"
+        PUSH, __3_intnl_interpolatedStr_String
+        PUSH, __20_intnl_SystemString
+        PUSH, __21_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __21_intnl_SystemString
+        PUSH, __3_intnl_interpolatedStr_String
+        COPY
+        PUSH, __3_intnl_interpolatedStr_String
+        PUSH, __16_const_intnl_SystemString
+        PUSH, __22_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __22_intnl_SystemString
+        PUSH, __3_intnl_interpolatedStr_String
+        COPY
+        PUSH, __3_intnl_interpolatedStr_String
+        PUSH, __0_mp_value_String
+        COPY
+        PUSH, __3_intnl_interpolatedStr_String
+        PUSH, __23_intnl_SystemString
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __15_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000031A0
+        
+         #  increment();
+        PUSH, __16_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000014A0
+        
+         #  if (nextAutoplayVideo == lastAutoplayVideo) break;
+        PUSH, nextAutoplayVideo
+        PUSH, __0_lastAutoplayVideo_Byte
+        PUSH, __30_intnl_SystemBoolean
+        EXTERN, "SystemByte.__op_Equality__SystemByte_SystemByte__SystemBoolean"
+        PUSH, __30_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000133C
+        JUMP, 0x000013EC
+        
+         #  } while (urls[nextAutoplayVideo].Get() == VRCUrl.Empty.Get());
+        PUSH, nextAutoplayVideo
+        PUSH, __13_intnl_SystemInt32
+        EXTERN, "SystemConvert.__ToInt32__SystemByte__SystemInt32"
+        PUSH, urls
+        PUSH, __13_intnl_SystemInt32
+        PUSH, __12_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCSDKBaseVRCUrlArray.__Get__SystemInt32__VRCSDKBaseVRCUrl"
+        PUSH, __12_intnl_VRCSDKBaseVRCUrl
+        PUSH, __20_intnl_SystemString
+        EXTERN, "VRCSDKBaseVRCUrl.__Get__SystemString"
+        PUSH, __13_intnl_VRCSDKBaseVRCUrl
+        EXTERN, "VRCSDKBaseVRCUrl.__get_Empty__VRCSDKBaseVRCUrl"
+        PUSH, __13_intnl_VRCSDKBaseVRCUrl
+        PUSH, __21_intnl_SystemString
+        EXTERN, "VRCSDKBaseVRCUrl.__Get__SystemString"
+        PUSH, __20_intnl_SystemString
+        PUSH, __21_intnl_SystemString
+        PUSH, __29_intnl_SystemBoolean
+        EXTERN, "SystemString.__op_Equality__SystemString_SystemString__SystemBoolean"
+        PUSH, __29_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000013EC
+        JUMP, 0x000011F8
+        
+         #  log($"Next playlist item {nextAutoplayVideo}");
+        PUSH, __17_const_intnl_SystemString
+        PUSH, __3_intnl_interpolatedStr_String
+        COPY
+        PUSH, nextAutoplayVideo
+        PUSH, __22_intnl_SystemString
+        EXTERN, "SystemByte.__ToString__SystemString"
+        PUSH, __3_intnl_interpolatedStr_String
+        PUSH, __22_intnl_SystemString
+        PUSH, __23_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __23_intnl_SystemString
+        PUSH, __3_intnl_interpolatedStr_String
+        COPY
+        PUSH, __3_intnl_interpolatedStr_String
+        PUSH, __0_mp_value_String
+        COPY
+        PUSH, __3_intnl_interpolatedStr_String
+        PUSH, __24_intnl_SystemString
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __17_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000031A0
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void increment()
+    increment:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  nextAutoplayVideo++;
+        PUSH, nextAutoplayVideo
+        PUSH, __4_intnl_SystemByte
+        COPY
+        PUSH, nextAutoplayVideo
+        PUSH, __0_const_intnl_SystemByte
+        PUSH, __14_intnl_SystemInt32
+        EXTERN, "SystemByte.__op_Addition__SystemByte_SystemByte__SystemInt32"
+        PUSH, __14_intnl_SystemInt32
+        PUSH, nextAutoplayVideo
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        
+         #  if (nextAutoplayVideo >= urls.Length) nextAutoplayVideo = 0;
+        PUSH, urls
+        PUSH, __15_intnl_SystemInt32
+        EXTERN, "VRCSDKBaseVRCUrlArray.__get_Length__SystemInt32"
+        PUSH, nextAutoplayVideo
+        PUSH, __16_intnl_SystemInt32
+        EXTERN, "SystemConvert.__ToInt32__SystemByte__SystemInt32"
+        PUSH, __16_intnl_SystemInt32
+        PUSH, __15_intnl_SystemInt32
+        PUSH, __31_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __31_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001564
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, nextAutoplayVideo
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void decrement()
+    decrement:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  nextAutoplayVideo--;
+        PUSH, nextAutoplayVideo
+        PUSH, __5_intnl_SystemByte
+        COPY
+        PUSH, nextAutoplayVideo
+        PUSH, __0_const_intnl_SystemByte
+        PUSH, __17_intnl_SystemInt32
+        EXTERN, "SystemByte.__op_Subtraction__SystemByte_SystemByte__SystemInt32"
+        PUSH, __17_intnl_SystemInt32
+        PUSH, nextAutoplayVideo
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        
+         #  if (nextAutoplayVideo < 0) nextAutoplayVideo = (byte)(urls.Length - 1);
+        PUSH, nextAutoplayVideo
+        PUSH, __18_intnl_SystemInt32
+        EXTERN, "SystemConvert.__ToInt32__SystemByte__SystemInt32"
+        PUSH, __18_intnl_SystemInt32
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __32_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __32_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001664
+        PUSH, urls
+        PUSH, __19_intnl_SystemInt32
+        EXTERN, "VRCSDKBaseVRCUrlArray.__get_Length__SystemInt32"
+        PUSH, __19_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __20_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, __20_intnl_SystemInt32
+        PUSH, nextAutoplayVideo
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private bool isTVOwner() => Networking.GetOwner(tv.gameObject) == Networking.LocalPlayer;
+    isTVOwner:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, tv
+        PUSH, __0_intnl_UnityEngineGameObject
+        EXTERN, "UnityEngineComponent.__get_gameObject__UnityEngineGameObject"
+        PUSH, __0_intnl_UnityEngineGameObject
+        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi
+        EXTERN, "VRCSDKBaseNetworking.__GetOwner__UnityEngineGameObject__VRCSDKBaseVRCPlayerApi"
+        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi
+        EXTERN, "VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi"
+        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi
+        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi
+        PUSH, __33_intnl_SystemBoolean
+        EXTERN, "SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean"
+        PUSH, __33_intnl_SystemBoolean
+        PUSH, __0_intnl_returnValSymbol_Boolean
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo0() => _SwitchTo(0);
+    .export _SwitchTo0
+        
+    _SwitchTo0:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __18_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo1() => _SwitchTo(1);
+    .export _SwitchTo1
+        
+    _SwitchTo1:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __19_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo2() => _SwitchTo(2);
+    .export _SwitchTo2
+        
+    _SwitchTo2:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __2_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __20_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo3() => _SwitchTo(3);
+    .export _SwitchTo3
+        
+    _SwitchTo3:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __3_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __21_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo4() => _SwitchTo(4);
+    .export _SwitchTo4
+        
+    _SwitchTo4:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __4_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __22_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo5() => _SwitchTo(5);
+    .export _SwitchTo5
+        
+    _SwitchTo5:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __5_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __23_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo6() => _SwitchTo(6);
+    .export _SwitchTo6
+        
+    _SwitchTo6:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __6_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __24_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo7() => _SwitchTo(7);
+    .export _SwitchTo7
+        
+    _SwitchTo7:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __7_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __25_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo8() => _SwitchTo(8);
+    .export _SwitchTo8
+        
+    _SwitchTo8:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __8_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __26_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo9() => _SwitchTo(9);
+    .export _SwitchTo9
+        
+    _SwitchTo9:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __9_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __27_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo10() => _SwitchTo(10);
+    .export _SwitchTo10
+        
+    _SwitchTo10:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __10_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __28_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo11() => _SwitchTo(11);
+    .export _SwitchTo11
+        
+    _SwitchTo11:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __11_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __29_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo12() => _SwitchTo(12);
+    .export _SwitchTo12
+        
+    _SwitchTo12:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __12_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __30_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo13() => _SwitchTo(13);
+    .export _SwitchTo13
+        
+    _SwitchTo13:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __13_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __31_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo14() => _SwitchTo(14);
+    .export _SwitchTo14
+        
+    _SwitchTo14:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __14_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __32_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo15() => _SwitchTo(15);
+    .export _SwitchTo15
+        
+    _SwitchTo15:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __15_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __33_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo16() => _SwitchTo(16);
+    .export _SwitchTo16
+        
+    _SwitchTo16:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __16_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __34_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo17() => _SwitchTo(17);
+    .export _SwitchTo17
+        
+    _SwitchTo17:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __17_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __35_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo18() => _SwitchTo(18);
+    .export _SwitchTo18
+        
+    _SwitchTo18:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __18_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __36_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo19() => _SwitchTo(19);
+    .export _SwitchTo19
+        
+    _SwitchTo19:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __19_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __37_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo20() => _SwitchTo(20);
+    .export _SwitchTo20
+        
+    _SwitchTo20:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __20_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __38_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo21() => _SwitchTo(21);
+    .export _SwitchTo21
+        
+    _SwitchTo21:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __21_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __39_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo22() => _SwitchTo(22);
+    .export _SwitchTo22
+        
+    _SwitchTo22:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __22_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __40_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo23() => _SwitchTo(23);
+    .export _SwitchTo23
+        
+    _SwitchTo23:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __23_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __41_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo24() => _SwitchTo(24);
+    .export _SwitchTo24
+        
+    _SwitchTo24:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __24_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __42_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo25() => _SwitchTo(25);
+    .export _SwitchTo25
+        
+    _SwitchTo25:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __25_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __43_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo26() => _SwitchTo(26);
+    .export _SwitchTo26
+        
+    _SwitchTo26:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __26_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __44_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo27() => _SwitchTo(27);
+    .export _SwitchTo27
+        
+    _SwitchTo27:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __27_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __45_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo28() => _SwitchTo(28);
+    .export _SwitchTo28
+        
+    _SwitchTo28:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __28_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __46_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo29() => _SwitchTo(29);
+    .export _SwitchTo29
+        
+    _SwitchTo29:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __29_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __47_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo30() => _SwitchTo(30);
+    .export _SwitchTo30
+        
+    _SwitchTo30:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __30_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __48_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo31() => _SwitchTo(31);
+    .export _SwitchTo31
+        
+    _SwitchTo31:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __31_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __49_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo32() => _SwitchTo(32);
+    .export _SwitchTo32
+        
+    _SwitchTo32:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __32_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __50_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo33() => _SwitchTo(33);
+    .export _SwitchTo33
+        
+    _SwitchTo33:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __33_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __51_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo34() => _SwitchTo(34);
+    .export _SwitchTo34
+        
+    _SwitchTo34:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __34_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __52_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo35() => _SwitchTo(35);
+    .export _SwitchTo35
+        
+    _SwitchTo35:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __35_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __53_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo36() => _SwitchTo(36);
+    .export _SwitchTo36
+        
+    _SwitchTo36:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __36_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __54_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo37() => _SwitchTo(37);
+    .export _SwitchTo37
+        
+    _SwitchTo37:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __37_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __55_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo38() => _SwitchTo(38);
+    .export _SwitchTo38
+        
+    _SwitchTo38:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __38_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __56_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo39() => _SwitchTo(39);
+    .export _SwitchTo39
+        
+    _SwitchTo39:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __39_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __57_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo40() => _SwitchTo(40);
+    .export _SwitchTo40
+        
+    _SwitchTo40:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __40_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __58_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo41() => _SwitchTo(41);
+    .export _SwitchTo41
+        
+    _SwitchTo41:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __41_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __59_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo42() => _SwitchTo(42);
+    .export _SwitchTo42
+        
+    _SwitchTo42:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __42_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __60_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo43() => _SwitchTo(43);
+    .export _SwitchTo43
+        
+    _SwitchTo43:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __43_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __61_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo44() => _SwitchTo(44);
+    .export _SwitchTo44
+        
+    _SwitchTo44:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __44_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __62_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo45() => _SwitchTo(45);
+    .export _SwitchTo45
+        
+    _SwitchTo45:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __45_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __63_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo46() => _SwitchTo(46);
+    .export _SwitchTo46
+        
+    _SwitchTo46:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __46_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __64_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo47() => _SwitchTo(47);
+    .export _SwitchTo47
+        
+    _SwitchTo47:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __47_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __65_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo48() => _SwitchTo(48);
+    .export _SwitchTo48
+        
+    _SwitchTo48:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __48_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __66_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo49() => _SwitchTo(49);
+    .export _SwitchTo49
+        
+    _SwitchTo49:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __49_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __67_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo50() => _SwitchTo(50);
+    .export _SwitchTo50
+        
+    _SwitchTo50:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __50_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __68_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo51() => _SwitchTo(51);
+    .export _SwitchTo51
+        
+    _SwitchTo51:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __51_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __69_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo52() => _SwitchTo(52);
+    .export _SwitchTo52
+        
+    _SwitchTo52:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __52_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __70_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo53() => _SwitchTo(53);
+    .export _SwitchTo53
+        
+    _SwitchTo53:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __53_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __71_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo54() => _SwitchTo(54);
+    .export _SwitchTo54
+        
+    _SwitchTo54:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __54_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __72_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo55() => _SwitchTo(55);
+    .export _SwitchTo55
+        
+    _SwitchTo55:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __55_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __73_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo56() => _SwitchTo(56);
+    .export _SwitchTo56
+        
+    _SwitchTo56:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __56_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __74_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo57() => _SwitchTo(57);
+    .export _SwitchTo57
+        
+    _SwitchTo57:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __57_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __75_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo58() => _SwitchTo(58);
+    .export _SwitchTo58
+        
+    _SwitchTo58:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __58_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __76_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo59() => _SwitchTo(59);
+    .export _SwitchTo59
+        
+    _SwitchTo59:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __59_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __77_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo60() => _SwitchTo(60);
+    .export _SwitchTo60
+        
+    _SwitchTo60:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __60_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __78_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo61() => _SwitchTo(61);
+    .export _SwitchTo61
+        
+    _SwitchTo61:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __61_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __79_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo62() => _SwitchTo(62);
+    .export _SwitchTo62
+        
+    _SwitchTo62:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __62_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __80_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo63() => _SwitchTo(63);
+    .export _SwitchTo63
+        
+    _SwitchTo63:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __63_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __81_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo64() => _SwitchTo(64);
+    .export _SwitchTo64
+        
+    _SwitchTo64:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __64_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __82_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo65() => _SwitchTo(65);
+    .export _SwitchTo65
+        
+    _SwitchTo65:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __65_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __83_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo66() => _SwitchTo(66);
+    .export _SwitchTo66
+        
+    _SwitchTo66:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __66_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __84_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo67() => _SwitchTo(67);
+    .export _SwitchTo67
+        
+    _SwitchTo67:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __67_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __85_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo68() => _SwitchTo(68);
+    .export _SwitchTo68
+        
+    _SwitchTo68:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __68_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __86_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo69() => _SwitchTo(69);
+    .export _SwitchTo69
+        
+    _SwitchTo69:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __69_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __87_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo70() => _SwitchTo(70);
+    .export _SwitchTo70
+        
+    _SwitchTo70:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __70_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __88_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo71() => _SwitchTo(71);
+    .export _SwitchTo71
+        
+    _SwitchTo71:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __71_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __89_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo72() => _SwitchTo(72);
+    .export _SwitchTo72
+        
+    _SwitchTo72:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __72_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __90_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo73() => _SwitchTo(73);
+    .export _SwitchTo73
+        
+    _SwitchTo73:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __73_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __91_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo74() => _SwitchTo(74);
+    .export _SwitchTo74
+        
+    _SwitchTo74:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __74_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __92_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo75() => _SwitchTo(75);
+    .export _SwitchTo75
+        
+    _SwitchTo75:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __75_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __93_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo76() => _SwitchTo(76);
+    .export _SwitchTo76
+        
+    _SwitchTo76:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __76_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __94_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo77() => _SwitchTo(77);
+    .export _SwitchTo77
+        
+    _SwitchTo77:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __77_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __95_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo78() => _SwitchTo(78);
+    .export _SwitchTo78
+        
+    _SwitchTo78:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __78_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __96_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo79() => _SwitchTo(79);
+    .export _SwitchTo79
+        
+    _SwitchTo79:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __79_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __97_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo80() => _SwitchTo(80);
+    .export _SwitchTo80
+        
+    _SwitchTo80:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __80_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __98_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo81() => _SwitchTo(81);
+    .export _SwitchTo81
+        
+    _SwitchTo81:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __81_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __99_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo82() => _SwitchTo(82);
+    .export _SwitchTo82
+        
+    _SwitchTo82:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __82_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __100_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo83() => _SwitchTo(83);
+    .export _SwitchTo83
+        
+    _SwitchTo83:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __83_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __101_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo84() => _SwitchTo(84);
+    .export _SwitchTo84
+        
+    _SwitchTo84:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __84_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __102_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo85() => _SwitchTo(85);
+    .export _SwitchTo85
+        
+    _SwitchTo85:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __85_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __103_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo86() => _SwitchTo(86);
+    .export _SwitchTo86
+        
+    _SwitchTo86:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __86_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __104_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo87() => _SwitchTo(87);
+    .export _SwitchTo87
+        
+    _SwitchTo87:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __87_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __105_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo88() => _SwitchTo(88);
+    .export _SwitchTo88
+        
+    _SwitchTo88:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __88_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __106_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo89() => _SwitchTo(89);
+    .export _SwitchTo89
+        
+    _SwitchTo89:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __89_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __107_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo90() => _SwitchTo(90);
+    .export _SwitchTo90
+        
+    _SwitchTo90:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __90_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __108_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo91() => _SwitchTo(91);
+    .export _SwitchTo91
+        
+    _SwitchTo91:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __91_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __109_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo92() => _SwitchTo(92);
+    .export _SwitchTo92
+        
+    _SwitchTo92:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __92_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __110_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo93() => _SwitchTo(93);
+    .export _SwitchTo93
+        
+    _SwitchTo93:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __93_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __111_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo94() => _SwitchTo(94);
+    .export _SwitchTo94
+        
+    _SwitchTo94:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __94_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __112_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo95() => _SwitchTo(95);
+    .export _SwitchTo95
+        
+    _SwitchTo95:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __95_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __113_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo96() => _SwitchTo(96);
+    .export _SwitchTo96
+        
+    _SwitchTo96:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __96_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __114_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo97() => _SwitchTo(97);
+    .export _SwitchTo97
+        
+    _SwitchTo97:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __97_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __115_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo98() => _SwitchTo(98);
+    .export _SwitchTo98
+        
+    _SwitchTo98:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __98_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __116_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SwitchTo99() => _SwitchTo(99);
+    .export _SwitchTo99
+        
+    _SwitchTo99:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __99_const_intnl_SystemInt32
+        PUSH, __0_mp_entry_Byte
+        EXTERN, "SystemConvert.__ToByte__SystemInt32__SystemByte"
+        PUSH, __117_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000F44
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void log(string value)
+    log:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!skipLog) Debug.Log($"[<color=#1F84A9>A</color><color=#A3A3A3>T</color><color=#2861B4>A</color> | <color=#abbccd>SimplePlaylist</color>] {value}");
+        PUSH, skipLog
+        PUSH, __34_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __34_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00003220
+        PUSH, __18_const_intnl_SystemString
+        PUSH, __4_intnl_interpolatedStr_String
+        COPY
+        PUSH, __4_intnl_interpolatedStr_String
+        PUSH, __0_mp_value_String
+        PUSH, __25_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __25_intnl_SystemString
+        PUSH, __4_intnl_interpolatedStr_String
+        COPY
+        PUSH, __4_intnl_interpolatedStr_String
+        EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void warn(string value)
+    warn:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!skipLog) Debug.LogWarning($"[<color=#1F84A9>A</color><color=#A3A3A3>T</color><color=#2861B4>A</color> | <color=#abbccd>SimplePlaylist</color>] {value}");
+        PUSH, skipLog
+        PUSH, __35_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __35_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000032BC
+        PUSH, __18_const_intnl_SystemString
+        PUSH, __5_intnl_interpolatedStr_String
+        COPY
+        PUSH, __5_intnl_interpolatedStr_String
+        PUSH, __1_mp_value_String
+        PUSH, __26_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __26_intnl_SystemString
+        PUSH, __5_intnl_interpolatedStr_String
+        COPY
+        PUSH, __5_intnl_interpolatedStr_String
+        EXTERN, "UnityEngineDebug.__LogWarning__SystemObject__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void err(string value)
+    err:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!skipLog) Debug.LogError($"[<color=#1F84A9>A</color><color=#A3A3A3>T</color><color=#2861B4>A</color> | <color=#abbccd>SimplePlaylist</color>] {value}");
+        PUSH, skipLog
+        PUSH, __36_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __36_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00003358
+        PUSH, __18_const_intnl_SystemString
+        PUSH, __6_intnl_interpolatedStr_String
+        COPY
+        PUSH, __6_intnl_interpolatedStr_String
+        PUSH, __2_mp_value_String
+        PUSH, __27_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __27_intnl_SystemString
+        PUSH, __6_intnl_interpolatedStr_String
+        COPY
+        PUSH, __6_intnl_interpolatedStr_String
+        EXTERN, "UnityEngineDebug.__LogError__SystemObject__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+.code_end

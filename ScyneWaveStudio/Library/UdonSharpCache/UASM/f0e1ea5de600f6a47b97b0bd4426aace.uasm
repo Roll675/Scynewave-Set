@@ -1,0 +1,978 @@
+.data_start
+
+    .export player
+    .export isVisible
+    .export screens
+    .export speakers
+
+    __refl_const_intnl_udonTypeID: %SystemInt64, null
+    __refl_const_intnl_udonTypeName: %SystemString, null
+    speakers: %UnityEngineAudioSourceArray, null
+    player: %VRCSDK3VideoComponentsBaseBaseVRCVideoPlayer, null
+    isVisible: %SystemBoolean, null
+    screens: %UnityEngineGameObjectArray, null
+    skipLog: %SystemBoolean, null
+    init: %SystemBoolean, null
+    audio3d: %SystemBoolean, null
+    muted: %SystemBoolean, null
+    volume: %SystemSingle, null
+    tv: %VRCUdonUdonBehaviour, null
+    onVideoErrorVideoError: %VRCSDK3ComponentsVideoVideoError, null
+    lastError: %VRCSDK3ComponentsVideoVideoError, null
+    __0_this_intnl_UnityEngineGameObject: %UnityEngineGameObject, this
+    __0_this_intnl_ArchiTechVideoManagerV2: %VRCUdonUdonBehaviour, this
+    __2_speaker_AudioSource: %UnityEngineAudioSource, null
+    __1_speaker_AudioSource: %UnityEngineAudioSource, null
+    __0_speaker_AudioSource: %UnityEngineAudioSource, null
+    __0_mp_use3dAudio_Boolean: %SystemBoolean, null
+    __0_mp_muted_Boolean: %SystemBoolean, null
+    __1_screen_GameObject: %UnityEngineGameObject, null
+    __0_screen_GameObject: %UnityEngineGameObject, null
+    __0_blend_Single: %SystemSingle, null
+    __0_mp_volume_Single: %SystemSingle, null
+    __2_mp_value_String: %SystemString, null
+    __1_mp_value_String: %SystemString, null
+    __0_mp_value_String: %SystemString, null
+    __0_mp_manager_TVManagerV2: %VRCUdonUdonBehaviour, null
+    __0_mp_other_VideoManagerV2: %VRCUdonUdonBehaviour, null
+    __0_mp_error_VideoError: %VRCSDK3ComponentsVideoVideoError, null
+    __0_const_intnl_UnityEngineAudioSource: %UnityEngineAudioSource, null
+    __1_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_UnityEngineGameObject: %UnityEngineGameObject, null
+    __1_const_intnl_SystemInt32: %SystemInt32, null
+    __0_const_intnl_SystemInt32: %SystemInt32, null
+    __0_const_intnl_SystemObject: %SystemObject, null
+    __2_const_intnl_SystemSingle: %SystemSingle, null
+    __1_const_intnl_SystemSingle: %SystemSingle, null
+    __0_const_intnl_SystemSingle: %SystemSingle, null
+    __13_const_intnl_SystemString: %SystemString, null
+    __12_const_intnl_SystemString: %SystemString, null
+    __11_const_intnl_SystemString: %SystemString, null
+    __10_const_intnl_SystemString: %SystemString, null
+    __9_const_intnl_SystemString: %SystemString, null
+    __8_const_intnl_SystemString: %SystemString, null
+    __7_const_intnl_SystemString: %SystemString, null
+    __6_const_intnl_SystemString: %SystemString, null
+    __5_const_intnl_SystemString: %SystemString, null
+    __4_const_intnl_SystemString: %SystemString, null
+    __3_const_intnl_SystemString: %SystemString, null
+    __2_const_intnl_SystemString: %SystemString, null
+    __1_const_intnl_SystemString: %SystemString, null
+    __0_const_intnl_SystemString: %SystemString, null
+    __0_const_intnl_SystemType: %SystemType, null
+    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver: %VRCUdonUdonBehaviour, null
+    __15_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __14_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __13_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __12_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __11_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __10_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __9_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __8_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __7_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __6_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __5_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __4_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __3_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __2_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __1_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __0_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __19_intnl_SystemBoolean: %SystemBoolean, null
+    __18_intnl_SystemBoolean: %SystemBoolean, null
+    __17_intnl_SystemBoolean: %SystemBoolean, null
+    __16_intnl_SystemBoolean: %SystemBoolean, null
+    __15_intnl_SystemBoolean: %SystemBoolean, null
+    __14_intnl_SystemBoolean: %SystemBoolean, null
+    __13_intnl_SystemBoolean: %SystemBoolean, null
+    __12_intnl_SystemBoolean: %SystemBoolean, null
+    __11_intnl_SystemBoolean: %SystemBoolean, null
+    __10_intnl_SystemBoolean: %SystemBoolean, null
+    __9_intnl_SystemBoolean: %SystemBoolean, null
+    __8_intnl_SystemBoolean: %SystemBoolean, null
+    __7_intnl_SystemBoolean: %SystemBoolean, null
+    __6_intnl_SystemBoolean: %SystemBoolean, null
+    __5_intnl_SystemBoolean: %SystemBoolean, null
+    __4_intnl_SystemBoolean: %SystemBoolean, null
+    __3_intnl_SystemBoolean: %SystemBoolean, null
+    __2_intnl_SystemBoolean: %SystemBoolean, null
+    __1_intnl_SystemBoolean: %SystemBoolean, null
+    __0_intnl_SystemBoolean: %SystemBoolean, null
+    __0_intnl_UnityEngineComponent: %UnityEngineComponent, null
+    __1_intnl_UnityEngineGameObject: %UnityEngineGameObject, null
+    __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null
+    __9_intnl_SystemInt32: %SystemInt32, null
+    __8_intnl_SystemInt32: %SystemInt32, null
+    __7_intnl_SystemInt32: %SystemInt32, null
+    __6_intnl_SystemInt32: %SystemInt32, null
+    __5_intnl_SystemInt32: %SystemInt32, null
+    __4_intnl_SystemInt32: %SystemInt32, null
+    __3_intnl_SystemInt32: %SystemInt32, null
+    __2_intnl_SystemInt32: %SystemInt32, null
+    __1_intnl_SystemInt32: %SystemInt32, null
+    __0_intnl_SystemInt32: %SystemInt32, null
+    __1_intnl_SystemSingle: %SystemSingle, null
+    __0_intnl_SystemSingle: %SystemSingle, null
+    __17_intnl_SystemString: %SystemString, null
+    __5_intnl_interpolatedStr_String: %SystemString, null
+    __16_intnl_SystemString: %SystemString, null
+    __4_intnl_interpolatedStr_String: %SystemString, null
+    __15_intnl_SystemString: %SystemString, null
+    __3_intnl_interpolatedStr_String: %SystemString, null
+    __14_intnl_SystemString: %SystemString, null
+    __13_intnl_SystemString: %SystemString, null
+    __12_intnl_SystemString: %SystemString, null
+    __11_intnl_SystemString: %SystemString, null
+    __10_intnl_SystemString: %SystemString, null
+    __9_intnl_SystemString: %SystemString, null
+    __2_intnl_interpolatedStr_String: %SystemString, null
+    __8_intnl_SystemString: %SystemString, null
+    __7_intnl_SystemString: %SystemString, null
+    __6_intnl_SystemString: %SystemString, null
+    __5_intnl_SystemString: %SystemString, null
+    __4_intnl_SystemString: %SystemString, null
+    __3_intnl_SystemString: %SystemString, null
+    __1_intnl_interpolatedStr_String: %SystemString, null
+    __2_intnl_SystemString: %SystemString, null
+    __1_intnl_SystemString: %SystemString, null
+    __0_intnl_SystemString: %SystemString, null
+    __0_intnl_interpolatedStr_String: %SystemString, null
+    __0_intnl_returnTarget_UInt32: %SystemUInt32, null
+
+.data_end
+
+        
+         #  using UdonSharp;
+        
+         #  using UnityEngine;
+        
+         #  using VRC.SDKBase;
+        
+         #  using VRC.Udon;
+        
+         #  using VRC.SDK3.Components.Video;
+        
+         #  using VRC.SDK3.Video.Components.AVPro;
+        
+         #  using VRC.SDK3.Video.Components.Base;
+        
+         #  namespace ArchiTech
+        
+         #  [RequireComponent(typeof(BaseVRCVideoPlayer))]
+        
+         #  public class VideoManagerV2 : UdonSharpBehaviour
+.code_start
+        
+         #  [HideInInspector] public BaseVRCVideoPlayer player;
+        
+         #  [HideInInspector] public bool isVisible;
+        
+         #  private TVManagerV2 tv;
+        
+         #  public GameObject[] screens;
+        
+         #  public AudioSource[] speakers;
+        
+         #  private VideoError lastError;
+        
+         #  private bool muted = true;
+        
+         #  private float volume = 0.5f;
+        
+         #  private bool audio3d = true;
+        
+         #  private bool init = false;
+        
+         #  private bool skipLog = false;
+        
+         #  private void initialize()
+    initialize:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (init) return;
+        PUSH, init
+        JUMP_IF_FALSE, 0x0000002C
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  player = (BaseVRCVideoPlayer)GetComponent(typeof(BaseVRCVideoPlayer));
+        PUSH, __0_this_intnl_ArchiTechVideoManagerV2
+        PUSH, __0_const_intnl_SystemType
+        PUSH, __0_intnl_UnityEngineComponent
+        EXTERN, "UnityEngineComponent.__GetComponent__SystemType__UnityEngineComponent"
+        PUSH, __0_intnl_UnityEngineComponent
+        PUSH, player
+        COPY
+        
+         #  init = true;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, init
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  void Start()
+    .export _start
+        
+    _start:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!init)
+        PUSH, init
+        PUSH, __0_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __0_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000170
+        
+         #  {
+        
+         #  initialize();
+        PUSH, __0_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  log($"Hiding self {gameObject.name}");
+        PUSH, __0_const_intnl_SystemString
+        PUSH, __0_intnl_interpolatedStr_String
+        COPY
+        PUSH, __0_this_intnl_UnityEngineGameObject
+        PUSH, __0_intnl_SystemString
+        EXTERN, "UnityEngineGameObject.__get_name__SystemString"
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __0_intnl_SystemString
+        PUSH, __1_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __1_intnl_SystemString
+        PUSH, __0_intnl_interpolatedStr_String
+        COPY
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __0_mp_value_String
+        COPY
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __2_intnl_SystemString
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __1_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000E54
+        
+         #  _Hide();
+        PUSH, __2_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000004F4
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  new void OnVideoStart() => tv._OnVideoPlayerStart();
+    .export _onVideoStart
+        
+    _onVideoStart:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, tv
+        PUSH, __1_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  new void OnVideoError(VideoError error) => tv._OnVideoPlayerError(error);
+    .export _onVideoError
+        
+    _onVideoError:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, onVideoErrorVideoError
+        PUSH, __0_mp_error_VideoError
+        COPY
+        PUSH, tv
+        PUSH, __2_const_intnl_SystemString
+        PUSH, __0_mp_error_VideoError
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, tv
+        PUSH, __3_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _Show()
+    .export _Show
+        
+    _Show:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!init) initialize();
+        PUSH, init
+        PUSH, __1_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __1_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000260
+        PUSH, __3_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  foreach (var screen in screens)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_intnl_SystemInt32
+        COPY
+        PUSH, screens
+        PUSH, __1_intnl_SystemInt32
+        EXTERN, "UnityEngineGameObjectArray.__get_Length__SystemInt32"
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __1_intnl_SystemInt32
+        PUSH, __2_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __2_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000354
+        PUSH, screens
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __0_screen_GameObject
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  {
+        
+         #  if (screen == null) continue;
+        PUSH, __0_screen_GameObject
+        PUSH, __0_const_intnl_UnityEngineGameObject
+        PUSH, __3_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __3_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000314
+        JUMP, 0x0000032C
+        
+         #  screen.SetActive(true);
+        PUSH, __0_screen_GameObject
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x0000028C
+        
+         #  _UnMute();
+        PUSH, __4_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000A34
+        
+         #  isVisible = true;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, isVisible
+        COPY
+        
+         #  if (tv != null)
+        PUSH, tv
+        PUSH, __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver
+        PUSH, __2_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __2_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000004D8
+        
+         #  log($"{tv.gameObject.name} [{gameObject.name}] activated");
+        PUSH, tv
+        PUSH, __0_intnl_UnityEngineGameObject
+        EXTERN, "UnityEngineComponent.__get_gameObject__UnityEngineGameObject"
+        PUSH, __0_intnl_UnityEngineGameObject
+        PUSH, __3_intnl_SystemString
+        EXTERN, "UnityEngineGameObject.__get_name__SystemString"
+        PUSH, __3_intnl_SystemString
+        PUSH, __1_intnl_interpolatedStr_String
+        COPY
+        PUSH, __1_intnl_interpolatedStr_String
+        PUSH, __4_const_intnl_SystemString
+        PUSH, __4_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __4_intnl_SystemString
+        PUSH, __1_intnl_interpolatedStr_String
+        COPY
+        PUSH, __0_this_intnl_UnityEngineGameObject
+        PUSH, __5_intnl_SystemString
+        EXTERN, "UnityEngineGameObject.__get_name__SystemString"
+        PUSH, __1_intnl_interpolatedStr_String
+        PUSH, __5_intnl_SystemString
+        PUSH, __6_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __6_intnl_SystemString
+        PUSH, __1_intnl_interpolatedStr_String
+        COPY
+        PUSH, __1_intnl_interpolatedStr_String
+        PUSH, __5_const_intnl_SystemString
+        PUSH, __7_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __7_intnl_SystemString
+        PUSH, __1_intnl_interpolatedStr_String
+        COPY
+        PUSH, __1_intnl_interpolatedStr_String
+        PUSH, __0_mp_value_String
+        COPY
+        PUSH, __1_intnl_interpolatedStr_String
+        PUSH, __8_intnl_SystemString
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __5_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000E54
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _Hide()
+    .export _Hide
+        
+    _Hide:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!init) initialize();
+        PUSH, init
+        PUSH, __4_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __4_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000052C
+        PUSH, __6_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  _Mute();
+        PUSH, __7_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x000009F4
+        
+         #  player.Stop();
+        PUSH, player
+        EXTERN, "VRCSDK3VideoComponentsBaseBaseVRCVideoPlayer.__Stop__SystemVoid"
+        
+         #  foreach (var screen in screens)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __2_intnl_SystemInt32
+        COPY
+        PUSH, screens
+        PUSH, __3_intnl_SystemInt32
+        EXTERN, "UnityEngineGameObjectArray.__get_Length__SystemInt32"
+        PUSH, __2_intnl_SystemInt32
+        PUSH, __3_intnl_SystemInt32
+        PUSH, __5_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __5_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000608
+        PUSH, screens
+        PUSH, __2_intnl_SystemInt32
+        PUSH, __1_screen_GameObject
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  screen.SetActive(false);
+        PUSH, __1_screen_GameObject
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __2_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __2_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00000578
+        
+         #  isVisible = false;
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, isVisible
+        COPY
+        
+         #  if (tv != null)
+        PUSH, tv
+        PUSH, __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver
+        PUSH, __5_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __5_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000077C
+        
+         #  log($"{tv.gameObject.name} [{gameObject.name}] deactivated");
+        PUSH, tv
+        PUSH, __1_intnl_UnityEngineGameObject
+        EXTERN, "UnityEngineComponent.__get_gameObject__UnityEngineGameObject"
+        PUSH, __1_intnl_UnityEngineGameObject
+        PUSH, __9_intnl_SystemString
+        EXTERN, "UnityEngineGameObject.__get_name__SystemString"
+        PUSH, __9_intnl_SystemString
+        PUSH, __2_intnl_interpolatedStr_String
+        COPY
+        PUSH, __2_intnl_interpolatedStr_String
+        PUSH, __4_const_intnl_SystemString
+        PUSH, __10_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __10_intnl_SystemString
+        PUSH, __2_intnl_interpolatedStr_String
+        COPY
+        PUSH, __0_this_intnl_UnityEngineGameObject
+        PUSH, __11_intnl_SystemString
+        EXTERN, "UnityEngineGameObject.__get_name__SystemString"
+        PUSH, __2_intnl_interpolatedStr_String
+        PUSH, __11_intnl_SystemString
+        PUSH, __12_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __12_intnl_SystemString
+        PUSH, __2_intnl_interpolatedStr_String
+        COPY
+        PUSH, __2_intnl_interpolatedStr_String
+        PUSH, __6_const_intnl_SystemString
+        PUSH, __13_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __13_intnl_SystemString
+        PUSH, __2_intnl_interpolatedStr_String
+        COPY
+        PUSH, __2_intnl_interpolatedStr_String
+        PUSH, __0_mp_value_String
+        COPY
+        PUSH, __2_intnl_interpolatedStr_String
+        PUSH, __14_intnl_SystemString
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __8_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000E54
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _ApplyStateTo(VideoManagerV2 other)
+    .export _ApplyStateTo
+        
+    _ApplyStateTo:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  other._ChangeMute(muted);
+        PUSH, __0_mp_other_VideoManagerV2
+        PUSH, __7_const_intnl_SystemString
+        PUSH, muted
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, muted
+        PUSH, __6_intnl_SystemBoolean
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __0_mp_other_VideoManagerV2
+        PUSH, __8_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        
+         #  other._ChangeVolume(volume);
+        PUSH, __0_mp_other_VideoManagerV2
+        PUSH, __9_const_intnl_SystemString
+        PUSH, volume
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, volume
+        PUSH, __0_intnl_SystemSingle
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __0_mp_other_VideoManagerV2
+        PUSH, __10_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        
+         #  other._ChangeAudioMode(audio3d);
+        PUSH, __0_mp_other_VideoManagerV2
+        PUSH, __11_const_intnl_SystemString
+        PUSH, audio3d
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, audio3d
+        PUSH, __7_intnl_SystemBoolean
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __0_mp_other_VideoManagerV2
+        PUSH, __12_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _ChangeMute(bool muted)
+    .export _ChangeMute
+        
+    _ChangeMute:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!init) initialize();
+        PUSH, init
+        PUSH, __8_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __8_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000008D0
+        PUSH, __9_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  this.muted = muted;
+        PUSH, __0_mp_muted_Boolean
+        PUSH, muted
+        COPY
+        
+         #  foreach (AudioSource speaker in speakers)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __4_intnl_SystemInt32
+        COPY
+        PUSH, speakers
+        PUSH, __5_intnl_SystemInt32
+        EXTERN, "UnityEngineAudioSourceArray.__get_Length__SystemInt32"
+        PUSH, __4_intnl_SystemInt32
+        PUSH, __5_intnl_SystemInt32
+        PUSH, __9_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __9_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000009D8
+        PUSH, speakers
+        PUSH, __4_intnl_SystemInt32
+        PUSH, __0_speaker_AudioSource
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  {
+        
+         #  if (speaker == null) continue;
+        PUSH, __0_speaker_AudioSource
+        PUSH, __0_const_intnl_UnityEngineAudioSource
+        PUSH, __10_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __10_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000998
+        JUMP, 0x000009B0
+        
+         #  speaker.mute = muted;
+        PUSH, __0_speaker_AudioSource
+        PUSH, __0_mp_muted_Boolean
+        EXTERN, "UnityEngineAudioSource.__set_mute__SystemBoolean__SystemVoid"
+        PUSH, __4_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __4_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00000910
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _Mute() => _ChangeMute(true);
+    .export _Mute
+        
+    _Mute:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, __0_mp_muted_Boolean
+        COPY
+        PUSH, __10_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000898
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _UnMute() => _ChangeMute(false);
+    .export _UnMute
+        
+    _UnMute:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, __0_mp_muted_Boolean
+        COPY
+        PUSH, __11_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000898
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _ChangeAudioMode(bool use3dAudio)
+    .export _ChangeAudioMode
+        
+    _ChangeAudioMode:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!init) initialize();
+        PUSH, init
+        PUSH, __11_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __11_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000AAC
+        PUSH, __12_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  this.audio3d = use3dAudio;
+        PUSH, __0_mp_use3dAudio_Boolean
+        PUSH, audio3d
+        COPY
+        
+         #  float blend = use3dAudio ? 1.0f : 0.0f;
+        PUSH, __0_mp_use3dAudio_Boolean
+        JUMP_IF_FALSE, 0x00000AEC
+        PUSH, __0_const_intnl_SystemSingle
+        PUSH, __0_blend_Single
+        COPY
+        JUMP, 0x00000B00
+        PUSH, __1_const_intnl_SystemSingle
+        PUSH, __0_blend_Single
+        COPY
+        
+         #  foreach (AudioSource speaker in speakers)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __6_intnl_SystemInt32
+        COPY
+        PUSH, speakers
+        PUSH, __7_intnl_SystemInt32
+        EXTERN, "UnityEngineAudioSourceArray.__get_Length__SystemInt32"
+        PUSH, __6_intnl_SystemInt32
+        PUSH, __7_intnl_SystemInt32
+        PUSH, __12_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __12_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000C2C
+        PUSH, speakers
+        PUSH, __6_intnl_SystemInt32
+        PUSH, __1_speaker_AudioSource
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  {
+        
+         #  if (speaker == null) continue;
+        PUSH, __1_speaker_AudioSource
+        PUSH, __0_const_intnl_UnityEngineAudioSource
+        PUSH, __13_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __13_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000BB4
+        JUMP, 0x00000C04
+        
+         #  speaker.spatialBlend = blend;
+        PUSH, __1_speaker_AudioSource
+        PUSH, __0_blend_Single
+        EXTERN, "UnityEngineAudioSource.__set_spatialBlend__SystemSingle__SystemVoid"
+        
+         #  speaker.spread = blend * 360f;
+        PUSH, __0_blend_Single
+        PUSH, __2_const_intnl_SystemSingle
+        PUSH, __1_intnl_SystemSingle
+        EXTERN, "SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle"
+        PUSH, __1_speaker_AudioSource
+        PUSH, __1_intnl_SystemSingle
+        EXTERN, "UnityEngineAudioSource.__set_spread__SystemSingle__SystemVoid"
+        PUSH, __6_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __6_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00000B2C
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _Use3dAudio() => _ChangeAudioMode(true);
+    .export _Use3dAudio
+        
+    _Use3dAudio:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, __0_mp_use3dAudio_Boolean
+        COPY
+        PUSH, __13_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000A74
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _Use2dAudio() => _ChangeAudioMode(false);
+    .export _Use2dAudio
+        
+    _Use2dAudio:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, __0_mp_use3dAudio_Boolean
+        COPY
+        PUSH, __14_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000A74
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _ChangeVolume(float volume)
+    .export _ChangeVolume
+        
+    _ChangeVolume:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!init) initialize();
+        PUSH, init
+        PUSH, __14_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __14_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000D00
+        PUSH, __15_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        
+         #  this.volume = volume;
+        PUSH, __0_mp_volume_Single
+        PUSH, volume
+        COPY
+        
+         #  foreach (AudioSource speaker in speakers)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __8_intnl_SystemInt32
+        COPY
+        PUSH, speakers
+        PUSH, __9_intnl_SystemInt32
+        EXTERN, "UnityEngineAudioSourceArray.__get_Length__SystemInt32"
+        PUSH, __8_intnl_SystemInt32
+        PUSH, __9_intnl_SystemInt32
+        PUSH, __15_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __15_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000E08
+        PUSH, speakers
+        PUSH, __8_intnl_SystemInt32
+        PUSH, __2_speaker_AudioSource
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  {
+        
+         #  if (speaker == null) continue;
+        PUSH, __2_speaker_AudioSource
+        PUSH, __0_const_intnl_UnityEngineAudioSource
+        PUSH, __16_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean"
+        PUSH, __16_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000DC8
+        JUMP, 0x00000DE0
+        
+         #  speaker.volume = volume;
+        PUSH, __2_speaker_AudioSource
+        PUSH, __0_mp_volume_Single
+        EXTERN, "UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid"
+        PUSH, __8_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __8_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x00000D40
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void _SetTV(TVManagerV2 manager) => tv = manager;
+    .export _SetTV
+        
+    _SetTV:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        PUSH, __0_mp_manager_TVManagerV2
+        PUSH, tv
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void log(string value)
+    log:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!skipLog) Debug.Log($"[<color=#1F84A9>A</color><color=#A3A3A3>T</color><color=#2861B4>A</color> | <color=#00ccaa>VideoManagerV2</color>] {value}");
+        PUSH, skipLog
+        PUSH, __17_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __17_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000ED4
+        PUSH, __13_const_intnl_SystemString
+        PUSH, __3_intnl_interpolatedStr_String
+        COPY
+        PUSH, __3_intnl_interpolatedStr_String
+        PUSH, __0_mp_value_String
+        PUSH, __15_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __15_intnl_SystemString
+        PUSH, __3_intnl_interpolatedStr_String
+        COPY
+        PUSH, __3_intnl_interpolatedStr_String
+        EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void warn(string value)
+    warn:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!skipLog) Debug.LogWarning($"[<color=#1F84A9>A</color><color=#A3A3A3>T</color><color=#2861B4>A</color> | <color=#00ccaa>VideoManagerV2</color>] {value}");
+        PUSH, skipLog
+        PUSH, __18_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __18_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000F70
+        PUSH, __13_const_intnl_SystemString
+        PUSH, __4_intnl_interpolatedStr_String
+        COPY
+        PUSH, __4_intnl_interpolatedStr_String
+        PUSH, __1_mp_value_String
+        PUSH, __16_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __16_intnl_SystemString
+        PUSH, __4_intnl_interpolatedStr_String
+        COPY
+        PUSH, __4_intnl_interpolatedStr_String
+        EXTERN, "UnityEngineDebug.__LogWarning__SystemObject__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void err(string value)
+    err:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!skipLog) Debug.LogError($"[<color=#1F84A9>A</color><color=#A3A3A3>T</color><color=#2861B4>A</color> | <color=#00ccaa>VideoManagerV2</color>] {value}");
+        PUSH, skipLog
+        PUSH, __19_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __19_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000100C
+        PUSH, __13_const_intnl_SystemString
+        PUSH, __5_intnl_interpolatedStr_String
+        COPY
+        PUSH, __5_intnl_interpolatedStr_String
+        PUSH, __2_mp_value_String
+        PUSH, __17_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __17_intnl_SystemString
+        PUSH, __5_intnl_interpolatedStr_String
+        COPY
+        PUSH, __5_intnl_interpolatedStr_String
+        EXTERN, "UnityEngineDebug.__LogError__SystemObject__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+.code_end

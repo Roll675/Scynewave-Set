@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: bfad5be0809a3a147a449a764a90a45a
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
+  - _BumpMap: {instanceID: 0}
+  - _MetallicMap: {instanceID: 0}
+  - _RoughnessMap: {instanceID: 0}
+  - _ReflectionMask: {instanceID: 0}
+  - _RimMask: {instanceID: 0}
+  - _EmissTex: {instanceID: 0}
+  - _EmissGradMask: {instanceID: 0}
+  - _GradientMask: {instanceID: 0}
+  - _NoiseMask: {instanceID: 0}
+  - _DissolveTex: {fileID: 2800000, guid: dfbb7eeed695dc14d82b08d887041406, type: 3}
+  - _OutlineMask: {instanceID: 0}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
