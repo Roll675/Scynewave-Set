@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MirrorReflection
-  m_Shader: {fileID: 4800000, guid: 693137b858e4dc64c83be531351f45e6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0362dbdc099907d488f61e9fff14bd61, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -21,6 +21,10 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cutouttexture:
+        m_Texture: {fileID: 2800000, guid: 69f6ad26c993e71459e755a2bc485213, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -67,6 +71,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -79,10 +87,12 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ReflectionStrength: 1
     - _Shininess: 200
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
+    - __dirty: 1
     m_Colors:
     - _AnimationDirection: {r: 1, g: 1, b: 1, a: 1}
     - _AnimationTiling: {r: 2.2, g: 2.2, b: -1.1, a: -1.1}
@@ -90,6 +100,7 @@ Material:
     - _BumpDirection: {r: 1, g: 1, b: -1, a: 1}
     - _BumpTiling: {r: 1, g: 1, b: -2, a: 3}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0.916, g: 0.916, b: 0.916, a: 0}
     - _DistortParams: {r: 1, g: 1, b: 2, a: 1.15}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GAmplitude: {r: 0.3, g: 0.35, b: 0.25, a: 0.25}

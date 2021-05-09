@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{21BD4D89-0B6C-4ADD-B2F1-637C14BB384A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRC.Udon.Serialization.OdinSerializer", "VRC.Udon.Serialization.OdinSerializer.csproj", "{EF56649A-7AFC-5776-D8F8-4FFF3CDE833C}"
@@ -23,11 +23,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BakeryEditorAssembly", "Bak
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRC.SDKBase.Editor.ShaderStripping", "VRC.SDKBase.Editor.ShaderStripping.csproj", "{F483378D-6E70-895D-4B8A-C83E6C060960}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{0B170BCB-C424-6B73-07F7-C35F27B55C97}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditorTests", "UnityEditorTests.csproj", "{2F2688D4-4C3F-7A60-606A-D01D498092D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRC.Udon.Editor.UPMImporter", "VRC.Udon.Editor.UPMImporter.csproj", "{A9A5F822-E380-9E6C-38E5-87C9BB02ADF4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{0B170BCB-C424-6B73-07F7-C35F27B55C97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +79,10 @@ Global
 		{F483378D-6E70-895D-4B8A-C83E6C060960}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F483378D-6E70-895D-4B8A-C83E6C060960}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F483378D-6E70-895D-4B8A-C83E6C060960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B170BCB-C424-6B73-07F7-C35F27B55C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B170BCB-C424-6B73-07F7-C35F27B55C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B170BCB-C424-6B73-07F7-C35F27B55C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B170BCB-C424-6B73-07F7-C35F27B55C97}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F2688D4-4C3F-7A60-606A-D01D498092D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F2688D4-4C3F-7A60-606A-D01D498092D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F2688D4-4C3F-7A60-606A-D01D498092D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,15 +91,8 @@ Global
 		{A9A5F822-E380-9E6C-38E5-87C9BB02ADF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9A5F822-E380-9E6C-38E5-87C9BB02ADF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9A5F822-E380-9E6C-38E5-87C9BB02ADF4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B170BCB-C424-6B73-07F7-C35F27B55C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B170BCB-C424-6B73-07F7-C35F27B55C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B170BCB-C424-6B73-07F7-C35F27B55C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B170BCB-C424-6B73-07F7-C35F27B55C97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
