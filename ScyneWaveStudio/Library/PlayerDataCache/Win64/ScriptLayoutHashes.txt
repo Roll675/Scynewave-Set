@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/losta/AppData/Local/Temp/DefaultCompany/ScyneWaveStudio/scene-standalonewindows64-scyne.vrcw
+C:/Users/Shadow/AppData/Local/Temp/DefaultCompany/ScyneWaveStudio/scene-standalonewindows64-scyne.vrcw
 SceneListBegin?
 Assets/scyne.unity
 SceneListEnd?
