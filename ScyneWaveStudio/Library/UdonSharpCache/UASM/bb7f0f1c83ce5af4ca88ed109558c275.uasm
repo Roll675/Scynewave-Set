@@ -1,0 +1,1292 @@
+.data_start
+
+    .export betterPlayerAudio
+    .export sliderOcclusionFactor
+    .export sliderPlayerOcclusionFactor
+    .export sliderListenerDirectionality
+    .export sliderPlayerDirectionality
+    .export textListenerDirectionality
+    .export textPlayerDirectionality
+    .export textOcclusionFactor
+    .export textPlayerOcclusionFactor
+    .export textAllowMasterControl
+    .export toggleAllowMasterControl
+    .export sliderVoiceDistanceNear
+    .export sliderVoiceDistanceFar
+    .export sliderVoiceGain
+    .export sliderVoiceVolumetricRadius
+    .export textVoiceDistanceNear
+    .export textVoiceDistanceFar
+    .export textVoiceGain
+    .export textVoiceVolumetricRadius
+    .export toggleVoiceLowpass
+    .export sliderAvatarDistanceNear
+    .export sliderAvatarDistanceFar
+    .export sliderAvatarGain
+    .export sliderAvatarVolumetricRadius
+    .export texAvatarDistanceNear
+    .export texAvatarDistanceFar
+    .export texAvatarGain
+    .export texAvatarVolumetricRadius
+    .export toggleAvatarSpatialize
+    .export toggleAvatarCustomCurve
+
+    __refl_const_intnl_udonTypeID: %SystemInt64, null
+    __refl_const_intnl_udonTypeName: %SystemString, null
+    sliderAvatarVolumetricRadius: %UnityEngineUISlider, null
+    sliderAvatarGain: %UnityEngineUISlider, null
+    sliderAvatarDistanceFar: %UnityEngineUISlider, null
+    sliderAvatarDistanceNear: %UnityEngineUISlider, null
+    sliderVoiceVolumetricRadius: %UnityEngineUISlider, null
+    sliderVoiceGain: %UnityEngineUISlider, null
+    sliderVoiceDistanceFar: %UnityEngineUISlider, null
+    sliderVoiceDistanceNear: %UnityEngineUISlider, null
+    sliderPlayerDirectionality: %UnityEngineUISlider, null
+    sliderListenerDirectionality: %UnityEngineUISlider, null
+    sliderPlayerOcclusionFactor: %UnityEngineUISlider, null
+    sliderOcclusionFactor: %UnityEngineUISlider, null
+    texAvatarVolumetricRadius: %UnityEngineUIText, null
+    texAvatarGain: %UnityEngineUIText, null
+    texAvatarDistanceFar: %UnityEngineUIText, null
+    texAvatarDistanceNear: %UnityEngineUIText, null
+    textVoiceVolumetricRadius: %UnityEngineUIText, null
+    textVoiceGain: %UnityEngineUIText, null
+    textVoiceDistanceFar: %UnityEngineUIText, null
+    textVoiceDistanceNear: %UnityEngineUIText, null
+    textAllowMasterControl: %UnityEngineUIText, null
+    textPlayerOcclusionFactor: %UnityEngineUIText, null
+    textOcclusionFactor: %UnityEngineUIText, null
+    textPlayerDirectionality: %UnityEngineUIText, null
+    textListenerDirectionality: %UnityEngineUIText, null
+    toggleAvatarCustomCurve: %UnityEngineUIToggle, null
+    toggleAvatarSpatialize: %UnityEngineUIToggle, null
+    toggleVoiceLowpass: %UnityEngineUIToggle, null
+    toggleAllowMasterControl: %UnityEngineUIToggle, null
+    betterPlayerAudio: %VRCUdonUdonBehaviour, null
+    _tabs: %UnityEngineRectTransformArray, null
+    __0_locallyControlled_Boolean: %SystemBoolean, null
+    __0_owner_VRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+    __0_const_intnl_SystemObject: %SystemObject, null
+    __45_const_intnl_SystemString: %SystemString, null
+    __44_const_intnl_SystemString: %SystemString, null
+    __43_const_intnl_SystemString: %SystemString, null
+    __42_const_intnl_SystemString: %SystemString, null
+    __41_const_intnl_SystemString: %SystemString, null
+    __40_const_intnl_SystemString: %SystemString, null
+    __39_const_intnl_SystemString: %SystemString, null
+    __38_const_intnl_SystemString: %SystemString, null
+    __37_const_intnl_SystemString: %SystemString, null
+    __36_const_intnl_SystemString: %SystemString, null
+    __35_const_intnl_SystemString: %SystemString, null
+    __34_const_intnl_SystemString: %SystemString, null
+    __33_const_intnl_SystemString: %SystemString, null
+    __32_const_intnl_SystemString: %SystemString, null
+    __31_const_intnl_SystemString: %SystemString, null
+    __30_const_intnl_SystemString: %SystemString, null
+    __29_const_intnl_SystemString: %SystemString, null
+    __28_const_intnl_SystemString: %SystemString, null
+    __27_const_intnl_SystemString: %SystemString, null
+    __26_const_intnl_SystemString: %SystemString, null
+    __25_const_intnl_SystemString: %SystemString, null
+    __24_const_intnl_SystemString: %SystemString, null
+    __23_const_intnl_SystemString: %SystemString, null
+    __22_const_intnl_SystemString: %SystemString, null
+    __21_const_intnl_SystemString: %SystemString, null
+    __20_const_intnl_SystemString: %SystemString, null
+    __19_const_intnl_SystemString: %SystemString, null
+    __18_const_intnl_SystemString: %SystemString, null
+    __17_const_intnl_SystemString: %SystemString, null
+    __16_const_intnl_SystemString: %SystemString, null
+    __15_const_intnl_SystemString: %SystemString, null
+    __14_const_intnl_SystemString: %SystemString, null
+    __13_const_intnl_SystemString: %SystemString, null
+    __12_const_intnl_SystemString: %SystemString, null
+    __11_const_intnl_SystemString: %SystemString, null
+    __10_const_intnl_SystemString: %SystemString, null
+    __9_const_intnl_SystemString: %SystemString, null
+    __8_const_intnl_SystemString: %SystemString, null
+    __7_const_intnl_SystemString: %SystemString, null
+    __6_const_intnl_SystemString: %SystemString, null
+    __5_const_intnl_SystemString: %SystemString, null
+    __4_const_intnl_SystemString: %SystemString, null
+    __3_const_intnl_SystemString: %SystemString, null
+    __2_const_intnl_SystemString: %SystemString, null
+    __1_const_intnl_SystemString: %SystemString, null
+    __0_const_intnl_SystemString: %SystemString, null
+    __0_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __0_const_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+    __29_intnl_SystemBoolean: %SystemBoolean, null
+    __28_intnl_SystemBoolean: %SystemBoolean, null
+    __27_intnl_SystemBoolean: %SystemBoolean, null
+    __26_intnl_SystemBoolean: %SystemBoolean, null
+    __25_intnl_SystemBoolean: %SystemBoolean, null
+    __24_intnl_SystemBoolean: %SystemBoolean, null
+    __23_intnl_SystemBoolean: %SystemBoolean, null
+    __22_intnl_SystemBoolean: %SystemBoolean, null
+    __21_intnl_SystemBoolean: %SystemBoolean, null
+    __20_intnl_SystemBoolean: %SystemBoolean, null
+    __19_intnl_SystemBoolean: %SystemBoolean, null
+    __18_intnl_SystemBoolean: %SystemBoolean, null
+    __17_intnl_SystemBoolean: %SystemBoolean, null
+    __16_intnl_SystemBoolean: %SystemBoolean, null
+    __15_intnl_SystemBoolean: %SystemBoolean, null
+    __14_intnl_SystemBoolean: %SystemBoolean, null
+    __13_intnl_SystemBoolean: %SystemBoolean, null
+    __12_intnl_SystemBoolean: %SystemBoolean, null
+    __11_intnl_SystemBoolean: %SystemBoolean, null
+    __10_intnl_SystemBoolean: %SystemBoolean, null
+    __9_intnl_SystemBoolean: %SystemBoolean, null
+    __8_intnl_SystemBoolean: %SystemBoolean, null
+    __7_intnl_SystemBoolean: %SystemBoolean, null
+    __6_intnl_SystemBoolean: %SystemBoolean, null
+    __5_intnl_SystemBoolean: %SystemBoolean, null
+    __4_intnl_SystemBoolean: %SystemBoolean, null
+    __3_intnl_SystemBoolean: %SystemBoolean, null
+    __2_intnl_SystemBoolean: %SystemBoolean, null
+    __1_intnl_SystemBoolean: %SystemBoolean, null
+    __0_intnl_SystemBoolean: %SystemBoolean, null
+    __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null
+    __34_intnl_SystemObject: %SystemObject, null
+    __33_intnl_SystemObject: %SystemObject, null
+    __32_intnl_SystemObject: %SystemObject, null
+    __31_intnl_SystemObject: %SystemObject, null
+    __30_intnl_SystemObject: %SystemObject, null
+    __29_intnl_SystemObject: %SystemObject, null
+    __28_intnl_SystemObject: %SystemObject, null
+    __27_intnl_SystemObject: %SystemObject, null
+    __26_intnl_SystemObject: %SystemObject, null
+    __25_intnl_SystemObject: %SystemObject, null
+    __24_intnl_SystemObject: %SystemObject, null
+    __23_intnl_SystemObject: %SystemObject, null
+    __22_intnl_SystemObject: %SystemObject, null
+    __21_intnl_SystemObject: %SystemObject, null
+    __20_intnl_SystemObject: %SystemObject, null
+    __19_intnl_SystemObject: %SystemObject, null
+    __18_intnl_SystemObject: %SystemObject, null
+    __17_intnl_SystemObject: %SystemObject, null
+    __16_intnl_SystemObject: %SystemObject, null
+    __15_intnl_SystemObject: %SystemObject, null
+    __14_intnl_SystemObject: %SystemObject, null
+    __13_intnl_SystemObject: %SystemObject, null
+    __12_intnl_SystemObject: %SystemObject, null
+    __11_intnl_SystemObject: %SystemObject, null
+    __10_intnl_SystemObject: %SystemObject, null
+    __9_intnl_SystemObject: %SystemObject, null
+    __8_intnl_SystemObject: %SystemObject, null
+    __7_intnl_SystemObject: %SystemObject, null
+    __6_intnl_SystemObject: %SystemObject, null
+    __5_intnl_SystemObject: %SystemObject, null
+    __4_intnl_SystemObject: %SystemObject, null
+    __3_intnl_SystemObject: %SystemObject, null
+    __2_intnl_SystemObject: %SystemObject, null
+    __1_intnl_SystemObject: %SystemObject, null
+    __0_intnl_SystemObject: %SystemObject, null
+    __71_intnl_SystemSingle: %SystemSingle, null
+    __70_intnl_SystemSingle: %SystemSingle, null
+    __69_intnl_SystemSingle: %SystemSingle, null
+    __68_intnl_SystemSingle: %SystemSingle, null
+    __67_intnl_SystemSingle: %SystemSingle, null
+    __66_intnl_SystemSingle: %SystemSingle, null
+    __65_intnl_SystemSingle: %SystemSingle, null
+    __64_intnl_SystemSingle: %SystemSingle, null
+    __63_intnl_SystemSingle: %SystemSingle, null
+    __62_intnl_SystemSingle: %SystemSingle, null
+    __61_intnl_SystemSingle: %SystemSingle, null
+    __60_intnl_SystemSingle: %SystemSingle, null
+    __59_intnl_SystemSingle: %SystemSingle, null
+    __58_intnl_SystemSingle: %SystemSingle, null
+    __57_intnl_SystemSingle: %SystemSingle, null
+    __56_intnl_SystemSingle: %SystemSingle, null
+    __55_intnl_SystemSingle: %SystemSingle, null
+    __54_intnl_SystemSingle: %SystemSingle, null
+    __53_intnl_SystemSingle: %SystemSingle, null
+    __52_intnl_SystemSingle: %SystemSingle, null
+    __51_intnl_SystemSingle: %SystemSingle, null
+    __50_intnl_SystemSingle: %SystemSingle, null
+    __49_intnl_SystemSingle: %SystemSingle, null
+    __48_intnl_SystemSingle: %SystemSingle, null
+    __47_intnl_SystemSingle: %SystemSingle, null
+    __46_intnl_SystemSingle: %SystemSingle, null
+    __45_intnl_SystemSingle: %SystemSingle, null
+    __44_intnl_SystemSingle: %SystemSingle, null
+    __43_intnl_SystemSingle: %SystemSingle, null
+    __42_intnl_SystemSingle: %SystemSingle, null
+    __41_intnl_SystemSingle: %SystemSingle, null
+    __40_intnl_SystemSingle: %SystemSingle, null
+    __39_intnl_SystemSingle: %SystemSingle, null
+    __38_intnl_SystemSingle: %SystemSingle, null
+    __37_intnl_SystemSingle: %SystemSingle, null
+    __36_intnl_SystemSingle: %SystemSingle, null
+    __35_intnl_SystemSingle: %SystemSingle, null
+    __34_intnl_SystemSingle: %SystemSingle, null
+    __33_intnl_SystemSingle: %SystemSingle, null
+    __32_intnl_SystemSingle: %SystemSingle, null
+    __31_intnl_SystemSingle: %SystemSingle, null
+    __30_intnl_SystemSingle: %SystemSingle, null
+    __29_intnl_SystemSingle: %SystemSingle, null
+    __28_intnl_SystemSingle: %SystemSingle, null
+    __27_intnl_SystemSingle: %SystemSingle, null
+    __26_intnl_SystemSingle: %SystemSingle, null
+    __25_intnl_SystemSingle: %SystemSingle, null
+    __24_intnl_SystemSingle: %SystemSingle, null
+    __23_intnl_SystemSingle: %SystemSingle, null
+    __22_intnl_SystemSingle: %SystemSingle, null
+    __21_intnl_SystemSingle: %SystemSingle, null
+    __20_intnl_SystemSingle: %SystemSingle, null
+    __19_intnl_SystemSingle: %SystemSingle, null
+    __18_intnl_SystemSingle: %SystemSingle, null
+    __17_intnl_SystemSingle: %SystemSingle, null
+    __16_intnl_SystemSingle: %SystemSingle, null
+    __15_intnl_SystemSingle: %SystemSingle, null
+    __14_intnl_SystemSingle: %SystemSingle, null
+    __13_intnl_SystemSingle: %SystemSingle, null
+    __12_intnl_SystemSingle: %SystemSingle, null
+    __11_intnl_SystemSingle: %SystemSingle, null
+    __10_intnl_SystemSingle: %SystemSingle, null
+    __9_intnl_SystemSingle: %SystemSingle, null
+    __8_intnl_SystemSingle: %SystemSingle, null
+    __7_intnl_SystemSingle: %SystemSingle, null
+    __6_intnl_SystemSingle: %SystemSingle, null
+    __5_intnl_SystemSingle: %SystemSingle, null
+    __4_intnl_SystemSingle: %SystemSingle, null
+    __3_intnl_SystemSingle: %SystemSingle, null
+    __2_intnl_SystemSingle: %SystemSingle, null
+    __1_intnl_SystemSingle: %SystemSingle, null
+    __0_intnl_SystemSingle: %SystemSingle, null
+    __14_intnl_SystemString: %SystemString, null
+    __13_intnl_SystemString: %SystemString, null
+    __12_intnl_SystemString: %SystemString, null
+    __0_intnl_interpolatedStr_String: %SystemString, null
+    __11_intnl_SystemString: %SystemString, null
+    __10_intnl_SystemString: %SystemString, null
+    __9_intnl_SystemString: %SystemString, null
+    __8_intnl_SystemString: %SystemString, null
+    __7_intnl_SystemString: %SystemString, null
+    __6_intnl_SystemString: %SystemString, null
+    __5_intnl_SystemString: %SystemString, null
+    __4_intnl_SystemString: %SystemString, null
+    __3_intnl_SystemString: %SystemString, null
+    __2_intnl_SystemString: %SystemString, null
+    __1_intnl_SystemString: %SystemString, null
+    __0_intnl_SystemString: %SystemString, null
+    __0_intnl_returnTarget_UInt32: %SystemUInt32, null
+    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+
+.data_end
+
+        
+         #  using System;
+        
+         #  using UdonSharp;
+        
+         #  using UnityEngine;
+        
+         #  using UnityEngine.UI;
+        
+         #  using VRC.SDKBase;
+        
+         #  namespace Guribo.UdonBetterAudio.Scripts
+        
+         #  public class BetterPlayerAudioUiController : UdonSharpBehaviour
+.code_start
+        
+         #  [SerializeField] private BetterPlayerAudio betterPlayerAudio;
+        
+         #  [Header("General Settings")] [SerializeField]
+        
+         #  [SerializeField] private Slider sliderPlayerOcclusionFactor;
+        
+         #  [SerializeField] private Slider sliderListenerDirectionality;
+        
+         #  [SerializeField] private Slider sliderPlayerDirectionality;
+        
+         #  [SerializeField] private Text textListenerDirectionality;
+        
+         #  [SerializeField] private Text textPlayerDirectionality;
+        
+         #  [SerializeField] private Text textOcclusionFactor;
+        
+         #  [SerializeField] private Text textPlayerOcclusionFactor;
+        
+         #  [SerializeField] private Text textAllowMasterControl;
+        
+         #  [SerializeField] private Toggle toggleAllowMasterControl;
+        
+         #  [Header("Voice Settings")] [SerializeField]
+        
+         #  [SerializeField] private Slider sliderVoiceDistanceFar;
+        
+         #  [SerializeField] private Slider sliderVoiceGain;
+        
+         #  [SerializeField] private Slider sliderVoiceVolumetricRadius;
+        
+         #  [SerializeField] private Text textVoiceDistanceNear;
+        
+         #  [SerializeField] private Text textVoiceDistanceFar;
+        
+         #  [SerializeField] private Text textVoiceGain;
+        
+         #  [SerializeField] private Text textVoiceVolumetricRadius;
+        
+         #  [SerializeField] private Toggle toggleVoiceLowpass;
+        
+         #  [Header("Avatar Settings")] [SerializeField]
+        
+         #  [SerializeField] private Slider sliderAvatarDistanceFar;
+        
+         #  [SerializeField] private Slider sliderAvatarGain;
+        
+         #  [SerializeField] private Slider sliderAvatarVolumetricRadius;
+        
+         #  [SerializeField] private Text texAvatarDistanceNear;
+        
+         #  [SerializeField] private Text texAvatarDistanceFar;
+        
+         #  [SerializeField] private Text texAvatarGain;
+        
+         #  [SerializeField] private Text texAvatarVolumetricRadius;
+        
+         #  [SerializeField] private Toggle toggleAvatarSpatialize;
+        
+         #  [SerializeField] private Toggle toggleAvatarCustomCurve;
+        
+         #  private RectTransform[] _tabs;
+        
+         #  public void Start()
+    .export _start
+        
+    _start:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!betterPlayerAudio)
+        PUSH, betterPlayerAudio
+        PUSH, __0_intnl_SystemBoolean
+        EXTERN, "UnityEngineObject.__op_Implicit__UnityEngineObject__SystemBoolean"
+        PUSH, __0_intnl_SystemBoolean
+        PUSH, __1_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __1_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000058
+        
+         #  {
+        
+         #  Debug.LogError("[<color=#008000>BetterAudio</color>] Invalid betterPlayerAudio");
+        PUSH, __3_const_intnl_SystemString
+        EXTERN, "UnityEngineDebug.__LogError__SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.Initialize();
+        PUSH, betterPlayerAudio
+        PUSH, __4_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        
+         #  ResetAll();
+        PUSH, __0_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000B34
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void OnSettingsChanged()
+    .export OnSettingsChanged
+        
+    OnSettingsChanged:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  betterPlayerAudio.OcclusionFactor = sliderOcclusionFactor.value;
+        PUSH, sliderOcclusionFactor
+        PUSH, __0_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __5_const_intnl_SystemString
+        PUSH, __0_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.PlayerOcclusionFactor = sliderPlayerOcclusionFactor.value;
+        PUSH, sliderPlayerOcclusionFactor
+        PUSH, __1_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __6_const_intnl_SystemString
+        PUSH, __1_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.PlayerDirectionality = sliderPlayerDirectionality.value;
+        PUSH, sliderPlayerDirectionality
+        PUSH, __2_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __7_const_intnl_SystemString
+        PUSH, __2_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.ListenerDirectionality = sliderListenerDirectionality.value;
+        PUSH, sliderListenerDirectionality
+        PUSH, __3_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __8_const_intnl_SystemString
+        PUSH, __3_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.TargetVoiceDistanceNear = sliderVoiceDistanceNear.value;
+        PUSH, sliderVoiceDistanceNear
+        PUSH, __4_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __9_const_intnl_SystemString
+        PUSH, __4_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.TargetVoiceDistanceFar = sliderVoiceDistanceFar.value;
+        PUSH, sliderVoiceDistanceFar
+        PUSH, __5_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __10_const_intnl_SystemString
+        PUSH, __5_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.TargetVoiceGain = sliderVoiceGain.value;
+        PUSH, sliderVoiceGain
+        PUSH, __6_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __11_const_intnl_SystemString
+        PUSH, __6_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.TargetVoiceVolumetricRadius = sliderVoiceVolumetricRadius.value;
+        PUSH, sliderVoiceVolumetricRadius
+        PUSH, __7_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __12_const_intnl_SystemString
+        PUSH, __7_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.EnableVoiceLowpass = toggleVoiceLowpass.isOn;
+        PUSH, toggleVoiceLowpass
+        PUSH, __2_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__get_isOn__SystemBoolean"
+        PUSH, betterPlayerAudio
+        PUSH, __13_const_intnl_SystemString
+        PUSH, __2_intnl_SystemBoolean
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.TargetAvatarNearRadius = sliderAvatarDistanceNear.value;
+        PUSH, sliderAvatarDistanceNear
+        PUSH, __8_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __14_const_intnl_SystemString
+        PUSH, __8_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.TargetAvatarFarRadius = sliderAvatarDistanceFar.value;
+        PUSH, sliderAvatarDistanceFar
+        PUSH, __9_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __15_const_intnl_SystemString
+        PUSH, __9_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.TargetAvatarGain = sliderAvatarGain.value;
+        PUSH, sliderAvatarGain
+        PUSH, __10_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __16_const_intnl_SystemString
+        PUSH, __10_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.TargetAvatarVolumetricRadius = sliderAvatarVolumetricRadius.value;
+        PUSH, sliderAvatarVolumetricRadius
+        PUSH, __11_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, betterPlayerAudio
+        PUSH, __17_const_intnl_SystemString
+        PUSH, __11_intnl_SystemSingle
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.ForceAvatarSpatialAudio = toggleAvatarSpatialize.isOn;
+        PUSH, toggleAvatarSpatialize
+        PUSH, __3_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__get_isOn__SystemBoolean"
+        PUSH, betterPlayerAudio
+        PUSH, __18_const_intnl_SystemString
+        PUSH, __3_intnl_SystemBoolean
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.AllowAvatarCustomAudioCurves = toggleAvatarCustomCurve.isOn;
+        PUSH, toggleAvatarCustomCurve
+        PUSH, __4_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__get_isOn__SystemBoolean"
+        PUSH, betterPlayerAudio
+        PUSH, __19_const_intnl_SystemString
+        PUSH, __4_intnl_SystemBoolean
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        
+         #  betterPlayerAudio.SetUseMasterControls(toggleAllowMasterControl.isOn);
+        PUSH, toggleAllowMasterControl
+        PUSH, __5_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__get_isOn__SystemBoolean"
+        PUSH, betterPlayerAudio
+        PUSH, __20_const_intnl_SystemString
+        PUSH, __5_intnl_SystemBoolean
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, betterPlayerAudio
+        PUSH, __21_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        
+         #  textOcclusionFactor.text = sliderOcclusionFactor.value.ToString("F");
+        PUSH, sliderOcclusionFactor
+        PUSH, __12_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __12_intnl_SystemSingle
+        PUSH, __22_const_intnl_SystemString
+        PUSH, __0_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, textOcclusionFactor
+        PUSH, __0_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  textPlayerOcclusionFactor.text = sliderPlayerOcclusionFactor.value.ToString("F");
+        PUSH, sliderPlayerOcclusionFactor
+        PUSH, __13_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __13_intnl_SystemSingle
+        PUSH, __22_const_intnl_SystemString
+        PUSH, __1_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, textPlayerOcclusionFactor
+        PUSH, __1_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  textPlayerDirectionality.text = sliderPlayerDirectionality.value.ToString("F");
+        PUSH, sliderPlayerDirectionality
+        PUSH, __14_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __14_intnl_SystemSingle
+        PUSH, __22_const_intnl_SystemString
+        PUSH, __2_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, textPlayerDirectionality
+        PUSH, __2_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  textListenerDirectionality.text = sliderListenerDirectionality.value.ToString("F");
+        PUSH, sliderListenerDirectionality
+        PUSH, __15_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __15_intnl_SystemSingle
+        PUSH, __22_const_intnl_SystemString
+        PUSH, __3_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, textListenerDirectionality
+        PUSH, __3_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  textVoiceDistanceNear.text = sliderVoiceDistanceNear.value.ToString("F1");
+        PUSH, sliderVoiceDistanceNear
+        PUSH, __16_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __16_intnl_SystemSingle
+        PUSH, __23_const_intnl_SystemString
+        PUSH, __4_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, textVoiceDistanceNear
+        PUSH, __4_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  textVoiceDistanceFar.text = sliderVoiceDistanceFar.value.ToString("F1");
+        PUSH, sliderVoiceDistanceFar
+        PUSH, __17_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __17_intnl_SystemSingle
+        PUSH, __23_const_intnl_SystemString
+        PUSH, __5_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, textVoiceDistanceFar
+        PUSH, __5_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  textVoiceGain.text = sliderVoiceGain.value.ToString("F1");
+        PUSH, sliderVoiceGain
+        PUSH, __18_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __18_intnl_SystemSingle
+        PUSH, __23_const_intnl_SystemString
+        PUSH, __6_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, textVoiceGain
+        PUSH, __6_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  textVoiceVolumetricRadius.text = sliderVoiceVolumetricRadius.value.ToString("F1");
+        PUSH, sliderVoiceVolumetricRadius
+        PUSH, __19_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __19_intnl_SystemSingle
+        PUSH, __23_const_intnl_SystemString
+        PUSH, __7_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, textVoiceVolumetricRadius
+        PUSH, __7_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  texAvatarDistanceNear.text = sliderAvatarDistanceNear.value.ToString("F1");
+        PUSH, sliderAvatarDistanceNear
+        PUSH, __20_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __20_intnl_SystemSingle
+        PUSH, __23_const_intnl_SystemString
+        PUSH, __8_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, texAvatarDistanceNear
+        PUSH, __8_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  texAvatarDistanceFar.text = sliderAvatarDistanceFar.value.ToString("F1");
+        PUSH, sliderAvatarDistanceFar
+        PUSH, __21_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __21_intnl_SystemSingle
+        PUSH, __23_const_intnl_SystemString
+        PUSH, __9_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, texAvatarDistanceFar
+        PUSH, __9_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  texAvatarGain.text = sliderAvatarGain.value.ToString("F1");
+        PUSH, sliderAvatarGain
+        PUSH, __22_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __22_intnl_SystemSingle
+        PUSH, __23_const_intnl_SystemString
+        PUSH, __10_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, texAvatarGain
+        PUSH, __10_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  texAvatarVolumetricRadius.text = sliderAvatarVolumetricRadius.value.ToString("F1");
+        PUSH, sliderAvatarVolumetricRadius
+        PUSH, __23_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
+        PUSH, __23_intnl_SystemSingle
+        PUSH, __23_const_intnl_SystemString
+        PUSH, __11_intnl_SystemString
+        EXTERN, "SystemSingle.__ToString__SystemString__SystemString"
+        PUSH, texAvatarVolumetricRadius
+        PUSH, __11_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  var locallyControlled = !betterPlayerAudio.AllowMasterTakeControl() || betterPlayerAudio.IsOwner();
+        PUSH, betterPlayerAudio
+        PUSH, __24_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, betterPlayerAudio
+        PUSH, __25_const_intnl_SystemString
+        PUSH, __0_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __0_intnl_SystemObject
+        PUSH, __7_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, __7_intnl_SystemBoolean
+        PUSH, __8_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __8_intnl_SystemBoolean
+        PUSH, __6_intnl_SystemBoolean
+        COPY
+        PUSH, __6_intnl_SystemBoolean
+        PUSH, __9_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __9_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000091C
+        PUSH, betterPlayerAudio
+        PUSH, __26_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, betterPlayerAudio
+        PUSH, __27_const_intnl_SystemString
+        PUSH, __1_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __1_intnl_SystemObject
+        PUSH, __10_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, __6_intnl_SystemBoolean
+        PUSH, __10_intnl_SystemBoolean
+        PUSH, __11_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_ConditionalOr__SystemBoolean_SystemBoolean__SystemBoolean"
+        PUSH, __11_intnl_SystemBoolean
+        PUSH, __6_intnl_SystemBoolean
+        COPY
+        PUSH, __6_intnl_SystemBoolean
+        PUSH, __0_locallyControlled_Boolean
+        COPY
+        
+         #  sliderOcclusionFactor.interactable = locallyControlled;
+        PUSH, sliderOcclusionFactor
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderPlayerOcclusionFactor.interactable = locallyControlled;
+        PUSH, sliderPlayerOcclusionFactor
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderListenerDirectionality.interactable = locallyControlled;
+        PUSH, sliderListenerDirectionality
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderPlayerDirectionality.interactable = locallyControlled;
+        PUSH, sliderPlayerDirectionality
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderVoiceDistanceNear.interactable = locallyControlled;
+        PUSH, sliderVoiceDistanceNear
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderVoiceDistanceFar.interactable = locallyControlled;
+        PUSH, sliderVoiceDistanceFar
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderVoiceGain.interactable = locallyControlled;
+        PUSH, sliderVoiceGain
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderVoiceVolumetricRadius.interactable = locallyControlled;
+        PUSH, sliderVoiceVolumetricRadius
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  toggleVoiceLowpass.interactable = locallyControlled;
+        PUSH, toggleVoiceLowpass
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUIToggle.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderAvatarDistanceNear.interactable = locallyControlled;
+        PUSH, sliderAvatarDistanceNear
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderAvatarDistanceFar.interactable = locallyControlled;
+        PUSH, sliderAvatarDistanceFar
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderAvatarGain.interactable = locallyControlled;
+        PUSH, sliderAvatarGain
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  sliderAvatarVolumetricRadius.interactable = locallyControlled;
+        PUSH, sliderAvatarVolumetricRadius
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUISlider.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  toggleAvatarSpatialize.interactable = locallyControlled;
+        PUSH, toggleAvatarSpatialize
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUIToggle.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  toggleAvatarCustomCurve.interactable = locallyControlled;
+        PUSH, toggleAvatarCustomCurve
+        PUSH, __0_locallyControlled_Boolean
+        EXTERN, "UnityEngineUIToggle.__set_interactable__SystemBoolean__SystemVoid"
+        
+         #  toggleAllowMasterControl.interactable = !betterPlayerAudio.IsOwner();
+        PUSH, betterPlayerAudio
+        PUSH, __26_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, betterPlayerAudio
+        PUSH, __27_const_intnl_SystemString
+        PUSH, __2_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __2_intnl_SystemObject
+        PUSH, __12_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, __12_intnl_SystemBoolean
+        PUSH, __13_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, toggleAllowMasterControl
+        PUSH, __13_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__set_interactable__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void ResetAll()
+    .export ResetAll
+        
+    ResetAll:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  toggleAllowMasterControl.isOn = betterPlayerAudio.defaultAllowMasterControl;
+        PUSH, betterPlayerAudio
+        PUSH, __28_const_intnl_SystemString
+        PUSH, __3_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __3_intnl_SystemObject
+        PUSH, __15_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, toggleAllowMasterControl
+        PUSH, __15_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__set_isOn__SystemBoolean__SystemVoid"
+        
+         #  sliderOcclusionFactor.value = betterPlayerAudio.defaultOcclusionFactor;
+        PUSH, betterPlayerAudio
+        PUSH, __29_const_intnl_SystemString
+        PUSH, __4_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __4_intnl_SystemObject
+        PUSH, __25_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderOcclusionFactor
+        PUSH, __25_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderPlayerOcclusionFactor.value = betterPlayerAudio.defaultPlayerOcclusionFactor;
+        PUSH, betterPlayerAudio
+        PUSH, __30_const_intnl_SystemString
+        PUSH, __5_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __5_intnl_SystemObject
+        PUSH, __27_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderPlayerOcclusionFactor
+        PUSH, __27_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderListenerDirectionality.value = betterPlayerAudio.defaultListenerDirectionality;
+        PUSH, betterPlayerAudio
+        PUSH, __31_const_intnl_SystemString
+        PUSH, __6_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __6_intnl_SystemObject
+        PUSH, __29_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderListenerDirectionality
+        PUSH, __29_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderPlayerDirectionality.value = betterPlayerAudio.defaultPlayerDirectionality;
+        PUSH, betterPlayerAudio
+        PUSH, __32_const_intnl_SystemString
+        PUSH, __7_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __7_intnl_SystemObject
+        PUSH, __31_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderPlayerDirectionality
+        PUSH, __31_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderVoiceDistanceNear.value = betterPlayerAudio.defaultVoiceDistanceNear;
+        PUSH, betterPlayerAudio
+        PUSH, __33_const_intnl_SystemString
+        PUSH, __8_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __8_intnl_SystemObject
+        PUSH, __33_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderVoiceDistanceNear
+        PUSH, __33_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderVoiceDistanceFar.value = betterPlayerAudio.defaultVoiceDistanceFar;
+        PUSH, betterPlayerAudio
+        PUSH, __34_const_intnl_SystemString
+        PUSH, __9_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __9_intnl_SystemObject
+        PUSH, __35_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderVoiceDistanceFar
+        PUSH, __35_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderVoiceGain.value = betterPlayerAudio.defaultVoiceGain;
+        PUSH, betterPlayerAudio
+        PUSH, __35_const_intnl_SystemString
+        PUSH, __10_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __10_intnl_SystemObject
+        PUSH, __37_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderVoiceGain
+        PUSH, __37_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderVoiceVolumetricRadius.value = betterPlayerAudio.defaultVoiceVolumetricRadius;
+        PUSH, betterPlayerAudio
+        PUSH, __36_const_intnl_SystemString
+        PUSH, __11_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __11_intnl_SystemObject
+        PUSH, __39_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderVoiceVolumetricRadius
+        PUSH, __39_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  toggleVoiceLowpass.isOn = betterPlayerAudio.defaultEnableVoiceLowpass;
+        PUSH, betterPlayerAudio
+        PUSH, __37_const_intnl_SystemString
+        PUSH, __12_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __12_intnl_SystemObject
+        PUSH, __17_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, toggleVoiceLowpass
+        PUSH, __17_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__set_isOn__SystemBoolean__SystemVoid"
+        
+         #  sliderAvatarDistanceNear.value = betterPlayerAudio.defaultAvatarNearRadius;
+        PUSH, betterPlayerAudio
+        PUSH, __38_const_intnl_SystemString
+        PUSH, __13_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __13_intnl_SystemObject
+        PUSH, __41_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderAvatarDistanceNear
+        PUSH, __41_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderAvatarDistanceFar.value = betterPlayerAudio.defaultAvatarFarRadius;
+        PUSH, betterPlayerAudio
+        PUSH, __39_const_intnl_SystemString
+        PUSH, __14_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __14_intnl_SystemObject
+        PUSH, __43_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderAvatarDistanceFar
+        PUSH, __43_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderAvatarGain.value = betterPlayerAudio.defaultAvatarGain;
+        PUSH, betterPlayerAudio
+        PUSH, __40_const_intnl_SystemString
+        PUSH, __15_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __15_intnl_SystemObject
+        PUSH, __45_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderAvatarGain
+        PUSH, __45_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderAvatarVolumetricRadius.value = betterPlayerAudio.defaultAvatarVolumetricRadius;
+        PUSH, betterPlayerAudio
+        PUSH, __41_const_intnl_SystemString
+        PUSH, __16_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __16_intnl_SystemObject
+        PUSH, __47_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderAvatarVolumetricRadius
+        PUSH, __47_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  toggleAvatarSpatialize.isOn = betterPlayerAudio.defaultForceAvatarSpatialAudio;
+        PUSH, betterPlayerAudio
+        PUSH, __42_const_intnl_SystemString
+        PUSH, __17_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __17_intnl_SystemObject
+        PUSH, __19_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, toggleAvatarSpatialize
+        PUSH, __19_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__set_isOn__SystemBoolean__SystemVoid"
+        
+         #  toggleAvatarCustomCurve.isOn = betterPlayerAudio.defaultAllowAvatarCustomAudioCurves;
+        PUSH, betterPlayerAudio
+        PUSH, __43_const_intnl_SystemString
+        PUSH, __18_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __18_intnl_SystemObject
+        PUSH, __21_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, toggleAvatarCustomCurve
+        PUSH, __21_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__set_isOn__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void UpdateUi()
+    .export UpdateUi
+        
+    UpdateUi:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  var owner = Networking.GetOwner(betterPlayerAudio.gameObject);
+        PUSH, betterPlayerAudio
+        PUSH, __0_intnl_UnityEngineGameObject
+        EXTERN, "UnityEngineComponent.__get_gameObject__UnityEngineGameObject"
+        PUSH, __0_intnl_UnityEngineGameObject
+        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi
+        EXTERN, "VRCSDKBaseNetworking.__GetOwner__UnityEngineGameObject__VRCSDKBaseVRCPlayerApi"
+        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi
+        PUSH, __0_owner_VRCPlayerApi
+        COPY
+        
+         #  if (owner != null)
+        PUSH, __0_owner_VRCPlayerApi
+        PUSH, __0_const_intnl_VRCSDKBaseVRCPlayerApi
+        PUSH, __22_intnl_SystemBoolean
+        EXTERN, "SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean"
+        PUSH, __22_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00001170
+        
+         #  {
+        
+         #  textAllowMasterControl.text = $"Let {owner.displayName} (owner) control everything";
+        PUSH, __44_const_intnl_SystemString
+        PUSH, __0_intnl_interpolatedStr_String
+        COPY
+        PUSH, __0_owner_VRCPlayerApi
+        PUSH, __12_intnl_SystemString
+        EXTERN, "VRCSDKBaseVRCPlayerApi.__get_displayName__SystemString"
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __12_intnl_SystemString
+        PUSH, __13_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __13_intnl_SystemString
+        PUSH, __0_intnl_interpolatedStr_String
+        COPY
+        PUSH, __0_intnl_interpolatedStr_String
+        PUSH, __45_const_intnl_SystemString
+        PUSH, __14_intnl_SystemString
+        EXTERN, "SystemString.__op_Addition__SystemString_SystemString__SystemString"
+        PUSH, __14_intnl_SystemString
+        PUSH, __0_intnl_interpolatedStr_String
+        COPY
+        PUSH, textAllowMasterControl
+        PUSH, __0_intnl_interpolatedStr_String
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        
+         #  sliderOcclusionFactor.value = betterPlayerAudio.OcclusionFactor;
+        PUSH, betterPlayerAudio
+        PUSH, __5_const_intnl_SystemString
+        PUSH, __19_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __19_intnl_SystemObject
+        PUSH, __49_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderOcclusionFactor
+        PUSH, __49_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderPlayerOcclusionFactor.value = betterPlayerAudio.PlayerOcclusionFactor;
+        PUSH, betterPlayerAudio
+        PUSH, __6_const_intnl_SystemString
+        PUSH, __20_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __20_intnl_SystemObject
+        PUSH, __51_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderPlayerOcclusionFactor
+        PUSH, __51_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderListenerDirectionality.value = betterPlayerAudio.ListenerDirectionality;
+        PUSH, betterPlayerAudio
+        PUSH, __8_const_intnl_SystemString
+        PUSH, __21_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __21_intnl_SystemObject
+        PUSH, __53_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderListenerDirectionality
+        PUSH, __53_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderPlayerDirectionality.value = betterPlayerAudio.PlayerDirectionality;
+        PUSH, betterPlayerAudio
+        PUSH, __7_const_intnl_SystemString
+        PUSH, __22_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __22_intnl_SystemObject
+        PUSH, __55_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderPlayerDirectionality
+        PUSH, __55_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderVoiceDistanceNear.value = betterPlayerAudio.TargetVoiceDistanceNear;
+        PUSH, betterPlayerAudio
+        PUSH, __9_const_intnl_SystemString
+        PUSH, __23_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __23_intnl_SystemObject
+        PUSH, __57_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderVoiceDistanceNear
+        PUSH, __57_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderVoiceDistanceFar.value = betterPlayerAudio.TargetVoiceDistanceFar;
+        PUSH, betterPlayerAudio
+        PUSH, __10_const_intnl_SystemString
+        PUSH, __24_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __24_intnl_SystemObject
+        PUSH, __59_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderVoiceDistanceFar
+        PUSH, __59_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderVoiceGain.value = betterPlayerAudio.TargetVoiceGain;
+        PUSH, betterPlayerAudio
+        PUSH, __11_const_intnl_SystemString
+        PUSH, __25_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __25_intnl_SystemObject
+        PUSH, __61_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderVoiceGain
+        PUSH, __61_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderVoiceVolumetricRadius.value = betterPlayerAudio.TargetVoiceVolumetricRadius;
+        PUSH, betterPlayerAudio
+        PUSH, __12_const_intnl_SystemString
+        PUSH, __26_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __26_intnl_SystemObject
+        PUSH, __63_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderVoiceVolumetricRadius
+        PUSH, __63_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  toggleVoiceLowpass.isOn = betterPlayerAudio.EnableVoiceLowpass;
+        PUSH, betterPlayerAudio
+        PUSH, __13_const_intnl_SystemString
+        PUSH, __27_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __27_intnl_SystemObject
+        PUSH, __24_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, toggleVoiceLowpass
+        PUSH, __24_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__set_isOn__SystemBoolean__SystemVoid"
+        
+         #  sliderAvatarDistanceNear.value = betterPlayerAudio.TargetAvatarNearRadius;
+        PUSH, betterPlayerAudio
+        PUSH, __14_const_intnl_SystemString
+        PUSH, __28_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __28_intnl_SystemObject
+        PUSH, __65_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderAvatarDistanceNear
+        PUSH, __65_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderAvatarDistanceFar.value = betterPlayerAudio.TargetAvatarFarRadius;
+        PUSH, betterPlayerAudio
+        PUSH, __15_const_intnl_SystemString
+        PUSH, __29_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __29_intnl_SystemObject
+        PUSH, __67_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderAvatarDistanceFar
+        PUSH, __67_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderAvatarGain.value = betterPlayerAudio.TargetAvatarGain;
+        PUSH, betterPlayerAudio
+        PUSH, __16_const_intnl_SystemString
+        PUSH, __30_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __30_intnl_SystemObject
+        PUSH, __69_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderAvatarGain
+        PUSH, __69_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  sliderAvatarVolumetricRadius.value = betterPlayerAudio.TargetAvatarVolumetricRadius;
+        PUSH, betterPlayerAudio
+        PUSH, __17_const_intnl_SystemString
+        PUSH, __31_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __31_intnl_SystemObject
+        PUSH, __71_intnl_SystemSingle
+        EXTERN, "SystemConvert.__ToSingle__SystemObject__SystemSingle"
+        PUSH, sliderAvatarVolumetricRadius
+        PUSH, __71_intnl_SystemSingle
+        EXTERN, "UnityEngineUISlider.__set_value__SystemSingle__SystemVoid"
+        
+         #  toggleAvatarSpatialize.isOn = betterPlayerAudio.ForceAvatarSpatialAudio;
+        PUSH, betterPlayerAudio
+        PUSH, __18_const_intnl_SystemString
+        PUSH, __32_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __32_intnl_SystemObject
+        PUSH, __26_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, toggleAvatarSpatialize
+        PUSH, __26_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__set_isOn__SystemBoolean__SystemVoid"
+        
+         #  toggleAvatarCustomCurve.isOn = betterPlayerAudio.AllowAvatarCustomAudioCurves;
+        PUSH, betterPlayerAudio
+        PUSH, __19_const_intnl_SystemString
+        PUSH, __33_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __33_intnl_SystemObject
+        PUSH, __28_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, toggleAvatarCustomCurve
+        PUSH, __28_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__set_isOn__SystemBoolean__SystemVoid"
+        
+         #  toggleAllowMasterControl.isOn = betterPlayerAudio.AllowMasterTakeControl();
+        PUSH, betterPlayerAudio
+        PUSH, __24_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, betterPlayerAudio
+        PUSH, __25_const_intnl_SystemString
+        PUSH, __34_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __34_intnl_SystemObject
+        PUSH, __29_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        PUSH, toggleAllowMasterControl
+        PUSH, __29_intnl_SystemBoolean
+        EXTERN, "UnityEngineUIToggle.__set_isOn__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+.code_end

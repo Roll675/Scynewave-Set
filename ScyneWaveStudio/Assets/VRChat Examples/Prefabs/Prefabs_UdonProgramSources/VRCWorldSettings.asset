@@ -15,20 +15,22 @@ MonoBehaviour:
   serializedUdonProgramAsset: {fileID: 11400000, guid: db3d58adf15354241a09090acb70ae88,
     type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export jumpImpulse\r\n    .export walkSpeed\r\n
-    \   .export runSpeed\r\n    .export strafeSpeed\r\n    \r\n    Boolean_0: %SystemBoolean,
-    null\r\n    Object_0: %SystemObject, null\r\n    Object_1: %SystemObject, null\r\n
-    \   var_0: %SystemObject, null\r\n    instance_0: %VRCSDKBaseVRCPlayerApi, null\r\n
-    \   impulse_0: %SystemSingle, null\r\n    instance_1: %VRCSDKBaseVRCPlayerApi,
-    null\r\n    speed_0: %SystemSingle, null\r\n    instance_2: %VRCSDKBaseVRCPlayerApi,
-    null\r\n    speed_1: %SystemSingle, null\r\n    instance_3: %VRCSDKBaseVRCPlayerApi,
-    null\r\n    speed_2: %SystemSingle, null\r\n    jumpImpulse: %SystemSingle, null\r\n
-    \   walkSpeed: %SystemSingle, null\r\n    runSpeed: %SystemSingle, null\r\n    strafeSpeed:
-    %SystemSingle, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export _start\r\n
-    \   \r\n    _start:\r\n    \r\n        PUSH, Object_0\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
+    \   .export runSpeed\r\n    .export strafeSpeed\r\n    .export voiceVolumetric\r\n
+    \   \r\n    Boolean_0: %SystemBoolean, null\r\n    Object_0: %SystemObject, null\r\n
+    \   Object_1: %SystemObject, null\r\n    var_0: %SystemObject, null\r\n    instance_0:
+    %VRCSDKBaseVRCPlayerApi, null\r\n    impulse_0: %SystemSingle, null\r\n    instance_1:
+    %VRCSDKBaseVRCPlayerApi, null\r\n    speed_0: %SystemSingle, null\r\n    instance_2:
+    %VRCSDKBaseVRCPlayerApi, null\r\n    speed_1: %SystemSingle, null\r\n    instance_3:
+    %VRCSDKBaseVRCPlayerApi, null\r\n    speed_2: %SystemSingle, null\r\n    instance_4:
+    %VRCSDKBaseVRCPlayerApi, null\r\n    radius_0: %SystemSingle, null\r\n    jumpImpulse:
+    %SystemSingle, null\r\n    walkSpeed: %SystemSingle, null\r\n    runSpeed: %SystemSingle,
+    null\r\n    strafeSpeed: %SystemSingle, null\r\n    voiceVolumetric: %SystemSingle,
+    null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export _start\r\n    \r\n
+    \   _start:\r\n    \r\n        PUSH, Object_0\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
     \       PUSH, var_0\r\n        PUSH, Object_1\r\n        COPY\r\n        PUSH,
     Object_0\r\n        PUSH, Object_1\r\n        PUSH, Boolean_0\r\n        EXTERN,
     \"SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean\"\r\n
-    \       PUSH, Boolean_0\r\n        JUMP_IF_FALSE, 0x00000108\r\n        PUSH,
+    \       PUSH, Boolean_0\r\n        JUMP_IF_FALSE, 0x00000134\r\n        PUSH,
     instance_0\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
     \       PUSH, instance_0\r\n        PUSH, jumpImpulse\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetJumpImpulse__SystemSingle__SystemVoid\"\r\n
     \       PUSH, instance_0\r\n        PUSH, instance_1\r\n        COPY\r\n        PUSH,
@@ -37,7 +39,9 @@ MonoBehaviour:
     instance_0\r\n        PUSH, runSpeed\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetRunSpeed__SystemSingle__SystemVoid\"\r\n
     \       PUSH, instance_0\r\n        PUSH, instance_3\r\n        COPY\r\n        PUSH,
     instance_0\r\n        PUSH, strafeSpeed\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetStrafeSpeed__SystemSingle__SystemVoid\"\r\n
-    \       JUMP, 0x00000108\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+    \       PUSH, instance_0\r\n        PUSH, instance_4\r\n        COPY\r\n        PUSH,
+    instance_0\r\n        PUSH, voiceVolumetric\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceVolumetricRadius__SystemSingle__SystemVoid\"\r\n
+    \       JUMP, 0x00000134\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -52,7 +56,7 @@ MonoBehaviour:
       nodeValues: []
     - fullName: VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
       uid: c7627294-2511-4dd9-a1a7-1031b9e0b569
-      position: {x: -330, y: 600}
+      position: {x: -312.80746, y: 564.2925}
       nodeUIDs: []
       flowUIDs: []
       nodeValues: []
@@ -78,6 +82,7 @@ MonoBehaviour:
       - f5145ed2-ccf0-4c0d-8c95-776094331205
       - b0310959-03d0-4375-911d-bd748f0c90c6
       - 9ca4ff2c-f643-4f2e-ba39-350fb65d5b39
+      - f00ee6a3-2d9d-406c-b8fd-d7c7118dc59b
       nodeValues: []
     - fullName: Get_Variable
       uid: 2d5a8ded-5798-4800-9df7-a67df67f86fb
@@ -206,7 +211,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Const_Null
       uid: f8cdfdb1-a47b-41e3-847a-34e4bd1db169
-      position: {x: -1235, y: 145}
+      position: {x: -1235, y: 143.99998}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -215,7 +220,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
       uid: b83c8601-8d94-4d96-a7dc-a6c233e0a1e8
-      position: {x: -1095, y: 75}
+      position: {x: -1095, y: 73.999985}
       nodeUIDs:
       - 3d00b06e-619b-42a6-8249-46f0b150fdd9|0
       - f8cdfdb1-a47b-41e3-847a-34e4bd1db169|0
@@ -227,7 +232,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
       uid: 3d00b06e-619b-42a6-8249-46f0b150fdd9
-      position: {x: -1395, y: 55}
+      position: {x: -1395, y: 53.999996}
       nodeUIDs: []
       flowUIDs: []
       nodeValues: []
@@ -273,6 +278,48 @@ MonoBehaviour:
         stringValue: 
       - unityObjectValue: {fileID: 0}
         stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
+    - fullName: VRCSDKBaseVRCPlayerApi.__SetVoiceVolumetricRadius__SystemSingle__SystemVoid
+      uid: f00ee6a3-2d9d-406c-b8fd-d7c7118dc59b
+      position: {x: 135.55418, y: 687.9398}
+      nodeUIDs:
+      - c7627294-2511-4dd9-a1a7-1031b9e0b569|0
+      - 08dd4040-4fb6-49b6-9256-c7ca2dd070ae|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
+    - fullName: Variable_SystemSingle
+      uid: ffb1a9a4-24be-4cf5-b647-fa3966cc73ee
+      position: {x: 0, y: 0}
+      nodeUIDs:
+      - 
+      - 
+      - 
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|voiceVolumetric
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
+    - fullName: Get_Variable
+      uid: 08dd4040-4fb6-49b6-9256-c7ca2dd070ae
+      position: {x: -73.72711, y: 787.0006}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|ffb1a9a4-24be-4cf5-b647-fa3966cc73ee
     updateOrder: 0
   graphElementData:
   - type: 2
@@ -289,7 +336,7 @@ MonoBehaviour:
       4 variables are Public so they can be changed in the Inspector","layer":0,"elementTypeColor":{"r":0.0,"g":0.0,"b":0.0,"a":0.0}}'
   - type: 3
     uid: 175bb2da-376f-4023-8a2b-ed645c79404a
-    jsonData: '{"uid":"175bb2da-376f-4023-8a2b-ed645c79404a","layout":{"serializedVersion":"2","x":-330.0,"y":690.0,"width":265.5098571777344,"height":149.82093811035157},"title":"This
+    jsonData: '{"uid":"175bb2da-376f-4023-8a2b-ed645c79404a","layout":{"serializedVersion":"2","x":-417.91748046875,"y":671.9382934570313,"width":265.5098571777344,"height":149.82093811035157},"title":"This
       gets the Local Players object so we can modify it. We can get it once and connect
       it to all three nodes that we want to set.","layer":0,"elementTypeColor":{"r":0.0,"g":0.0,"b":0.0,"a":0.0}}'
   - type: 3
@@ -297,13 +344,13 @@ MonoBehaviour:
     jsonData: '{"uid":"7c348f5f-9b10-41fd-bcdc-5431b3e5bad4","layout":{"serializedVersion":"2","x":-690.0,"y":-70.0,"width":291.0,"height":64.0},"title":"This
       flow only runs if we have a LocalPlayer to modify","layer":0,"elementTypeColor":{"r":0.0,"g":0.0,"b":0.0,"a":0.0}}'
   - type: 5
-    uid: 54d40074-e852-4aaa-b8ee-0e18b0475669
-    jsonData: '{"visible":true,"layout":{"serializedVersion":"2","x":10.0,"y":130.0,"width":202.0,"height":257.0}}'
+    uid: fa72fd50-100f-4538-88f2-344b6e9b4ebb
+    jsonData: '{"visible":true,"layout":{"serializedVersion":"2","x":102.0,"y":319.0,"width":202.0,"height":257.0}}'
   - type: 4
-    uid: 4df28d22-f655-4ebb-951d-06f65a528c59
+    uid: cb36a0e0-10bc-43a1-848c-fa44bb0e7aa5
     jsonData: '{"visible":true,"layout":{"serializedVersion":"2","x":10.0,"y":20.0,"width":0.0,"height":0.0}}'
   viewTransform:
-    position: {x: 1002.55334, y: 218.3866}
-    scale: 0.65751624
+    position: {x: 869.4883, y: 91.34684}
+    scale: 0.57175326
   version: 1.0.0
   showAssembly: 1

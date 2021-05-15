@@ -1,0 +1,607 @@
+.data_start
+
+    .export playerAudio
+    .export betterPlayerAudioOverride
+    .export micUserId
+    .sync micUserId, none
+
+    __refl_const_intnl_udonTypeID: %SystemInt64, null
+    __refl_const_intnl_udonTypeName: %SystemString, null
+    micUserId: %SystemInt32, null
+    betterPlayerAudioOverride: %VRCUdonUdonBehaviour, null
+    playerAudio: %VRCUdonUdonBehaviour, null
+    OldMicUserId: %SystemInt32, null
+    NoUser: %SystemInt32, null
+    __0_this_intnl_UnityEngineGameObject: %UnityEngineGameObject, this
+    __0_this_intnl_GuriboUdonBetterAudioScriptsExamplesPickupMicrophone: %VRCUdonUdonBehaviour, this
+    __0_mp_force_Boolean: %SystemBoolean, null
+    __0_mp_newUser_Int32: %SystemInt32, null
+    __0_mp_oldUser_Int32: %SystemInt32, null
+    __0_newMicUser_VRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+    __0_currentMicUser_VRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+    __0_localPlayer_VRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+    __0_mp_localPlayer_VRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+    __0_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemInt32: %SystemInt32, null
+    __11_const_intnl_SystemString: %SystemString, null
+    __10_const_intnl_SystemString: %SystemString, null
+    __9_const_intnl_SystemString: %SystemString, null
+    __8_const_intnl_SystemString: %SystemString, null
+    __7_const_intnl_SystemString: %SystemString, null
+    __6_const_intnl_SystemString: %SystemString, null
+    __5_const_intnl_SystemString: %SystemString, null
+    __4_const_intnl_SystemString: %SystemString, null
+    __3_const_intnl_SystemString: %SystemString, null
+    __2_const_intnl_SystemString: %SystemString, null
+    __1_const_intnl_SystemString: %SystemString, null
+    __0_const_intnl_SystemString: %SystemString, null
+    __7_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __6_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __5_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __4_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __3_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __2_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __1_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __0_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __22_intnl_SystemBoolean: %SystemBoolean, null
+    __21_intnl_SystemBoolean: %SystemBoolean, null
+    __20_intnl_SystemBoolean: %SystemBoolean, null
+    __19_intnl_SystemBoolean: %SystemBoolean, null
+    __18_intnl_SystemBoolean: %SystemBoolean, null
+    __17_intnl_SystemBoolean: %SystemBoolean, null
+    __16_intnl_SystemBoolean: %SystemBoolean, null
+    __15_intnl_SystemBoolean: %SystemBoolean, null
+    __14_intnl_SystemBoolean: %SystemBoolean, null
+    __13_intnl_SystemBoolean: %SystemBoolean, null
+    __12_intnl_SystemBoolean: %SystemBoolean, null
+    __11_intnl_SystemBoolean: %SystemBoolean, null
+    __10_intnl_SystemBoolean: %SystemBoolean, null
+    __9_intnl_SystemBoolean: %SystemBoolean, null
+    __8_intnl_SystemBoolean: %SystemBoolean, null
+    __7_intnl_SystemBoolean: %SystemBoolean, null
+    __6_intnl_SystemBoolean: %SystemBoolean, null
+    __5_intnl_SystemBoolean: %SystemBoolean, null
+    __4_intnl_SystemBoolean: %SystemBoolean, null
+    __3_intnl_SystemBoolean: %SystemBoolean, null
+    __2_intnl_SystemBoolean: %SystemBoolean, null
+    __1_intnl_SystemBoolean: %SystemBoolean, null
+    __0_intnl_SystemBoolean: %SystemBoolean, null
+    __5_intnl_SystemInt32: %SystemInt32, null
+    __4_intnl_SystemInt32: %SystemInt32, null
+    __3_intnl_SystemInt32: %SystemInt32, null
+    __2_intnl_SystemInt32: %SystemInt32, null
+    __1_intnl_SystemInt32: %SystemInt32, null
+    __0_intnl_SystemInt32: %SystemInt32, null
+    __1_intnl_SystemObject: %SystemObject, null
+    __0_intnl_SystemObject: %SystemObject, null
+    __0_intnl_GuriboUdonBetterAudioScriptsBetterPlayerAudioOverride: %VRCUdonUdonBehaviour, null
+    __0_intnl_returnTarget_UInt32: %SystemUInt32, null
+    __2_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+    __1_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null
+
+.data_end
+
+        
+         #  using System;
+        
+         #  using UdonSharp;
+        
+         #  using UnityEngine;
+        
+         #  using VRC.SDKBase;
+        
+         #  namespace Guribo.UdonBetterAudio.Scripts.Examples
+        
+         #  [DefaultExecutionOrder(10000)]
+        
+         #  public class PickupMicrophone : UdonSharpBehaviour
+.code_start
+.update_order 10000
+        
+         #  protected const int NoUser = -1;
+        
+         #  public BetterPlayerAudio playerAudio;
+        
+         #  public BetterPlayerAudioOverride betterPlayerAudioOverride;
+        
+         #  [UdonSynced] [SerializeField] protected int micUserId = NoUser;
+        
+         #  protected int OldMicUserId = NoUser;
+        
+         #  public override void OnPickup()
+    .export _onPickup
+        
+    _onPickup:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  var localPlayer = Networking.LocalPlayer;
+        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi
+        EXTERN, "VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi"
+        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi
+        PUSH, __0_localPlayer_VRCPlayerApi
+        COPY
+        
+         #  if (!Utilities.IsValid(localPlayer))
+        PUSH, __0_localPlayer_VRCPlayerApi
+        PUSH, __0_intnl_SystemBoolean
+        EXTERN, "VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean"
+        PUSH, __0_intnl_SystemBoolean
+        PUSH, __1_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __1_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000080
+        
+         #  {
+        
+         #  return;
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  TakeOwnership(localPlayer, false);
+        PUSH, __0_localPlayer_VRCPlayerApi
+        PUSH, __0_mp_localPlayer_VRCPlayerApi
+        COPY
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, __0_mp_force_Boolean
+        COPY
+        PUSH, __0_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000340
+        
+         #  micUserId = localPlayer.playerId;
+        PUSH, __0_localPlayer_VRCPlayerApi
+        PUSH, micUserId
+        EXTERN, "VRCSDKBaseVRCPlayerApi.__get_playerId__SystemInt32"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public override void OnDrop()
+    .export _onDrop
+        
+    _onDrop:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  micUserId = NoUser;
+        PUSH, NoUser
+        PUSH, micUserId
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public override void OnDeserialization()
+    .export _onDeserialization
+        
+    _onDeserialization:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  UpdateMicUser();
+        PUSH, __1_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000270
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public override void OnPreSerialization()
+    .export _onPreSerialization
+        
+    _onPreSerialization:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  UpdateMicUser();
+        PUSH, __2_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000270
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void OnEnable()
+    .export _onEnable
+        
+    _onEnable:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  NewUserStartUsingMic(micUserId);
+        PUSH, micUserId
+        PUSH, __0_mp_newUser_Int32
+        COPY
+        PUSH, micUserId
+        PUSH, __0_intnl_SystemInt32
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __3_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000698
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void OnDisable()
+    .export _onDisable
+        
+    _onDisable:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  CleanUpOldUser(micUserId);
+        PUSH, micUserId
+        PUSH, __0_mp_oldUser_Int32
+        COPY
+        PUSH, micUserId
+        PUSH, __1_intnl_SystemInt32
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __4_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000498
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void OnDestroy()
+    .export _onDestroy
+        
+    _onDestroy:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  CleanUpOldUser(micUserId);
+        PUSH, micUserId
+        PUSH, __0_mp_oldUser_Int32
+        COPY
+        PUSH, micUserId
+        PUSH, __2_intnl_SystemInt32
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __5_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000498
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void UpdateMicUser()
+    UpdateMicUser:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (micUserId != OldMicUserId)
+        PUSH, micUserId
+        PUSH, OldMicUserId
+        PUSH, __2_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __2_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000310
+        
+         #  {
+        
+         #  CleanUpOldUser(OldMicUserId);
+        PUSH, OldMicUserId
+        PUSH, __0_mp_oldUser_Int32
+        COPY
+        PUSH, OldMicUserId
+        PUSH, __3_intnl_SystemInt32
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __6_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000498
+        
+         #  NewUserStartUsingMic(micUserId);
+        PUSH, micUserId
+        PUSH, __0_mp_newUser_Int32
+        COPY
+        PUSH, micUserId
+        PUSH, __4_intnl_SystemInt32
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, __7_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000698
+        
+         #  OldMicUserId = micUserId;
+        PUSH, micUserId
+        PUSH, OldMicUserId
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void TakeOwnership(VRCPlayerApi localPlayer, bool force)
+    TakeOwnership:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!Utilities.IsValid(localPlayer))
+        PUSH, __0_mp_localPlayer_VRCPlayerApi
+        PUSH, __3_intnl_SystemBoolean
+        EXTERN, "VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean"
+        PUSH, __3_intnl_SystemBoolean
+        PUSH, __4_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __4_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000003AC
+        
+         #  {
+        
+         #  Debug.LogWarning("PickupMicrophone.TakeOwnership: Invalid local player", this);
+        PUSH, __0_const_intnl_SystemString
+        PUSH, __0_this_intnl_GuriboUdonBetterAudioScriptsExamplesPickupMicrophone
+        EXTERN, "UnityEngineDebug.__LogWarning__SystemObject_UnityEngineObject__SystemVoid"
+        
+         #  return;
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  if (force || !Networking.IsOwner(localPlayer, gameObject))
+        PUSH, __0_mp_force_Boolean
+        PUSH, __5_intnl_SystemBoolean
+        COPY
+        PUSH, __5_intnl_SystemBoolean
+        PUSH, __6_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __6_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000454
+        PUSH, __0_mp_localPlayer_VRCPlayerApi
+        PUSH, __0_this_intnl_UnityEngineGameObject
+        PUSH, __7_intnl_SystemBoolean
+        EXTERN, "VRCSDKBaseNetworking.__IsOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemBoolean"
+        PUSH, __7_intnl_SystemBoolean
+        PUSH, __8_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __5_intnl_SystemBoolean
+        PUSH, __8_intnl_SystemBoolean
+        PUSH, __9_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_ConditionalOr__SystemBoolean_SystemBoolean__SystemBoolean"
+        PUSH, __9_intnl_SystemBoolean
+        PUSH, __5_intnl_SystemBoolean
+        COPY
+        PUSH, __5_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000047C
+        
+         #  {
+        
+         #  Networking.SetOwner(localPlayer, gameObject);
+        PUSH, __0_mp_localPlayer_VRCPlayerApi
+        PUSH, __0_this_intnl_UnityEngineGameObject
+        EXTERN, "VRCSDKBaseNetworking.__SetOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void CleanUpOldUser(int oldUser)
+    CleanUpOldUser:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!Utilities.IsValid(playerAudio))
+        PUSH, playerAudio
+        PUSH, __10_intnl_SystemBoolean
+        EXTERN, "VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean"
+        PUSH, __10_intnl_SystemBoolean
+        PUSH, __11_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __11_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000004FC
+        
+         #  {
+        
+         #  Debug.LogError("PickupMicrophone.CleanUpOldUser: playerAudio is invalid");
+        PUSH, __1_const_intnl_SystemString
+        EXTERN, "UnityEngineDebug.__LogError__SystemObject__SystemVoid"
+        
+         #  return;
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  if (oldUser == NoUser)
+        PUSH, __0_mp_oldUser_Int32
+        PUSH, NoUser
+        PUSH, __12_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __12_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000540
+        
+         #  {
+        
+         #  return;
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  var currentMicUser = VRCPlayerApi.GetPlayerById(oldUser);
+        PUSH, __0_mp_oldUser_Int32
+        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi
+        EXTERN, "VRCSDKBaseVRCPlayerApi.__GetPlayerById__SystemInt32__VRCSDKBaseVRCPlayerApi"
+        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi
+        PUSH, __0_currentMicUser_VRCPlayerApi
+        COPY
+        
+         #  if (Utilities.IsValid(currentMicUser))
+        PUSH, __0_currentMicUser_VRCPlayerApi
+        PUSH, __13_intnl_SystemBoolean
+        EXTERN, "VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean"
+        PUSH, __13_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000067C
+        
+         #  {
+        
+         #  if (Utilities.IsValid(betterPlayerAudioOverride))
+        PUSH, betterPlayerAudioOverride
+        PUSH, __14_intnl_SystemBoolean
+        EXTERN, "VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean"
+        PUSH, __14_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000062C
+        
+         #  {
+        
+         #  betterPlayerAudioOverride.RemoveAffectedPlayer(currentMicUser);
+        PUSH, betterPlayerAudioOverride
+        PUSH, __2_const_intnl_SystemString
+        PUSH, __0_currentMicUser_VRCPlayerApi
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, betterPlayerAudioOverride
+        PUSH, __3_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, betterPlayerAudioOverride
+        PUSH, __4_const_intnl_SystemString
+        PUSH, __0_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __0_intnl_SystemObject
+        PUSH, __15_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        
+         #  playerAudio.ClearPlayerOverride(currentMicUser.playerId);
+        PUSH, __0_currentMicUser_VRCPlayerApi
+        PUSH, __5_intnl_SystemInt32
+        EXTERN, "VRCSDKBaseVRCPlayerApi.__get_playerId__SystemInt32"
+        PUSH, playerAudio
+        PUSH, __5_const_intnl_SystemString
+        PUSH, __5_intnl_SystemInt32
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, playerAudio
+        PUSH, __6_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void NewUserStartUsingMic(int newUser)
+    NewUserStartUsingMic:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (!Utilities.IsValid(playerAudio))
+        PUSH, playerAudio
+        PUSH, __16_intnl_SystemBoolean
+        EXTERN, "VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean"
+        PUSH, __16_intnl_SystemBoolean
+        PUSH, __17_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __17_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000006FC
+        
+         #  {
+        
+         #  Debug.LogError("PickupMicrophone.CleanUpOldUser: playerAudio is invalid");
+        PUSH, __1_const_intnl_SystemString
+        EXTERN, "UnityEngineDebug.__LogError__SystemObject__SystemVoid"
+        
+         #  return;
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  if (newUser == NoUser)
+        PUSH, __0_mp_newUser_Int32
+        PUSH, NoUser
+        PUSH, __18_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __18_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000740
+        
+         #  {
+        
+         #  return;
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  var newMicUser = VRCPlayerApi.GetPlayerById(newUser);
+        PUSH, __0_mp_newUser_Int32
+        PUSH, __2_intnl_VRCSDKBaseVRCPlayerApi
+        EXTERN, "VRCSDKBaseVRCPlayerApi.__GetPlayerById__SystemInt32__VRCSDKBaseVRCPlayerApi"
+        PUSH, __2_intnl_VRCSDKBaseVRCPlayerApi
+        PUSH, __0_newMicUser_VRCPlayerApi
+        COPY
+        
+         #  if (!Utilities.IsValid(newMicUser))
+        PUSH, __0_newMicUser_VRCPlayerApi
+        PUSH, __19_intnl_SystemBoolean
+        EXTERN, "VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean"
+        PUSH, __19_intnl_SystemBoolean
+        PUSH, __20_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __20_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000007C0
+        
+         #  {
+        
+         #  return;
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+         #  if (Utilities.IsValid(betterPlayerAudioOverride))
+        PUSH, betterPlayerAudioOverride
+        PUSH, __21_intnl_SystemBoolean
+        EXTERN, "VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean"
+        PUSH, __21_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000858
+        
+         #  {
+        
+         #  betterPlayerAudioOverride.AffectPlayer(newMicUser);
+        PUSH, betterPlayerAudioOverride
+        PUSH, __7_const_intnl_SystemString
+        PUSH, __0_newMicUser_VRCPlayerApi
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, betterPlayerAudioOverride
+        PUSH, __8_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, betterPlayerAudioOverride
+        PUSH, __9_const_intnl_SystemString
+        PUSH, __1_intnl_SystemObject
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject"
+        PUSH, __1_intnl_SystemObject
+        PUSH, __22_intnl_SystemBoolean
+        EXTERN, "SystemConvert.__ToBoolean__SystemObject__SystemBoolean"
+        
+         #  playerAudio.OverridePlayerSettings( betterPlayerAudioOverride);
+        PUSH, playerAudio
+        PUSH, __10_const_intnl_SystemString
+        PUSH, betterPlayerAudioOverride
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+        PUSH, betterPlayerAudioOverride
+        PUSH, __0_intnl_GuriboUdonBetterAudioScriptsBetterPlayerAudioOverride
+        COPY #  Copy-on-write symbol value dirtied
+        PUSH, playerAudio
+        PUSH, __11_const_intnl_SystemString
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+.code_end

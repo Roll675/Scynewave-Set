@@ -16,6 +16,7 @@ aba7b2852ef61d175dd9602e7723d5e5 UnityEngine.UI.dll:UnityEngine.UI.Mask
 d4020bafcd3ccbb5601a6e6c8ac78be0 UnityEngine.UI.dll:UnityEngine.UI.ScrollRect
 aa165095bcf0f4d99594ea33df01c81b UnityEngine.UI.dll:UnityEngine.UI.Slider
 72712369a7c681ad84fc255a5ec0b333 UnityEngine.UI.dll:UnityEngine.UI.Text
+06cb1bb98d1aeb23695b6b732ec291d7 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 38bcb4d3f9a1812fd650f92e87a4cf64 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessProfile
 bad0f5a58d4b55ed1442379677ba2587 VRC.Udon.dll:VRC.Udon.ProgramSources.SerializedUdonProgramAsset
 8963690ef6f6b05ce03bfd8b5c26e20c Cinemachine.dll:Cinemachine.NoiseSettings

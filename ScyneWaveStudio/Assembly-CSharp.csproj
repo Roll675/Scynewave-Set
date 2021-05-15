@@ -103,6 +103,10 @@
      <Compile Include="Assets\CyanTrigger\Scripts\Extensions\CyanTriggerNameHelpers.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Serializables\CyanTriggerSerializableObject.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Serializables\CyanTriggerSerializableType.cs" />
+     <Compile Include="Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.cs" />
+     <Compile Include="Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.cs" />
+     <Compile Include="Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.cs" />
+     <Compile Include="Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.cs" />
      <Compile Include="Assets\Mochie\Unity\Textures\Ramps\RampImporter.cs" />
      <Compile Include="Assets\SceneAA\SceneAA.cs" />
      <Compile Include="Assets\UdonSharp\Examples\Tutorials\SpinningCubes\SpinningCubes_1.cs" />
@@ -181,6 +185,7 @@
      <None Include="Assets\CyanEmu\license.txt" />
      <None Include="Assets\Mochie\Uber Shader\USXFeatures.cginc" />
      <None Include="Assets\CyanEmu\version.txt" />
+     <None Include="Assets\Guribo\UdonBetterAudio\Version.txt" />
      <None Include="Assets\VRCSDK\Sample Assets\Shaders\Mobile\VRChat-Mobile-Skybox.shader" />
      <None Include="Assets\Mochie\Uber Shader\Uber (Outline).shader" />
      <None Include="Assets\Mochie\Mochie Standard\Mochie Standard.shader" />
