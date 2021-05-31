@@ -13,642 +13,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2021-05-15T02:12:39.180-04:00
-  initializedAtString: 2021-05-15T00:54:09.864-04:00
+  lastUpdatedAtString: 2021-05-31T17:36:31.063-04:00
+  initializedAtString: 2021-05-31T16:45:00.426-04:00
   entries:
-  - path: ScyneWaveStudio\Assembly-CSharp.csproj
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assembly-CSharp.csproj
-    projectPath: Assembly-CSharp.csproj
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: ScyneWaveStudio\Assets\Guribo.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo.meta
-    projectPath: Assets\Guribo.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio.meta
-    projectPath: Assets\Guribo\UdonBetterAudio.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\LICENSE
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\LICENSE
-    projectPath: Assets\Guribo\UdonBetterAudio\LICENSE
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\LICENSE.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\LICENSE.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\LICENSE.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Materials.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Materials.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Materials.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Materials\MetalBlack.mat
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Materials\MetalBlack.mat
-    projectPath: Assets\Guribo\UdonBetterAudio\Materials\MetalBlack.mat
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Materials\MetalBlack.mat.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Materials\MetalBlack.mat.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Materials\MetalBlack.mat.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Materials\PlasticWhite.mat
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Materials\PlasticWhite.mat
-    projectPath: Assets\Guribo\UdonBetterAudio\Materials\PlasticWhite.mat
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Materials\PlasticWhite.mat.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Materials\PlasticWhite.mat.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Materials\PlasticWhite.mat.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Prefabs.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudio.prefab
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudio.prefab
-    projectPath: Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudio.prefab
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudio.prefab.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudio.prefab.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudio.prefab.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioController.prefab
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioController.prefab
-    projectPath: Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioController.prefab
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioController.prefab.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioController.prefab.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioController.prefab.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioMenu.prefab
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioMenu.prefab
-    projectPath: Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioMenu.prefab
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioMenu.prefab.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioMenu.prefab.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Prefabs\BetterPlayerAudioMenu.prefab.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\Examples.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\Examples.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Prefabs\Examples.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\Examples\Microphone.prefab
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\Examples\Microphone.prefab
-    projectPath: Assets\Guribo\UdonBetterAudio\Prefabs\Examples\Microphone.prefab
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\Examples\Microphone.prefab.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Prefabs\Examples\Microphone.prefab.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Prefabs\Examples\Microphone.prefab.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\README.md
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\README.md
-    projectPath: Assets\Guribo\UdonBetterAudio\README.md
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\README.md.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\README.md.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\README.md.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio.unity
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio.unity
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio.unity
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio.unity.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio.unity.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio.unity.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\LightingData.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\LightingData.asset
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\LightingData.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\LightingData.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\LightingData.asset.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\LightingData.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_dir.png
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_dir.png
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_dir.png
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_dir.png.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_dir.png.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_dir.png.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_light.exr
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_light.exr
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_light.exr
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_light.exr.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_light.exr.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_light.exr.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_shadowmask.png
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_shadowmask.png
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_shadowmask.png
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_shadowmask.png.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_shadowmask.png.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\Lightmap-0_comp_shadowmask.png.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\ReflectionProbe-0.exr
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\ReflectionProbe-0.exr
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\ReflectionProbe-0.exr
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\ReflectionProbe-0.exr.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\ReflectionProbe-0.exr.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio\ReflectionProbe-0.exr.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup.unity
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup.unity
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup.unity
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup.unity.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup.unity.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup.unity.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\LightingData.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\LightingData.asset
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\LightingData.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\LightingData.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\LightingData.asset.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\LightingData.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_dir.png
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_dir.png
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_dir.png
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_dir.png.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_dir.png.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_dir.png.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_light.exr
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_light.exr
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_light.exr
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_light.exr.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_light.exr.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_light.exr.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_shadowmask.png
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_shadowmask.png
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_shadowmask.png
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_shadowmask.png.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_shadowmask.png.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\Lightmap-0_comp_shadowmask.png.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\ReflectionProbe-0.exr
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\ReflectionProbe-0.exr
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\ReflectionProbe-0.exr
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\ReflectionProbe-0.exr.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\ReflectionProbe-0.exr.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_MicPickup\ReflectionProbe-0.exr.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu.unity
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu.unity
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu.unity
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu.unity.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu.unity.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu.unity.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\LightingData.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\LightingData.asset
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\LightingData.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\LightingData.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\LightingData.asset.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\LightingData.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_dir.png
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_dir.png
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_dir.png
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_dir.png.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_dir.png.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_dir.png.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_light.exr
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_light.exr
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_light.exr
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_light.exr.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_light.exr.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_light.exr.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_shadowmask.png
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_shadowmask.png
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_shadowmask.png
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_shadowmask.png.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_shadowmask.png.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\Lightmap-0_comp_shadowmask.png.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\ReflectionProbe-0.exr
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\ReflectionProbe-0.exr
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\ReflectionProbe-0.exr
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\ReflectionProbe-0.exr.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\ReflectionProbe-0.exr.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu\ReflectionProbe-0.exr.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup.unity
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup.unity
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup.unity
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup.unity.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup.unity.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup.unity.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\LightingData.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\LightingData.asset
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\LightingData.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\LightingData.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\LightingData.asset.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\LightingData.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_dir.png
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_dir.png
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_dir.png
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_dir.png.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_dir.png.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_dir.png.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_light.exr
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_light.exr
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_light.exr
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_light.exr.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_light.exr.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_light.exr.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_shadowmask.png
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_shadowmask.png
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_shadowmask.png
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_shadowmask.png.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_shadowmask.png.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\Lightmap-0_comp_shadowmask.png.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\ReflectionProbe-0.exr
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\ReflectionProbe-0.exr
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\ReflectionProbe-0.exr
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\ReflectionProbe-0.exr.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\ReflectionProbe-0.exr.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scenes\UdonBetterPlayerAudio_NoMenu_MicPickup\ReflectionProbe-0.exr.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.asset
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.asset.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.cs
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.cs
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.cs
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.cs.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.cs.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudio.cs.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.asset
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.asset.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.cs
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.cs
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.cs
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.cs.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.cs.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioOverride.cs.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.asset
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.asset.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.cs
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.cs
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.cs
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.cs.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.cs.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\BetterPlayerAudioUiController.cs.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\Examples.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\Examples.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\Examples.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.asset
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.asset.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.cs
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.cs
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.cs
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.cs.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.cs.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Scripts\Examples\PickupMicrophone.cs.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Version.txt
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Version.txt
-    projectPath: Assets\Guribo\UdonBetterAudio\Version.txt
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Version.txt.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Guribo\UdonBetterAudio\Version.txt.meta
-    projectPath: Assets\Guribo\UdonBetterAudio\Version.txt.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: ScyneWaveStudio\Assets\scyne.unity
     fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\scyne.unity
     projectPath: Assets\scyne.unity
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: ScyneWaveStudio\Assets\SerializedUdonPrograms\00e7195c282b04b40a5f0479e81cd681.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\SerializedUdonPrograms\00e7195c282b04b40a5f0479e81cd681.asset
-    projectPath: Assets\SerializedUdonPrograms\00e7195c282b04b40a5f0479e81cd681.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\SerializedUdonPrograms\00e7195c282b04b40a5f0479e81cd681.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\SerializedUdonPrograms\00e7195c282b04b40a5f0479e81cd681.asset.meta
-    projectPath: Assets\SerializedUdonPrograms\00e7195c282b04b40a5f0479e81cd681.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\SerializedUdonPrograms\7ac7b5de662781741ae394254c55e90f.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\SerializedUdonPrograms\7ac7b5de662781741ae394254c55e90f.asset
-    projectPath: Assets\SerializedUdonPrograms\7ac7b5de662781741ae394254c55e90f.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\SerializedUdonPrograms\7ac7b5de662781741ae394254c55e90f.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\SerializedUdonPrograms\7ac7b5de662781741ae394254c55e90f.asset.meta
-    projectPath: Assets\SerializedUdonPrograms\7ac7b5de662781741ae394254c55e90f.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\SerializedUdonPrograms\bb7f0f1c83ce5af4ca88ed109558c275.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\SerializedUdonPrograms\bb7f0f1c83ce5af4ca88ed109558c275.asset
-    projectPath: Assets\SerializedUdonPrograms\bb7f0f1c83ce5af4ca88ed109558c275.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\SerializedUdonPrograms\bb7f0f1c83ce5af4ca88ed109558c275.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\SerializedUdonPrograms\bb7f0f1c83ce5af4ca88ed109558c275.asset.meta
-    projectPath: Assets\SerializedUdonPrograms\bb7f0f1c83ce5af4ca88ed109558c275.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\SerializedUdonPrograms\c8df303ceb45ae84f85a11591f741734.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\SerializedUdonPrograms\c8df303ceb45ae84f85a11591f741734.asset
-    projectPath: Assets\SerializedUdonPrograms\c8df303ceb45ae84f85a11591f741734.asset
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: ScyneWaveStudio\Assets\SerializedUdonPrograms\df28128702ff35643981e315b0e8a974.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\SerializedUdonPrograms\df28128702ff35643981e315b0e8a974.asset
-    projectPath: Assets\SerializedUdonPrograms\df28128702ff35643981e315b0e8a974.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\SerializedUdonPrograms\df28128702ff35643981e315b0e8a974.asset.meta
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\SerializedUdonPrograms\df28128702ff35643981e315b0e8a974.asset.meta
-    projectPath: Assets\SerializedUdonPrograms\df28128702ff35643981e315b0e8a974.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Assets\VRChat Examples\Prefabs\Prefabs_UdonProgramSources\VRCWorldSettings.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\VRChat Examples\Prefabs\Prefabs_UdonProgramSources\VRCWorldSettings.asset
-    projectPath: Assets\VRChat Examples\Prefabs\Prefabs_UdonProgramSources\VRCWorldSettings.asset
+  - path: ScyneWaveStudio\Assets\Scynewave\OnKeyDownCameraEnable.asset
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Scynewave\OnKeyDownCameraEnable.asset
+    projectPath: Assets\Scynewave\OnKeyDownCameraEnable.asset
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -664,24 +40,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\CurrentLayout.dwlt
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\CurrentLayout.dwlt
-    projectPath: Library\CurrentLayout.dwlt
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: ScyneWaveStudio\Library\EditorInstance.json
     fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\EditorInstance.json
     projectPath: Library\EditorInstance.json
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\expandedItems
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\expandedItems
-    projectPath: Library\expandedItems
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: ScyneWaveStudio\Library\gfu\cache\branches.yaml
     fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\gfu\cache\branches.yaml
     projectPath: Library\gfu\cache\branches.yaml
@@ -724,705 +88,9 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: ScyneWaveStudio\Library\metadata\00\00334f725dae7c24aa6715aefa325fd2
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\00\00334f725dae7c24aa6715aefa325fd2
-    projectPath: Library\metadata\00\00334f725dae7c24aa6715aefa325fd2
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\00\00334f725dae7c24aa6715aefa325fd2.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\00\00334f725dae7c24aa6715aefa325fd2.info
-    projectPath: Library\metadata\00\00334f725dae7c24aa6715aefa325fd2.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\00\00e7195c282b04b40a5f0479e81cd681
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\00\00e7195c282b04b40a5f0479e81cd681
-    projectPath: Library\metadata\00\00e7195c282b04b40a5f0479e81cd681
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\00\00e7195c282b04b40a5f0479e81cd681.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\00\00e7195c282b04b40a5f0479e81cd681.info
-    projectPath: Library\metadata\00\00e7195c282b04b40a5f0479e81cd681.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\04\0474967b00b7f744891fd055ecfba421
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\04\0474967b00b7f744891fd055ecfba421
-    projectPath: Library\metadata\04\0474967b00b7f744891fd055ecfba421
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\04\0474967b00b7f744891fd055ecfba421.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\04\0474967b00b7f744891fd055ecfba421.info
-    projectPath: Library\metadata\04\0474967b00b7f744891fd055ecfba421.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\07\0701784455c8ef048a44d184c4537bbb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\07\0701784455c8ef048a44d184c4537bbb
-    projectPath: Library\metadata\07\0701784455c8ef048a44d184c4537bbb
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\07\0701784455c8ef048a44d184c4537bbb.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\07\0701784455c8ef048a44d184c4537bbb.info
-    projectPath: Library\metadata\07\0701784455c8ef048a44d184c4537bbb.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\26\26bfbf1b1a5e2e345b13767ec5b829a3
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\26\26bfbf1b1a5e2e345b13767ec5b829a3
-    projectPath: Library\metadata\26\26bfbf1b1a5e2e345b13767ec5b829a3
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\26\26bfbf1b1a5e2e345b13767ec5b829a3.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\26\26bfbf1b1a5e2e345b13767ec5b829a3.info
-    projectPath: Library\metadata\26\26bfbf1b1a5e2e345b13767ec5b829a3.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\2d\2d0f84b9d12c3ee40b92e363d3a9efcb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\2d\2d0f84b9d12c3ee40b92e363d3a9efcb
-    projectPath: Library\metadata\2d\2d0f84b9d12c3ee40b92e363d3a9efcb
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\2d\2d0f84b9d12c3ee40b92e363d3a9efcb.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\2d\2d0f84b9d12c3ee40b92e363d3a9efcb.info
-    projectPath: Library\metadata\2d\2d0f84b9d12c3ee40b92e363d3a9efcb.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\2f\2f452a42eeb3388438981d72446a8b2e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\2f\2f452a42eeb3388438981d72446a8b2e
-    projectPath: Library\metadata\2f\2f452a42eeb3388438981d72446a8b2e
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\2f\2f452a42eeb3388438981d72446a8b2e.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\2f\2f452a42eeb3388438981d72446a8b2e.info
-    projectPath: Library\metadata\2f\2f452a42eeb3388438981d72446a8b2e.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\31\3129fbbfb84d27b46b0aa680686a5a1f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\31\3129fbbfb84d27b46b0aa680686a5a1f
-    projectPath: Library\metadata\31\3129fbbfb84d27b46b0aa680686a5a1f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\31\3129fbbfb84d27b46b0aa680686a5a1f.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\31\3129fbbfb84d27b46b0aa680686a5a1f.info
-    projectPath: Library\metadata\31\3129fbbfb84d27b46b0aa680686a5a1f.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\31\312e77002baa6a847b63c6e3a56ab1bb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\31\312e77002baa6a847b63c6e3a56ab1bb
-    projectPath: Library\metadata\31\312e77002baa6a847b63c6e3a56ab1bb
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\31\312e77002baa6a847b63c6e3a56ab1bb.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\31\312e77002baa6a847b63c6e3a56ab1bb.info
-    projectPath: Library\metadata\31\312e77002baa6a847b63c6e3a56ab1bb.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\34\340b1e66a5497394ca98e0137f75bd88
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\34\340b1e66a5497394ca98e0137f75bd88
-    projectPath: Library\metadata\34\340b1e66a5497394ca98e0137f75bd88
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\34\340b1e66a5497394ca98e0137f75bd88.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\34\340b1e66a5497394ca98e0137f75bd88.info
-    projectPath: Library\metadata\34\340b1e66a5497394ca98e0137f75bd88.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\39\3937cf9174c68f24399f2e35e2199e3f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\39\3937cf9174c68f24399f2e35e2199e3f
-    projectPath: Library\metadata\39\3937cf9174c68f24399f2e35e2199e3f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\39\3937cf9174c68f24399f2e35e2199e3f.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\39\3937cf9174c68f24399f2e35e2199e3f.info
-    projectPath: Library\metadata\39\3937cf9174c68f24399f2e35e2199e3f.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\41\411003431c2dfbd43b6768a75bdf22f2
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\41\411003431c2dfbd43b6768a75bdf22f2
-    projectPath: Library\metadata\41\411003431c2dfbd43b6768a75bdf22f2
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\41\411003431c2dfbd43b6768a75bdf22f2.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\41\411003431c2dfbd43b6768a75bdf22f2.info
-    projectPath: Library\metadata\41\411003431c2dfbd43b6768a75bdf22f2.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\42\426dbbf61dd7264498ac9818b6b894be
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\42\426dbbf61dd7264498ac9818b6b894be
-    projectPath: Library\metadata\42\426dbbf61dd7264498ac9818b6b894be
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\42\426dbbf61dd7264498ac9818b6b894be.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\42\426dbbf61dd7264498ac9818b6b894be.info
-    projectPath: Library\metadata\42\426dbbf61dd7264498ac9818b6b894be.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\43\43b98542431a6fc47a625b3dd4c7254f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\43\43b98542431a6fc47a625b3dd4c7254f
-    projectPath: Library\metadata\43\43b98542431a6fc47a625b3dd4c7254f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\43\43b98542431a6fc47a625b3dd4c7254f.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\43\43b98542431a6fc47a625b3dd4c7254f.info
-    projectPath: Library\metadata\43\43b98542431a6fc47a625b3dd4c7254f.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\44\44a3ff630e72b4647bc4e384329e57d0
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\44\44a3ff630e72b4647bc4e384329e57d0
-    projectPath: Library\metadata\44\44a3ff630e72b4647bc4e384329e57d0
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\44\44a3ff630e72b4647bc4e384329e57d0.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\44\44a3ff630e72b4647bc4e384329e57d0.info
-    projectPath: Library\metadata\44\44a3ff630e72b4647bc4e384329e57d0.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\46\46cb813e8372c274b8b9d3937ebcb5a8
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\46\46cb813e8372c274b8b9d3937ebcb5a8
-    projectPath: Library\metadata\46\46cb813e8372c274b8b9d3937ebcb5a8
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\46\46cb813e8372c274b8b9d3937ebcb5a8.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\46\46cb813e8372c274b8b9d3937ebcb5a8.info
-    projectPath: Library\metadata\46\46cb813e8372c274b8b9d3937ebcb5a8.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\49\49ca6ae3871858640bf9e2a3c827cbd6
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\49\49ca6ae3871858640bf9e2a3c827cbd6
-    projectPath: Library\metadata\49\49ca6ae3871858640bf9e2a3c827cbd6
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\49\49ca6ae3871858640bf9e2a3c827cbd6.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\49\49ca6ae3871858640bf9e2a3c827cbd6.info
-    projectPath: Library\metadata\49\49ca6ae3871858640bf9e2a3c827cbd6.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\5c\5cd3b778e97f7f140bbf0e98f6ab9078
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\5c\5cd3b778e97f7f140bbf0e98f6ab9078
-    projectPath: Library\metadata\5c\5cd3b778e97f7f140bbf0e98f6ab9078
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\5c\5cd3b778e97f7f140bbf0e98f6ab9078.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\5c\5cd3b778e97f7f140bbf0e98f6ab9078.info
-    projectPath: Library\metadata\5c\5cd3b778e97f7f140bbf0e98f6ab9078.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\5f\5f05bf2f0343a6e4a974d6ebc8c0feec
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\5f\5f05bf2f0343a6e4a974d6ebc8c0feec
-    projectPath: Library\metadata\5f\5f05bf2f0343a6e4a974d6ebc8c0feec
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\5f\5f05bf2f0343a6e4a974d6ebc8c0feec.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\5f\5f05bf2f0343a6e4a974d6ebc8c0feec.info
-    projectPath: Library\metadata\5f\5f05bf2f0343a6e4a974d6ebc8c0feec.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\5f\5f2650af1128c904f91d01c9b90d1fcb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\5f\5f2650af1128c904f91d01c9b90d1fcb
-    projectPath: Library\metadata\5f\5f2650af1128c904f91d01c9b90d1fcb
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\5f\5f2650af1128c904f91d01c9b90d1fcb.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\5f\5f2650af1128c904f91d01c9b90d1fcb.info
-    projectPath: Library\metadata\5f\5f2650af1128c904f91d01c9b90d1fcb.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\66\664b101e17bc6fc4e855c47e84823e8a
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\66\664b101e17bc6fc4e855c47e84823e8a
-    projectPath: Library\metadata\66\664b101e17bc6fc4e855c47e84823e8a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\66\664b101e17bc6fc4e855c47e84823e8a.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\66\664b101e17bc6fc4e855c47e84823e8a.info
-    projectPath: Library\metadata\66\664b101e17bc6fc4e855c47e84823e8a.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\68\68f4a0aae08c853448c8ddf45faa8345
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\68\68f4a0aae08c853448c8ddf45faa8345
-    projectPath: Library\metadata\68\68f4a0aae08c853448c8ddf45faa8345
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\68\68f4a0aae08c853448c8ddf45faa8345.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\68\68f4a0aae08c853448c8ddf45faa8345.info
-    projectPath: Library\metadata\68\68f4a0aae08c853448c8ddf45faa8345.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\6f\6fdc3633ff1173941bff9454f514080e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\6f\6fdc3633ff1173941bff9454f514080e
-    projectPath: Library\metadata\6f\6fdc3633ff1173941bff9454f514080e
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\6f\6fdc3633ff1173941bff9454f514080e.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\6f\6fdc3633ff1173941bff9454f514080e.info
-    projectPath: Library\metadata\6f\6fdc3633ff1173941bff9454f514080e.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\74\74fbbeac9c3f4694fb7fbc4d33b871ad
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\74\74fbbeac9c3f4694fb7fbc4d33b871ad
-    projectPath: Library\metadata\74\74fbbeac9c3f4694fb7fbc4d33b871ad
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\74\74fbbeac9c3f4694fb7fbc4d33b871ad.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\74\74fbbeac9c3f4694fb7fbc4d33b871ad.info
-    projectPath: Library\metadata\74\74fbbeac9c3f4694fb7fbc4d33b871ad.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\79\792947e2fa811ce4a883beb32c1fdfdf
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\79\792947e2fa811ce4a883beb32c1fdfdf
-    projectPath: Library\metadata\79\792947e2fa811ce4a883beb32c1fdfdf
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\79\792947e2fa811ce4a883beb32c1fdfdf.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\79\792947e2fa811ce4a883beb32c1fdfdf.info
-    projectPath: Library\metadata\79\792947e2fa811ce4a883beb32c1fdfdf.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\7a\7ac7b5de662781741ae394254c55e90f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\7a\7ac7b5de662781741ae394254c55e90f
-    projectPath: Library\metadata\7a\7ac7b5de662781741ae394254c55e90f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\7a\7ac7b5de662781741ae394254c55e90f.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\7a\7ac7b5de662781741ae394254c55e90f.info
-    projectPath: Library\metadata\7a\7ac7b5de662781741ae394254c55e90f.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\7c\7cc6a5146dfd6b5499ab447871bbe623
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\7c\7cc6a5146dfd6b5499ab447871bbe623
-    projectPath: Library\metadata\7c\7cc6a5146dfd6b5499ab447871bbe623
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\7c\7cc6a5146dfd6b5499ab447871bbe623.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\7c\7cc6a5146dfd6b5499ab447871bbe623.info
-    projectPath: Library\metadata\7c\7cc6a5146dfd6b5499ab447871bbe623.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\7d\7d49336118e0d6449a0aed30c63d6c5e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\7d\7d49336118e0d6449a0aed30c63d6c5e
-    projectPath: Library\metadata\7d\7d49336118e0d6449a0aed30c63d6c5e
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\7d\7d49336118e0d6449a0aed30c63d6c5e.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\7d\7d49336118e0d6449a0aed30c63d6c5e.info
-    projectPath: Library\metadata\7d\7d49336118e0d6449a0aed30c63d6c5e.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\7e\7ed0353b737622a4e86f1778cb72dd00
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\7e\7ed0353b737622a4e86f1778cb72dd00
-    projectPath: Library\metadata\7e\7ed0353b737622a4e86f1778cb72dd00
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\7e\7ed0353b737622a4e86f1778cb72dd00.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\7e\7ed0353b737622a4e86f1778cb72dd00.info
-    projectPath: Library\metadata\7e\7ed0353b737622a4e86f1778cb72dd00.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\7f\7f69b8637394b564c9cc2850901a9809
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\7f\7f69b8637394b564c9cc2850901a9809
-    projectPath: Library\metadata\7f\7f69b8637394b564c9cc2850901a9809
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\7f\7f69b8637394b564c9cc2850901a9809.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\7f\7f69b8637394b564c9cc2850901a9809.info
-    projectPath: Library\metadata\7f\7f69b8637394b564c9cc2850901a9809.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\80\802eb809c6db0e24fbf01369b699f615
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\80\802eb809c6db0e24fbf01369b699f615
-    projectPath: Library\metadata\80\802eb809c6db0e24fbf01369b699f615
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\80\802eb809c6db0e24fbf01369b699f615.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\80\802eb809c6db0e24fbf01369b699f615.info
-    projectPath: Library\metadata\80\802eb809c6db0e24fbf01369b699f615.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\82\82f7d1794e8468d45b57de24967cbbd1
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\82\82f7d1794e8468d45b57de24967cbbd1
-    projectPath: Library\metadata\82\82f7d1794e8468d45b57de24967cbbd1
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\82\82f7d1794e8468d45b57de24967cbbd1.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\82\82f7d1794e8468d45b57de24967cbbd1.info
-    projectPath: Library\metadata\82\82f7d1794e8468d45b57de24967cbbd1.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\86\8660078a100fa5a498672013cf60ce29
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\86\8660078a100fa5a498672013cf60ce29
-    projectPath: Library\metadata\86\8660078a100fa5a498672013cf60ce29
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\86\8660078a100fa5a498672013cf60ce29.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\86\8660078a100fa5a498672013cf60ce29.info
-    projectPath: Library\metadata\86\8660078a100fa5a498672013cf60ce29.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\88\8870edf8a2719074e874ca5746bd2470
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\88\8870edf8a2719074e874ca5746bd2470
-    projectPath: Library\metadata\88\8870edf8a2719074e874ca5746bd2470
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\88\8870edf8a2719074e874ca5746bd2470.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\88\8870edf8a2719074e874ca5746bd2470.info
-    projectPath: Library\metadata\88\8870edf8a2719074e874ca5746bd2470.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\8d\8d98f0c53fb5852438a4b3ec97f87cd8
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\8d\8d98f0c53fb5852438a4b3ec97f87cd8
-    projectPath: Library\metadata\8d\8d98f0c53fb5852438a4b3ec97f87cd8
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\8d\8d98f0c53fb5852438a4b3ec97f87cd8.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\8d\8d98f0c53fb5852438a4b3ec97f87cd8.info
-    projectPath: Library\metadata\8d\8d98f0c53fb5852438a4b3ec97f87cd8.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\8d\8dde9b96bde84a7428b699e64d7c0034
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\8d\8dde9b96bde84a7428b699e64d7c0034
-    projectPath: Library\metadata\8d\8dde9b96bde84a7428b699e64d7c0034
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\8d\8dde9b96bde84a7428b699e64d7c0034.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\8d\8dde9b96bde84a7428b699e64d7c0034.info
-    projectPath: Library\metadata\8d\8dde9b96bde84a7428b699e64d7c0034.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\99\99aa6aced9437d14687a3676419030f1
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\99\99aa6aced9437d14687a3676419030f1
-    projectPath: Library\metadata\99\99aa6aced9437d14687a3676419030f1
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\99\99aa6aced9437d14687a3676419030f1.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\99\99aa6aced9437d14687a3676419030f1.info
-    projectPath: Library\metadata\99\99aa6aced9437d14687a3676419030f1.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\99\99efad0598d81404a954d6286e36ab7c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\99\99efad0598d81404a954d6286e36ab7c
-    projectPath: Library\metadata\99\99efad0598d81404a954d6286e36ab7c
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\99\99efad0598d81404a954d6286e36ab7c.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\99\99efad0598d81404a954d6286e36ab7c.info
-    projectPath: Library\metadata\99\99efad0598d81404a954d6286e36ab7c.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\9a\9a4f9ef7ca727524eb2ad58870413814
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\9a\9a4f9ef7ca727524eb2ad58870413814
-    projectPath: Library\metadata\9a\9a4f9ef7ca727524eb2ad58870413814
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\9a\9a4f9ef7ca727524eb2ad58870413814.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\9a\9a4f9ef7ca727524eb2ad58870413814.info
-    projectPath: Library\metadata\9a\9a4f9ef7ca727524eb2ad58870413814.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\9c\9c343c9d93a05474fa3294b407704e0a
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\9c\9c343c9d93a05474fa3294b407704e0a
-    projectPath: Library\metadata\9c\9c343c9d93a05474fa3294b407704e0a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\9c\9c343c9d93a05474fa3294b407704e0a.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\9c\9c343c9d93a05474fa3294b407704e0a.info
-    projectPath: Library\metadata\9c\9c343c9d93a05474fa3294b407704e0a.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\9f\9f3552e8a11de6048959b1deb46225c0
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\9f\9f3552e8a11de6048959b1deb46225c0
-    projectPath: Library\metadata\9f\9f3552e8a11de6048959b1deb46225c0
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\9f\9f3552e8a11de6048959b1deb46225c0.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\9f\9f3552e8a11de6048959b1deb46225c0.info
-    projectPath: Library\metadata\9f\9f3552e8a11de6048959b1deb46225c0.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\a4\a4adb97dab0d0eb4e969ff86829b4349
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\a4\a4adb97dab0d0eb4e969ff86829b4349
-    projectPath: Library\metadata\a4\a4adb97dab0d0eb4e969ff86829b4349
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\a4\a4adb97dab0d0eb4e969ff86829b4349.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\a4\a4adb97dab0d0eb4e969ff86829b4349.info
-    projectPath: Library\metadata\a4\a4adb97dab0d0eb4e969ff86829b4349.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\ab\abdeff961b485f34884eee0fa7f4a90c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\ab\abdeff961b485f34884eee0fa7f4a90c
-    projectPath: Library\metadata\ab\abdeff961b485f34884eee0fa7f4a90c
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\ab\abdeff961b485f34884eee0fa7f4a90c.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\ab\abdeff961b485f34884eee0fa7f4a90c.info
-    projectPath: Library\metadata\ab\abdeff961b485f34884eee0fa7f4a90c.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\ae\aeb14b71bc5cbf24bb3f8f576fcfc830
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\ae\aeb14b71bc5cbf24bb3f8f576fcfc830
-    projectPath: Library\metadata\ae\aeb14b71bc5cbf24bb3f8f576fcfc830
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\ae\aeb14b71bc5cbf24bb3f8f576fcfc830.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\ae\aeb14b71bc5cbf24bb3f8f576fcfc830.info
-    projectPath: Library\metadata\ae\aeb14b71bc5cbf24bb3f8f576fcfc830.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\bb\bb7f0f1c83ce5af4ca88ed109558c275
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\bb\bb7f0f1c83ce5af4ca88ed109558c275
-    projectPath: Library\metadata\bb\bb7f0f1c83ce5af4ca88ed109558c275
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\bb\bb7f0f1c83ce5af4ca88ed109558c275.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\bb\bb7f0f1c83ce5af4ca88ed109558c275.info
-    projectPath: Library\metadata\bb\bb7f0f1c83ce5af4ca88ed109558c275.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\be\bed142bf96c7c9b4f82583e47303417c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\be\bed142bf96c7c9b4f82583e47303417c
-    projectPath: Library\metadata\be\bed142bf96c7c9b4f82583e47303417c
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\be\bed142bf96c7c9b4f82583e47303417c.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\be\bed142bf96c7c9b4f82583e47303417c.info
-    projectPath: Library\metadata\be\bed142bf96c7c9b4f82583e47303417c.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\bf\bf91124a06403a84cbe8ae2e165cce47
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\bf\bf91124a06403a84cbe8ae2e165cce47
-    projectPath: Library\metadata\bf\bf91124a06403a84cbe8ae2e165cce47
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\bf\bf91124a06403a84cbe8ae2e165cce47.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\bf\bf91124a06403a84cbe8ae2e165cce47.info
-    projectPath: Library\metadata\bf\bf91124a06403a84cbe8ae2e165cce47.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\c1\c1868b9788f58fa43b0e2b57eacea7d9
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\c1\c1868b9788f58fa43b0e2b57eacea7d9
-    projectPath: Library\metadata\c1\c1868b9788f58fa43b0e2b57eacea7d9
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\c1\c1868b9788f58fa43b0e2b57eacea7d9.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\c1\c1868b9788f58fa43b0e2b57eacea7d9.info
-    projectPath: Library\metadata\c1\c1868b9788f58fa43b0e2b57eacea7d9.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\c3\c35f94b5b439c7446a4100d2a7b84aad
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\c3\c35f94b5b439c7446a4100d2a7b84aad
-    projectPath: Library\metadata\c3\c35f94b5b439c7446a4100d2a7b84aad
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\c3\c35f94b5b439c7446a4100d2a7b84aad.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\c3\c35f94b5b439c7446a4100d2a7b84aad.info
-    projectPath: Library\metadata\c3\c35f94b5b439c7446a4100d2a7b84aad.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\c7\c7529e3f43aeded43a9ce98218c100ec
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\c7\c7529e3f43aeded43a9ce98218c100ec
-    projectPath: Library\metadata\c7\c7529e3f43aeded43a9ce98218c100ec
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\c7\c7529e3f43aeded43a9ce98218c100ec.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\c7\c7529e3f43aeded43a9ce98218c100ec.info
-    projectPath: Library\metadata\c7\c7529e3f43aeded43a9ce98218c100ec.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\ce\ceab4fd288b391e4b9822dc12e00f795
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\ce\ceab4fd288b391e4b9822dc12e00f795
-    projectPath: Library\metadata\ce\ceab4fd288b391e4b9822dc12e00f795
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\ce\ceab4fd288b391e4b9822dc12e00f795.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\ce\ceab4fd288b391e4b9822dc12e00f795.info
-    projectPath: Library\metadata\ce\ceab4fd288b391e4b9822dc12e00f795.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\d5\d5a466309b544a64d8b3459ee4f8d47c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\d5\d5a466309b544a64d8b3459ee4f8d47c
-    projectPath: Library\metadata\d5\d5a466309b544a64d8b3459ee4f8d47c
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\d5\d5a466309b544a64d8b3459ee4f8d47c.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\d5\d5a466309b544a64d8b3459ee4f8d47c.info
-    projectPath: Library\metadata\d5\d5a466309b544a64d8b3459ee4f8d47c.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\df\df28128702ff35643981e315b0e8a974
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\df\df28128702ff35643981e315b0e8a974
-    projectPath: Library\metadata\df\df28128702ff35643981e315b0e8a974
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\df\df28128702ff35643981e315b0e8a974.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\df\df28128702ff35643981e315b0e8a974.info
-    projectPath: Library\metadata\df\df28128702ff35643981e315b0e8a974.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\e2\e277293730c57de41a2a6bcf0128508c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\e2\e277293730c57de41a2a6bcf0128508c
-    projectPath: Library\metadata\e2\e277293730c57de41a2a6bcf0128508c
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\e2\e277293730c57de41a2a6bcf0128508c.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\e2\e277293730c57de41a2a6bcf0128508c.info
-    projectPath: Library\metadata\e2\e277293730c57de41a2a6bcf0128508c.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\e6\e6305259726979d4ea76337f5f5039ea
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\e6\e6305259726979d4ea76337f5f5039ea
-    projectPath: Library\metadata\e6\e6305259726979d4ea76337f5f5039ea
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\e6\e6305259726979d4ea76337f5f5039ea.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\e6\e6305259726979d4ea76337f5f5039ea.info
-    projectPath: Library\metadata\e6\e6305259726979d4ea76337f5f5039ea.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\e8\e88181bfac5bd3d4fb580a0dfae86e98
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\e8\e88181bfac5bd3d4fb580a0dfae86e98
-    projectPath: Library\metadata\e8\e88181bfac5bd3d4fb580a0dfae86e98
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\e8\e88181bfac5bd3d4fb580a0dfae86e98.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\e8\e88181bfac5bd3d4fb580a0dfae86e98.info
-    projectPath: Library\metadata\e8\e88181bfac5bd3d4fb580a0dfae86e98.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\ed\edfa356c0f5629548b4ecf155905ed9d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\ed\edfa356c0f5629548b4ecf155905ed9d
-    projectPath: Library\metadata\ed\edfa356c0f5629548b4ecf155905ed9d
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\metadata\ed\edfa356c0f5629548b4ecf155905ed9d.info
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\metadata\ed\edfa356c0f5629548b4ecf155905ed9d.info
-    projectPath: Library\metadata\ed\edfa356c0f5629548b4ecf155905ed9d.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\PlayerDataCache\Win64\ScriptLayoutHashes.txt
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\PlayerDataCache\Win64\ScriptLayoutHashes.txt
-    projectPath: Library\PlayerDataCache\Win64\ScriptLayoutHashes.txt
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: ScyneWaveStudio\Library\ScriptAssemblies\Assembly-CSharp.dll
     fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\ScriptAssemblies\Assembly-CSharp.dll
     projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: ScyneWaveStudio\Library\ScriptAssemblies\Assembly-CSharp.pdb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\ScriptAssemblies\Assembly-CSharp.pdb
-    projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -1558,135 +226,63 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: ScyneWaveStudio\Library\StateCache\Hierarchy\b0590a-00334f725dae7c24aa.json
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\StateCache\Hierarchy\b0590a-00334f725dae7c24aa.json
-    projectPath: Library\StateCache\Hierarchy\b0590a-00334f725dae7c24aa.json
+  - path: ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe0.log
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe0.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\StateCache\Hierarchy\b0590a-340b1e66a5497394ca.json
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\StateCache\Hierarchy\b0590a-340b1e66a5497394ca.json
-    projectPath: Library\StateCache\Hierarchy\b0590a-340b1e66a5497394ca.json
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe1.log
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe1.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe1.log
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\StateCache\Hierarchy\b0590a-c1868b9788f58fa43b.json
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\StateCache\Hierarchy\b0590a-c1868b9788f58fa43b.json
-    projectPath: Library\StateCache\Hierarchy\b0590a-c1868b9788f58fa43b.json
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe2.log
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe2.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe2.log
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe3.log
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe3.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe3.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe4.log
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe4.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe4.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe5.log
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe5.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe5.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe6.log
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe6.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe6.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe7.log
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\shadercompiler-UnityShaderCompiler.exe7.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe7.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: ScyneWaveStudio\Library\StateCache\Hierarchy\b0590a-mainStage.json
     fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\StateCache\Hierarchy\b0590a-mainStage.json
     projectPath: Library\StateCache\Hierarchy\b0590a-mainStage.json
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: ScyneWaveStudio\Library\StateCache\SceneView\86ffd8-00334f725dae7c24aa.json
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\StateCache\SceneView\86ffd8-00334f725dae7c24aa.json
-    projectPath: Library\StateCache\SceneView\86ffd8-00334f725dae7c24aa.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\StateCache\SceneView\86ffd8-340b1e66a5497394ca.json
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\StateCache\SceneView\86ffd8-340b1e66a5497394ca.json
-    projectPath: Library\StateCache\SceneView\86ffd8-340b1e66a5497394ca.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\StateCache\SceneView\86ffd8-c1868b9788f58fa43b.json
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\StateCache\SceneView\86ffd8-c1868b9788f58fa43b.json
-    projectPath: Library\StateCache\SceneView\86ffd8-c1868b9788f58fa43b.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: ScyneWaveStudio\Library\StateCache\SceneView\86ffd8-mainStage.json
     fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\StateCache\SceneView\86ffd8-mainStage.json
     projectPath: Library\StateCache\SceneView\86ffd8-mainStage.json
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\00e7195c282b04b40a5f0479e81cd681_Client.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\00e7195c282b04b40a5f0479e81cd681_Client.asset
-    projectPath: Library\UdonSharpCache\DebugInfo\00e7195c282b04b40a5f0479e81cd681_Client.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\00e7195c282b04b40a5f0479e81cd681_Editor.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\00e7195c282b04b40a5f0479e81cd681_Editor.asset
-    projectPath: Library\UdonSharpCache\DebugInfo\00e7195c282b04b40a5f0479e81cd681_Editor.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\7ac7b5de662781741ae394254c55e90f_Client.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\7ac7b5de662781741ae394254c55e90f_Client.asset
-    projectPath: Library\UdonSharpCache\DebugInfo\7ac7b5de662781741ae394254c55e90f_Client.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\7ac7b5de662781741ae394254c55e90f_Editor.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\7ac7b5de662781741ae394254c55e90f_Editor.asset
-    projectPath: Library\UdonSharpCache\DebugInfo\7ac7b5de662781741ae394254c55e90f_Editor.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\bb7f0f1c83ce5af4ca88ed109558c275_Client.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\bb7f0f1c83ce5af4ca88ed109558c275_Client.asset
-    projectPath: Library\UdonSharpCache\DebugInfo\bb7f0f1c83ce5af4ca88ed109558c275_Client.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\bb7f0f1c83ce5af4ca88ed109558c275_Editor.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\bb7f0f1c83ce5af4ca88ed109558c275_Editor.asset
-    projectPath: Library\UdonSharpCache\DebugInfo\bb7f0f1c83ce5af4ca88ed109558c275_Editor.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\df28128702ff35643981e315b0e8a974_Client.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\df28128702ff35643981e315b0e8a974_Client.asset
-    projectPath: Library\UdonSharpCache\DebugInfo\df28128702ff35643981e315b0e8a974_Client.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\df28128702ff35643981e315b0e8a974_Editor.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\DebugInfo\df28128702ff35643981e315b0e8a974_Editor.asset
-    projectPath: Library\UdonSharpCache\DebugInfo\df28128702ff35643981e315b0e8a974_Editor.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\UASM\00e7195c282b04b40a5f0479e81cd681.uasm
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\UASM\00e7195c282b04b40a5f0479e81cd681.uasm
-    projectPath: Library\UdonSharpCache\UASM\00e7195c282b04b40a5f0479e81cd681.uasm
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\UASM\7ac7b5de662781741ae394254c55e90f.uasm
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\UASM\7ac7b5de662781741ae394254c55e90f.uasm
-    projectPath: Library\UdonSharpCache\UASM\7ac7b5de662781741ae394254c55e90f.uasm
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\UASM\bb7f0f1c83ce5af4ca88ed109558c275.uasm
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\UASM\bb7f0f1c83ce5af4ca88ed109558c275.uasm
-    projectPath: Library\UdonSharpCache\UASM\bb7f0f1c83ce5af4ca88ed109558c275.uasm
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\UASM\df28128702ff35643981e315b0e8a974.uasm
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\UASM\df28128702ff35643981e315b0e8a974.uasm
-    projectPath: Library\UdonSharpCache\UASM\df28128702ff35643981e315b0e8a974.uasm
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Library\UdonSharpCache\UdonSharpEditorCache.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UdonSharpCache\UdonSharpEditorCache.asset
-    projectPath: Library\UdonSharpCache\UdonSharpEditorCache.asset
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: ScyneWaveStudio\Library\UIElements\EditorWindows\VRC.Udon.Editor.ProgramSources.UdonGraphProgram.UI.GraphView.UdonGraphWindow.pref
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\UIElements\EditorWindows\VRC.Udon.Editor.ProgramSources.UdonGraphProgram.UI.GraphView.UdonGraphWindow.pref
-    projectPath: Library\UIElements\EditorWindows\VRC.Udon.Editor.ProgramSources.UdonGraphProgram.UI.GraphView.UdonGraphWindow.pref
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -1726,597 +322,795 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-02295f12904c48c468c4e946d082f1fe
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-02295f12904c48c468c4e946d082f1fe
-    projectPath: Temp\UnityTempFile-02295f12904c48c468c4e946d082f1fe
+  - path: ScyneWaveStudio\Temp\UnityTempFile-02b833f80f2bf7e40bcb55527874ed02
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-02b833f80f2bf7e40bcb55527874ed02
+    projectPath: Temp\UnityTempFile-02b833f80f2bf7e40bcb55527874ed02
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-0a65a8bda8995a749b42ffb86b858d07
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-0a65a8bda8995a749b42ffb86b858d07
-    projectPath: Temp\UnityTempFile-0a65a8bda8995a749b42ffb86b858d07
+  - path: ScyneWaveStudio\Temp\UnityTempFile-0aa88b14ed6a78f4dba0d4323645d888
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-0aa88b14ed6a78f4dba0d4323645d888
+    projectPath: Temp\UnityTempFile-0aa88b14ed6a78f4dba0d4323645d888
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-0eb89b445053f884f9ccbb32a1661f70
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-0eb89b445053f884f9ccbb32a1661f70
-    projectPath: Temp\UnityTempFile-0eb89b445053f884f9ccbb32a1661f70
+  - path: ScyneWaveStudio\Temp\UnityTempFile-149f4934afbaf5a45afaa2da53fe6498
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-149f4934afbaf5a45afaa2da53fe6498
+    projectPath: Temp\UnityTempFile-149f4934afbaf5a45afaa2da53fe6498
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-0f1e190ab11b4004c891687eee8cd886
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-0f1e190ab11b4004c891687eee8cd886
-    projectPath: Temp\UnityTempFile-0f1e190ab11b4004c891687eee8cd886
+  - path: ScyneWaveStudio\Temp\UnityTempFile-157a697f8c972c64aa189c1b4c473c1b
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-157a697f8c972c64aa189c1b4c473c1b
+    projectPath: Temp\UnityTempFile-157a697f8c972c64aa189c1b4c473c1b
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-109c9b3f7b7bbcd4aab6135fb243d737
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-109c9b3f7b7bbcd4aab6135fb243d737
-    projectPath: Temp\UnityTempFile-109c9b3f7b7bbcd4aab6135fb243d737
+  - path: ScyneWaveStudio\Temp\UnityTempFile-1777409164f18f2408617a70800195ec
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-1777409164f18f2408617a70800195ec
+    projectPath: Temp\UnityTempFile-1777409164f18f2408617a70800195ec
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-1596538ef87d82049905a831eae3f596
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-1596538ef87d82049905a831eae3f596
-    projectPath: Temp\UnityTempFile-1596538ef87d82049905a831eae3f596
+  - path: ScyneWaveStudio\Temp\UnityTempFile-1b1e1fe122371b84dbd3a67d2ab6e939
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-1b1e1fe122371b84dbd3a67d2ab6e939
+    projectPath: Temp\UnityTempFile-1b1e1fe122371b84dbd3a67d2ab6e939
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-1bf87509b3049944f99608b031a11adc
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-1bf87509b3049944f99608b031a11adc
-    projectPath: Temp\UnityTempFile-1bf87509b3049944f99608b031a11adc
+  - path: ScyneWaveStudio\Temp\UnityTempFile-1fb7f73f8ae89d145b26ca1f733f7474
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-1fb7f73f8ae89d145b26ca1f733f7474
+    projectPath: Temp\UnityTempFile-1fb7f73f8ae89d145b26ca1f733f7474
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-2005baa9ca82e1248ac108c532c76e84
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2005baa9ca82e1248ac108c532c76e84
-    projectPath: Temp\UnityTempFile-2005baa9ca82e1248ac108c532c76e84
+  - path: ScyneWaveStudio\Temp\UnityTempFile-20d30d3a8b8e26c45b3c5815edc0b6b6
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-20d30d3a8b8e26c45b3c5815edc0b6b6
+    projectPath: Temp\UnityTempFile-20d30d3a8b8e26c45b3c5815edc0b6b6
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-203be2268f391d6418a8cbe265fa4d08
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-203be2268f391d6418a8cbe265fa4d08
-    projectPath: Temp\UnityTempFile-203be2268f391d6418a8cbe265fa4d08
+  - path: ScyneWaveStudio\Temp\UnityTempFile-21075aa806591974481f28b39425a87c
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-21075aa806591974481f28b39425a87c
+    projectPath: Temp\UnityTempFile-21075aa806591974481f28b39425a87c
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-206944185bcdc4140b5b41ef9703e637
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-206944185bcdc4140b5b41ef9703e637
-    projectPath: Temp\UnityTempFile-206944185bcdc4140b5b41ef9703e637
+  - path: ScyneWaveStudio\Temp\UnityTempFile-258c431173298fc46bbf376bc74aeb64
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-258c431173298fc46bbf376bc74aeb64
+    projectPath: Temp\UnityTempFile-258c431173298fc46bbf376bc74aeb64
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-206dc828221bb8d408e2526b18a081ed
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-206dc828221bb8d408e2526b18a081ed
-    projectPath: Temp\UnityTempFile-206dc828221bb8d408e2526b18a081ed
+  - path: ScyneWaveStudio\Temp\UnityTempFile-284756a7096bfe54b8290931e1964541
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-284756a7096bfe54b8290931e1964541
+    projectPath: Temp\UnityTempFile-284756a7096bfe54b8290931e1964541
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-217faa004f931194890657b2090b1271
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-217faa004f931194890657b2090b1271
-    projectPath: Temp\UnityTempFile-217faa004f931194890657b2090b1271
+  - path: ScyneWaveStudio\Temp\UnityTempFile-2b92a78b0fd1ab8468361c0d5ca740b0
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2b92a78b0fd1ab8468361c0d5ca740b0
+    projectPath: Temp\UnityTempFile-2b92a78b0fd1ab8468361c0d5ca740b0
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-21d7e938da034d3428315906070beb3f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-21d7e938da034d3428315906070beb3f
-    projectPath: Temp\UnityTempFile-21d7e938da034d3428315906070beb3f
+  - path: ScyneWaveStudio\Temp\UnityTempFile-2c670dbcba6a9a8419ba38c104fee5fc
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2c670dbcba6a9a8419ba38c104fee5fc
+    projectPath: Temp\UnityTempFile-2c670dbcba6a9a8419ba38c104fee5fc
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-222638d39c0589d4ea519f353c677914
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-222638d39c0589d4ea519f353c677914
-    projectPath: Temp\UnityTempFile-222638d39c0589d4ea519f353c677914
+  - path: ScyneWaveStudio\Temp\UnityTempFile-2dc094803a66441489c020ad4541860c
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2dc094803a66441489c020ad4541860c
+    projectPath: Temp\UnityTempFile-2dc094803a66441489c020ad4541860c
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-24006cf9668dc48459663d95ee6d10f5
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-24006cf9668dc48459663d95ee6d10f5
-    projectPath: Temp\UnityTempFile-24006cf9668dc48459663d95ee6d10f5
+  - path: ScyneWaveStudio\Temp\UnityTempFile-2e0fa78a866c83a4685525da37d2661d
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2e0fa78a866c83a4685525da37d2661d
+    projectPath: Temp\UnityTempFile-2e0fa78a866c83a4685525da37d2661d
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-282fcca711cb1ea4fafded3056600c22
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-282fcca711cb1ea4fafded3056600c22
-    projectPath: Temp\UnityTempFile-282fcca711cb1ea4fafded3056600c22
+  - path: ScyneWaveStudio\Temp\UnityTempFile-2e2d2dfd3db3f854cbe1f820b180a1bd
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2e2d2dfd3db3f854cbe1f820b180a1bd
+    projectPath: Temp\UnityTempFile-2e2d2dfd3db3f854cbe1f820b180a1bd
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-29fe9688b330b594cbb909ffb2244b88
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-29fe9688b330b594cbb909ffb2244b88
-    projectPath: Temp\UnityTempFile-29fe9688b330b594cbb909ffb2244b88
+  - path: ScyneWaveStudio\Temp\UnityTempFile-2edecde92171b8249bde37a677b28961
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2edecde92171b8249bde37a677b28961
+    projectPath: Temp\UnityTempFile-2edecde92171b8249bde37a677b28961
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-2b083e1b21840614e86a3c93aba2eee6
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2b083e1b21840614e86a3c93aba2eee6
-    projectPath: Temp\UnityTempFile-2b083e1b21840614e86a3c93aba2eee6
+  - path: ScyneWaveStudio\Temp\UnityTempFile-2edf50507c4bc2047be7347a1bebf3bb
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2edf50507c4bc2047be7347a1bebf3bb
+    projectPath: Temp\UnityTempFile-2edf50507c4bc2047be7347a1bebf3bb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-2f26a30a964bc1a4895b257bbbcbc19e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2f26a30a964bc1a4895b257bbbcbc19e
-    projectPath: Temp\UnityTempFile-2f26a30a964bc1a4895b257bbbcbc19e
+  - path: ScyneWaveStudio\Temp\UnityTempFile-321ce6f1e7356624b8d38fd025662f91
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-321ce6f1e7356624b8d38fd025662f91
+    projectPath: Temp\UnityTempFile-321ce6f1e7356624b8d38fd025662f91
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-30304486681b66c41830c2fea0bd1742
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-30304486681b66c41830c2fea0bd1742
-    projectPath: Temp\UnityTempFile-30304486681b66c41830c2fea0bd1742
+  - path: ScyneWaveStudio\Temp\UnityTempFile-33161bf8c855c734780435e82c135831
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-33161bf8c855c734780435e82c135831
+    projectPath: Temp\UnityTempFile-33161bf8c855c734780435e82c135831
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-349d56aa3a065914dafc8ab2a3fe3558
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-349d56aa3a065914dafc8ab2a3fe3558
-    projectPath: Temp\UnityTempFile-349d56aa3a065914dafc8ab2a3fe3558
+  - path: ScyneWaveStudio\Temp\UnityTempFile-35bace523a9a2e8499413ef88ec059e8
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-35bace523a9a2e8499413ef88ec059e8
+    projectPath: Temp\UnityTempFile-35bace523a9a2e8499413ef88ec059e8
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-352a27800edb0884aaf25b639fe3eed6
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-352a27800edb0884aaf25b639fe3eed6
-    projectPath: Temp\UnityTempFile-352a27800edb0884aaf25b639fe3eed6
+  - path: ScyneWaveStudio\Temp\UnityTempFile-363ea53f21b5a8749b8c116b9bcfbabc
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-363ea53f21b5a8749b8c116b9bcfbabc
+    projectPath: Temp\UnityTempFile-363ea53f21b5a8749b8c116b9bcfbabc
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-365c4ca3623965a42939ffa6ac8a0a71
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-365c4ca3623965a42939ffa6ac8a0a71
-    projectPath: Temp\UnityTempFile-365c4ca3623965a42939ffa6ac8a0a71
+  - path: ScyneWaveStudio\Temp\UnityTempFile-3e6ef5ec97bd7da488b160653c613a82
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-3e6ef5ec97bd7da488b160653c613a82
+    projectPath: Temp\UnityTempFile-3e6ef5ec97bd7da488b160653c613a82
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-3aa772066ced279468d93fe2c290ae4b
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-3aa772066ced279468d93fe2c290ae4b
-    projectPath: Temp\UnityTempFile-3aa772066ced279468d93fe2c290ae4b
+  - path: ScyneWaveStudio\Temp\UnityTempFile-40234c2d1b6568149bb59486f3fe3f32
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-40234c2d1b6568149bb59486f3fe3f32
+    projectPath: Temp\UnityTempFile-40234c2d1b6568149bb59486f3fe3f32
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-3b55515aba869f24bac54665087ab961
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-3b55515aba869f24bac54665087ab961
-    projectPath: Temp\UnityTempFile-3b55515aba869f24bac54665087ab961
+  - path: ScyneWaveStudio\Temp\UnityTempFile-40afa49e58cb5da48b079f7fdde4295c
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-40afa49e58cb5da48b079f7fdde4295c
+    projectPath: Temp\UnityTempFile-40afa49e58cb5da48b079f7fdde4295c
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-3c7115fc44cb4c04fb9cabe2b656187e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-3c7115fc44cb4c04fb9cabe2b656187e
-    projectPath: Temp\UnityTempFile-3c7115fc44cb4c04fb9cabe2b656187e
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4239e9b2bd83cd04b9c22057214cfe6e
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4239e9b2bd83cd04b9c22057214cfe6e
+    projectPath: Temp\UnityTempFile-4239e9b2bd83cd04b9c22057214cfe6e
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-3c9f494e53b373c4f89fc99aa9455681
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-3c9f494e53b373c4f89fc99aa9455681
-    projectPath: Temp\UnityTempFile-3c9f494e53b373c4f89fc99aa9455681
+  - path: ScyneWaveStudio\Temp\UnityTempFile-42e181360f0db2b4dbf39fa3877d95ea
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-42e181360f0db2b4dbf39fa3877d95ea
+    projectPath: Temp\UnityTempFile-42e181360f0db2b4dbf39fa3877d95ea
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-3f286b57e2614e844bdcd2555f1503a5
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-3f286b57e2614e844bdcd2555f1503a5
-    projectPath: Temp\UnityTempFile-3f286b57e2614e844bdcd2555f1503a5
+  - path: ScyneWaveStudio\Temp\UnityTempFile-43eece752c31fb341a74e8c28c53fd06
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-43eece752c31fb341a74e8c28c53fd06
+    projectPath: Temp\UnityTempFile-43eece752c31fb341a74e8c28c53fd06
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-41c0301b3839ef942a55210e59ae7e82
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-41c0301b3839ef942a55210e59ae7e82
-    projectPath: Temp\UnityTempFile-41c0301b3839ef942a55210e59ae7e82
+  - path: ScyneWaveStudio\Temp\UnityTempFile-44bb895fb6f41a743bf02bd69a3f47b9
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-44bb895fb6f41a743bf02bd69a3f47b9
+    projectPath: Temp\UnityTempFile-44bb895fb6f41a743bf02bd69a3f47b9
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-41e98dd3b80502040adf28aa8a0839c6
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-41e98dd3b80502040adf28aa8a0839c6
-    projectPath: Temp\UnityTempFile-41e98dd3b80502040adf28aa8a0839c6
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4543315f9a6c6334a9106e1cdd3f7eeb
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4543315f9a6c6334a9106e1cdd3f7eeb
+    projectPath: Temp\UnityTempFile-4543315f9a6c6334a9106e1cdd3f7eeb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-45275227d820dbf479fa52ae216f4d3e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-45275227d820dbf479fa52ae216f4d3e
-    projectPath: Temp\UnityTempFile-45275227d820dbf479fa52ae216f4d3e
+  - path: ScyneWaveStudio\Temp\UnityTempFile-47e93d60a3382f541b16105ef1ed1159
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-47e93d60a3382f541b16105ef1ed1159
+    projectPath: Temp\UnityTempFile-47e93d60a3382f541b16105ef1ed1159
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-46144e6d98f30484ab89bb777186deef
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-46144e6d98f30484ab89bb777186deef
-    projectPath: Temp\UnityTempFile-46144e6d98f30484ab89bb777186deef
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4976bd2f48f84ae41be9548f7357d336
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4976bd2f48f84ae41be9548f7357d336
+    projectPath: Temp\UnityTempFile-4976bd2f48f84ae41be9548f7357d336
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4736a66e962600a4e98f1d02517d1dd6
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4736a66e962600a4e98f1d02517d1dd6
-    projectPath: Temp\UnityTempFile-4736a66e962600a4e98f1d02517d1dd6
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4b5bc9c2bb9cf144a8c80293cf10f0d4
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4b5bc9c2bb9cf144a8c80293cf10f0d4
+    projectPath: Temp\UnityTempFile-4b5bc9c2bb9cf144a8c80293cf10f0d4
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-488ea51a349cc4b4493f4002f5c09671
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-488ea51a349cc4b4493f4002f5c09671
-    projectPath: Temp\UnityTempFile-488ea51a349cc4b4493f4002f5c09671
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4e4d9d4497d19164896480ddcba702e0
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4e4d9d4497d19164896480ddcba702e0
+    projectPath: Temp\UnityTempFile-4e4d9d4497d19164896480ddcba702e0
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4a631f3b5c715a740baa486092995204
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4a631f3b5c715a740baa486092995204
-    projectPath: Temp\UnityTempFile-4a631f3b5c715a740baa486092995204
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4e6c3f546dff1bc42bba0bea8154dba3
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4e6c3f546dff1bc42bba0bea8154dba3
+    projectPath: Temp\UnityTempFile-4e6c3f546dff1bc42bba0bea8154dba3
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4b024858f1010bd4faedb3d31a78fafc
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4b024858f1010bd4faedb3d31a78fafc
-    projectPath: Temp\UnityTempFile-4b024858f1010bd4faedb3d31a78fafc
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4e765985fe8b7a54abf64162d2a8e270
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4e765985fe8b7a54abf64162d2a8e270
+    projectPath: Temp\UnityTempFile-4e765985fe8b7a54abf64162d2a8e270
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4df7621df9e244d45a7ff2c5a8f1c237
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4df7621df9e244d45a7ff2c5a8f1c237
-    projectPath: Temp\UnityTempFile-4df7621df9e244d45a7ff2c5a8f1c237
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4f4e37920ba7210449388fbbc5bf324e
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4f4e37920ba7210449388fbbc5bf324e
+    projectPath: Temp\UnityTempFile-4f4e37920ba7210449388fbbc5bf324e
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-537266d86bb5b9c4bb45932974e567cd
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-537266d86bb5b9c4bb45932974e567cd
-    projectPath: Temp\UnityTempFile-537266d86bb5b9c4bb45932974e567cd
+  - path: ScyneWaveStudio\Temp\UnityTempFile-535da6fe65a1a224f90509df7d79b10b
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-535da6fe65a1a224f90509df7d79b10b
+    projectPath: Temp\UnityTempFile-535da6fe65a1a224f90509df7d79b10b
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-54bbb08ade53fc64fac8bfe84026851f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-54bbb08ade53fc64fac8bfe84026851f
-    projectPath: Temp\UnityTempFile-54bbb08ade53fc64fac8bfe84026851f
+  - path: ScyneWaveStudio\Temp\UnityTempFile-53ab191b840970447a2e2d6f1921c279
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-53ab191b840970447a2e2d6f1921c279
+    projectPath: Temp\UnityTempFile-53ab191b840970447a2e2d6f1921c279
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-58cb4b3f7fae5174181344f6d1e2e123
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-58cb4b3f7fae5174181344f6d1e2e123
-    projectPath: Temp\UnityTempFile-58cb4b3f7fae5174181344f6d1e2e123
+  - path: ScyneWaveStudio\Temp\UnityTempFile-54d4e607f441ea9448f82dc277d615b1
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-54d4e607f441ea9448f82dc277d615b1
+    projectPath: Temp\UnityTempFile-54d4e607f441ea9448f82dc277d615b1
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-5a63971419f61014d95ee5ad74eb562c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5a63971419f61014d95ee5ad74eb562c
-    projectPath: Temp\UnityTempFile-5a63971419f61014d95ee5ad74eb562c
+  - path: ScyneWaveStudio\Temp\UnityTempFile-555cfde3576484248939948ee13ed77c
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-555cfde3576484248939948ee13ed77c
+    projectPath: Temp\UnityTempFile-555cfde3576484248939948ee13ed77c
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-5a6b1de5238e0864387746eb33c43011
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5a6b1de5238e0864387746eb33c43011
-    projectPath: Temp\UnityTempFile-5a6b1de5238e0864387746eb33c43011
+  - path: ScyneWaveStudio\Temp\UnityTempFile-56be0a880881c0345ade042d58995a83
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-56be0a880881c0345ade042d58995a83
+    projectPath: Temp\UnityTempFile-56be0a880881c0345ade042d58995a83
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-5aa36a1986957bb45b7a56def64e5bb8
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5aa36a1986957bb45b7a56def64e5bb8
-    projectPath: Temp\UnityTempFile-5aa36a1986957bb45b7a56def64e5bb8
+  - path: ScyneWaveStudio\Temp\UnityTempFile-5b1f10a358ed78549a074b4f6f7f33e4
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5b1f10a358ed78549a074b4f6f7f33e4
+    projectPath: Temp\UnityTempFile-5b1f10a358ed78549a074b4f6f7f33e4
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-5c4b3db0861caef42a811f9db51b5d7f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5c4b3db0861caef42a811f9db51b5d7f
-    projectPath: Temp\UnityTempFile-5c4b3db0861caef42a811f9db51b5d7f
+  - path: ScyneWaveStudio\Temp\UnityTempFile-5b754559e834dff4180d27b1f8cef42a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5b754559e834dff4180d27b1f8cef42a
+    projectPath: Temp\UnityTempFile-5b754559e834dff4180d27b1f8cef42a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-616ac1ec97cea1d48841f7c5a41c13db
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-616ac1ec97cea1d48841f7c5a41c13db
-    projectPath: Temp\UnityTempFile-616ac1ec97cea1d48841f7c5a41c13db
+  - path: ScyneWaveStudio\Temp\UnityTempFile-5c6768e93063bb34ba8ee213250e3f11
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5c6768e93063bb34ba8ee213250e3f11
+    projectPath: Temp\UnityTempFile-5c6768e93063bb34ba8ee213250e3f11
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-633c38fc42523024183ec80c82893038
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-633c38fc42523024183ec80c82893038
-    projectPath: Temp\UnityTempFile-633c38fc42523024183ec80c82893038
+  - path: ScyneWaveStudio\Temp\UnityTempFile-5e8c70ca0beca514d9f3795dd4aa7fec
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5e8c70ca0beca514d9f3795dd4aa7fec
+    projectPath: Temp\UnityTempFile-5e8c70ca0beca514d9f3795dd4aa7fec
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-66259568b9ba89246a62a010b649eb4e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-66259568b9ba89246a62a010b649eb4e
-    projectPath: Temp\UnityTempFile-66259568b9ba89246a62a010b649eb4e
+  - path: ScyneWaveStudio\Temp\UnityTempFile-62e31320b940ae24e86bf93cd811f69c
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-62e31320b940ae24e86bf93cd811f69c
+    projectPath: Temp\UnityTempFile-62e31320b940ae24e86bf93cd811f69c
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-68ca3228aec604c4e98c921838034a29
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-68ca3228aec604c4e98c921838034a29
-    projectPath: Temp\UnityTempFile-68ca3228aec604c4e98c921838034a29
+  - path: ScyneWaveStudio\Temp\UnityTempFile-67410dd1d1c619c4a8e37ce2b5657a81
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-67410dd1d1c619c4a8e37ce2b5657a81
+    projectPath: Temp\UnityTempFile-67410dd1d1c619c4a8e37ce2b5657a81
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-6993719046893f14295d98b76fc68e43
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6993719046893f14295d98b76fc68e43
-    projectPath: Temp\UnityTempFile-6993719046893f14295d98b76fc68e43
+  - path: ScyneWaveStudio\Temp\UnityTempFile-6b56b703f0cc1a94e8213f517d81dfc8
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6b56b703f0cc1a94e8213f517d81dfc8
+    projectPath: Temp\UnityTempFile-6b56b703f0cc1a94e8213f517d81dfc8
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-6bf5502afc242334098e0585646e0919
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6bf5502afc242334098e0585646e0919
-    projectPath: Temp\UnityTempFile-6bf5502afc242334098e0585646e0919
+  - path: ScyneWaveStudio\Temp\UnityTempFile-6ccca984e147520428149129a590f145
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6ccca984e147520428149129a590f145
+    projectPath: Temp\UnityTempFile-6ccca984e147520428149129a590f145
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-6de62a3db7f1a404692b7e34c937b3da
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6de62a3db7f1a404692b7e34c937b3da
-    projectPath: Temp\UnityTempFile-6de62a3db7f1a404692b7e34c937b3da
+  - path: ScyneWaveStudio\Temp\UnityTempFile-6fb833633f9e55242adf708f2768640d
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6fb833633f9e55242adf708f2768640d
+    projectPath: Temp\UnityTempFile-6fb833633f9e55242adf708f2768640d
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-6e0ca2076aa499b46b20b13f627db50b
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6e0ca2076aa499b46b20b13f627db50b
-    projectPath: Temp\UnityTempFile-6e0ca2076aa499b46b20b13f627db50b
+  - path: ScyneWaveStudio\Temp\UnityTempFile-70216b833a7ea89498542f9f5fa71f1a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-70216b833a7ea89498542f9f5fa71f1a
+    projectPath: Temp\UnityTempFile-70216b833a7ea89498542f9f5fa71f1a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-6ed2e26bad9768748a35b66df9cb3a0f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6ed2e26bad9768748a35b66df9cb3a0f
-    projectPath: Temp\UnityTempFile-6ed2e26bad9768748a35b66df9cb3a0f
+  - path: ScyneWaveStudio\Temp\UnityTempFile-7198eb22dca7d8b419f5e215988d16e3
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-7198eb22dca7d8b419f5e215988d16e3
+    projectPath: Temp\UnityTempFile-7198eb22dca7d8b419f5e215988d16e3
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-6ed86ff89be191a49b58763e1016be98
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6ed86ff89be191a49b58763e1016be98
-    projectPath: Temp\UnityTempFile-6ed86ff89be191a49b58763e1016be98
+  - path: ScyneWaveStudio\Temp\UnityTempFile-75973b4b7b409ce4f821d5dbbdf028e7
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-75973b4b7b409ce4f821d5dbbdf028e7
+    projectPath: Temp\UnityTempFile-75973b4b7b409ce4f821d5dbbdf028e7
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-700f76d7a3df8e84db3dd603c02ecb3a
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-700f76d7a3df8e84db3dd603c02ecb3a
-    projectPath: Temp\UnityTempFile-700f76d7a3df8e84db3dd603c02ecb3a
+  - path: ScyneWaveStudio\Temp\UnityTempFile-7ae5c8a76d53d394a9c6f7ec49c2bf1a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-7ae5c8a76d53d394a9c6f7ec49c2bf1a
+    projectPath: Temp\UnityTempFile-7ae5c8a76d53d394a9c6f7ec49c2bf1a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-703c9868c2027d640bfaca917274a9da
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-703c9868c2027d640bfaca917274a9da
-    projectPath: Temp\UnityTempFile-703c9868c2027d640bfaca917274a9da
+  - path: ScyneWaveStudio\Temp\UnityTempFile-7b4849f843ba6604e8a3aa721d8beaab
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-7b4849f843ba6604e8a3aa721d8beaab
+    projectPath: Temp\UnityTempFile-7b4849f843ba6604e8a3aa721d8beaab
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-71db73fce4f0af64ea21d1e43e5a4eb1
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-71db73fce4f0af64ea21d1e43e5a4eb1
-    projectPath: Temp\UnityTempFile-71db73fce4f0af64ea21d1e43e5a4eb1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8067e965160f4a54a9fd619bf8b31ffb
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8067e965160f4a54a9fd619bf8b31ffb
+    projectPath: Temp\UnityTempFile-8067e965160f4a54a9fd619bf8b31ffb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-76678c15fa7e474438a884bc1bbb98da
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-76678c15fa7e474438a884bc1bbb98da
-    projectPath: Temp\UnityTempFile-76678c15fa7e474438a884bc1bbb98da
+  - path: ScyneWaveStudio\Temp\UnityTempFile-806ef8613d22e694083648e9049f345e
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-806ef8613d22e694083648e9049f345e
+    projectPath: Temp\UnityTempFile-806ef8613d22e694083648e9049f345e
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-767a614846982a74f99d657509f9e122
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-767a614846982a74f99d657509f9e122
-    projectPath: Temp\UnityTempFile-767a614846982a74f99d657509f9e122
+  - path: ScyneWaveStudio\Temp\UnityTempFile-80a03e1f4ae723d4dab6e77b8991d336
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-80a03e1f4ae723d4dab6e77b8991d336
+    projectPath: Temp\UnityTempFile-80a03e1f4ae723d4dab6e77b8991d336
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-780292518f2d753478f175b1b3a3d622
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-780292518f2d753478f175b1b3a3d622
-    projectPath: Temp\UnityTempFile-780292518f2d753478f175b1b3a3d622
+  - path: ScyneWaveStudio\Temp\UnityTempFile-80bcb2c287c0af54c9a9a58411d2a717
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-80bcb2c287c0af54c9a9a58411d2a717
+    projectPath: Temp\UnityTempFile-80bcb2c287c0af54c9a9a58411d2a717
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-7cfdbd5107ebd4c429e9f4c8bc7db6af
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-7cfdbd5107ebd4c429e9f4c8bc7db6af
-    projectPath: Temp\UnityTempFile-7cfdbd5107ebd4c429e9f4c8bc7db6af
+  - path: ScyneWaveStudio\Temp\UnityTempFile-811e3e2119c7c114ca9a6fecd10d7d9d
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-811e3e2119c7c114ca9a6fecd10d7d9d
+    projectPath: Temp\UnityTempFile-811e3e2119c7c114ca9a6fecd10d7d9d
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-818df154d085e5c4db0cedc7f2df4893
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-818df154d085e5c4db0cedc7f2df4893
-    projectPath: Temp\UnityTempFile-818df154d085e5c4db0cedc7f2df4893
+  - path: ScyneWaveStudio\Temp\UnityTempFile-81f3fe94e9634cf40aa8a70e85881358
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-81f3fe94e9634cf40aa8a70e85881358
+    projectPath: Temp\UnityTempFile-81f3fe94e9634cf40aa8a70e85881358
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8287ac81aa91b83488d78829c3f047ae
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8287ac81aa91b83488d78829c3f047ae
-    projectPath: Temp\UnityTempFile-8287ac81aa91b83488d78829c3f047ae
+  - path: ScyneWaveStudio\Temp\UnityTempFile-823b23ebe1359f648a5dbda53c2448a6
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-823b23ebe1359f648a5dbda53c2448a6
+    projectPath: Temp\UnityTempFile-823b23ebe1359f648a5dbda53c2448a6
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-832e62e14b99b434b96e93256bf99c56
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-832e62e14b99b434b96e93256bf99c56
-    projectPath: Temp\UnityTempFile-832e62e14b99b434b96e93256bf99c56
+  - path: ScyneWaveStudio\Temp\UnityTempFile-836938de3db3be34e9eb472a5a938f52
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-836938de3db3be34e9eb472a5a938f52
+    projectPath: Temp\UnityTempFile-836938de3db3be34e9eb472a5a938f52
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8aa541355f5f2534d90eb2080b289d84
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8aa541355f5f2534d90eb2080b289d84
-    projectPath: Temp\UnityTempFile-8aa541355f5f2534d90eb2080b289d84
+  - path: ScyneWaveStudio\Temp\UnityTempFile-84f6f77cf0cc8c84e90e06574a024088
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-84f6f77cf0cc8c84e90e06574a024088
+    projectPath: Temp\UnityTempFile-84f6f77cf0cc8c84e90e06574a024088
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8c42966ce6fee8a4999cfb83146947b0
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8c42966ce6fee8a4999cfb83146947b0
-    projectPath: Temp\UnityTempFile-8c42966ce6fee8a4999cfb83146947b0
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8be752eb23a5a79408f86a33c55b9d4c
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8be752eb23a5a79408f86a33c55b9d4c
+    projectPath: Temp\UnityTempFile-8be752eb23a5a79408f86a33c55b9d4c
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8c87db82b83f3e34ba3d9b5d58fbd9d3
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8c87db82b83f3e34ba3d9b5d58fbd9d3
-    projectPath: Temp\UnityTempFile-8c87db82b83f3e34ba3d9b5d58fbd9d3
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8c592f500e3ea684bb22c33062b4804d
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8c592f500e3ea684bb22c33062b4804d
+    projectPath: Temp\UnityTempFile-8c592f500e3ea684bb22c33062b4804d
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8d3e31e2a2cc4534092bcfff9d5daef3
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8d3e31e2a2cc4534092bcfff9d5daef3
-    projectPath: Temp\UnityTempFile-8d3e31e2a2cc4534092bcfff9d5daef3
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8ccfce7edd841a441aad249553f6b2b3
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8ccfce7edd841a441aad249553f6b2b3
+    projectPath: Temp\UnityTempFile-8ccfce7edd841a441aad249553f6b2b3
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8f3d4aa582a0e6d4b9dbe5944a9f4b26
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8f3d4aa582a0e6d4b9dbe5944a9f4b26
-    projectPath: Temp\UnityTempFile-8f3d4aa582a0e6d4b9dbe5944a9f4b26
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8e1162f241dee384f8383f3b66b2a16f
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8e1162f241dee384f8383f3b66b2a16f
+    projectPath: Temp\UnityTempFile-8e1162f241dee384f8383f3b66b2a16f
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-9951ea802ed4779428c889baa00f0c3d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9951ea802ed4779428c889baa00f0c3d
-    projectPath: Temp\UnityTempFile-9951ea802ed4779428c889baa00f0c3d
+  - path: ScyneWaveStudio\Temp\UnityTempFile-9067322f710d1bb4c99ab461eea30abc
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9067322f710d1bb4c99ab461eea30abc
+    projectPath: Temp\UnityTempFile-9067322f710d1bb4c99ab461eea30abc
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-9a517e5f58e86ae49b1ed7c7cb7054ed
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9a517e5f58e86ae49b1ed7c7cb7054ed
-    projectPath: Temp\UnityTempFile-9a517e5f58e86ae49b1ed7c7cb7054ed
+  - path: ScyneWaveStudio\Temp\UnityTempFile-933e7f253fcb01a4c8166afbe194196d
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-933e7f253fcb01a4c8166afbe194196d
+    projectPath: Temp\UnityTempFile-933e7f253fcb01a4c8166afbe194196d
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-9d170fa349ffbd64683bed0f65f6b186
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9d170fa349ffbd64683bed0f65f6b186
-    projectPath: Temp\UnityTempFile-9d170fa349ffbd64683bed0f65f6b186
+  - path: ScyneWaveStudio\Temp\UnityTempFile-94852eedd14a3db4b8e3de7490616fd5
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-94852eedd14a3db4b8e3de7490616fd5
+    projectPath: Temp\UnityTempFile-94852eedd14a3db4b8e3de7490616fd5
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-a476dee2e3c63f64fb4b62f60751bce1
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-a476dee2e3c63f64fb4b62f60751bce1
-    projectPath: Temp\UnityTempFile-a476dee2e3c63f64fb4b62f60751bce1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-95cd38d0cd8cd6343952b47647c3036d
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-95cd38d0cd8cd6343952b47647c3036d
+    projectPath: Temp\UnityTempFile-95cd38d0cd8cd6343952b47647c3036d
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-b509a6e5e56fcd1408e747fef9802381
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b509a6e5e56fcd1408e747fef9802381
-    projectPath: Temp\UnityTempFile-b509a6e5e56fcd1408e747fef9802381
+  - path: ScyneWaveStudio\Temp\UnityTempFile-96c68e3c11500864699d8396bf8e5097
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-96c68e3c11500864699d8396bf8e5097
+    projectPath: Temp\UnityTempFile-96c68e3c11500864699d8396bf8e5097
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-b9be93965f65ef94589565159777d874
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b9be93965f65ef94589565159777d874
-    projectPath: Temp\UnityTempFile-b9be93965f65ef94589565159777d874
+  - path: ScyneWaveStudio\Temp\UnityTempFile-9a229d6b4fb37704caaec28f7d647150
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9a229d6b4fb37704caaec28f7d647150
+    projectPath: Temp\UnityTempFile-9a229d6b4fb37704caaec28f7d647150
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ba4f19d4635c09243b036720c802f90b
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ba4f19d4635c09243b036720c802f90b
-    projectPath: Temp\UnityTempFile-ba4f19d4635c09243b036720c802f90b
+  - path: ScyneWaveStudio\Temp\UnityTempFile-9b716b7befb2c1646a4e9a2deb4cfb04
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9b716b7befb2c1646a4e9a2deb4cfb04
+    projectPath: Temp\UnityTempFile-9b716b7befb2c1646a4e9a2deb4cfb04
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-bb33273255f07ab45b091cdee216c0eb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-bb33273255f07ab45b091cdee216c0eb
-    projectPath: Temp\UnityTempFile-bb33273255f07ab45b091cdee216c0eb
+  - path: ScyneWaveStudio\Temp\UnityTempFile-9c5b515d3776f7349a963bb3fe66b104
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9c5b515d3776f7349a963bb3fe66b104
+    projectPath: Temp\UnityTempFile-9c5b515d3776f7349a963bb3fe66b104
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-bfea067f9852ef341a3786e0b643c7b6
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-bfea067f9852ef341a3786e0b643c7b6
-    projectPath: Temp\UnityTempFile-bfea067f9852ef341a3786e0b643c7b6
+  - path: ScyneWaveStudio\Temp\UnityTempFile-9dface2cdd900804690503eb6b6fe01b
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9dface2cdd900804690503eb6b6fe01b
+    projectPath: Temp\UnityTempFile-9dface2cdd900804690503eb6b6fe01b
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-c2d2eab97156f7d4ab283f96626bdccc
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c2d2eab97156f7d4ab283f96626bdccc
-    projectPath: Temp\UnityTempFile-c2d2eab97156f7d4ab283f96626bdccc
+  - path: ScyneWaveStudio\Temp\UnityTempFile-9e9fd3032d1288c42801afa7993fd514
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9e9fd3032d1288c42801afa7993fd514
+    projectPath: Temp\UnityTempFile-9e9fd3032d1288c42801afa7993fd514
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-c73d0295434cc99428490b4009de9c21
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c73d0295434cc99428490b4009de9c21
-    projectPath: Temp\UnityTempFile-c73d0295434cc99428490b4009de9c21
+  - path: ScyneWaveStudio\Temp\UnityTempFile-9fcecc2c32f147a44a50a0fda0eb0549
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9fcecc2c32f147a44a50a0fda0eb0549
+    projectPath: Temp\UnityTempFile-9fcecc2c32f147a44a50a0fda0eb0549
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ca9e87c14c80f6449a8a6ec99fdccbb0
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ca9e87c14c80f6449a8a6ec99fdccbb0
-    projectPath: Temp\UnityTempFile-ca9e87c14c80f6449a8a6ec99fdccbb0
+  - path: ScyneWaveStudio\Temp\UnityTempFile-a0570b53d7532cd419c0e4cb4e5761a7
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-a0570b53d7532cd419c0e4cb4e5761a7
+    projectPath: Temp\UnityTempFile-a0570b53d7532cd419c0e4cb4e5761a7
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-cb9153da3ac56e540be615563db8eb4f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-cb9153da3ac56e540be615563db8eb4f
-    projectPath: Temp\UnityTempFile-cb9153da3ac56e540be615563db8eb4f
+  - path: ScyneWaveStudio\Temp\UnityTempFile-a2172d12ea8c84042bd4d554d4753cf0
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-a2172d12ea8c84042bd4d554d4753cf0
+    projectPath: Temp\UnityTempFile-a2172d12ea8c84042bd4d554d4753cf0
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-cd9c4731f76e8f04aa604846978c3b4c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-cd9c4731f76e8f04aa604846978c3b4c
-    projectPath: Temp\UnityTempFile-cd9c4731f76e8f04aa604846978c3b4c
+  - path: ScyneWaveStudio\Temp\UnityTempFile-a77a968318718014ca64ac6fd4f41b2c
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-a77a968318718014ca64ac6fd4f41b2c
+    projectPath: Temp\UnityTempFile-a77a968318718014ca64ac6fd4f41b2c
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ce7c4b783ff43ea4eb150af84f09afdd
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ce7c4b783ff43ea4eb150af84f09afdd
-    projectPath: Temp\UnityTempFile-ce7c4b783ff43ea4eb150af84f09afdd
+  - path: ScyneWaveStudio\Temp\UnityTempFile-aa44352f0ef207d41ab7f95a94a1952a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-aa44352f0ef207d41ab7f95a94a1952a
+    projectPath: Temp\UnityTempFile-aa44352f0ef207d41ab7f95a94a1952a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-d21cd0add1959354588f1d54164f87fa
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d21cd0add1959354588f1d54164f87fa
-    projectPath: Temp\UnityTempFile-d21cd0add1959354588f1d54164f87fa
+  - path: ScyneWaveStudio\Temp\UnityTempFile-aa6a310f7538f31418741fdcfc26fa43
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-aa6a310f7538f31418741fdcfc26fa43
+    projectPath: Temp\UnityTempFile-aa6a310f7538f31418741fdcfc26fa43
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-d444f7992e85ec5408375f527c8d03cd
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d444f7992e85ec5408375f527c8d03cd
-    projectPath: Temp\UnityTempFile-d444f7992e85ec5408375f527c8d03cd
+  - path: ScyneWaveStudio\Temp\UnityTempFile-abaffafb7cd4ff9408ecb2a5dd557fa1
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-abaffafb7cd4ff9408ecb2a5dd557fa1
+    projectPath: Temp\UnityTempFile-abaffafb7cd4ff9408ecb2a5dd557fa1
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-dc04527c315e96a4dac505733fe23f19
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-dc04527c315e96a4dac505733fe23f19
-    projectPath: Temp\UnityTempFile-dc04527c315e96a4dac505733fe23f19
+  - path: ScyneWaveStudio\Temp\UnityTempFile-ac58a8efd475be24dac2941ba20c49e1
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ac58a8efd475be24dac2941ba20c49e1
+    projectPath: Temp\UnityTempFile-ac58a8efd475be24dac2941ba20c49e1
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e09a44a7574c00d4ea869c92b5316ea3
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e09a44a7574c00d4ea869c92b5316ea3
-    projectPath: Temp\UnityTempFile-e09a44a7574c00d4ea869c92b5316ea3
+  - path: ScyneWaveStudio\Temp\UnityTempFile-acaeaeb0261536c47bc32b9553043f1b
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-acaeaeb0261536c47bc32b9553043f1b
+    projectPath: Temp\UnityTempFile-acaeaeb0261536c47bc32b9553043f1b
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e29507c03618de740a680ec039c747eb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e29507c03618de740a680ec039c747eb
-    projectPath: Temp\UnityTempFile-e29507c03618de740a680ec039c747eb
+  - path: ScyneWaveStudio\Temp\UnityTempFile-b1008214ca9fb704980383af9e7b98ea
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b1008214ca9fb704980383af9e7b98ea
+    projectPath: Temp\UnityTempFile-b1008214ca9fb704980383af9e7b98ea
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e379e31075701f8468805c9c72a9419d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e379e31075701f8468805c9c72a9419d
-    projectPath: Temp\UnityTempFile-e379e31075701f8468805c9c72a9419d
+  - path: ScyneWaveStudio\Temp\UnityTempFile-b1fb22021d932024c83ba83243b750a0
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b1fb22021d932024c83ba83243b750a0
+    projectPath: Temp\UnityTempFile-b1fb22021d932024c83ba83243b750a0
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e52e1374715d8e44e8e10d8f80f929e5
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e52e1374715d8e44e8e10d8f80f929e5
-    projectPath: Temp\UnityTempFile-e52e1374715d8e44e8e10d8f80f929e5
+  - path: ScyneWaveStudio\Temp\UnityTempFile-b668ac4b8251ccd4e979b2227bf263e6
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b668ac4b8251ccd4e979b2227bf263e6
+    projectPath: Temp\UnityTempFile-b668ac4b8251ccd4e979b2227bf263e6
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e791cbad0104e0b4c8dc868595305640
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e791cbad0104e0b4c8dc868595305640
-    projectPath: Temp\UnityTempFile-e791cbad0104e0b4c8dc868595305640
+  - path: ScyneWaveStudio\Temp\UnityTempFile-b727a928261de764d918426194ae07e2
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b727a928261de764d918426194ae07e2
+    projectPath: Temp\UnityTempFile-b727a928261de764d918426194ae07e2
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ea050d9f0d2fc834ab61f3bec92eaebb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ea050d9f0d2fc834ab61f3bec92eaebb
-    projectPath: Temp\UnityTempFile-ea050d9f0d2fc834ab61f3bec92eaebb
+  - path: ScyneWaveStudio\Temp\UnityTempFile-bfb31df8ea0269744aaa285e07669cee
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-bfb31df8ea0269744aaa285e07669cee
+    projectPath: Temp\UnityTempFile-bfb31df8ea0269744aaa285e07669cee
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ebd1ba1541c9f8b489b6b93be081a174
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ebd1ba1541c9f8b489b6b93be081a174
-    projectPath: Temp\UnityTempFile-ebd1ba1541c9f8b489b6b93be081a174
+  - path: ScyneWaveStudio\Temp\UnityTempFile-c32bd7634c5f82144b48152dc05a395a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c32bd7634c5f82144b48152dc05a395a
+    projectPath: Temp\UnityTempFile-c32bd7634c5f82144b48152dc05a395a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-edabe82aadc5bfc4cb6df1cfbe7d4479
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-edabe82aadc5bfc4cb6df1cfbe7d4479
-    projectPath: Temp\UnityTempFile-edabe82aadc5bfc4cb6df1cfbe7d4479
+  - path: ScyneWaveStudio\Temp\UnityTempFile-c32bdb01f3c6cd142b81f8eb397e60d7
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c32bdb01f3c6cd142b81f8eb397e60d7
+    projectPath: Temp\UnityTempFile-c32bdb01f3c6cd142b81f8eb397e60d7
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-edd4475563f0e1e4a973392386608f21
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-edd4475563f0e1e4a973392386608f21
-    projectPath: Temp\UnityTempFile-edd4475563f0e1e4a973392386608f21
+  - path: ScyneWaveStudio\Temp\UnityTempFile-c5342efac6161fb41bcc6c5a24150c3f
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c5342efac6161fb41bcc6c5a24150c3f
+    projectPath: Temp\UnityTempFile-c5342efac6161fb41bcc6c5a24150c3f
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-f1b13a37fead74d449f8fd56005e9b1d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-f1b13a37fead74d449f8fd56005e9b1d
-    projectPath: Temp\UnityTempFile-f1b13a37fead74d449f8fd56005e9b1d
+  - path: ScyneWaveStudio\Temp\UnityTempFile-c549e61528c73fb408ac9d042b5f5af8
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c549e61528c73fb408ac9d042b5f5af8
+    projectPath: Temp\UnityTempFile-c549e61528c73fb408ac9d042b5f5af8
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-f9e12dd8ba9aedf469e61889af6e7bea
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-f9e12dd8ba9aedf469e61889af6e7bea
-    projectPath: Temp\UnityTempFile-f9e12dd8ba9aedf469e61889af6e7bea
+  - path: ScyneWaveStudio\Temp\UnityTempFile-c7a247da06dd8c74d8d45435aeb680b6
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c7a247da06dd8c74d8d45435aeb680b6
+    projectPath: Temp\UnityTempFile-c7a247da06dd8c74d8d45435aeb680b6
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-fc1dad50305a49d488def94ebae61ac7
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-fc1dad50305a49d488def94ebae61ac7
-    projectPath: Temp\UnityTempFile-fc1dad50305a49d488def94ebae61ac7
+  - path: ScyneWaveStudio\Temp\UnityTempFile-c8fa49fff2dd5f14da6a4f16dce071af
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c8fa49fff2dd5f14da6a4f16dce071af
+    projectPath: Temp\UnityTempFile-c8fa49fff2dd5f14da6a4f16dce071af
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-cb5e15e5c25ba3f4d92cd84ca2401529
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-cb5e15e5c25ba3f4d92cd84ca2401529
+    projectPath: Temp\UnityTempFile-cb5e15e5c25ba3f4d92cd84ca2401529
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-cd0823727247abd428730ea7f62bcc42
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-cd0823727247abd428730ea7f62bcc42
+    projectPath: Temp\UnityTempFile-cd0823727247abd428730ea7f62bcc42
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-ce1cd2735a6cf9b48b0f1e703da83b90
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ce1cd2735a6cf9b48b0f1e703da83b90
+    projectPath: Temp\UnityTempFile-ce1cd2735a6cf9b48b0f1e703da83b90
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-d081ea2adacb4d3428e3172fa5f7a622
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d081ea2adacb4d3428e3172fa5f7a622
+    projectPath: Temp\UnityTempFile-d081ea2adacb4d3428e3172fa5f7a622
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-d0aae1083695f9f46a871bf92f1863f0
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d0aae1083695f9f46a871bf92f1863f0
+    projectPath: Temp\UnityTempFile-d0aae1083695f9f46a871bf92f1863f0
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-d0ab9d1a98304614ea7e468d07f4fd5e
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d0ab9d1a98304614ea7e468d07f4fd5e
+    projectPath: Temp\UnityTempFile-d0ab9d1a98304614ea7e468d07f4fd5e
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-d2b0ea5e6d6dfdb4db8fdee8fcc170ea
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d2b0ea5e6d6dfdb4db8fdee8fcc170ea
+    projectPath: Temp\UnityTempFile-d2b0ea5e6d6dfdb4db8fdee8fcc170ea
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-d6d13169f82cb04408d13d204ca9c929
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d6d13169f82cb04408d13d204ca9c929
+    projectPath: Temp\UnityTempFile-d6d13169f82cb04408d13d204ca9c929
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-d91ae89cf25cae5478b8addb1c3041f2
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d91ae89cf25cae5478b8addb1c3041f2
+    projectPath: Temp\UnityTempFile-d91ae89cf25cae5478b8addb1c3041f2
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-dd9fea5534937ac4d8186bda39d82e32
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-dd9fea5534937ac4d8186bda39d82e32
+    projectPath: Temp\UnityTempFile-dd9fea5534937ac4d8186bda39d82e32
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-df0455490a696024993320ce91cca492
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-df0455490a696024993320ce91cca492
+    projectPath: Temp\UnityTempFile-df0455490a696024993320ce91cca492
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-dfe8c56cd3e63b24386410659922c817
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-dfe8c56cd3e63b24386410659922c817
+    projectPath: Temp\UnityTempFile-dfe8c56cd3e63b24386410659922c817
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-e00dcbb523d4e7840b1bff4b6b9c76ae
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e00dcbb523d4e7840b1bff4b6b9c76ae
+    projectPath: Temp\UnityTempFile-e00dcbb523d4e7840b1bff4b6b9c76ae
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-e0c0026af3ddde6449c1e1851f6985ca
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e0c0026af3ddde6449c1e1851f6985ca
+    projectPath: Temp\UnityTempFile-e0c0026af3ddde6449c1e1851f6985ca
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-e15770f6923368a42adbeed869e5f8b5
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e15770f6923368a42adbeed869e5f8b5
+    projectPath: Temp\UnityTempFile-e15770f6923368a42adbeed869e5f8b5
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-e3bb55526d3c40545ab202f61439dac9
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e3bb55526d3c40545ab202f61439dac9
+    projectPath: Temp\UnityTempFile-e3bb55526d3c40545ab202f61439dac9
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-e5f1becb6f9198c49b198d6b4c8e0a9f
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e5f1becb6f9198c49b198d6b4c8e0a9f
+    projectPath: Temp\UnityTempFile-e5f1becb6f9198c49b198d6b4c8e0a9f
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-e619a48e26d26e84ba29a60e38032a40
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e619a48e26d26e84ba29a60e38032a40
+    projectPath: Temp\UnityTempFile-e619a48e26d26e84ba29a60e38032a40
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-e6f41f9ebc3f49d498071b35e6bdcdb4
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e6f41f9ebc3f49d498071b35e6bdcdb4
+    projectPath: Temp\UnityTempFile-e6f41f9ebc3f49d498071b35e6bdcdb4
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-e7e93281bcd65ff458d7f3e1a27df46e
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e7e93281bcd65ff458d7f3e1a27df46e
+    projectPath: Temp\UnityTempFile-e7e93281bcd65ff458d7f3e1a27df46e
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-ec31717a49863024ba0b45f0e0c95928
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ec31717a49863024ba0b45f0e0c95928
+    projectPath: Temp\UnityTempFile-ec31717a49863024ba0b45f0e0c95928
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-eed8f266002e28746976f0d981bcb637
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-eed8f266002e28746976f0d981bcb637
+    projectPath: Temp\UnityTempFile-eed8f266002e28746976f0d981bcb637
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-ef2bb6a756aad70449855be47c560de4
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ef2bb6a756aad70449855be47c560de4
+    projectPath: Temp\UnityTempFile-ef2bb6a756aad70449855be47c560de4
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-ef99a8efc6f561340b4a1dae5af59637
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ef99a8efc6f561340b4a1dae5af59637
+    projectPath: Temp\UnityTempFile-ef99a8efc6f561340b4a1dae5af59637
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-f7a4b5c5ec65bb1468feafc099b51180
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-f7a4b5c5ec65bb1468feafc099b51180
+    projectPath: Temp\UnityTempFile-f7a4b5c5ec65bb1468feafc099b51180
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-fa4de738b803a0444b9ac946a5cd80ad
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-fa4de738b803a0444b9ac946a5cd80ad
+    projectPath: Temp\UnityTempFile-fa4de738b803a0444b9ac946a5cd80ad
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-faee0b6aeb6e8be4680fcbf425b37b96
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-faee0b6aeb6e8be4680fcbf425b37b96
+    projectPath: Temp\UnityTempFile-faee0b6aeb6e8be4680fcbf425b37b96
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-fb026ac1c2fac584b9242e9095128580
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-fb026ac1c2fac584b9242e9095128580
+    projectPath: Temp\UnityTempFile-fb026ac1c2fac584b9242e9095128580
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-fc3dbd975c11df54580770470d89f9d7
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-fc3dbd975c11df54580770470d89f9d7
+    projectPath: Temp\UnityTempFile-fc3dbd975c11df54580770470d89f9d7
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-febdf7f965757d74dba7c579c6a5adc5
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-febdf7f965757d74dba7c579c6a5adc5
+    projectPath: Temp\UnityTempFile-febdf7f965757d74dba7c579c6a5adc5
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-ff0863ad5c188234d80da8dc71234cee
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ff0863ad5c188234d80da8dc71234cee
+    projectPath: Temp\UnityTempFile-ff0863ad5c188234d80da8dc71234cee
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-ff5c12412a58787408bcd8d6973ff25d
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ff5c12412a58787408bcd8d6973ff25d
+    projectPath: Temp\UnityTempFile-ff5c12412a58787408bcd8d6973ff25d
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-ffdf80a00af67534a91c6c6bdd5d8e59
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ffdf80a00af67534a91c6c6bdd5d8e59
+    projectPath: Temp\UnityTempFile-ffdf80a00af67534a91c6c6bdd5d8e59
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2021-05-15T01:57:49.344-04:00
-  initializedAtString: 2021-05-15T00:54:07.869-04:00
+  lastUpdatedAtString: 2021-05-31T17:17:47.009-04:00
+  initializedAtString: 2021-05-31T16:44:51.808-04:00
   currentGitRemote:
     name: origin
     url: https://github.com/Roll675/Scynewave-Set.git
@@ -24,14 +24,14 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: main
-    tracking: origin/main
+    name: Test
+    tracking: origin/Test
   currentConfigBranch:
-    name: main
+    name: Test
     remote:
       name: origin
       url: https://github.com/Roll675/Scynewave-Set.git
-    trackingBranch: main
+    trackingBranch: Test
   currentConfigRemote:
     name: origin
     url: https://github.com/Roll675/Scynewave-Set.git
