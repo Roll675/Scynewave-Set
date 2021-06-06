@@ -13,19 +13,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2021-05-31T17:17:47.051-04:00
-  initializedAtString: 2021-05-31T17:17:47.020-04:00
-  localBranches:
-  - name: main
-    tracking: origin/main
-  - name: Test
-    tracking: origin/Test
+  lastUpdatedAtString: 2021-06-06T03:53:23.994-04:00
+  initializedAtString: 2021-06-06T00:58:49.313-04:00
+  localBranches: []
   remoteBranches:
   - name: origin/HEAD
     tracking: '[None]'
-  - name: origin/main
-    tracking: '[None]'
-  - name: origin/Test
+  - name: origin/Quest
     tracking: '[None]'
   remotes:
   - name: origin
@@ -36,28 +30,15 @@ MonoBehaviour:
     function: 0
     token: 
   localConfigBranches:
-    keys:
-    - main
-    - Test
-    values:
-    - name: main
-      remote:
-        name: origin
-        url: https://github.com/Roll675/Scynewave-Set.git
-      trackingBranch: main
-    - name: Test
-      remote:
-        name: origin
-        url: https://github.com/Roll675/Scynewave-Set.git
-      trackingBranch: Test
+    keys: []
+    values: []
   remoteConfigBranches:
     keys:
     - origin
     subKeys:
     - Values:
       - HEAD
-      - main
-      - Test
+      - Quest
     subKeyValues:
     - Values:
       - name: HEAD
@@ -65,12 +46,7 @@ MonoBehaviour:
           name: origin
           url: https://github.com/Roll675/Scynewave-Set.git
         trackingBranch: 
-      - name: main
-        remote:
-          name: origin
-          url: https://github.com/Roll675/Scynewave-Set.git
-        trackingBranch: 
-      - name: Test
+      - name: Quest
         remote:
           name: origin
           url: https://github.com/Roll675/Scynewave-Set.git

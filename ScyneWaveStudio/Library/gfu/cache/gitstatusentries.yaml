@@ -13,18 +13,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2021-05-31T17:36:31.063-04:00
-  initializedAtString: 2021-05-31T16:45:00.426-04:00
+  lastUpdatedAtString: 2021-06-06T05:06:00.355-04:00
+  initializedAtString: 2021-06-06T00:19:25.593-04:00
   entries:
   - path: ScyneWaveStudio\Assets\scyne.unity
     fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\scyne.unity
     projectPath: Assets\scyne.unity
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: ScyneWaveStudio\Assets\Scynewave\OnKeyDownCameraEnable.asset
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Assets\Scynewave\OnKeyDownCameraEnable.asset
-    projectPath: Assets\Scynewave\OnKeyDownCameraEnable.asset
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -34,12 +28,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: ScyneWaveStudio\Library\CrashedAssetImports.txt
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\CrashedAssetImports.txt
-    projectPath: Library\CrashedAssetImports.txt
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: ScyneWaveStudio\Library\EditorInstance.json
     fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Library\EditorInstance.json
     projectPath: Library\EditorInstance.json
@@ -286,6 +274,18 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: ScyneWaveStudio\ProjectSettings\GraphicsSettings.asset
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\ProjectSettings\GraphicsSettings.asset
+    projectPath: ProjectSettings\GraphicsSettings.asset
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: ScyneWaveStudio\ProjectSettings\ProjectSettings.asset
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\ProjectSettings\ProjectSettings.asset
+    projectPath: ProjectSettings\ProjectSettings.asset
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: ScyneWaveStudio\scyne.unitypackage
     fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\scyne.unitypackage
     projectPath: scyne.unitypackage
@@ -322,795 +322,597 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-02b833f80f2bf7e40bcb55527874ed02
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-02b833f80f2bf7e40bcb55527874ed02
-    projectPath: Temp\UnityTempFile-02b833f80f2bf7e40bcb55527874ed02
+  - path: ScyneWaveStudio\Temp\UnityTempFile-057649fe40e7a0840a4e35b8b6b0656a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-057649fe40e7a0840a4e35b8b6b0656a
+    projectPath: Temp\UnityTempFile-057649fe40e7a0840a4e35b8b6b0656a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-0aa88b14ed6a78f4dba0d4323645d888
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-0aa88b14ed6a78f4dba0d4323645d888
-    projectPath: Temp\UnityTempFile-0aa88b14ed6a78f4dba0d4323645d888
+  - path: ScyneWaveStudio\Temp\UnityTempFile-065221285a50a1448b5424c54756de26
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-065221285a50a1448b5424c54756de26
+    projectPath: Temp\UnityTempFile-065221285a50a1448b5424c54756de26
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-149f4934afbaf5a45afaa2da53fe6498
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-149f4934afbaf5a45afaa2da53fe6498
-    projectPath: Temp\UnityTempFile-149f4934afbaf5a45afaa2da53fe6498
+  - path: ScyneWaveStudio\Temp\UnityTempFile-0b229a9864f215345be4476646c0c357
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-0b229a9864f215345be4476646c0c357
+    projectPath: Temp\UnityTempFile-0b229a9864f215345be4476646c0c357
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-157a697f8c972c64aa189c1b4c473c1b
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-157a697f8c972c64aa189c1b4c473c1b
-    projectPath: Temp\UnityTempFile-157a697f8c972c64aa189c1b4c473c1b
+  - path: ScyneWaveStudio\Temp\UnityTempFile-0c8376eb383479f4eaef17297360a8b8
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-0c8376eb383479f4eaef17297360a8b8
+    projectPath: Temp\UnityTempFile-0c8376eb383479f4eaef17297360a8b8
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-1777409164f18f2408617a70800195ec
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-1777409164f18f2408617a70800195ec
-    projectPath: Temp\UnityTempFile-1777409164f18f2408617a70800195ec
+  - path: ScyneWaveStudio\Temp\UnityTempFile-0cbff2c48e7a652488370941fb7e9a58
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-0cbff2c48e7a652488370941fb7e9a58
+    projectPath: Temp\UnityTempFile-0cbff2c48e7a652488370941fb7e9a58
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-1b1e1fe122371b84dbd3a67d2ab6e939
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-1b1e1fe122371b84dbd3a67d2ab6e939
-    projectPath: Temp\UnityTempFile-1b1e1fe122371b84dbd3a67d2ab6e939
+  - path: ScyneWaveStudio\Temp\UnityTempFile-165c88c39dade904db9e417fb07df79b
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-165c88c39dade904db9e417fb07df79b
+    projectPath: Temp\UnityTempFile-165c88c39dade904db9e417fb07df79b
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-1fb7f73f8ae89d145b26ca1f733f7474
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-1fb7f73f8ae89d145b26ca1f733f7474
-    projectPath: Temp\UnityTempFile-1fb7f73f8ae89d145b26ca1f733f7474
+  - path: ScyneWaveStudio\Temp\UnityTempFile-18d56a3f93598f94da249515644df2f9
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-18d56a3f93598f94da249515644df2f9
+    projectPath: Temp\UnityTempFile-18d56a3f93598f94da249515644df2f9
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-20d30d3a8b8e26c45b3c5815edc0b6b6
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-20d30d3a8b8e26c45b3c5815edc0b6b6
-    projectPath: Temp\UnityTempFile-20d30d3a8b8e26c45b3c5815edc0b6b6
+  - path: ScyneWaveStudio\Temp\UnityTempFile-190454f060b3bc0459e32f3bfa167f38
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-190454f060b3bc0459e32f3bfa167f38
+    projectPath: Temp\UnityTempFile-190454f060b3bc0459e32f3bfa167f38
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-21075aa806591974481f28b39425a87c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-21075aa806591974481f28b39425a87c
-    projectPath: Temp\UnityTempFile-21075aa806591974481f28b39425a87c
+  - path: ScyneWaveStudio\Temp\UnityTempFile-19ee953d4b9682843aa55669e07167fa
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-19ee953d4b9682843aa55669e07167fa
+    projectPath: Temp\UnityTempFile-19ee953d4b9682843aa55669e07167fa
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-258c431173298fc46bbf376bc74aeb64
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-258c431173298fc46bbf376bc74aeb64
-    projectPath: Temp\UnityTempFile-258c431173298fc46bbf376bc74aeb64
+  - path: ScyneWaveStudio\Temp\UnityTempFile-1a714312df99e324d8d0e5e9353492c5
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-1a714312df99e324d8d0e5e9353492c5
+    projectPath: Temp\UnityTempFile-1a714312df99e324d8d0e5e9353492c5
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-284756a7096bfe54b8290931e1964541
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-284756a7096bfe54b8290931e1964541
-    projectPath: Temp\UnityTempFile-284756a7096bfe54b8290931e1964541
+  - path: ScyneWaveStudio\Temp\UnityTempFile-1b3337c4c9f102b40b3554a675ee3bc6
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-1b3337c4c9f102b40b3554a675ee3bc6
+    projectPath: Temp\UnityTempFile-1b3337c4c9f102b40b3554a675ee3bc6
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-2b92a78b0fd1ab8468361c0d5ca740b0
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2b92a78b0fd1ab8468361c0d5ca740b0
-    projectPath: Temp\UnityTempFile-2b92a78b0fd1ab8468361c0d5ca740b0
+  - path: ScyneWaveStudio\Temp\UnityTempFile-2227e3f15a085294dae0d8ad748376e9
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2227e3f15a085294dae0d8ad748376e9
+    projectPath: Temp\UnityTempFile-2227e3f15a085294dae0d8ad748376e9
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-2c670dbcba6a9a8419ba38c104fee5fc
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2c670dbcba6a9a8419ba38c104fee5fc
-    projectPath: Temp\UnityTempFile-2c670dbcba6a9a8419ba38c104fee5fc
+  - path: ScyneWaveStudio\Temp\UnityTempFile-223e6db047fafc047a394fb2a78aa776
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-223e6db047fafc047a394fb2a78aa776
+    projectPath: Temp\UnityTempFile-223e6db047fafc047a394fb2a78aa776
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-2dc094803a66441489c020ad4541860c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2dc094803a66441489c020ad4541860c
-    projectPath: Temp\UnityTempFile-2dc094803a66441489c020ad4541860c
+  - path: ScyneWaveStudio\Temp\UnityTempFile-29ed5d1726b65d04abc4525d0b282027
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-29ed5d1726b65d04abc4525d0b282027
+    projectPath: Temp\UnityTempFile-29ed5d1726b65d04abc4525d0b282027
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-2e0fa78a866c83a4685525da37d2661d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2e0fa78a866c83a4685525da37d2661d
-    projectPath: Temp\UnityTempFile-2e0fa78a866c83a4685525da37d2661d
+  - path: ScyneWaveStudio\Temp\UnityTempFile-2c07355db4706b74ea025f3dc8e440d0
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2c07355db4706b74ea025f3dc8e440d0
+    projectPath: Temp\UnityTempFile-2c07355db4706b74ea025f3dc8e440d0
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-2e2d2dfd3db3f854cbe1f820b180a1bd
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2e2d2dfd3db3f854cbe1f820b180a1bd
-    projectPath: Temp\UnityTempFile-2e2d2dfd3db3f854cbe1f820b180a1bd
+  - path: ScyneWaveStudio\Temp\UnityTempFile-2e1e1307f2a7d154f8392d6e32e4bd0a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2e1e1307f2a7d154f8392d6e32e4bd0a
+    projectPath: Temp\UnityTempFile-2e1e1307f2a7d154f8392d6e32e4bd0a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-2edecde92171b8249bde37a677b28961
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2edecde92171b8249bde37a677b28961
-    projectPath: Temp\UnityTempFile-2edecde92171b8249bde37a677b28961
+  - path: ScyneWaveStudio\Temp\UnityTempFile-3174a4985bb93e041b5103b01add115e
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-3174a4985bb93e041b5103b01add115e
+    projectPath: Temp\UnityTempFile-3174a4985bb93e041b5103b01add115e
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-2edf50507c4bc2047be7347a1bebf3bb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-2edf50507c4bc2047be7347a1bebf3bb
-    projectPath: Temp\UnityTempFile-2edf50507c4bc2047be7347a1bebf3bb
+  - path: ScyneWaveStudio\Temp\UnityTempFile-331373b24e9d1904aa4225512560eb15
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-331373b24e9d1904aa4225512560eb15
+    projectPath: Temp\UnityTempFile-331373b24e9d1904aa4225512560eb15
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-321ce6f1e7356624b8d38fd025662f91
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-321ce6f1e7356624b8d38fd025662f91
-    projectPath: Temp\UnityTempFile-321ce6f1e7356624b8d38fd025662f91
+  - path: ScyneWaveStudio\Temp\UnityTempFile-35342550cc9ac89418db8047e17c7ae2
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-35342550cc9ac89418db8047e17c7ae2
+    projectPath: Temp\UnityTempFile-35342550cc9ac89418db8047e17c7ae2
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-33161bf8c855c734780435e82c135831
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-33161bf8c855c734780435e82c135831
-    projectPath: Temp\UnityTempFile-33161bf8c855c734780435e82c135831
+  - path: ScyneWaveStudio\Temp\UnityTempFile-3723f012389538f439403e1cb07e4e81
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-3723f012389538f439403e1cb07e4e81
+    projectPath: Temp\UnityTempFile-3723f012389538f439403e1cb07e4e81
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-35bace523a9a2e8499413ef88ec059e8
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-35bace523a9a2e8499413ef88ec059e8
-    projectPath: Temp\UnityTempFile-35bace523a9a2e8499413ef88ec059e8
+  - path: ScyneWaveStudio\Temp\UnityTempFile-37c77e87871be3241956157604be4a3e
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-37c77e87871be3241956157604be4a3e
+    projectPath: Temp\UnityTempFile-37c77e87871be3241956157604be4a3e
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-363ea53f21b5a8749b8c116b9bcfbabc
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-363ea53f21b5a8749b8c116b9bcfbabc
-    projectPath: Temp\UnityTempFile-363ea53f21b5a8749b8c116b9bcfbabc
+  - path: ScyneWaveStudio\Temp\UnityTempFile-3824a993ccea37d4d881405a4a6bb137
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-3824a993ccea37d4d881405a4a6bb137
+    projectPath: Temp\UnityTempFile-3824a993ccea37d4d881405a4a6bb137
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-3e6ef5ec97bd7da488b160653c613a82
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-3e6ef5ec97bd7da488b160653c613a82
-    projectPath: Temp\UnityTempFile-3e6ef5ec97bd7da488b160653c613a82
+  - path: ScyneWaveStudio\Temp\UnityTempFile-38943a534e0aa7a4387c578ec88ac387
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-38943a534e0aa7a4387c578ec88ac387
+    projectPath: Temp\UnityTempFile-38943a534e0aa7a4387c578ec88ac387
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-40234c2d1b6568149bb59486f3fe3f32
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-40234c2d1b6568149bb59486f3fe3f32
-    projectPath: Temp\UnityTempFile-40234c2d1b6568149bb59486f3fe3f32
+  - path: ScyneWaveStudio\Temp\UnityTempFile-42b1c07df54b02f4f9ad516c588328ca
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-42b1c07df54b02f4f9ad516c588328ca
+    projectPath: Temp\UnityTempFile-42b1c07df54b02f4f9ad516c588328ca
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-40afa49e58cb5da48b079f7fdde4295c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-40afa49e58cb5da48b079f7fdde4295c
-    projectPath: Temp\UnityTempFile-40afa49e58cb5da48b079f7fdde4295c
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4328f49c792af9349a1fa269412d0684
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4328f49c792af9349a1fa269412d0684
+    projectPath: Temp\UnityTempFile-4328f49c792af9349a1fa269412d0684
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4239e9b2bd83cd04b9c22057214cfe6e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4239e9b2bd83cd04b9c22057214cfe6e
-    projectPath: Temp\UnityTempFile-4239e9b2bd83cd04b9c22057214cfe6e
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4719c456b8b512140873c6f553922699
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4719c456b8b512140873c6f553922699
+    projectPath: Temp\UnityTempFile-4719c456b8b512140873c6f553922699
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-42e181360f0db2b4dbf39fa3877d95ea
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-42e181360f0db2b4dbf39fa3877d95ea
-    projectPath: Temp\UnityTempFile-42e181360f0db2b4dbf39fa3877d95ea
+  - path: ScyneWaveStudio\Temp\UnityTempFile-47ca76653aa59f549bc05bf1d477ecdd
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-47ca76653aa59f549bc05bf1d477ecdd
+    projectPath: Temp\UnityTempFile-47ca76653aa59f549bc05bf1d477ecdd
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-43eece752c31fb341a74e8c28c53fd06
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-43eece752c31fb341a74e8c28c53fd06
-    projectPath: Temp\UnityTempFile-43eece752c31fb341a74e8c28c53fd06
+  - path: ScyneWaveStudio\Temp\UnityTempFile-49dbf05b5807fe248bea198d4c053eee
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-49dbf05b5807fe248bea198d4c053eee
+    projectPath: Temp\UnityTempFile-49dbf05b5807fe248bea198d4c053eee
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-44bb895fb6f41a743bf02bd69a3f47b9
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-44bb895fb6f41a743bf02bd69a3f47b9
-    projectPath: Temp\UnityTempFile-44bb895fb6f41a743bf02bd69a3f47b9
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4aaa02e25fcc9f745bf453317207c200
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4aaa02e25fcc9f745bf453317207c200
+    projectPath: Temp\UnityTempFile-4aaa02e25fcc9f745bf453317207c200
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4543315f9a6c6334a9106e1cdd3f7eeb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4543315f9a6c6334a9106e1cdd3f7eeb
-    projectPath: Temp\UnityTempFile-4543315f9a6c6334a9106e1cdd3f7eeb
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4ae79b8dab00152429fb1dcf3f8d62dc
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4ae79b8dab00152429fb1dcf3f8d62dc
+    projectPath: Temp\UnityTempFile-4ae79b8dab00152429fb1dcf3f8d62dc
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-47e93d60a3382f541b16105ef1ed1159
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-47e93d60a3382f541b16105ef1ed1159
-    projectPath: Temp\UnityTempFile-47e93d60a3382f541b16105ef1ed1159
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4c0aec94c1a81c64f8dcd6020fa73d47
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4c0aec94c1a81c64f8dcd6020fa73d47
+    projectPath: Temp\UnityTempFile-4c0aec94c1a81c64f8dcd6020fa73d47
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4976bd2f48f84ae41be9548f7357d336
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4976bd2f48f84ae41be9548f7357d336
-    projectPath: Temp\UnityTempFile-4976bd2f48f84ae41be9548f7357d336
+  - path: ScyneWaveStudio\Temp\UnityTempFile-4e298e5306ae43d44a6eb6af3e4816fe
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4e298e5306ae43d44a6eb6af3e4816fe
+    projectPath: Temp\UnityTempFile-4e298e5306ae43d44a6eb6af3e4816fe
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4b5bc9c2bb9cf144a8c80293cf10f0d4
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4b5bc9c2bb9cf144a8c80293cf10f0d4
-    projectPath: Temp\UnityTempFile-4b5bc9c2bb9cf144a8c80293cf10f0d4
+  - path: ScyneWaveStudio\Temp\UnityTempFile-51ff63e7472a98245a5188fad8d07042
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-51ff63e7472a98245a5188fad8d07042
+    projectPath: Temp\UnityTempFile-51ff63e7472a98245a5188fad8d07042
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4e4d9d4497d19164896480ddcba702e0
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4e4d9d4497d19164896480ddcba702e0
-    projectPath: Temp\UnityTempFile-4e4d9d4497d19164896480ddcba702e0
+  - path: ScyneWaveStudio\Temp\UnityTempFile-55b72be568fbbdc4d99a75e2e1acf797
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-55b72be568fbbdc4d99a75e2e1acf797
+    projectPath: Temp\UnityTempFile-55b72be568fbbdc4d99a75e2e1acf797
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4e6c3f546dff1bc42bba0bea8154dba3
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4e6c3f546dff1bc42bba0bea8154dba3
-    projectPath: Temp\UnityTempFile-4e6c3f546dff1bc42bba0bea8154dba3
+  - path: ScyneWaveStudio\Temp\UnityTempFile-5854236870898ea4b874b5c68ec0b67b
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5854236870898ea4b874b5c68ec0b67b
+    projectPath: Temp\UnityTempFile-5854236870898ea4b874b5c68ec0b67b
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4e765985fe8b7a54abf64162d2a8e270
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4e765985fe8b7a54abf64162d2a8e270
-    projectPath: Temp\UnityTempFile-4e765985fe8b7a54abf64162d2a8e270
+  - path: ScyneWaveStudio\Temp\UnityTempFile-5973d4b1605e1af4592c4d37aed71bf9
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5973d4b1605e1af4592c4d37aed71bf9
+    projectPath: Temp\UnityTempFile-5973d4b1605e1af4592c4d37aed71bf9
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-4f4e37920ba7210449388fbbc5bf324e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-4f4e37920ba7210449388fbbc5bf324e
-    projectPath: Temp\UnityTempFile-4f4e37920ba7210449388fbbc5bf324e
+  - path: ScyneWaveStudio\Temp\UnityTempFile-5adec76a95656564b81c28ad86cfe889
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5adec76a95656564b81c28ad86cfe889
+    projectPath: Temp\UnityTempFile-5adec76a95656564b81c28ad86cfe889
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-535da6fe65a1a224f90509df7d79b10b
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-535da6fe65a1a224f90509df7d79b10b
-    projectPath: Temp\UnityTempFile-535da6fe65a1a224f90509df7d79b10b
+  - path: ScyneWaveStudio\Temp\UnityTempFile-5d1384438c7b1c649836a02b5cf59356
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5d1384438c7b1c649836a02b5cf59356
+    projectPath: Temp\UnityTempFile-5d1384438c7b1c649836a02b5cf59356
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-53ab191b840970447a2e2d6f1921c279
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-53ab191b840970447a2e2d6f1921c279
-    projectPath: Temp\UnityTempFile-53ab191b840970447a2e2d6f1921c279
+  - path: ScyneWaveStudio\Temp\UnityTempFile-5f76a15e47a9ec94488d8125ab6215f9
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5f76a15e47a9ec94488d8125ab6215f9
+    projectPath: Temp\UnityTempFile-5f76a15e47a9ec94488d8125ab6215f9
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-54d4e607f441ea9448f82dc277d615b1
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-54d4e607f441ea9448f82dc277d615b1
-    projectPath: Temp\UnityTempFile-54d4e607f441ea9448f82dc277d615b1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-617f45d6a11aa3847bf1f662a9212e34
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-617f45d6a11aa3847bf1f662a9212e34
+    projectPath: Temp\UnityTempFile-617f45d6a11aa3847bf1f662a9212e34
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-555cfde3576484248939948ee13ed77c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-555cfde3576484248939948ee13ed77c
-    projectPath: Temp\UnityTempFile-555cfde3576484248939948ee13ed77c
+  - path: ScyneWaveStudio\Temp\UnityTempFile-68c41861a93e4934887de4861c714d27
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-68c41861a93e4934887de4861c714d27
+    projectPath: Temp\UnityTempFile-68c41861a93e4934887de4861c714d27
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-56be0a880881c0345ade042d58995a83
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-56be0a880881c0345ade042d58995a83
-    projectPath: Temp\UnityTempFile-56be0a880881c0345ade042d58995a83
+  - path: ScyneWaveStudio\Temp\UnityTempFile-70ddea7bc151c6443b3056ddd4f89468
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-70ddea7bc151c6443b3056ddd4f89468
+    projectPath: Temp\UnityTempFile-70ddea7bc151c6443b3056ddd4f89468
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-5b1f10a358ed78549a074b4f6f7f33e4
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5b1f10a358ed78549a074b4f6f7f33e4
-    projectPath: Temp\UnityTempFile-5b1f10a358ed78549a074b4f6f7f33e4
+  - path: ScyneWaveStudio\Temp\UnityTempFile-7102c93cb3d5dce49950c8e5bf42809c
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-7102c93cb3d5dce49950c8e5bf42809c
+    projectPath: Temp\UnityTempFile-7102c93cb3d5dce49950c8e5bf42809c
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-5b754559e834dff4180d27b1f8cef42a
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5b754559e834dff4180d27b1f8cef42a
-    projectPath: Temp\UnityTempFile-5b754559e834dff4180d27b1f8cef42a
+  - path: ScyneWaveStudio\Temp\UnityTempFile-71e1d681478319d489d4706264e5d299
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-71e1d681478319d489d4706264e5d299
+    projectPath: Temp\UnityTempFile-71e1d681478319d489d4706264e5d299
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-5c6768e93063bb34ba8ee213250e3f11
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5c6768e93063bb34ba8ee213250e3f11
-    projectPath: Temp\UnityTempFile-5c6768e93063bb34ba8ee213250e3f11
+  - path: ScyneWaveStudio\Temp\UnityTempFile-72697f3700bf12a42b0195927779ef7f
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-72697f3700bf12a42b0195927779ef7f
+    projectPath: Temp\UnityTempFile-72697f3700bf12a42b0195927779ef7f
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-5e8c70ca0beca514d9f3795dd4aa7fec
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-5e8c70ca0beca514d9f3795dd4aa7fec
-    projectPath: Temp\UnityTempFile-5e8c70ca0beca514d9f3795dd4aa7fec
+  - path: ScyneWaveStudio\Temp\UnityTempFile-75dc0127837cd4f419d380add9476ed7
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-75dc0127837cd4f419d380add9476ed7
+    projectPath: Temp\UnityTempFile-75dc0127837cd4f419d380add9476ed7
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-62e31320b940ae24e86bf93cd811f69c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-62e31320b940ae24e86bf93cd811f69c
-    projectPath: Temp\UnityTempFile-62e31320b940ae24e86bf93cd811f69c
+  - path: ScyneWaveStudio\Temp\UnityTempFile-79fe9dd44301f4046a06e6fe7f903615
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-79fe9dd44301f4046a06e6fe7f903615
+    projectPath: Temp\UnityTempFile-79fe9dd44301f4046a06e6fe7f903615
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-67410dd1d1c619c4a8e37ce2b5657a81
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-67410dd1d1c619c4a8e37ce2b5657a81
-    projectPath: Temp\UnityTempFile-67410dd1d1c619c4a8e37ce2b5657a81
+  - path: ScyneWaveStudio\Temp\UnityTempFile-7ae16db51a43d794689ab76276ecb29f
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-7ae16db51a43d794689ab76276ecb29f
+    projectPath: Temp\UnityTempFile-7ae16db51a43d794689ab76276ecb29f
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-6b56b703f0cc1a94e8213f517d81dfc8
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6b56b703f0cc1a94e8213f517d81dfc8
-    projectPath: Temp\UnityTempFile-6b56b703f0cc1a94e8213f517d81dfc8
+  - path: ScyneWaveStudio\Temp\UnityTempFile-7f9e9d33f4af5c247ada04734fb93dec
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-7f9e9d33f4af5c247ada04734fb93dec
+    projectPath: Temp\UnityTempFile-7f9e9d33f4af5c247ada04734fb93dec
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-6ccca984e147520428149129a590f145
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6ccca984e147520428149129a590f145
-    projectPath: Temp\UnityTempFile-6ccca984e147520428149129a590f145
+  - path: ScyneWaveStudio\Temp\UnityTempFile-800c344901cdf4d4cb3dba4ce6ad257f
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-800c344901cdf4d4cb3dba4ce6ad257f
+    projectPath: Temp\UnityTempFile-800c344901cdf4d4cb3dba4ce6ad257f
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-6fb833633f9e55242adf708f2768640d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-6fb833633f9e55242adf708f2768640d
-    projectPath: Temp\UnityTempFile-6fb833633f9e55242adf708f2768640d
+  - path: ScyneWaveStudio\Temp\UnityTempFile-83b5fce9b1ece3e4db7d13e20a335eed
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-83b5fce9b1ece3e4db7d13e20a335eed
+    projectPath: Temp\UnityTempFile-83b5fce9b1ece3e4db7d13e20a335eed
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-70216b833a7ea89498542f9f5fa71f1a
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-70216b833a7ea89498542f9f5fa71f1a
-    projectPath: Temp\UnityTempFile-70216b833a7ea89498542f9f5fa71f1a
+  - path: ScyneWaveStudio\Temp\UnityTempFile-83cff408b74794845936c40536c580b6
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-83cff408b74794845936c40536c580b6
+    projectPath: Temp\UnityTempFile-83cff408b74794845936c40536c580b6
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-7198eb22dca7d8b419f5e215988d16e3
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-7198eb22dca7d8b419f5e215988d16e3
-    projectPath: Temp\UnityTempFile-7198eb22dca7d8b419f5e215988d16e3
+  - path: ScyneWaveStudio\Temp\UnityTempFile-891c5e8b915782d4b9e7f1698a91efbf
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-891c5e8b915782d4b9e7f1698a91efbf
+    projectPath: Temp\UnityTempFile-891c5e8b915782d4b9e7f1698a91efbf
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-75973b4b7b409ce4f821d5dbbdf028e7
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-75973b4b7b409ce4f821d5dbbdf028e7
-    projectPath: Temp\UnityTempFile-75973b4b7b409ce4f821d5dbbdf028e7
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8bc0e00d30fb832429a91ab3ba594336
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8bc0e00d30fb832429a91ab3ba594336
+    projectPath: Temp\UnityTempFile-8bc0e00d30fb832429a91ab3ba594336
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-7ae5c8a76d53d394a9c6f7ec49c2bf1a
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-7ae5c8a76d53d394a9c6f7ec49c2bf1a
-    projectPath: Temp\UnityTempFile-7ae5c8a76d53d394a9c6f7ec49c2bf1a
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8c1ca91e15c881d41804d92156423232
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8c1ca91e15c881d41804d92156423232
+    projectPath: Temp\UnityTempFile-8c1ca91e15c881d41804d92156423232
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-7b4849f843ba6604e8a3aa721d8beaab
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-7b4849f843ba6604e8a3aa721d8beaab
-    projectPath: Temp\UnityTempFile-7b4849f843ba6604e8a3aa721d8beaab
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8c6c0c2087071bd499e7c65417162ce1
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8c6c0c2087071bd499e7c65417162ce1
+    projectPath: Temp\UnityTempFile-8c6c0c2087071bd499e7c65417162ce1
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8067e965160f4a54a9fd619bf8b31ffb
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8067e965160f4a54a9fd619bf8b31ffb
-    projectPath: Temp\UnityTempFile-8067e965160f4a54a9fd619bf8b31ffb
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8d2745800a0da6847bc225fdf445bb6f
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8d2745800a0da6847bc225fdf445bb6f
+    projectPath: Temp\UnityTempFile-8d2745800a0da6847bc225fdf445bb6f
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-806ef8613d22e694083648e9049f345e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-806ef8613d22e694083648e9049f345e
-    projectPath: Temp\UnityTempFile-806ef8613d22e694083648e9049f345e
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8d2d5a600dd92d4448590c0655b1f4f9
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8d2d5a600dd92d4448590c0655b1f4f9
+    projectPath: Temp\UnityTempFile-8d2d5a600dd92d4448590c0655b1f4f9
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-80a03e1f4ae723d4dab6e77b8991d336
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-80a03e1f4ae723d4dab6e77b8991d336
-    projectPath: Temp\UnityTempFile-80a03e1f4ae723d4dab6e77b8991d336
+  - path: ScyneWaveStudio\Temp\UnityTempFile-8d4feec9db043e34590cf18e47e6dac1
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8d4feec9db043e34590cf18e47e6dac1
+    projectPath: Temp\UnityTempFile-8d4feec9db043e34590cf18e47e6dac1
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-80bcb2c287c0af54c9a9a58411d2a717
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-80bcb2c287c0af54c9a9a58411d2a717
-    projectPath: Temp\UnityTempFile-80bcb2c287c0af54c9a9a58411d2a717
+  - path: ScyneWaveStudio\Temp\UnityTempFile-905f4b0e6249f32448dfbb204f0d68ee
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-905f4b0e6249f32448dfbb204f0d68ee
+    projectPath: Temp\UnityTempFile-905f4b0e6249f32448dfbb204f0d68ee
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-811e3e2119c7c114ca9a6fecd10d7d9d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-811e3e2119c7c114ca9a6fecd10d7d9d
-    projectPath: Temp\UnityTempFile-811e3e2119c7c114ca9a6fecd10d7d9d
+  - path: ScyneWaveStudio\Temp\UnityTempFile-90ddef766a639c74490d2cd06de05ab8
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-90ddef766a639c74490d2cd06de05ab8
+    projectPath: Temp\UnityTempFile-90ddef766a639c74490d2cd06de05ab8
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-81f3fe94e9634cf40aa8a70e85881358
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-81f3fe94e9634cf40aa8a70e85881358
-    projectPath: Temp\UnityTempFile-81f3fe94e9634cf40aa8a70e85881358
+  - path: ScyneWaveStudio\Temp\UnityTempFile-927eea34265ce1a47a08d400adaead7d
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-927eea34265ce1a47a08d400adaead7d
+    projectPath: Temp\UnityTempFile-927eea34265ce1a47a08d400adaead7d
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-823b23ebe1359f648a5dbda53c2448a6
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-823b23ebe1359f648a5dbda53c2448a6
-    projectPath: Temp\UnityTempFile-823b23ebe1359f648a5dbda53c2448a6
+  - path: ScyneWaveStudio\Temp\UnityTempFile-9293fc431069cb141bbad13b2c18bd80
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9293fc431069cb141bbad13b2c18bd80
+    projectPath: Temp\UnityTempFile-9293fc431069cb141bbad13b2c18bd80
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-836938de3db3be34e9eb472a5a938f52
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-836938de3db3be34e9eb472a5a938f52
-    projectPath: Temp\UnityTempFile-836938de3db3be34e9eb472a5a938f52
+  - path: ScyneWaveStudio\Temp\UnityTempFile-958195069bd78084c8958d017a6bedea
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-958195069bd78084c8958d017a6bedea
+    projectPath: Temp\UnityTempFile-958195069bd78084c8958d017a6bedea
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-84f6f77cf0cc8c84e90e06574a024088
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-84f6f77cf0cc8c84e90e06574a024088
-    projectPath: Temp\UnityTempFile-84f6f77cf0cc8c84e90e06574a024088
+  - path: ScyneWaveStudio\Temp\UnityTempFile-97d77b793dbdd12479dcff0ce28cec64
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-97d77b793dbdd12479dcff0ce28cec64
+    projectPath: Temp\UnityTempFile-97d77b793dbdd12479dcff0ce28cec64
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8be752eb23a5a79408f86a33c55b9d4c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8be752eb23a5a79408f86a33c55b9d4c
-    projectPath: Temp\UnityTempFile-8be752eb23a5a79408f86a33c55b9d4c
+  - path: ScyneWaveStudio\Temp\UnityTempFile-9810e568e172ce746b752c75cd2a9df2
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9810e568e172ce746b752c75cd2a9df2
+    projectPath: Temp\UnityTempFile-9810e568e172ce746b752c75cd2a9df2
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8c592f500e3ea684bb22c33062b4804d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8c592f500e3ea684bb22c33062b4804d
-    projectPath: Temp\UnityTempFile-8c592f500e3ea684bb22c33062b4804d
+  - path: ScyneWaveStudio\Temp\UnityTempFile-982392e00cc8ec74db3abf381cc3359a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-982392e00cc8ec74db3abf381cc3359a
+    projectPath: Temp\UnityTempFile-982392e00cc8ec74db3abf381cc3359a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8ccfce7edd841a441aad249553f6b2b3
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8ccfce7edd841a441aad249553f6b2b3
-    projectPath: Temp\UnityTempFile-8ccfce7edd841a441aad249553f6b2b3
+  - path: ScyneWaveStudio\Temp\UnityTempFile-9852877d8b6f59941adbe0d2b55d012e
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9852877d8b6f59941adbe0d2b55d012e
+    projectPath: Temp\UnityTempFile-9852877d8b6f59941adbe0d2b55d012e
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-8e1162f241dee384f8383f3b66b2a16f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-8e1162f241dee384f8383f3b66b2a16f
-    projectPath: Temp\UnityTempFile-8e1162f241dee384f8383f3b66b2a16f
+  - path: ScyneWaveStudio\Temp\UnityTempFile-992579e121a3b3a4592bc0106c0d50a2
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-992579e121a3b3a4592bc0106c0d50a2
+    projectPath: Temp\UnityTempFile-992579e121a3b3a4592bc0106c0d50a2
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-9067322f710d1bb4c99ab461eea30abc
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9067322f710d1bb4c99ab461eea30abc
-    projectPath: Temp\UnityTempFile-9067322f710d1bb4c99ab461eea30abc
+  - path: ScyneWaveStudio\Temp\UnityTempFile-a7207503963a0bd4185c8f3e42d89399
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-a7207503963a0bd4185c8f3e42d89399
+    projectPath: Temp\UnityTempFile-a7207503963a0bd4185c8f3e42d89399
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-933e7f253fcb01a4c8166afbe194196d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-933e7f253fcb01a4c8166afbe194196d
-    projectPath: Temp\UnityTempFile-933e7f253fcb01a4c8166afbe194196d
+  - path: ScyneWaveStudio\Temp\UnityTempFile-a8025756283563545a64dbf9a09c0a89
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-a8025756283563545a64dbf9a09c0a89
+    projectPath: Temp\UnityTempFile-a8025756283563545a64dbf9a09c0a89
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-94852eedd14a3db4b8e3de7490616fd5
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-94852eedd14a3db4b8e3de7490616fd5
-    projectPath: Temp\UnityTempFile-94852eedd14a3db4b8e3de7490616fd5
+  - path: ScyneWaveStudio\Temp\UnityTempFile-aa3ae44d563772d4287c214b39f1d154
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-aa3ae44d563772d4287c214b39f1d154
+    projectPath: Temp\UnityTempFile-aa3ae44d563772d4287c214b39f1d154
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-95cd38d0cd8cd6343952b47647c3036d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-95cd38d0cd8cd6343952b47647c3036d
-    projectPath: Temp\UnityTempFile-95cd38d0cd8cd6343952b47647c3036d
+  - path: ScyneWaveStudio\Temp\UnityTempFile-aac305b5a73ba2c4ba0d7e0f517394ea
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-aac305b5a73ba2c4ba0d7e0f517394ea
+    projectPath: Temp\UnityTempFile-aac305b5a73ba2c4ba0d7e0f517394ea
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-96c68e3c11500864699d8396bf8e5097
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-96c68e3c11500864699d8396bf8e5097
-    projectPath: Temp\UnityTempFile-96c68e3c11500864699d8396bf8e5097
+  - path: ScyneWaveStudio\Temp\UnityTempFile-ae198107310d3e940a01b2605f6d293b
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ae198107310d3e940a01b2605f6d293b
+    projectPath: Temp\UnityTempFile-ae198107310d3e940a01b2605f6d293b
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-9a229d6b4fb37704caaec28f7d647150
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9a229d6b4fb37704caaec28f7d647150
-    projectPath: Temp\UnityTempFile-9a229d6b4fb37704caaec28f7d647150
+  - path: ScyneWaveStudio\Temp\UnityTempFile-b0398bae0e8c6184abff50958fdaead0
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b0398bae0e8c6184abff50958fdaead0
+    projectPath: Temp\UnityTempFile-b0398bae0e8c6184abff50958fdaead0
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-9b716b7befb2c1646a4e9a2deb4cfb04
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9b716b7befb2c1646a4e9a2deb4cfb04
-    projectPath: Temp\UnityTempFile-9b716b7befb2c1646a4e9a2deb4cfb04
+  - path: ScyneWaveStudio\Temp\UnityTempFile-b0808055659102448ba48a45fcdc2727
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b0808055659102448ba48a45fcdc2727
+    projectPath: Temp\UnityTempFile-b0808055659102448ba48a45fcdc2727
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-9c5b515d3776f7349a963bb3fe66b104
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9c5b515d3776f7349a963bb3fe66b104
-    projectPath: Temp\UnityTempFile-9c5b515d3776f7349a963bb3fe66b104
+  - path: ScyneWaveStudio\Temp\UnityTempFile-b24c3e2d2633b264eb75e7c1e75d2dc9
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b24c3e2d2633b264eb75e7c1e75d2dc9
+    projectPath: Temp\UnityTempFile-b24c3e2d2633b264eb75e7c1e75d2dc9
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-9dface2cdd900804690503eb6b6fe01b
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9dface2cdd900804690503eb6b6fe01b
-    projectPath: Temp\UnityTempFile-9dface2cdd900804690503eb6b6fe01b
+  - path: ScyneWaveStudio\Temp\UnityTempFile-b311d4bd434863c4b90ca66bf6b12154
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b311d4bd434863c4b90ca66bf6b12154
+    projectPath: Temp\UnityTempFile-b311d4bd434863c4b90ca66bf6b12154
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-9e9fd3032d1288c42801afa7993fd514
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9e9fd3032d1288c42801afa7993fd514
-    projectPath: Temp\UnityTempFile-9e9fd3032d1288c42801afa7993fd514
+  - path: ScyneWaveStudio\Temp\UnityTempFile-b5c3dbd23249aac48837ca7308571aa4
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b5c3dbd23249aac48837ca7308571aa4
+    projectPath: Temp\UnityTempFile-b5c3dbd23249aac48837ca7308571aa4
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-9fcecc2c32f147a44a50a0fda0eb0549
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-9fcecc2c32f147a44a50a0fda0eb0549
-    projectPath: Temp\UnityTempFile-9fcecc2c32f147a44a50a0fda0eb0549
+  - path: ScyneWaveStudio\Temp\UnityTempFile-b8e08ddc26658b04db617319897e3f0a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b8e08ddc26658b04db617319897e3f0a
+    projectPath: Temp\UnityTempFile-b8e08ddc26658b04db617319897e3f0a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-a0570b53d7532cd419c0e4cb4e5761a7
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-a0570b53d7532cd419c0e4cb4e5761a7
-    projectPath: Temp\UnityTempFile-a0570b53d7532cd419c0e4cb4e5761a7
+  - path: ScyneWaveStudio\Temp\UnityTempFile-bf8b4c65244b4304ab2fa5dbed46c4e9
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-bf8b4c65244b4304ab2fa5dbed46c4e9
+    projectPath: Temp\UnityTempFile-bf8b4c65244b4304ab2fa5dbed46c4e9
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-a2172d12ea8c84042bd4d554d4753cf0
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-a2172d12ea8c84042bd4d554d4753cf0
-    projectPath: Temp\UnityTempFile-a2172d12ea8c84042bd4d554d4753cf0
+  - path: ScyneWaveStudio\Temp\UnityTempFile-bfe6b5e81bd0c34469974919a9144640
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-bfe6b5e81bd0c34469974919a9144640
+    projectPath: Temp\UnityTempFile-bfe6b5e81bd0c34469974919a9144640
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-a77a968318718014ca64ac6fd4f41b2c
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-a77a968318718014ca64ac6fd4f41b2c
-    projectPath: Temp\UnityTempFile-a77a968318718014ca64ac6fd4f41b2c
+  - path: ScyneWaveStudio\Temp\UnityTempFile-c56e8c2cdb2aeb84ea46a5022e51464a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c56e8c2cdb2aeb84ea46a5022e51464a
+    projectPath: Temp\UnityTempFile-c56e8c2cdb2aeb84ea46a5022e51464a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-aa44352f0ef207d41ab7f95a94a1952a
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-aa44352f0ef207d41ab7f95a94a1952a
-    projectPath: Temp\UnityTempFile-aa44352f0ef207d41ab7f95a94a1952a
+  - path: ScyneWaveStudio\Temp\UnityTempFile-c5d4c3a577e8128449f6f6afee209655
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c5d4c3a577e8128449f6f6afee209655
+    projectPath: Temp\UnityTempFile-c5d4c3a577e8128449f6f6afee209655
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-aa6a310f7538f31418741fdcfc26fa43
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-aa6a310f7538f31418741fdcfc26fa43
-    projectPath: Temp\UnityTempFile-aa6a310f7538f31418741fdcfc26fa43
+  - path: ScyneWaveStudio\Temp\UnityTempFile-caf03fdcf9171cf498faee2ecf8b789c
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-caf03fdcf9171cf498faee2ecf8b789c
+    projectPath: Temp\UnityTempFile-caf03fdcf9171cf498faee2ecf8b789c
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-abaffafb7cd4ff9408ecb2a5dd557fa1
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-abaffafb7cd4ff9408ecb2a5dd557fa1
-    projectPath: Temp\UnityTempFile-abaffafb7cd4ff9408ecb2a5dd557fa1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-cd64a53015c71534aa50cbbfa1321370
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-cd64a53015c71534aa50cbbfa1321370
+    projectPath: Temp\UnityTempFile-cd64a53015c71534aa50cbbfa1321370
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ac58a8efd475be24dac2941ba20c49e1
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ac58a8efd475be24dac2941ba20c49e1
-    projectPath: Temp\UnityTempFile-ac58a8efd475be24dac2941ba20c49e1
+  - path: ScyneWaveStudio\Temp\UnityTempFile-cf209284f0ca50840be642fc29c12a0e
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-cf209284f0ca50840be642fc29c12a0e
+    projectPath: Temp\UnityTempFile-cf209284f0ca50840be642fc29c12a0e
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-acaeaeb0261536c47bc32b9553043f1b
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-acaeaeb0261536c47bc32b9553043f1b
-    projectPath: Temp\UnityTempFile-acaeaeb0261536c47bc32b9553043f1b
+  - path: ScyneWaveStudio\Temp\UnityTempFile-cf4eb3d6f985aa245a955c033eaf4b41
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-cf4eb3d6f985aa245a955c033eaf4b41
+    projectPath: Temp\UnityTempFile-cf4eb3d6f985aa245a955c033eaf4b41
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-b1008214ca9fb704980383af9e7b98ea
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b1008214ca9fb704980383af9e7b98ea
-    projectPath: Temp\UnityTempFile-b1008214ca9fb704980383af9e7b98ea
+  - path: ScyneWaveStudio\Temp\UnityTempFile-d6cc0fd2dfaa3974ca9be03ee6c1fb4f
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d6cc0fd2dfaa3974ca9be03ee6c1fb4f
+    projectPath: Temp\UnityTempFile-d6cc0fd2dfaa3974ca9be03ee6c1fb4f
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-b1fb22021d932024c83ba83243b750a0
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b1fb22021d932024c83ba83243b750a0
-    projectPath: Temp\UnityTempFile-b1fb22021d932024c83ba83243b750a0
+  - path: ScyneWaveStudio\Temp\UnityTempFile-d6d781594d1fdb84e9d8c3bc1f2c3d6a
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d6d781594d1fdb84e9d8c3bc1f2c3d6a
+    projectPath: Temp\UnityTempFile-d6d781594d1fdb84e9d8c3bc1f2c3d6a
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-b668ac4b8251ccd4e979b2227bf263e6
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b668ac4b8251ccd4e979b2227bf263e6
-    projectPath: Temp\UnityTempFile-b668ac4b8251ccd4e979b2227bf263e6
+  - path: ScyneWaveStudio\Temp\UnityTempFile-d9de428e17d456f4696539ee33e1c5bc
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d9de428e17d456f4696539ee33e1c5bc
+    projectPath: Temp\UnityTempFile-d9de428e17d456f4696539ee33e1c5bc
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-b727a928261de764d918426194ae07e2
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-b727a928261de764d918426194ae07e2
-    projectPath: Temp\UnityTempFile-b727a928261de764d918426194ae07e2
+  - path: ScyneWaveStudio\Temp\UnityTempFile-dc0ce6a1a5d0959448d43586fc28d8d7
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-dc0ce6a1a5d0959448d43586fc28d8d7
+    projectPath: Temp\UnityTempFile-dc0ce6a1a5d0959448d43586fc28d8d7
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-bfb31df8ea0269744aaa285e07669cee
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-bfb31df8ea0269744aaa285e07669cee
-    projectPath: Temp\UnityTempFile-bfb31df8ea0269744aaa285e07669cee
+  - path: ScyneWaveStudio\Temp\UnityTempFile-e70336aad42d0714c834f74bacc7c8c1
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e70336aad42d0714c834f74bacc7c8c1
+    projectPath: Temp\UnityTempFile-e70336aad42d0714c834f74bacc7c8c1
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-c32bd7634c5f82144b48152dc05a395a
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c32bd7634c5f82144b48152dc05a395a
-    projectPath: Temp\UnityTempFile-c32bd7634c5f82144b48152dc05a395a
+  - path: ScyneWaveStudio\Temp\UnityTempFile-f59c4617a9aaef842988bd32f9f50664
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-f59c4617a9aaef842988bd32f9f50664
+    projectPath: Temp\UnityTempFile-f59c4617a9aaef842988bd32f9f50664
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-c32bdb01f3c6cd142b81f8eb397e60d7
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c32bdb01f3c6cd142b81f8eb397e60d7
-    projectPath: Temp\UnityTempFile-c32bdb01f3c6cd142b81f8eb397e60d7
+  - path: ScyneWaveStudio\Temp\UnityTempFile-f7dbb666bfd7602408be1e0a285fb59b
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-f7dbb666bfd7602408be1e0a285fb59b
+    projectPath: Temp\UnityTempFile-f7dbb666bfd7602408be1e0a285fb59b
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-c5342efac6161fb41bcc6c5a24150c3f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c5342efac6161fb41bcc6c5a24150c3f
-    projectPath: Temp\UnityTempFile-c5342efac6161fb41bcc6c5a24150c3f
+  - path: ScyneWaveStudio\Temp\UnityTempFile-fa4bc0b6e88d3e84e92b98da28953aed
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-fa4bc0b6e88d3e84e92b98da28953aed
+    projectPath: Temp\UnityTempFile-fa4bc0b6e88d3e84e92b98da28953aed
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-c549e61528c73fb408ac9d042b5f5af8
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c549e61528c73fb408ac9d042b5f5af8
-    projectPath: Temp\UnityTempFile-c549e61528c73fb408ac9d042b5f5af8
+  - path: ScyneWaveStudio\Temp\UnityTempFile-fd1dbc16910fe63488e67b50cb204afe
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-fd1dbc16910fe63488e67b50cb204afe
+    projectPath: Temp\UnityTempFile-fd1dbc16910fe63488e67b50cb204afe
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-c7a247da06dd8c74d8d45435aeb680b6
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c7a247da06dd8c74d8d45435aeb680b6
-    projectPath: Temp\UnityTempFile-c7a247da06dd8c74d8d45435aeb680b6
+  - path: ScyneWaveStudio\Temp\UnityTempFile-fefa110816f9f0a43b34938390d84381
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-fefa110816f9f0a43b34938390d84381
+    projectPath: Temp\UnityTempFile-fefa110816f9f0a43b34938390d84381
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-c8fa49fff2dd5f14da6a4f16dce071af
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-c8fa49fff2dd5f14da6a4f16dce071af
-    projectPath: Temp\UnityTempFile-c8fa49fff2dd5f14da6a4f16dce071af
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-cb5e15e5c25ba3f4d92cd84ca2401529
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-cb5e15e5c25ba3f4d92cd84ca2401529
-    projectPath: Temp\UnityTempFile-cb5e15e5c25ba3f4d92cd84ca2401529
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-cd0823727247abd428730ea7f62bcc42
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-cd0823727247abd428730ea7f62bcc42
-    projectPath: Temp\UnityTempFile-cd0823727247abd428730ea7f62bcc42
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ce1cd2735a6cf9b48b0f1e703da83b90
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ce1cd2735a6cf9b48b0f1e703da83b90
-    projectPath: Temp\UnityTempFile-ce1cd2735a6cf9b48b0f1e703da83b90
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-d081ea2adacb4d3428e3172fa5f7a622
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d081ea2adacb4d3428e3172fa5f7a622
-    projectPath: Temp\UnityTempFile-d081ea2adacb4d3428e3172fa5f7a622
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-d0aae1083695f9f46a871bf92f1863f0
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d0aae1083695f9f46a871bf92f1863f0
-    projectPath: Temp\UnityTempFile-d0aae1083695f9f46a871bf92f1863f0
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-d0ab9d1a98304614ea7e468d07f4fd5e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d0ab9d1a98304614ea7e468d07f4fd5e
-    projectPath: Temp\UnityTempFile-d0ab9d1a98304614ea7e468d07f4fd5e
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-d2b0ea5e6d6dfdb4db8fdee8fcc170ea
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d2b0ea5e6d6dfdb4db8fdee8fcc170ea
-    projectPath: Temp\UnityTempFile-d2b0ea5e6d6dfdb4db8fdee8fcc170ea
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-d6d13169f82cb04408d13d204ca9c929
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d6d13169f82cb04408d13d204ca9c929
-    projectPath: Temp\UnityTempFile-d6d13169f82cb04408d13d204ca9c929
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-d91ae89cf25cae5478b8addb1c3041f2
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-d91ae89cf25cae5478b8addb1c3041f2
-    projectPath: Temp\UnityTempFile-d91ae89cf25cae5478b8addb1c3041f2
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-dd9fea5534937ac4d8186bda39d82e32
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-dd9fea5534937ac4d8186bda39d82e32
-    projectPath: Temp\UnityTempFile-dd9fea5534937ac4d8186bda39d82e32
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-df0455490a696024993320ce91cca492
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-df0455490a696024993320ce91cca492
-    projectPath: Temp\UnityTempFile-df0455490a696024993320ce91cca492
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-dfe8c56cd3e63b24386410659922c817
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-dfe8c56cd3e63b24386410659922c817
-    projectPath: Temp\UnityTempFile-dfe8c56cd3e63b24386410659922c817
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e00dcbb523d4e7840b1bff4b6b9c76ae
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e00dcbb523d4e7840b1bff4b6b9c76ae
-    projectPath: Temp\UnityTempFile-e00dcbb523d4e7840b1bff4b6b9c76ae
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e0c0026af3ddde6449c1e1851f6985ca
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e0c0026af3ddde6449c1e1851f6985ca
-    projectPath: Temp\UnityTempFile-e0c0026af3ddde6449c1e1851f6985ca
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e15770f6923368a42adbeed869e5f8b5
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e15770f6923368a42adbeed869e5f8b5
-    projectPath: Temp\UnityTempFile-e15770f6923368a42adbeed869e5f8b5
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e3bb55526d3c40545ab202f61439dac9
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e3bb55526d3c40545ab202f61439dac9
-    projectPath: Temp\UnityTempFile-e3bb55526d3c40545ab202f61439dac9
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e5f1becb6f9198c49b198d6b4c8e0a9f
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e5f1becb6f9198c49b198d6b4c8e0a9f
-    projectPath: Temp\UnityTempFile-e5f1becb6f9198c49b198d6b4c8e0a9f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e619a48e26d26e84ba29a60e38032a40
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e619a48e26d26e84ba29a60e38032a40
-    projectPath: Temp\UnityTempFile-e619a48e26d26e84ba29a60e38032a40
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e6f41f9ebc3f49d498071b35e6bdcdb4
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e6f41f9ebc3f49d498071b35e6bdcdb4
-    projectPath: Temp\UnityTempFile-e6f41f9ebc3f49d498071b35e6bdcdb4
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-e7e93281bcd65ff458d7f3e1a27df46e
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-e7e93281bcd65ff458d7f3e1a27df46e
-    projectPath: Temp\UnityTempFile-e7e93281bcd65ff458d7f3e1a27df46e
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ec31717a49863024ba0b45f0e0c95928
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ec31717a49863024ba0b45f0e0c95928
-    projectPath: Temp\UnityTempFile-ec31717a49863024ba0b45f0e0c95928
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-eed8f266002e28746976f0d981bcb637
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-eed8f266002e28746976f0d981bcb637
-    projectPath: Temp\UnityTempFile-eed8f266002e28746976f0d981bcb637
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ef2bb6a756aad70449855be47c560de4
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ef2bb6a756aad70449855be47c560de4
-    projectPath: Temp\UnityTempFile-ef2bb6a756aad70449855be47c560de4
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ef99a8efc6f561340b4a1dae5af59637
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ef99a8efc6f561340b4a1dae5af59637
-    projectPath: Temp\UnityTempFile-ef99a8efc6f561340b4a1dae5af59637
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-f7a4b5c5ec65bb1468feafc099b51180
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-f7a4b5c5ec65bb1468feafc099b51180
-    projectPath: Temp\UnityTempFile-f7a4b5c5ec65bb1468feafc099b51180
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-fa4de738b803a0444b9ac946a5cd80ad
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-fa4de738b803a0444b9ac946a5cd80ad
-    projectPath: Temp\UnityTempFile-fa4de738b803a0444b9ac946a5cd80ad
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-faee0b6aeb6e8be4680fcbf425b37b96
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-faee0b6aeb6e8be4680fcbf425b37b96
-    projectPath: Temp\UnityTempFile-faee0b6aeb6e8be4680fcbf425b37b96
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-fb026ac1c2fac584b9242e9095128580
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-fb026ac1c2fac584b9242e9095128580
-    projectPath: Temp\UnityTempFile-fb026ac1c2fac584b9242e9095128580
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-fc3dbd975c11df54580770470d89f9d7
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-fc3dbd975c11df54580770470d89f9d7
-    projectPath: Temp\UnityTempFile-fc3dbd975c11df54580770470d89f9d7
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-febdf7f965757d74dba7c579c6a5adc5
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-febdf7f965757d74dba7c579c6a5adc5
-    projectPath: Temp\UnityTempFile-febdf7f965757d74dba7c579c6a5adc5
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ff0863ad5c188234d80da8dc71234cee
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ff0863ad5c188234d80da8dc71234cee
-    projectPath: Temp\UnityTempFile-ff0863ad5c188234d80da8dc71234cee
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ff5c12412a58787408bcd8d6973ff25d
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ff5c12412a58787408bcd8d6973ff25d
-    projectPath: Temp\UnityTempFile-ff5c12412a58787408bcd8d6973ff25d
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: ScyneWaveStudio\Temp\UnityTempFile-ffdf80a00af67534a91c6c6bdd5d8e59
-    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ffdf80a00af67534a91c6c6bdd5d8e59
-    projectPath: Temp\UnityTempFile-ffdf80a00af67534a91c6c6bdd5d8e59
+  - path: ScyneWaveStudio\Temp\UnityTempFile-ff8b08c94ee2eb441a5f834b6f50bdcc
+    fullPath: D:\github\Scynewave-Set\ScyneWaveStudio\Temp\UnityTempFile-ff8b08c94ee2eb441a5f834b6f50bdcc
+    projectPath: Temp\UnityTempFile-ff8b08c94ee2eb441a5f834b6f50bdcc
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
