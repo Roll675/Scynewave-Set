@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 22119945}
   - component: {fileID: 22119947}
   - component: {fileID: 22119946}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2623,7 +2623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 90459505}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2944,7 +2944,7 @@ GameObject:
   - component: {fileID: 107947588}
   - component: {fileID: 107947590}
   - component: {fileID: 107947589}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Url
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3755,7 +3755,7 @@ GameObject:
   - component: {fileID: 150732466}
   - component: {fileID: 150732468}
   - component: {fileID: 150732467}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Url
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3830,7 +3830,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 152456133}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4096,7 +4096,7 @@ GameObject:
   - component: {fileID: 163956061}
   - component: {fileID: 163956063}
   - component: {fileID: 163956062}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5697,7 +5697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 208224034}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6031,7 +6031,7 @@ GameObject:
   - component: {fileID: 213117794}
   - component: {fileID: 213117793}
   - component: {fileID: 213117792}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: MainGuestCamLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6577,7 +6577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 219717440}
   - component: {fileID: 219717441}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Loading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7171,7 +7171,7 @@ GameObject:
   - component: {fileID: 238533413}
   - component: {fileID: 238533412}
   - component: {fileID: 238533411}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: ScyneCamLogic (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9564,7 +9564,7 @@ GameObject:
   - component: {fileID: 355795466}
   - component: {fileID: 355795465}
   - component: {fileID: 355795464}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: AirCamLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9870,7 +9870,7 @@ GameObject:
   - component: {fileID: 358692290}
   - component: {fileID: 358692289}
   - component: {fileID: 358692288}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Entry (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10302,7 +10302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 363761797}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11423,7 +11423,7 @@ GameObject:
   - component: {fileID: 385731717}
   - component: {fileID: 385731719}
   - component: {fileID: 385731718}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12409,7 +12409,7 @@ GameObject:
   - component: {fileID: 429341208}
   - component: {fileID: 429341207}
   - component: {fileID: 429341206}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: ScyneCamLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15675,7 +15675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 535473602}
   - component: {fileID: 535473603}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Loading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15957,7 +15957,7 @@ GameObject:
   - component: {fileID: 540410330}
   - component: {fileID: 540410329}
   - component: {fileID: 540410328}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16060,7 +16060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 540766673}
   - component: {fileID: 540766674}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Loading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17604,7 +17604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 584116966}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19688,7 +19688,7 @@ GameObject:
   - component: {fileID: 637889556}
   - component: {fileID: 637889558}
   - component: {fileID: 637889557}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Url
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20298,7 +20298,7 @@ PrefabInstance:
     - target: {fileID: 1350032267753345932, guid: 1dacfe29d81b51c46a85f97842455123,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.034
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1350032267753345932, guid: 1dacfe29d81b51c46a85f97842455123,
         type: 3}
@@ -20348,7 +20348,7 @@ PrefabInstance:
     - target: {fileID: 1350032267753345934, guid: 1dacfe29d81b51c46a85f97842455123,
         type: 3}
       propertyPath: m_Name
-      value: ScyneChairSitTarget
+      value: VRCChair3
       objectReference: {fileID: 0}
     - target: {fileID: 1350032267753345970, guid: 1dacfe29d81b51c46a85f97842455123,
         type: 3}
@@ -21749,7 +21749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 708373429}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22277,7 +22277,7 @@ GameObject:
   - component: {fileID: 723278618}
   - component: {fileID: 723278620}
   - component: {fileID: 723278619}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24012,7 +24012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 800516460}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25010,7 +25010,7 @@ GameObject:
   - component: {fileID: 823082560}
   - component: {fileID: 823082559}
   - component: {fileID: 823082558}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Entry (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25683,7 +25683,7 @@ GameObject:
   - component: {fileID: 846138340}
   - component: {fileID: 846138339}
   - component: {fileID: 846138338}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: VideoLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26875,7 +26875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879119358}
   - component: {fileID: 879119359}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Loading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26965,7 +26965,7 @@ GameObject:
   - component: {fileID: 882965330}
   - component: {fileID: 882965329}
   - component: {fileID: 882965328}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: SleekPlaylist (UNPACK AFTER ADDING TO SCENE) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28641,7 +28641,7 @@ GameObject:
   - component: {fileID: 924970645}
   - component: {fileID: 924970647}
   - component: {fileID: 924970646}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30763,11 +30763,6 @@ PrefabInstance:
       propertyPath: NoiseModule.positionAmount.scalar
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4646618985623885654, guid: 2b9a3eaaca863f84085219720f0df388,
-        type: 3}
-      propertyPath: NoiseModule.strengthZ.scalar
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 4646618985623885655, guid: 2b9a3eaaca863f84085219720f0df388,
         type: 3}
       propertyPath: m_SortMode
@@ -31454,7 +31449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 999072234}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32671,7 +32666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1046913925}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33496,7 +33491,7 @@ GameObject:
   - component: {fileID: 1084089639}
   - component: {fileID: 1084089638}
   - component: {fileID: 1084089637}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: GuestCamLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33879,7 +33874,7 @@ GameObject:
   - component: {fileID: 1118544030}
   - component: {fileID: 1118544029}
   - component: {fileID: 1118544028}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Scrollbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35223,7 +35218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1162548259}
   - component: {fileID: 1162548260}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Loading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36479,7 +36474,7 @@ GameObject:
   - component: {fileID: 1204643505}
   - component: {fileID: 1204643507}
   - component: {fileID: 1204643506}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Divider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38908,7 +38903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1276592364}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39018,7 +39013,7 @@ GameObject:
   - component: {fileID: 1293575073}
   - component: {fileID: 1293575075}
   - component: {fileID: 1293575074}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Url
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39181,7 +39176,7 @@ GameObject:
   - component: {fileID: 1304140892}
   - component: {fileID: 1304140894}
   - component: {fileID: 1304140893}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39574,7 +39569,7 @@ GameObject:
   - component: {fileID: 1318539220}
   - component: {fileID: 1318539222}
   - component: {fileID: 1318539221}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40835,7 +40830,7 @@ GameObject:
   - component: {fileID: 1356200677}
   - component: {fileID: 1356200679}
   - component: {fileID: 1356200678}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40946,7 +40941,7 @@ GameObject:
   - component: {fileID: 1359276042}
   - component: {fileID: 1359276041}
   - component: {fileID: 1359276040}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: PartnerCamLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41654,7 +41649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1375228411}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43211,7 +43206,7 @@ GameObject:
   - component: {fileID: 1407368672}
   - component: {fileID: 1407368674}
   - component: {fileID: 1407368673}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43283,7 +43278,7 @@ GameObject:
   - component: {fileID: 1407895782}
   - component: {fileID: 1407895784}
   - component: {fileID: 1407895783}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44666,7 +44661,7 @@ GameObject:
   - component: {fileID: 1423761032}
   - component: {fileID: 1423761031}
   - component: {fileID: 1423761030}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Entry (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45234,7 +45229,7 @@ GameObject:
   - component: {fileID: 1435818037}
   - component: {fileID: 1435818039}
   - component: {fileID: 1435818038}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Divider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46739,7 +46734,7 @@ GameObject:
   - component: {fileID: 1480435646}
   - component: {fileID: 1480435645}
   - component: {fileID: 1480435644}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47995,7 +47990,7 @@ GameObject:
   - component: {fileID: 1525894900}
   - component: {fileID: 1525894899}
   - component: {fileID: 1525894898}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50184,7 +50179,7 @@ GameObject:
   - component: {fileID: 1620607611}
   - component: {fileID: 1620607613}
   - component: {fileID: 1620607612}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Divider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51095,7 +51090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4ef70fa8227bcac4c83bed043c6c90ae, type: 3}
       propertyPath: m_Layer
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4ef70fa8227bcac4c83bed043c6c90ae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52821,7 +52816,7 @@ GameObject:
   - component: {fileID: 1681282176}
   - component: {fileID: 1681282178}
   - component: {fileID: 1681282177}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Divider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54213,7 +54208,7 @@ GameObject:
   - component: {fileID: 1723851768}
   - component: {fileID: 1723851770}
   - component: {fileID: 1723851769}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54594,7 +54589,7 @@ GameObject:
   - component: {fileID: 1730332568}
   - component: {fileID: 1730332567}
   - component: {fileID: 1730332566}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Entry (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55807,7 +55802,7 @@ GameObject:
   - component: {fileID: 1748076752}
   - component: {fileID: 1748076754}
   - component: {fileID: 1748076753}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57617,7 +57612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1806402065}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57740,7 +57735,7 @@ GameObject:
   - component: {fileID: 1810786006}
   - component: {fileID: 1810786008}
   - component: {fileID: 1810786007}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58287,7 +58282,7 @@ GameObject:
   - component: {fileID: 1832330458}
   - component: {fileID: 1832330460}
   - component: {fileID: 1832330459}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58992,7 +58987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876768769}
   m_LocalRotation: {x: 0.000000002102083, y: -0.9999864, z: 0.005224752, w: 0.00000040232584}
-  m_LocalPosition: {x: 0.956, y: -0.093, z: -1.492}
+  m_LocalPosition: {x: 0.956, y: 0.23599994, z: -1.1300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 158579166}
@@ -60526,7 +60521,7 @@ GameObject:
   - component: {fileID: 1906906964}
   - component: {fileID: 1906906966}
   - component: {fileID: 1906906965}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Url
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60766,7 +60761,7 @@ GameObject:
   - component: {fileID: 1913272487}
   - component: {fileID: 1913272489}
   - component: {fileID: 1913272488}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60915,7 +60910,7 @@ GameObject:
   - component: {fileID: 1922569231}
   - component: {fileID: 1922569233}
   - component: {fileID: 1922569232}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61023,7 +61018,7 @@ GameObject:
   - component: {fileID: 1926982360}
   - component: {fileID: 1926982362}
   - component: {fileID: 1926982361}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61275,7 +61270,7 @@ GameObject:
   - component: {fileID: 1929683990}
   - component: {fileID: 1929683992}
   - component: {fileID: 1929683991}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62029,7 +62024,7 @@ GameObject:
   - component: {fileID: 1982976142}
   - component: {fileID: 1982976141}
   - component: {fileID: 1982976140}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: GuestCamLogic (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62498,7 +62493,7 @@ GameObject:
   - component: {fileID: 1987803758}
   - component: {fileID: 1987803760}
   - component: {fileID: 1987803759}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63822,7 +63817,7 @@ GameObject:
   - component: {fileID: 2047823047}
   - component: {fileID: 2047823049}
   - component: {fileID: 2047823048}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Divider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68009,7 +68004,7 @@ GameObject:
   - component: {fileID: 2095932040}
   - component: {fileID: 2095932042}
   - component: {fileID: 2095932041}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68917,7 +68912,7 @@ GameObject:
   - component: {fileID: 2118038763}
   - component: {fileID: 2118038765}
   - component: {fileID: 2118038764}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
