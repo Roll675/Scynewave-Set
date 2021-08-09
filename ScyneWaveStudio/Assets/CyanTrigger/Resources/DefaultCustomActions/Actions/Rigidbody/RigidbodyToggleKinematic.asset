@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: RigidbodyToggleKinematic
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: b35a5065070881948beea004346ac61e,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 5dd03b0aa197b344091ef6c3bc986a9f,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    .export Rigidbody\r\n    \r\n    instance_0:
-    %UnityEngineRigidbody, null\r\n    value_0: %SystemBoolean, null\r\n    Boolean_0:
-    %SystemBoolean, null\r\n    instance_1: %UnityEngineRigidbody, null\r\n    Rigidbody:
-    %UnityEngineRigidbody, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export
-    RigidbodyToggleKinematic\r\n    \r\n    RigidbodyToggleKinematic:\r\n    \r\n
-    \       PUSH, Rigidbody\r\n        PUSH, instance_0\r\n        COPY\r\n        PUSH,
-    Rigidbody\r\n        PUSH, instance_1\r\n        COPY\r\n        PUSH, instance_1\r\n
-    \       PUSH, Boolean_0\r\n        EXTERN, \"UnityEngineRigidbody.__get_isKinematic__SystemBoolean\"\r\n
-    \       PUSH, Boolean_0\r\n        PUSH, value_0\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n
-    \       PUSH, instance_0\r\n        PUSH, value_0\r\n        EXTERN, \"UnityEngineRigidbody.__set_isKinematic__SystemBoolean__SystemVoid\"\r\n
-    \       JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+  udonAssembly: ".data_start\r\n\r\n    .export Rigidbody\r\n    \r\n    __instance_0:
+    %UnityEngineRigidbody, null\r\n    __value_0: %SystemBoolean, null\r\n    __Boolean_0:
+    %SystemBoolean, null\r\n    __instance_1: %UnityEngineRigidbody, null\r\n   
+    Rigidbody: %UnityEngineRigidbody, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
+    .export RigidbodyToggleKinematic\r\n    \r\n    RigidbodyToggleKinematic:\r\n   
+    \r\n        PUSH, Rigidbody\r\n        PUSH, __instance_0\r\n        COPY\r\n       
+    PUSH, Rigidbody\r\n        PUSH, __instance_1\r\n        COPY\r\n        PUSH,
+    __instance_1\r\n        PUSH, __Boolean_0\r\n        EXTERN, \"UnityEngineRigidbody.__get_isKinematic__SystemBoolean\"\r\n       
+    PUSH, __Boolean_0\r\n        PUSH, __value_0\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n       
+    PUSH, __instance_0\r\n        PUSH, __value_0\r\n        EXTERN, \"UnityEngineRigidbody.__set_isKinematic__SystemBoolean__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -56,9 +56,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Rigidbody
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Get_Variable
@@ -78,7 +80,8 @@ MonoBehaviour:
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
     - fullName: UnityEngineRigidbody.__get_isKinematic__SystemBoolean
       uid: 4e7870ab-2fb9-4d1c-9fee-4bdc0a9f30ed
       position: {x: 273.10812, y: 377.24002}
@@ -99,7 +102,8 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: 
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
     updateOrder: 0
   graphElementData:
   - type: 5

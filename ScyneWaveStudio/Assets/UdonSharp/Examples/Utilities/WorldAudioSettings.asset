@@ -18,7 +18,9 @@ MonoBehaviour:
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: fdc09c11006c3474f91cfe7e809c9b96, type: 3}
   behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
-  compileErrors: []
+  compileErrors:
+  - '[<color=#FF00FF>UdonSharp</color>] Assets/UdonSharp/Examples/Utilities/WorldAudioSettings.cs(13,4):
+    System.Exception: User type WorldAudioSettings could not be found'
   hasInteractEvent: 0
   serializationData:
     SerializedFormat: 2
@@ -316,8 +318,8 @@ MonoBehaviour:
       Data: 20|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: The volumetric radius for the player voice, this should be left at 0 unless
-        you know what you're doing
+      Data: The volumetric radius for the player voice, this should be left at 0
+        unless you know what you're doing
     - Name: 
       Entry: 8
       Data: 
@@ -542,8 +544,8 @@ MonoBehaviour:
       Data: 35|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: The maximum end of avatar audio range, a value of 0 will effectively mute
-        avatar audio
+      Data: The maximum end of avatar audio range, a value of 0 will effectively
+        mute avatar audio
     - Name: 
       Entry: 8
       Data: 

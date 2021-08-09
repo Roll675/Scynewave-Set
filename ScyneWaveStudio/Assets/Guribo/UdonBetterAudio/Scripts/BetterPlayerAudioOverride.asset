@@ -18,7 +18,9 @@ MonoBehaviour:
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 3129fbbfb84d27b46b0aa680686a5a1f, type: 3}
   behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
-  compileErrors: []
+  compileErrors:
+  - '[<color=#FF00FF>UdonSharp</color>] Assets/Guribo/UdonBetterAudio/Scripts/BetterPlayerAudioOverride.cs(12,4):
+    System.Exception: User type BetterPlayerAudioOverride could not be found'
   hasInteractEvent: 0
   serializationData:
     SerializedFormat: 2
@@ -524,8 +526,8 @@ MonoBehaviour:
       Data: 33|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: A value of 1.0 reduces the ranges by up to 100% when the listener is facing
-        away from a voice/avatar and thus making them more quiet.
+      Data: A value of 1.0 reduces the ranges by up to 100% when the listener is
+        facing away from a voice/avatar and thus making them more quiet.
     - Name: 
       Entry: 8
       Data: 
@@ -988,8 +990,8 @@ MonoBehaviour:
     - Name: tooltip
       Entry: 1
       Data: Range in which the player voice is not spatialized. Increases experienced
-        volume by a lot! May require extensive tweaking of gain/range parameters when
-        being changed.
+        volume by a lot! May require extensive tweaking of gain/range parameters
+        when being changed.
     - Name: 
       Entry: 8
       Data: 

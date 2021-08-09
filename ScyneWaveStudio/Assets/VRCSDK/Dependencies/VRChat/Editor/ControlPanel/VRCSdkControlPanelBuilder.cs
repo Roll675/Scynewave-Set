@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -292,8 +292,8 @@ public partial class VRCSdkControlPanel : EditorWindow
                 }
                 else
                 {
-                    errorMessage =
-                        "A Unity scene cannot contain a VRChat Scene Descriptor and also contain VRChat Avatar Descriptors";
+                     errorMessage =
+                         "A Unity scene cannot contain a VRChat Scene Descriptor and also contain VRChat Avatar Descriptors";
                 }
             }
         }
@@ -303,6 +303,8 @@ public partial class VRCSdkControlPanel : EditorWindow
             EditorGUILayout.LabelField("A VRC_SceneDescriptor or VRC_AvatarDescriptor\nis required to build VRChat SDK Content", titleGuiStyle, GUILayout.Width(SdkWindowWidth));
 #elif VRC_SDK_VRCSDK3
             EditorGUILayout.LabelField("A VRCSceneDescriptor or VRCAvatarDescriptor\nis required to build VRChat SDK Content", titleGuiStyle, GUILayout.Width(SdkWindowWidth));
+#else
+            EditorGUILayout.LabelField("The SDK did not load properly. Try this - In the Project window, navigate to Assets/VRCSDK/Plugins. Select all the DLLs, then right click and choose 'Reimport'");
 #endif
         }
         else if (errorMessage != null)

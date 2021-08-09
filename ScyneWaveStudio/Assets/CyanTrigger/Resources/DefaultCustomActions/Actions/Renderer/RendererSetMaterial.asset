@@ -12,25 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: RendererSetMaterial
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 4cc358feaf21987479456d2feb28bb94,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 3bb434f92e5975b40ba221f034d7f6d3,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    .export Renderer\r\n    .export Material\r\n
-    \   .export Index\r\n    \r\n    instance_0: %UnityEngineRenderer, null\r\n    instance_1:
-    %UnityEngineMaterialArray, null\r\n    Int32_0: %SystemInt32, null\r\n    Material_0:
-    %UnityEngineMaterial, null\r\n    instance_2: %UnityEngineRenderer, null\r\n    value_0:
-    %UnityEngineMaterialArray, null\r\n    Renderer: %UnityEngineRenderer, null\r\n
-    \   Material: %UnityEngineMaterial, null\r\n    Index: %SystemInt32, null\r\n
-    \   materials: %UnityEngineMaterialArray, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n
-    \   .export SetMaterial\r\n    \r\n    SetMaterial:\r\n    \r\n        PUSH, Renderer\r\n
-    \       PUSH, instance_0\r\n        COPY\r\n        PUSH, instance_0\r\n        PUSH,
-    materials\r\n        EXTERN, \"UnityEngineRenderer.__get_sharedMaterials__UnityEngineMaterialArray\"\r\n
-    \       PUSH, materials\r\n        PUSH, instance_1\r\n        COPY\r\n        PUSH,
-    Material\r\n        PUSH, Material_0\r\n        COPY\r\n        PUSH, instance_1\r\n
-    \       PUSH, Index\r\n        PUSH, Material_0\r\n        EXTERN, \"UnityEngineMaterialArray.__Set__SystemInt32_UnityEngineMaterial__SystemVoid\"\r\n
-    \       PUSH, Renderer\r\n        PUSH, instance_2\r\n        COPY\r\n        PUSH,
-    materials\r\n        PUSH, value_0\r\n        COPY\r\n        PUSH, instance_2\r\n
-    \       PUSH, value_0\r\n        EXTERN, \"UnityEngineRenderer.__set_sharedMaterials__UnityEngineMaterialArray__SystemVoid\"\r\n
-    \       JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+  udonAssembly: ".data_start\r\n\r\n    .export Renderer\r\n    .export Material\r\n   
+    .export Index\r\n    \r\n    __instance_0: %UnityEngineRenderer, null\r\n   
+    __instance_1: %UnityEngineMaterialArray, null\r\n    __Int32_0: %SystemInt32,
+    null\r\n    __Material_0: %UnityEngineMaterial, null\r\n    __instance_2: %UnityEngineRenderer,
+    null\r\n    __value_0: %UnityEngineMaterialArray, null\r\n    Renderer: %UnityEngineRenderer,
+    null\r\n    Material: %UnityEngineMaterial, null\r\n    Index: %SystemInt32,
+    null\r\n    materials: %UnityEngineMaterialArray, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
+    .export SetMaterial\r\n    \r\n    SetMaterial:\r\n    \r\n        PUSH, Renderer\r\n       
+    PUSH, __instance_0\r\n        COPY\r\n        PUSH, __instance_0\r\n        PUSH,
+    materials\r\n        EXTERN, \"UnityEngineRenderer.__get_sharedMaterials__UnityEngineMaterialArray\"\r\n       
+    PUSH, materials\r\n        PUSH, __instance_1\r\n        COPY\r\n        PUSH,
+    Material\r\n        PUSH, __Material_0\r\n        COPY\r\n        PUSH, __instance_1\r\n       
+    PUSH, Index\r\n        PUSH, __Material_0\r\n        EXTERN, \"UnityEngineMaterialArray.__Set__SystemInt32_UnityEngineMaterial__SystemVoid\"\r\n       
+    PUSH, Renderer\r\n        PUSH, __instance_2\r\n        COPY\r\n        PUSH,
+    materials\r\n        PUSH, __value_0\r\n        COPY\r\n        PUSH, __instance_2\r\n       
+    PUSH, __value_0\r\n        EXTERN, \"UnityEngineRenderer.__set_sharedMaterials__UnityEngineMaterialArray__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -52,9 +52,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Renderer
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Variable_UnityEngineMaterial
@@ -73,9 +75,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Material
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Variable_SystemInt32
@@ -94,9 +98,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Index
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Get_Variable
@@ -161,9 +167,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|materials
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Set_Variable

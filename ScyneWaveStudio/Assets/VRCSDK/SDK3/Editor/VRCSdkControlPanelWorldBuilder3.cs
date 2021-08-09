@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -10,6 +11,7 @@ using VRC.SDKBase.Editor;
 using VRC.SDKBase.Editor.BuildPipeline;
 using VRC.Udon;
 using VRC.Udon.Common.Interfaces;
+using Object = UnityEngine.Object;
 
 [assembly: VRCSdkControlPanelBuilder(typeof(VRCSdkControlPanelWorldBuilder3))]
 
@@ -44,7 +46,43 @@ namespace VRC.SDK3.Editor
         {
             Debug.Log("SelectAllComponents");
         }
-        
+
+        protected override bool IsSDK3Scene()
+        {
+            return true;
+        }
+
+        protected override void OnGUISceneCheck(VRC.SDKBase.VRC_SceneDescriptor scene)
+        {
+            base.OnGUISceneCheck(scene);
+            
+            var resyncNotEnabled = Object.FindObjectsOfType<VRC.SDK3.Video.Components.Base.BaseVRCVideoPlayer>().Where(vp => !vp.EnableAutomaticResync).ToArray();
+            if (resyncNotEnabled.Length > 0)
+            {
+                _builder.OnGUIWarning(null,
+                "Video Players do not have automatic resync enabled; audio may become desynchronized from video during low performance.", 
+                () =>
+                {
+                    Selection.objects = resyncNotEnabled.Select(s => s.gameObject).Cast<Object>().ToArray();
+                },
+                () =>
+                {
+                    foreach (var vp in resyncNotEnabled)
+                        vp.EnableAutomaticResync = true;
+                });
+            }
+            
+            foreach (VRC.SDK3.Components.VRCObjectSync os in Object.FindObjectsOfType<VRC.SDK3.Components.VRCObjectSync>())
+            {
+                if (os.GetComponents<VRC.Udon.UdonBehaviour>().Any((ub) => ub.Reliable))
+                    _builder.OnGUIError(scene, "Object Sync cannot share an object with a manually synchronized Udon Behaviour",
+                        delegate { Selection.activeObject = os.gameObject; }, null);
+                if (os.GetComponent<VRC.SDK3.Components.VRCObjectPool>() != null)
+                    _builder.OnGUIError(scene, "Object Sync cannot share an object with an object pool",
+                        delegate { Selection.activeObject = os.gameObject; }, null);
+            }
+        } 
+
         #endregion
 
         public override void OnGUIScene()
@@ -70,22 +108,46 @@ namespace VRC.SDK3.Editor
             EditorGUILayout.Space();
             VRCSettings.ForceNoVR = EditorGUILayout.Toggle("Force Non-VR", VRCSettings.ForceNoVR, GUILayout.MaxWidth(190));
             EditorGUILayout.Space();
+            if (VRCSettings.DisplayAdvancedSettings)
+            {
+                VRCSettings.WatchWorlds =
+                    EditorGUILayout.Toggle("Enable World Reload", VRCSettings.WatchWorlds, GUILayout.MaxWidth(190));
+                EditorGUILayout.Space();
+            }
 
             GUI.enabled = _builder.NoGuiErrorsOrIssues();
 
             string lastUrl = VRC_SdkBuilder.GetLastUrl();
 
+            bool doReload = VRCSettings.WatchWorlds && VRCSettings.NumClients == 0;
+            
             bool lastBuildPresent = lastUrl != null;
             if (lastBuildPresent == false)
                 GUI.enabled = false;
             if (VRCSettings.DisplayAdvancedSettings)
             {
-                if (GUILayout.Button("Last Build"))
+                string lastBuildLabel = doReload ? "Reload Last Build" : "Last Build";
+                if (GUILayout.Button(lastBuildLabel))
                 {
-                    VRC_SdkBuilder.shouldBuildUnityPackage = false;
-                    VRC_SdkBuilder.SetNumClients(VRCSettings.NumClients);
-                    VRC_SdkBuilder.forceNoVR = VRCSettings.ForceNoVR;
-                    VRC_SdkBuilder.RunLastExportedSceneResource();
+                    if (doReload)
+                    {
+                        // Todo: get this from settings or make key a const
+                        string path = EditorPrefs.GetString("lastVRCPath");
+                        if (File.Exists(path))
+                        {
+                            File.SetLastWriteTimeUtc(path, DateTime.Now);
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"Cannot find last built scene, please Rebuild.");
+                        }
+                    }
+                    else
+                    {
+                        VRC_SdkBuilder.shouldBuildUnityPackage = false;
+                        VRC_SdkBuilder.SetNumClients(VRCSettings.NumClients);
+                        VRC_SdkBuilder.RunLastExportedSceneResource();
+                    }
                 }
 
                 if (Core.APIUser.CurrentUser.hasSuperPowers)
@@ -105,7 +167,8 @@ namespace VRC.SDK3.Editor
 #if UNITY_ANDROID
         EditorGUI.BeginDisabledGroup(true);
 #endif
-            if (GUILayout.Button("Build & Test"))
+            string buildLabel = doReload ? "Build & Reload" : "Build & Test";
+            if (GUILayout.Button(buildLabel))
             {
                 bool buildTestBlocked = !VRCBuildPipelineCallbacks.OnVRCSDKBuildRequested(VRCSDKRequestedBuildType.Scene);
                 if (!buildTestBlocked)
@@ -113,10 +176,16 @@ namespace VRC.SDK3.Editor
                     EnvConfig.ConfigurePlayerSettings();
                     VRC_SdkBuilder.shouldBuildUnityPackage = false;
                     AssetExporter.CleanupUnityPackageExport(); // force unity package rebuild on next publish
-                    VRC_SdkBuilder.SetNumClients(VRCSettings.NumClients);
-                    VRC_SdkBuilder.forceNoVR = VRCSettings.ForceNoVR;
                     VRC_SdkBuilder.PreBuildBehaviourPackaging();
-                    VRC_SdkBuilder.ExportSceneResourceAndRun();
+                    if (doReload)
+                    {
+                        VRC_SdkBuilder.ExportSceneResource();
+                    }
+                    else
+                    {
+                        VRC_SdkBuilder.SetNumClients(VRCSettings.NumClients);
+                        VRC_SdkBuilder.ExportSceneResourceAndRun();
+                    }
                 }
             }
 #if UNITY_ANDROID

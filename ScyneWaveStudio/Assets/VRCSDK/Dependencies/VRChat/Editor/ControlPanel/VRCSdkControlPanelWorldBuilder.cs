@@ -306,15 +306,17 @@ namespace VRC.SDKBase.Editor
 
             return mandatoryExpand;
         }
+        
+        protected virtual bool IsSDK3Scene()
+        {
+            return false;
+        }
 
         protected virtual void OnGUISceneCheck(VRC_SceneDescriptor scene)
         {
             CheckUploadChanges(scene);
-#if !VRC_SDK_VRCSDK3
-        bool isSdk3Scene = false;
-#elif UDON
-        bool isSdk3Scene = scene as VRC.SDK3.Components.VRCSceneDescriptor != null;
-#endif
+            
+            bool isSdk3Scene = IsSDK3Scene();
 
             List<VRC_EventHandler> sdkBaseEventHandlers =
                 new List<VRC_EventHandler>(Object.FindObjectsOfType<VRC_EventHandler>());
@@ -431,16 +433,6 @@ namespace VRC.SDKBase.Editor
                     () => { Selection.objects = VRCSdkControlPanel.GetSubstanceObjects(); },
                     null);
             }
-
-#if VRC_SDK_VRCSDK2
-        foreach (VRC_DataStorage ds in Object.FindObjectsOfType<VRC_DataStorage>())
-        {
-            VRCSDK2.VRC_ObjectSync os = ds.GetComponent<VRCSDK2.VRC_ObjectSync>();
-            if (os != null && os.SynchronizePhysics)
-                _builder.OnGUIWarning(scene, ds.name + " has a VRC_DataStorage and VRC_ObjectSync, with SynchronizePhysics enabled.",
-                    delegate { Selection.activeObject = os.gameObject; }, null);
-        }
-#endif
 
             string vrcFilePath = UnityWebRequest.UnEscapeURL(EditorPrefs.GetString("lastVRCPath"));
             if (!string.IsNullOrEmpty(vrcFilePath) &&
@@ -599,7 +591,7 @@ namespace VRC.SDKBase.Editor
                     if (scene.apiWorld == null)
                     {
                         Core.ApiWorld world = Core.API.FromCacheOrNew<Core.ApiWorld>(pms[0].blueprintId);
-                        world.Fetch(null, null,
+                        world.Fetch(null,
                             (c) => scene.apiWorld = c.Model as Core.ApiWorld,
                             (c) =>
                             {
