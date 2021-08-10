@@ -67,6 +67,7 @@
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeBlock.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeBlockEnd.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeBreak.cs" />
+     <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeComment.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeCondition.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeConditionBody.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeContinue.cs" />
@@ -81,7 +82,9 @@
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeReturnIfDisabled.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeSendCustomEvent.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeSetComponentActive.cs" />
+     <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeSetReturnValue.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeSetVariable.cs" />
+     <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeType.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeVariable.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeVariableProvider.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\ActionDefinition\CustomNodes\CyanTriggerCustomNodeWhile.cs" />
@@ -107,6 +110,7 @@
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\CyanTriggerInstanceDataHash.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\CyanTriggerResourceManager.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\CyanTriggerSerializedProgramManager.cs" />
+     <Compile Include="Assets\CyanTrigger\Scripts\Editor\CyanTriggerSerializedPropertyUtils.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\CyanTriggerSerializerManager.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\CyanTriggerUtil.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\CyanTriggerVersionMigrator.cs" />
@@ -115,6 +119,7 @@
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\SearchWindows\CyanTriggerEventSearchWindow.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\SearchWindows\CyanTriggerFavoriteSearchWindow.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\SearchWindows\CyanTriggerFocusedSearchWindow.cs" />
+     <Compile Include="Assets\CyanTrigger\Scripts\Editor\SearchWindows\CyanTriggerSearchWindow.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\SearchWindows\CyanTriggerSearchWindowManager.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\SearchWindows\CyanTriggerVariableSearchWindow.cs" />
      <Compile Include="Assets\CyanTrigger\Scripts\Editor\Settings\CyanTriggerSettingsData.cs" />

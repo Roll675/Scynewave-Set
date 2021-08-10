@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using VRC.Udon;
+using VRC.Udon.Common.Interfaces;
 using VRC.Udon.Editor;
 using VRC.Udon.Graph;
 
@@ -60,7 +62,7 @@ namespace CyanTrigger
             this.definition = definition;
 
             fullName = definition.fullName;
-            baseType = definition.type;
+            baseType = GetFixedType(definition);
 
             if (fullName.StartsWith("VRCInstantiate"))
             {
@@ -198,6 +200,7 @@ namespace CyanTrigger
                 typeFriendlyName = "void";
                 return;
             }
+            
             typeFriendlyName = CyanTriggerNameHelpers.GetTypeFriendlyName(baseType);
 
             // Get type and method name
@@ -231,6 +234,19 @@ namespace CyanTrigger
 
                 typeCategories = categories.ToArray();
             }
+        }
+
+        public static Type GetFixedType(UdonNodeDefinition typeDefinition)
+        {
+            Type returnType = typeDefinition.type;
+            
+            // TODO find a more generic way to fix this...
+            if (typeDefinition.fullName.StartsWith("Type_VRCUdonCommonInterfacesIUdonEventReceive"))
+            {
+                returnType = returnType.IsArray ? typeof(IUdonEventReceiver[]) : typeof(IUdonEventReceiver);
+            }
+
+            return returnType;
         }
 
         public string[] GetTrieCategories()

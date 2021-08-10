@@ -9,10 +9,14 @@ namespace CyanTrigger
     public static class CyanTriggerInstanceDataHash
     {
 /*
+
+======== Remember to also update CyanTriggerUtil.CopyCyanTriggerDataInstance!! ======== 
+
 Program unique string format:
 
 Version: <version>
-Apply animators: <true/false>
+Update Order: <int>
+Sync Method: <sync>
 variables:
 <User Variables>
 events:
@@ -53,10 +57,16 @@ Input
         // This is basically a string encoding of a cyan trigger that does not depend on any variable data.
         public static string GetProgramUniqueStringForCyanTrigger(CyanTriggerDataInstance instanceData)
         {
+            if (instanceData == null || instanceData.variables == null || instanceData.events == null)
+            {
+                return "Null CyanTrigger";
+            }
+            
             StringBuilder triggerInfo = new StringBuilder();
 
+            bool valid = false;
             HashSet<string> variablesWithCallbacks =
-                CyanTriggerCustomNodeOnVariableChanged.GetVariablesWithOnChangedCallback(instanceData.events);
+                CyanTriggerCustomNodeOnVariableChanged.GetVariablesWithOnChangedCallback(instanceData.events, ref valid);
             Dictionary<string, int> variableMap = new Dictionary<string, int>();
             int varCount = 0;
             
@@ -68,7 +78,9 @@ Input
             variableMap.Add(CyanTriggerAssemblyData.LocalPlayerGUID, varCount++);
 
             triggerInfo.AppendLine("Version: " + instanceData.version);
-            triggerInfo.AppendLine("Apply animators: " + instanceData.applyAnimatorMove);
+            triggerInfo.AppendLine("Update Order: " + instanceData.updateOrder);
+            triggerInfo.AppendLine("Sync Method: " + instanceData.programSyncMode);
+            
             // Variables
             {
                 triggerInfo.AppendLine("variables:");
@@ -86,6 +98,14 @@ Input
                     // The name is defined in the code and is needed in the hash.
                     triggerInfo.AppendLine(variable.name +", " + variable.type.type +", " +variable.sync +", " + hasCallback);
                     variableMap.Add(variable.variableID, varCount++);
+
+                    if (hasCallback)
+                    {
+                        string prevVariable = CyanTriggerCustomNodeOnVariableChanged.GetPrevVariableGuid(
+                            CyanTriggerCustomNodeOnVariableChanged.GetOldVariableName(variable.name),
+                            variable.variableID);
+                        variableMap.Add(prevVariable, varCount++);
+                    }
                 }
             }
             // Events
@@ -295,11 +315,17 @@ Input
                 }
                 
                 bool hasCallback = variablesWithCallbacks.Contains(variable.variableID);
+                string varID = "<ERROR_INVALID_ID>";
                 if (!variableMap.TryGetValue(variable.variableID, out int id))
                 {
-                    throw new Exception("Variable id could not be found: " + variable.variableID);
+                    // TODO add a callback to know when there are errors in the hashing process.
+                    throw new Exception("[CyanTrigger] Variable id could not be found: " + variable.variableID);
                 }
-                return $"{def.type.type} var[{id}] {hasCallback}";
+                else
+                {
+                    varID = id.ToString();
+                }
+                return $"{def.type.type} var[{varID}] {hasCallback}";
             }
 
             string data = "";

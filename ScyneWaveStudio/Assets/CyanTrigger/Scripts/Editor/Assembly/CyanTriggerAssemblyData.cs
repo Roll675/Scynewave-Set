@@ -53,6 +53,7 @@ namespace CyanTrigger
             EndAddress,
             ActionJumpAddress,
             TimerQueue,
+            ReturnValue,
         }
 
         private static readonly (string, Type)[] UdonSpecialVariableNames =
@@ -62,6 +63,7 @@ namespace CyanTrigger
             ("uint_int_end_address", typeof(uint)),
             ("uint_action_jump_address", typeof(uint)),
             ("_timer_queue", typeof(IUdonEventReceiver)),
+            (UdonBehaviour.ReturnVariableName, typeof(object)),
         };
 
         // Unchanging data
@@ -152,7 +154,8 @@ namespace CyanTrigger
 
         public string CreateVariableName(string name, Type type)
         {
-            return "_" + _variables.Count + "_" + name + "_" + CyanTriggerNameHelpers.GetSanitizedTypeName(type);
+            return VRC.Udon.Compiler.Compilers.UdonGraphCompiler.INTERNAL_VARIABLE_PREFIX + 
+                   _variables.Count + "_" + name + "_" + CyanTriggerNameHelpers.GetSanitizedTypeName(type);
         }
         
         public CyanTriggerAssemblyDataType AddVariable(string name, Type type, bool export, object defaultValue = null)
@@ -176,7 +179,7 @@ namespace CyanTrigger
             return var;
         }
 
-        public void AddUserDefinedVariable(string name, string guid, Type type, CyanTriggerSyncMode sync, bool hasCallback)
+        public void AddUserDefinedVariable(string name, string guid, Type type, CyanTriggerVariableSyncMode sync, bool hasCallback)
         {
             _userDefinedVariables.Add(guid, name);
             CyanTriggerAssemblyDataType var = new CyanTriggerAssemblyDataType(name, type, GetResolvedType(type), true);
@@ -191,20 +194,16 @@ namespace CyanTrigger
                 var.previousVariable = AddPreviousVariable(name, type);
             }
         }
-
-        public static string GetPreviousUserVarName(string name)
-        {
-            return "__intern_var_prev_" + name.Replace('-', '_');
-        }
         
         public CyanTriggerAssemblyDataType AddPreviousVariable(string varName, Type type)
         {
-            string name = GetPreviousUserVarName(varName);
+            string name = CyanTriggerCustomNodeOnVariableChanged.GetOldVariableName(varName);
             if (_variables.ContainsKey(name))
             {
                 return _variables[name];
             }
 
+            // Note that the previous variable should be exported as this is how the initial data is properly set.
             CyanTriggerAssemblyDataType var = new CyanTriggerAssemblyDataType(name, type, GetResolvedType(type), true);
             
             _variables.Add(var.name, var);
@@ -330,13 +329,27 @@ namespace CyanTrigger
         
         public CyanTriggerAssemblyDataType GetUserDefinedVariable(string guid)
         {
+            CyanTriggerAssemblyDataType var;
             if (!_userDefinedVariables.TryGetValue(guid, out string varName))
             {
+                // Try using guid as variable name directly
+                if (_variables.TryGetValue(guid, out var))
+                {
+                    return var;
+                }
+                
+                // Try get variable name from guid tag
+                varName = CyanTriggerAssemblyDataGuidTags.GetVariableName(guid);
+                if (!string.IsNullOrEmpty(varName) && _variables.TryGetValue(varName, out var))
+                {
+                    return var;
+                }
+                
                 Debug.LogError("GUID does not exist in user defined variables! " + guid);
                 return null;
             }
 
-            if (!_variables.TryGetValue(varName, out CyanTriggerAssemblyDataType var))
+            if (!_variables.TryGetValue(varName, out var))
             {
                 Debug.LogError("User variable name is not a defined variable! " + varName);
                 return null;
@@ -437,7 +450,7 @@ namespace CyanTrigger
                 {
                     sb.AppendLine("  .export " + variable.Value.name);
                 }
-                if (variable.Value.sync != CyanTriggerSyncMode.NotSynced)
+                if (variable.Value.sync != CyanTriggerVariableSyncMode.NotSynced)
                 {
                     sb.AppendLine("  .sync " + variable.Value.name + ", " + GetSyncExportName(variable.Value.sync));
                 }
@@ -453,16 +466,16 @@ namespace CyanTrigger
             return sb.ToString();
         }
         
-        public static string GetSyncExportName(CyanTriggerSyncMode sync)
+        public static string GetSyncExportName(CyanTriggerVariableSyncMode sync)
         {
             switch(sync)
             {
-                case CyanTriggerSyncMode.NotSynced:
-                case CyanTriggerSyncMode.Synced:
+                case CyanTriggerVariableSyncMode.NotSynced:
+                case CyanTriggerVariableSyncMode.Synced:
                     return "none";
-                case CyanTriggerSyncMode.SyncedLinear:
+                case CyanTriggerVariableSyncMode.SyncedLinear:
                     return "linear";
-                case CyanTriggerSyncMode.SyncedSmooth:
+                case CyanTriggerVariableSyncMode.SyncedSmooth:
                     return "smooth";
                 default:
                     throw new Exception("Unexpected SyncMode " + sync);
@@ -625,6 +638,61 @@ namespace CyanTrigger
                 var pair = _jumpReturnVariables[cur];
                 _jumpReturnVariables[cur] = (pair.Item1, mapping[pair.Item2]);
             }
+        }
+    }
+
+    public static class CyanTriggerAssemblyDataGuidTags
+    {
+        public const string VariableNameTag = "VariableName";
+        public const string VariableIdTag = "VariableId";
+
+        // This is stupidly hacky.
+        private const char GuidTagSeparator = ',';
+        private const char GuidTagDataSeparator = ':';
+
+        public static string AddVariableGuidTag(string tag, string data, string guid = null)
+        {
+            string nTag = tag + GuidTagDataSeparator + data;
+            if (string.IsNullOrEmpty(guid))
+            {
+                return nTag;
+            }
+
+            return guid + GuidTagSeparator + nTag;
+        }
+
+        // TODO optimize?
+        public static string GetVariableGuidTag(string guid, string tag)
+        {
+            foreach (var tagPair in guid.Split(GuidTagSeparator))
+            {
+                if (tagPair.StartsWith(tag + GuidTagDataSeparator))
+                {
+                    return tagPair.Substring(tag.Length + 1);
+                }
+            }
+
+            return null;
+        }
+
+        public static string AddVariableIdTag(string id, string guid = null)
+        {
+            return AddVariableGuidTag(VariableIdTag, id, guid);
+        }
+
+        public static string GetVariableId(string guid)
+        {
+            return GetVariableGuidTag(guid, VariableIdTag);
+        }
+        
+        public static string AddVariableNameTag(string name, string guid = null)
+        {
+            return AddVariableGuidTag(VariableNameTag, name, guid);
+        }
+
+        public static string GetVariableName(string guid)
+        {
+            return GetVariableGuidTag(guid, VariableNameTag);
         }
     }
 }

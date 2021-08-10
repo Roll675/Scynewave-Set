@@ -1229,6 +1229,11 @@ MonoBehaviour:
       directEvent: 
       guid: 
     scopeDelta: 1
+  - item: Comment
+    data:
+      directEvent: CyanTriggerSpecial_Comment
+      guid: 
+    scopeDelta: 0
   - item: Block
     data:
       directEvent: CyanTriggerSpecial_Block
@@ -1289,6 +1294,11 @@ MonoBehaviour:
       directEvent: CyanTriggerSpecial_ConditionFailIfFalse
       guid: 
     scopeDelta: 0
+  - item: SetReturnValue
+    data:
+      directEvent: CyanTriggerSpecial_SetReturnValue
+      guid: 
+    scopeDelta: 0
   - item: _ScopeEnd New Folder
     data:
       directEvent: 
@@ -1339,14 +1349,39 @@ MonoBehaviour:
       directEvent: VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
       guid: 
     scopeDelta: 0
+  - item: UdonBehaviour.Get DisableInteractive
+    data:
+      directEvent: VRCUdonCommonInterfacesIUdonEventReceiver.__get_DisableInteractive__SystemBoolean
+      guid: 
+    scopeDelta: 0
+  - item: UdonBehaviour.Set DisableInteractive
+    data:
+      directEvent: VRCUdonCommonInterfacesIUdonEventReceiver.__set_DisableInteractive__SystemBoolean__SystemVoid
+      guid: 
+    scopeDelta: 0
   - item: UdonBehaviour.SendCustomEvent
     data:
       directEvent: VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
       guid: 
     scopeDelta: 0
+  - item: UdonBehaviour.SendCustomEventDelayedFrames
+    data:
+      directEvent: VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedFrames__SystemString_SystemInt32_VRCUdonCommonEnumsEventTiming__SystemVoid
+      guid: 
+    scopeDelta: 0
+  - item: UdonBehaviour.SendCustomEventDelayedSeconds
+    data:
+      directEvent: VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+      guid: 
+    scopeDelta: 0
   - item: UdonBehaviour.SendCustomNetworkEvent
     data:
       directEvent: VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomNetworkEvent__VRCUdonCommonInterfacesNetworkEventTarget_SystemString__SystemVoid
+      guid: 
+    scopeDelta: 0
+  - item: UdonBehaviour.RequestSerialization
+    data:
+      directEvent: VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid
       guid: 
     scopeDelta: 0
   - item: _ScopeEnd New Folder

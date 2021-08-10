@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor;
+#if UNITY_2019_3_OR_NEWER
+using UnityEditor.Experimental.GraphView;
+#else
 using UnityEditor.Experimental.UIElements.GraphView;
+#endif
 using UnityEngine;
 using VRC.Udon.Graph;
 
@@ -20,6 +25,17 @@ namespace CyanTrigger
         {
             if (entry.userData is CyanTriggerActionInfoHolder actionInfoHolder && OnDefinitionSelected != null)
             {
+                if (CyanTriggerSearchWindow.WasEventRightClick)
+                {
+                    GenericMenu menu = new GenericMenu();
+                    menu.AddItem(new GUIContent("Add Variable"), false, () =>
+                    {
+                        OnDefinitionSelected.Invoke(actionInfoHolder.definition.definition);
+                    });
+                
+                    menu.ShowAsContext();
+                    return false;
+                }
                 OnDefinitionSelected.Invoke(actionInfoHolder.definition.definition);
                 return true;
             }

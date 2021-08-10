@@ -203,6 +203,7 @@ namespace CyanTrigger
                     if (trigger == null || trigger.triggerInstance.udonBehaviour != udon)
                     {
                         GameObject obj = udon.gameObject;
+                        //Debug.Log("Setting object dirty after deleting udon/trigger: " + VRC.Tools.GetGameObjectPath(obj));
                         EditorUtility.SetDirty(obj);
                         Undo.RecordObject(obj, "Removing unused udon");
                         
@@ -225,6 +226,16 @@ namespace CyanTrigger
 
         private static void VerifyTrigger(CyanTrigger trigger, bool fullVerification)
         {
+            trigger.Verify();
+            trigger.hideFlags = HideFlags.DontSaveInBuild;
+            
+            if (trigger.triggerInstance == null || trigger.triggerInstance.triggerDataInstance == null)
+            {
+                Debug.LogError("Trigger data is null!: "
+                                 + VRC.Tools.GetGameObjectPath(trigger.gameObject));
+                return;
+            }
+            
             Profiler.BeginSample("CyanTrigger.VerifyTrigger");
             
             Undo.RecordObject(trigger.gameObject, "Verifying Trigger");
@@ -234,21 +245,26 @@ namespace CyanTrigger
             if (triggerInstance.udonBehaviour != null && trigger.gameObject != triggerInstance.udonBehaviour.gameObject)
             {
                 triggerInstance.udonBehaviour = null;
-                EditorUtility.SetDirty(trigger);
                 
+                EditorUtility.SetDirty(trigger);
+#if CYAN_TRIGGER_DEBUG
+                //Debug.Log("Setting trigger dirty with wrong udon: " + VRC.Tools.GetGameObjectPath(trigger.gameObject));
                 Debug.LogWarning("Trigger has UdonBehaviour on different object: "
                           + VRC.Tools.GetGameObjectPath(trigger.gameObject));
+#endif
             }
             
             // Try getting UdonBehaviour if one already exists
             if (triggerInstance.udonBehaviour == null)
             {
+#if CYAN_TRIGGER_DEBUG
                 Debug.LogWarning("Trigger missing UdonBehaviour: "
                                  + VRC.Tools.GetGameObjectPath(trigger.gameObject));
-                
+#endif
                 // find anything that had proper name
                 UdonBehaviour[] udonBehaviours = trigger.GetComponents<UdonBehaviour>();
                 UdonBehaviour behaviour = null;
+                UdonBehaviour nullBehaviour = null;
                 bool warnedDuplicate = false;
                 foreach (var udonBehaviour in udonBehaviours)
                 {
@@ -262,16 +278,30 @@ namespace CyanTrigger
                         }
                         else if (!warnedDuplicate)
                         {
+#if CYAN_TRIGGER_DEBUG
                             Debug.LogWarning("Multiple UdonBehaviours with CyanTrigger programs. " 
                                              + VRC.Tools.GetGameObjectPath(trigger.gameObject));
+#endif
                             warnedDuplicate = true;
                         }
                     }
+
+                    if (abstractProgram == null)
+                    {
+                        nullBehaviour = udonBehaviour;
+                    }
                 }
 
+                if (behaviour == null && nullBehaviour != null)
+                {
+                    behaviour = nullBehaviour;
+                }
+                
                 if (behaviour != null)
                 {
                     triggerInstance.udonBehaviour = behaviour;
+                    
+                    //Debug.Log("Setting trigger dirty with new udon: " + VRC.Tools.GetGameObjectPath(trigger.gameObject));
                     EditorUtility.SetDirty(trigger);
                 }
                 else
@@ -306,6 +336,8 @@ namespace CyanTrigger
                         }
                     }
                 }
+                
+                //Debug.Log("Setting trigger dirty after migration: " + VRC.Tools.GetGameObjectPath(trigger.gameObject));
                 EditorUtility.SetDirty(trigger);
             }
 
@@ -313,7 +345,7 @@ namespace CyanTrigger
             if (fullVerification)
             {
                 var dataInstance = trigger.triggerInstance?.triggerDataInstance;
-                if (dataInstance != null)
+                if (dataInstance?.events != null)
                 {
                     bool dirty = false;
                     foreach (var eventData in dataInstance.events)
@@ -327,6 +359,7 @@ namespace CyanTrigger
 
                     if (dirty)
                     {
+                        //Debug.Log("Setting trigger dirty after verification: " + VRC.Tools.GetGameObjectPath(trigger.gameObject));
                         EditorUtility.SetDirty(trigger);
                     }
                 }
@@ -350,6 +383,7 @@ namespace CyanTrigger
                 if (udonBehaviour.programSource == null)
                 {
                     udonBehaviour.programSource = CyanTriggerSerializedProgramManager.Instance.DefaultProgramAsset;
+                    //Debug.Log("Setting udon dirty after setting default program: " + VRC.Tools.GetGameObjectPath(udonBehaviour.gameObject));
                     EditorUtility.SetDirty(udonBehaviour);
                 }
             }

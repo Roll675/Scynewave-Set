@@ -12,25 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: AnimatorIntMod
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 6ab2ec867ac59e9479a4332c9a1aa663,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 4f249cce4fd246d4f8bc317e8e6bc248,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    .export Animator\r\n    .export Value\r\n   
-    .export Parameter\r\n    \r\n    __instance_0: %UnityEngineAnimator, null\r\n   
-    __name_0: %SystemString, null\r\n    __value_0: %SystemInt32, null\r\n    __Int32_0:
-    %SystemInt32, null\r\n    __Int32_1: %SystemInt32, null\r\n    __instance_1:
-    %UnityEngineAnimator, null\r\n    __name_1: %SystemString, null\r\n    Animator:
-    %UnityEngineAnimator, null\r\n    Value: %SystemInt32, null\r\n    Parameter:
-    %SystemString, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export AnimatorInt\r\n   
-    \r\n    AnimatorInt:\r\n    \r\n        PUSH, Animator\r\n        PUSH, __instance_0\r\n       
-    COPY\r\n        PUSH, Parameter\r\n        PUSH, __name_0\r\n        COPY\r\n       
-    PUSH, Animator\r\n        PUSH, __instance_1\r\n        COPY\r\n        PUSH,
-    Parameter\r\n        PUSH, __name_1\r\n        COPY\r\n        PUSH, __instance_1\r\n       
-    PUSH, __name_1\r\n        PUSH, __Int32_0\r\n        EXTERN, \"UnityEngineAnimator.__GetInteger__SystemString__SystemInt32\"\r\n       
-    PUSH, __Int32_0\r\n        PUSH, Value\r\n        PUSH, __value_0\r\n       
-    EXTERN, \"SystemInt32.__op_Remainder__SystemInt32_SystemInt32__SystemInt32\"\r\n       
-    PUSH, __instance_0\r\n        PUSH, __name_0\r\n        PUSH, __value_0\r\n       
-    EXTERN, \"UnityEngineAnimator.__SetInteger__SystemString_SystemInt32__SystemVoid\"\r\n       
-    JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+  udonAssembly: ".data_start\r\n\r\n    .export Animator\r\n    .export Value\r\n
+    \   .export Parameter\r\n    \r\n    __instance_0: %UnityEngineAnimator, null\r\n
+    \   __name_0: %SystemString, null\r\n    __value_0: %SystemInt32, null\r\n    __Int32_0:
+    %SystemInt32, null\r\n    __Int32_1: %SystemInt32, null\r\n    __instance_1: %UnityEngineAnimator,
+    null\r\n    __name_1: %SystemString, null\r\n    Animator: %UnityEngineAnimator,
+    null\r\n    Value: %SystemInt32, null\r\n    Parameter: %SystemString, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n
+    \   .export AnimatorInt\r\n    \r\n    AnimatorInt:\r\n    \r\n        PUSH, Animator\r\n
+    \       PUSH, __instance_0\r\n        COPY\r\n        PUSH, Parameter\r\n        PUSH,
+    __name_0\r\n        COPY\r\n        PUSH, Animator\r\n        PUSH, __instance_1\r\n
+    \       COPY\r\n        PUSH, Parameter\r\n        PUSH, __name_1\r\n        COPY\r\n
+    \       PUSH, __instance_1\r\n        PUSH, __name_1\r\n        PUSH, __Int32_0\r\n
+    \       EXTERN, \"UnityEngineAnimator.__GetInteger__SystemString__SystemInt32\"\r\n
+    \       PUSH, __Int32_0\r\n        PUSH, Value\r\n        PUSH, __value_0\r\n
+    \       EXTERN, \"SystemInt32.__op_Remainder__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __instance_0\r\n        PUSH, __name_0\r\n        PUSH, __value_0\r\n
+    \       EXTERN, \"UnityEngineAnimator.__SetInteger__SystemString_SystemInt32__SystemVoid\"\r\n
+    \       JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -52,11 +52,9 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Animator
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Variable_SystemInt32
@@ -75,11 +73,9 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Value
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Get_Variable
@@ -116,11 +112,9 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Parameter
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Get_Variable

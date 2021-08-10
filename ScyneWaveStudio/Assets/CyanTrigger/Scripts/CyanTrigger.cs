@@ -12,22 +12,50 @@ namespace CyanTrigger
 #if UNITY_EDITOR
         public void Reset()
         {
+            bool dirty = false;
             if (triggerInstance == null)
             {
                 triggerInstance = CyanTriggerSerializableInstance.CreateInstance();
+                dirty = true;
             }
             
             if (triggerInstance.udonBehaviour == null)
             {
                 triggerInstance.udonBehaviour = gameObject.AddComponent<UdonBehaviour>();
+                dirty = true;
             }
-            UnityEditor.EditorUtility.SetDirty(this);
+
+            if (dirty)
+            {
+                UnityEditor.EditorUtility.SetDirty(this);
+            }
+        }
+
+        public void Verify()
+        {
+            // Verify that trigger data is valid.
+            // When importing CyanTriggers, any compile errors will cause prefabs to import without data.
+            // This checks both that data is missing and the object is part of a prefab. If both are true, reimport it. 
+            if (triggerInstance == null)
+            {
+                string path = UnityEditor.PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(gameObject);
+                if (path != null)
+                {
+                    UnityEditor.AssetDatabase.ImportAsset(path);
+                }
+            }
         }
 #endif
 
+
         private void OnDrawGizmosSelected()
         {
-            var data = triggerInstance.triggerDataInstance;
+            var data = triggerInstance?.triggerDataInstance;
+            if (data == null || data.variables == null || data.events == null)
+            {
+                return;
+            }
+            
             foreach (var variable in data.variables)
             {
                 DrawLineToObject(variable);
@@ -119,8 +147,10 @@ namespace CyanTrigger
             {
                 triggerDataInstance = new CyanTriggerDataInstance
                 {
+                    version = CyanTriggerDataInstance.DataVersion,
                     events =  new CyanTriggerEvent[0],
                     variables = new CyanTriggerVariable[0],
+                    programSyncMode = CyanTriggerProgramSyncMode.ManualWithAutoRequest,
                 }
             };
             return instance;

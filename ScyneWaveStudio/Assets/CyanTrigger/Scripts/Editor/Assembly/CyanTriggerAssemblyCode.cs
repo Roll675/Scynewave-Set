@@ -8,11 +8,14 @@ namespace CyanTrigger
     {
         private Dictionary<string, CyanTriggerAssemblyMethod> methods;
         private List<string> orderedMethods;
+        private int updateOrder;
 
-        public CyanTriggerAssemblyCode()
+        public CyanTriggerAssemblyCode(int updateOrder = 0)
         {
             methods = new Dictionary<string, CyanTriggerAssemblyMethod>();
             orderedMethods = new List<string>();
+
+            this.updateOrder = updateOrder;
         }
 
         public void AddMethod(CyanTriggerAssemblyMethod udonEvent)
@@ -101,6 +104,11 @@ namespace CyanTrigger
 
             sb.AppendLine(".code_start");
 
+            if (updateOrder != 0)
+            {
+                sb.AppendLine("  .update_order " + updateOrder);
+            }
+            
             foreach (string eventName in orderedMethods)
             {
                 sb.AppendLine(methods[eventName].Export());

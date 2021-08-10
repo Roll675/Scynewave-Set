@@ -58,7 +58,7 @@ namespace CyanTrigger
         }
         
         // TODO make more generic?
-        protected override void RowGUI(RowGUIArgs args)
+        protected override void OnRowGUI(RowGUIArgs args)
         {
             var item = (CyanTriggerScopedTreeItem)args.item;
             Rect cellRect = args.GetCellRect(0);
@@ -77,7 +77,7 @@ namespace CyanTrigger
                 // Default icon and label
                 args.rowRect = cellRect;
             }
-            base.RowGUI(args);
+            base.OnRowGUI(args);
         }
     }
 }

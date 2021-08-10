@@ -13,7 +13,12 @@ namespace CyanTrigger
     public class CyanTriggerProgramAsset : UdonAssemblyProgramAsset
     {
         public string triggerHash;
-
+        
+        [NonSerialized, OdinSerialize]
+        public List<string> warningMessages = new List<string>();
+        [NonSerialized, OdinSerialize]
+        public List<string> errorMessages = new List<string>();
+        
         [NonSerialized, OdinSerialize]
         private CyanTriggerDataInstance cyanTriggerDataInstance;
         
@@ -23,11 +28,12 @@ namespace CyanTrigger
         [NonSerialized, OdinSerialize]
         private Dictionary<string, (object value, Type type)> heapDefaultValues = 
             new Dictionary<string, (object value, Type type)>();
-        
+
         private bool _showProgramUasm;
         private bool _showVariableReferences;
         private bool _showPublicVariables;
         private bool _showDefaultHeapValues;
+        private bool _showHash;
 
         protected override void DrawProgramSourceGUI(UdonBehaviour udonBehaviour, ref bool dirty)
         {
@@ -47,11 +53,15 @@ namespace CyanTrigger
             // TODO verify if valid, otherwise break out;
 
             ShowDebugInformation(udonBehaviour, ref dirty);
+            
+            ApplyUdonProperties(cyanTrigger.triggerInstance, udonBehaviour, ref dirty);
         }
 
         private void ShowDebugInformation(UdonBehaviour udonBehaviour, ref bool dirty)
         {
-            _showProgramUasm = EditorGUILayout.Foldout(_showProgramUasm, "Compiled Trigger Assembly");
+            DrawAssemblyErrorTextArea();
+            
+            _showProgramUasm = EditorGUILayout.Foldout(_showProgramUasm, "Compiled Trigger Assembly", true);
             if (_showProgramUasm)
             {
                 DrawAssemblyTextArea(false, ref dirty);
@@ -63,7 +73,7 @@ namespace CyanTrigger
             }
             
 #if CYAN_TRIGGER_DEBUG
-            _showVariableReferences = EditorGUILayout.Foldout(_showVariableReferences, "Variable References");
+            _showVariableReferences = EditorGUILayout.Foldout(_showVariableReferences, "Variable References", true);
             if (_showVariableReferences) 
             {
                 if (variableReferences == null)
@@ -78,7 +88,7 @@ namespace CyanTrigger
                 }
             }
 
-            _showPublicVariables = EditorGUILayout.Foldout(_showPublicVariables, "Public Variables");
+            _showPublicVariables = EditorGUILayout.Foldout(_showPublicVariables, "Public Variables", true);
             if (_showPublicVariables)
             {
                 EditorGUI.BeginDisabledGroup(true);
@@ -88,7 +98,7 @@ namespace CyanTrigger
                 EditorGUI.EndDisabledGroup();
             }
 
-            _showDefaultHeapValues = EditorGUILayout.Foldout(_showDefaultHeapValues, "Heap Variables");
+            _showDefaultHeapValues = EditorGUILayout.Foldout(_showDefaultHeapValues, "Heap Variables", true);
             if (_showDefaultHeapValues)
             {
                 IUdonSymbolTable symbolTable = program?.SymbolTable;
@@ -113,7 +123,34 @@ namespace CyanTrigger
                     GUILayout.Label(defaultValue.Key + " " + defaultValue.Value.Item1);
                 }
             }
+
+            _showHash = EditorGUILayout.Foldout(_showHash, "Trigger Hash", true);
+            if (_showHash)
+            {
+                EditorGUI.BeginDisabledGroup(true);
+
+                EditorGUILayout.TextArea(triggerHash);
+                EditorGUILayout.TextArea(CyanTriggerInstanceDataHash.HashCyanTriggerInstanceData(cyanTriggerDataInstance));
+                EditorGUILayout.TextArea(CyanTriggerInstanceDataHash.GetProgramUniqueStringForCyanTrigger(cyanTriggerDataInstance));
+
+                EditorGUI.EndDisabledGroup();
+            }
 #endif
+        }
+
+        public static void ClearPublicUdonVariables(UdonBehaviour udonBehaviour, ref bool dirty)
+        {
+            IUdonVariableTable publicVariables = udonBehaviour.publicVariables;
+            if (publicVariables == null)
+            {
+                return;
+            }
+            
+            foreach(string publicVariableSymbol in new List<string>(publicVariables.VariableSymbols))
+            {
+                publicVariables.RemoveVariable(publicVariableSymbol);
+                dirty = true;
+            }
         }
 
         public void ApplyCyanTriggerToUdon(
@@ -170,6 +207,15 @@ namespace CyanTrigger
             if (triggerInstance.interactText != udonBehaviour.interactText)
             {
                 udonBehaviour.interactText = triggerInstance.interactText;
+                dirty = true;
+            }
+
+            bool reliableSync = triggerInstance.triggerDataInstance.programSyncMode !=
+                                CyanTriggerProgramSyncMode.Continuous;
+
+            if (udonBehaviour.Reliable != reliableSync)
+            {
+                udonBehaviour.Reliable = reliableSync;
                 dirty = true;
             }
         }
@@ -242,6 +288,12 @@ namespace CyanTrigger
             cyanTriggerDataInstance = CyanTriggerUtil.CopyCyanTriggerDataInstance(dataInstance, false);
         }
 
+        public void InvalidateData()
+        {
+            triggerHash = name;
+            cyanTriggerDataInstance = null;
+        }
+
         public bool CompileTrigger()
         {
             return CyanTriggerCompiler.CompileCyanTrigger(cyanTriggerDataInstance, this, triggerHash);
@@ -252,7 +304,9 @@ namespace CyanTrigger
             string assembly, 
             Dictionary<string, (object value, Type type)> variables,
             CyanTriggerDataReferences varReferences,
-            CyanTriggerDataInstance dataInstance)
+            CyanTriggerDataInstance dataInstance,
+            List<string> warnings,
+            List<string> errors)
         {
             triggerHash = hash;
             udonAssembly = assembly;
@@ -260,12 +314,30 @@ namespace CyanTrigger
 
             variableReferences = varReferences;
             SetDefaultHeapValues(variables);
+
+            warningMessages = warnings;
+            errorMessages = errors;
             
             base.RefreshProgramImpl();
             ApplyDefaultValuesToHeap();
             
             SerializedProgramAsset.StoreProgram(program);
+            
+            UpdateUdonErrors();
+            
             EditorUtility.SetDirty(this);
+        }
+
+        private void UpdateUdonErrors()
+        {
+            if (errorMessages != null && errorMessages.Count > 0)
+            {
+                assemblyError = string.Join("\n", errorMessages);
+            }
+            else
+            {
+                assemblyError = null;
+            }
         }
 
         private void DebugLogHeapAndRefData()
@@ -303,9 +375,9 @@ namespace CyanTrigger
             try
             {
                 // Program doesn't always reload correctly, so try to retrieve it here.
-                if (program == null && SerializedProgramAsset != null)
+                if (program == null && serializedUdonProgramAsset != null)
                 {
-                    program = SerializedProgramAsset.RetrieveProgram();
+                    program = serializedUdonProgramAsset.RetrieveProgram();
                 }
 
                 // TODO verify if this is even needed? 

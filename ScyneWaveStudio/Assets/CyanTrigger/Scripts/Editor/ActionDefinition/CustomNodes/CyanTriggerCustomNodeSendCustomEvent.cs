@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEditor;
+﻿using UnityEditor;
 using VRC.Udon.Graph;
 
 namespace CyanTrigger
@@ -99,9 +98,10 @@ namespace CyanTrigger
             string eventName = actionInstance.inputs[1].data?.obj as string;
             if (string.IsNullOrEmpty(eventName))
             {
+                compileState.LogError("CyanTrigger.SendCustomEvent cannot have an empty event!");
                 return;
             }
-
+            
             var eventNameVariable =
                 compileState.GetDataFromVariableInstance(-1, 1, actionInstance.inputs[1], typeof(string), false);
             

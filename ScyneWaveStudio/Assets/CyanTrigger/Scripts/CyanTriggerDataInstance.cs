@@ -6,24 +6,31 @@ namespace CyanTrigger
     // This conversion requires reworking all editor interfaces though...
 
     // This is all the data that should be affect compilation of a CyanTrigger program. 
+    // Adding any compilation required data should also be added to these classes:
+    // - CyanTriggerUtil.CopyCyanTriggerDataInstance
+    // - CyanTriggerInstanceDataHash.GetProgramUniqueStringForCyanTrigger
     [Serializable]
     public class CyanTriggerDataInstance
     {
-        public const int DataVersion = 1;
+        public const int DataVersion = 3;
 
         public int version;
         // public bool addDebugLogsPerAction
-        // public int updateOrder;
-        public bool applyAnimatorMove = true;
+        public int updateOrder;
+        public CyanTriggerProgramSyncMode programSyncMode;
+        
         public CyanTriggerEvent[] events;
         public CyanTriggerVariable[] variables;
+        
+        // Data that does not affect compilation and is visual only
+        public CyanTriggerComment comment;
     }
 
     [Serializable]
     public class CyanTriggerVariable : CyanTriggerActionVariableInstance
     {
         public CyanTriggerSerializableType type;
-        public CyanTriggerSyncMode sync;
+        public CyanTriggerVariableSyncMode sync;
     }
     
     [Serializable]
@@ -44,6 +51,10 @@ namespace CyanTrigger
         public CyanTriggerActionType actionType;
         public CyanTriggerActionVariableInstance[] inputs;
         public CyanTriggerActionVariableInstance[] multiInput; // For first input only if it allows multiple
+        
+        // Data that does not affect compilation and is visual only
+        public bool expanded;
+        public CyanTriggerComment comment;
     }
 
     [Serializable]
@@ -75,5 +86,15 @@ namespace CyanTrigger
         public CyanTriggerActionInstance[] actionInstances;
 
         public CyanTriggerEventOptions eventOptions;
+        
+        // Data that does not affect compilation and is visual only
+        public bool expanded = true;
+    }
+
+    // This data isn't used in compilation, but is helpful in creating programs
+    [Serializable]
+    public class CyanTriggerComment
+    {
+        public string comment;
     }
 }

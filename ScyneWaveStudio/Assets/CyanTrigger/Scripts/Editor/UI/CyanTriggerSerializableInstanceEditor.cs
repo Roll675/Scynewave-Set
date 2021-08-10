@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Profiling;
+using VRC.SDK3.Components;
 using VRC.SDKBase;
 using VRC.Udon;
 using VRC.Udon.Common.Interfaces;
@@ -14,14 +15,21 @@ namespace CyanTrigger
     public class CyanTriggerSerializableInstanceEditor
     {
         private static readonly GUIContent SelectToEditContent = new GUIContent("Select to Edit");
-        private static readonly GUIContent AnimatorMoveContent = new GUIContent("Apply Animator Move",
-            "When an UdonBehaviour is on the same object as an animator, root motion breaks. With this option enabled, the transform updates can be auto applied through implementing OnAnimatorMove in Udon.");
+        private static readonly GUIContent UpdateOrderContent = new GUIContent("Update Order",
+            "Set the value this CyanTrigger should be sorted by when using Update, LateUpdate, or FixedUpdate. Lower values will be executed earlier.");
+        private static readonly GUIContent ProgramSyncModeContent = new GUIContent("Sync Method",
+            "How will synced variables within this CyanTrigger be handled?");
         private static readonly GUIContent InteractTextContent = new GUIContent("Interaction Text",
             "Text that will be shown to the user when they highlight an object to interact.");
         private static readonly GUIContent ProximityContent = new GUIContent("Proximity",
             "How close the user needs to be before the object can be interacted with. Note that this is not in unity units and the distance depends on the avatar scale.");
 
         private const string UnnamedCustomName = "Unnamed";
+        
+        private const string CommentControlName = "Event Editor Comment Control";
+
+        private const int InvalidCommentId = -1;
+        private const int CyanTriggerCommentId = -2;
         
         public static readonly CyanTriggerActionVariableDefinition AllowedUserGateVariableDefinition =
             new CyanTriggerActionVariableDefinition
@@ -42,14 +50,9 @@ namespace CyanTrigger
                 description = "If the local user's name is in this list, they will be denied from initiating this event."
             };
 
-        private static readonly List<CyanTriggerEditorVariableOption> EmptyVariableOptionsList = new List<CyanTriggerEditorVariableOption>();
-
         private static readonly HashSet<CyanTriggerSerializableInstanceEditor> OpenSerializers =
             new HashSet<CyanTriggerSerializableInstanceEditor>();
-        
-        private readonly HashSet<string> _optionExpands = new HashSet<string>();
 
-        
         private readonly SerializedObject _serializedObject;
         private readonly SerializedProperty _serializedProperty;
         private readonly SerializedProperty _dataInstanceProperty;
@@ -57,32 +60,36 @@ namespace CyanTrigger
         private readonly CyanTriggerDataInstance _cyanTriggerDataInstance;
         
 
-        private GUIStyle _style;
-
+        private bool _showOtherSettings = true;
+        private bool _showVariablesSection = true;
+        
         private readonly CyanTriggerVariableTreeView _variableTreeView;
         private readonly SerializedProperty _variableDataProperty;
 
         private readonly Dictionary<Type, CyanTriggerEditorVariableOptionList> _userVariableOptions =
             new Dictionary<Type, CyanTriggerEditorVariableOptionList>();
+        private readonly Dictionary<string, string> _userVariables = new Dictionary<string, string>();
 
-        private CyanTriggerActionTreeView.ActionInstanceRenderData[] _eventInstanceRenderData = 
-            new CyanTriggerActionTreeView.ActionInstanceRenderData[0];
-        private CyanTriggerActionTreeView.ActionInstanceRenderData[] _eventOptionRenderData = 
-            new CyanTriggerActionTreeView.ActionInstanceRenderData[0];
+        private CyanTriggerActionInstanceRenderData[] _eventInstanceRenderData = 
+            new CyanTriggerActionInstanceRenderData[0];
+        private CyanTriggerActionInstanceRenderData[] _eventOptionRenderData = 
+            new CyanTriggerActionInstanceRenderData[0];
 
         private int _eventListSize;
         private readonly SerializedProperty _eventsProperty;
-        private bool[] _hiddenEvents = new bool[0];
         private ReorderableList[] _eventActionUserGateLists = new ReorderableList[0];
         private Dictionary<int, ReorderableList>[] _eventActionInputLists = new Dictionary<int, ReorderableList>[0];
         private Dictionary<int, ReorderableList>[] _eventInputLists = new Dictionary<int, ReorderableList>[0];
+        
+        private int _editingCommentId = InvalidCommentId;
+        private bool _editCommentButtonPressed = false;
+        private bool _focusedCommentEditor = false;
 
         private CyanTriggerActionTreeView[] _eventActionTrees = new CyanTriggerActionTreeView[0];
         
         private bool _resetVariableInputs = false;
 
         private Editor _baseEditor;
-        private bool _showActionDetails;
 
         private CyanTriggerEditorScopeTree[] _scopeTreeRoot = new CyanTriggerEditorScopeTree[0];
         
@@ -99,7 +106,7 @@ namespace CyanTrigger
             _cyanTriggerSerializableInstance = cyanTriggerSerializableInstance;
             _baseEditor = baseEditor;
             
-            _cyanTriggerDataInstance = cyanTriggerSerializableInstance.triggerDataInstance;
+            _cyanTriggerDataInstance = cyanTriggerSerializableInstance?.triggerDataInstance;
             _dataInstanceProperty =
                 serializedProperty.FindPropertyRelative(nameof(CyanTriggerSerializableInstance.triggerDataInstance));
 
@@ -113,30 +120,37 @@ namespace CyanTrigger
                 {
                     varName = CyanTriggerNameHelpers.SanitizeName(varName);
                     return GetUniqueVariableName(varName, varGuid, _cyanTriggerDataInstance.variables);
-                });
+                },
+                OnGlobalVariableRenamed);
 
-            // TODO find a better location for this?
-            SerializedProperty version =
-                _dataInstanceProperty.FindPropertyRelative(nameof(CyanTriggerDataInstance.version));
-            if (version.intValue != CyanTriggerDataInstance.DataVersion)
-            {
-                version.intValue = CyanTriggerDataInstance.DataVersion;
-            }
-            
             UpdateUserVariableOptions();
         }
         
         public void Dispose()
         {
-            _baseEditor = null;
             OpenSerializers.Remove(this);
+            
+            var target = _baseEditor.target;
+            _baseEditor = null;
+            
+            if (target == null)
+            {
+                return;
+            }
+
+            for (int index = 0; index < _eventActionTrees.Length; ++index)
+            {
+                if (_eventActionTrees[index] != null)
+                {
+                    _eventActionTrees[index].Dispose();
+                }
+            }
         }
 
         public static void UpdateAllOpenSerializers()
         {
             foreach (var serializer in OpenSerializers)
             {
-                serializer._showActionDetails = CyanTriggerSettings.Instance.actionDetailedView;
                 serializer.UpdateActionTreeDisplayNames();
                 serializer._baseEditor.Repaint();
             }
@@ -145,23 +159,27 @@ namespace CyanTrigger
         public void OnInspectorGUI()
         {
             Profiler.BeginSample("CyanTriggerEditor");
-            _style = new GUIStyle(EditorStyles.helpBox);
 
-            _serializedObject.Update();
+            _serializedObject.UpdateIfRequiredOrScript();
 
-            if (Event.current.type == EventType.ValidateCommand &&
-                Event.current.commandName == "UndoRedoPerformed")
+            if (Event.current.commandName == "UndoRedoPerformed")
             {
                 ResetValues();
+                ResetAllActionTrees();
+                _resetVariableInputs = true;
             }
+
+            HandleCommentEvents();
 
             UpdateVariableScope();
 
             EditorGUILayout.BeginVertical(GUILayout.MaxWidth(EditorGUIUtility.currentViewWidth - 30));
             
             EditorGUILayout.Space();
+
+            RenderWarningsAndErrors();
             
-            RenderHeader();
+            RenderMainComment();
             
             RenderExtraOptions();
             
@@ -170,6 +188,8 @@ namespace CyanTrigger
             RenderEvents();
 
             EditorGUILayout.EndVertical();
+
+            HandleTriggerRightClick(GUILayoutUtility.GetLastRect());
 
             // if ((GUI.changed && _serializedObject.hasModifiedProperties) ||
             //     (Event.current.type == EventType.ValidateCommand &&
@@ -180,29 +200,96 @@ namespace CyanTrigger
 
             _serializedObject.ApplyModifiedProperties();
 
+            CheckResetVariableInputs();
+            
+            Profiler.EndSample();
+        }
 
+        private void CheckResetVariableInputs()
+        {
             if (_resetVariableInputs)
             {
                 _resetVariableInputs = false;
                 UpdateUserVariableOptions();
+                UpdateActionTreeDisplayNames();
             }
-            Profiler.EndSample();
+        }
+
+        private void HandleCommentEvents()
+        {
+            // Event has a comment being edited. Check if we it needs to be closed. 
+            if (_editingCommentId != InvalidCommentId)
+            {
+                // Detect if we should close the comment editor
+                Event cur = Event.current;
+                bool enterPressed = cur.type == EventType.KeyDown &&
+                                    cur.keyCode == KeyCode.Return &&
+                                    (cur.shift || cur.alt || cur.command || cur.control);
+                bool isCommentControlFocused = GUI.GetNameOfFocusedControl() == CommentControlName;
+                if ((!_editCommentButtonPressed && _focusedCommentEditor && !isCommentControlFocused) || enterPressed)
+                {
+                    _editingCommentId = InvalidCommentId;
+                    GUI.FocusControl(null);
+                    if (enterPressed)
+                    {
+                        cur.Use();
+                    }
+                }
+            }
+            _editCommentButtonPressed = false;
+        }
+        
+        private void HandleTriggerRightClick(Rect triggerRect)
+        {
+            Event current = Event.current;
+            if(current.type == EventType.ContextClick && triggerRect.Contains(current.mousePosition))
+            {
+                GenericMenu menu = new GenericMenu();
+                
+                menu.AddItem(new GUIContent("Edit CyanTrigger Comment"), false, () =>
+                {
+                    _editingCommentId = CyanTriggerCommentId;
+                    _focusedCommentEditor = false;
+                });
+                
+                void SetAllEventsExpandState(bool value)
+                {
+                    for (int i = 0; i < _eventsProperty.arraySize; ++i)
+                    {
+                        SerializedProperty action = _eventsProperty.GetArrayElementAtIndex(i);
+                        SerializedProperty expanded = action.FindPropertyRelative(nameof(CyanTriggerEvent.expanded));
+                        expanded.boolValue = value;
+                    }
+                    _eventsProperty.serializedObject.ApplyModifiedProperties();
+                }
+            
+                menu.AddItem(new GUIContent("Maximize All Events"), false, () => SetAllEventsExpandState(true));
+                menu.AddItem(new GUIContent("Minimize All Events"), false, () => SetAllEventsExpandState(false));
+                
+                menu.AddSeparator("");
+                
+                menu.AddItem(new GUIContent("Compile Triggers"), false, () =>
+                {
+                    CyanTriggerSerializerManager.RecompileAllTriggers(true);
+                });
+                menu.AddItem(new GUIContent("Show CyanTrigger Settings"), false, CyanTriggerSettingsWindow.ShowWindow);
+
+                menu.ShowAsContext();
+ 
+                current.Use(); 
+            }
         }
 
         private void ResetValues()
         {
             UpdateUserVariableOptions();
 
-            _eventListSize = _eventsProperty.arraySize;
-
-            _eventActionUserGateLists = new ReorderableList[_eventListSize];
-
-            Array.Resize(ref _hiddenEvents, _eventListSize);
-            Array.Resize(ref _eventInputLists, _eventListSize);
-            Array.Resize(ref _eventActionInputLists, _eventListSize);
+            ResizeEventArrays(_eventsProperty.arraySize);
 
             for (int i = 0; i < _eventListSize; ++i)
             {
+                _eventActionUserGateLists[i] = null;
+                
                 if (_eventInputLists[i] == null)
                 {
                     _eventInputLists[i] = new Dictionary<int, ReorderableList>();
@@ -230,6 +317,24 @@ namespace CyanTrigger
                 }
                 
                 _eventOptionRenderData[i]?.ClearInputLists();
+
+                // Force recalculate all variable scopes
+                _scopeTreeRoot[i] = null;
+            }
+
+            UpdateActionTreeViewProperties();
+        }
+
+        private void ResetAllActionTrees()
+        {
+            int eventLength = _eventsProperty.arraySize;
+            for (int index = 0; index < eventLength; ++index)
+            {
+                if (_eventActionTrees[index] == null)
+                {
+                    continue;
+                }
+                _eventActionTrees[index].UndoReset();
             }
         }
 
@@ -272,14 +377,13 @@ namespace CyanTrigger
             toRemove.Sort();
             
             // TODO update all other arrays here too :eyes:
-            CyanTriggerActionTreeView.ActionInstanceRenderData[] tempRenderData =
-                new CyanTriggerActionTreeView.ActionInstanceRenderData[newCount];
-            CyanTriggerActionTreeView.ActionInstanceRenderData[] tempOptionData =
-                new CyanTriggerActionTreeView.ActionInstanceRenderData[newCount];
+            CyanTriggerActionInstanceRenderData[] tempRenderData =
+                new CyanTriggerActionInstanceRenderData[newCount];
+            CyanTriggerActionInstanceRenderData[] tempOptionData =
+                new CyanTriggerActionInstanceRenderData[newCount];
 
             CyanTriggerActionTreeView[] tempActionTrees = new CyanTriggerActionTreeView[newCount];
             
-            bool[] tempHiddenEvents = new bool[newCount];
             Dictionary<int, ReorderableList>[] tempEventActionInputLists = 
                 new Dictionary<int, ReorderableList>[newCount];
             Dictionary<int, ReorderableList>[] tempEventInputLists = 
@@ -306,7 +410,6 @@ namespace CyanTrigger
                 
                 tempActionTrees[nIndex] = _eventActionTrees[index];
                 
-                tempHiddenEvents[nIndex] = _hiddenEvents[index];
                 tempEventActionInputLists[nIndex] = _eventActionInputLists[index];
                 tempEventInputLists[nIndex] = _eventInputLists[index];
 
@@ -327,7 +430,6 @@ namespace CyanTrigger
             _eventInstanceRenderData = tempRenderData;
             _eventOptionRenderData = tempOptionData;
             _eventActionTrees = tempActionTrees;
-            _hiddenEvents = tempHiddenEvents;
             _eventActionInputLists = tempEventActionInputLists;
             _eventInputLists = tempEventInputLists;
             _eventActionUserGateLists = tempEventActionUserGateLists;
@@ -358,9 +460,14 @@ namespace CyanTrigger
             {
                 if (_eventActionTrees[index] == null)
                 {
+                    Debug.LogWarning($"[CyanTrigger] Action tree [{index}] is null and cannot set start id!");
                     continue;
                 }
-                _eventActionTrees[index].IdStartIndex = treeIndexCount;
+
+                if (_eventActionTrees[index].IdStartIndex != treeIndexCount)
+                {
+                    _eventActionTrees[index].IdStartIndex = treeIndexCount;
+                }
                 treeIndexCount += _eventActionTrees[index].Size;
             }
         }
@@ -371,7 +478,6 @@ namespace CyanTrigger
             Array.Resize(ref _eventInstanceRenderData, newSize);
             Array.Resize(ref _eventOptionRenderData, newSize);
             Array.Resize(ref _eventActionTrees, newSize);
-            Array.Resize(ref _hiddenEvents, newSize);
             Array.Resize(ref _eventActionInputLists, newSize);
             Array.Resize(ref _eventInputLists, newSize);
             Array.Resize(ref _eventActionUserGateLists, newSize);
@@ -390,16 +496,21 @@ namespace CyanTrigger
                 SwapElements(_eventInstanceRenderData, index, prev);
                 SwapElements(_eventOptionRenderData, index, prev);
                 SwapElements(_eventActionTrees, index, prev);
-                SwapElements(_hiddenEvents, index, prev);
                 SwapElements(_eventActionInputLists, index, prev);
                 SwapElements(_eventInputLists, index, prev);
                 SwapElements(_scopeTreeRoot, index, prev);
 
-                _eventInstanceRenderData[index].Property = _eventsProperty.GetArrayElementAtIndex(index)
-                    .FindPropertyRelative(nameof(CyanTriggerEvent.eventInstance));
-                _eventInstanceRenderData[prev].Property = _eventsProperty.GetArrayElementAtIndex(prev)
-                    .FindPropertyRelative(nameof(CyanTriggerEvent.eventInstance));
-                
+                if (_eventInstanceRenderData[index] != null)
+                {
+                    _eventInstanceRenderData[index].Property = _eventsProperty.GetArrayElementAtIndex(index)
+                        .FindPropertyRelative(nameof(CyanTriggerEvent.eventInstance));
+                }
+                if (_eventInstanceRenderData[prev] != null)
+                {
+                    _eventInstanceRenderData[prev].Property = _eventsProperty.GetArrayElementAtIndex(prev)
+                        .FindPropertyRelative(nameof(CyanTriggerEvent.eventInstance));
+                }
+
                 _eventActionUserGateLists[index] = null;
                 _eventActionUserGateLists[prev] = null;
                 
@@ -419,6 +530,24 @@ namespace CyanTrigger
             UpdateActionTreeViewProperties();
         }
 
+        private void MoveEventToIndex(int srcIndex, int dstIndex)
+        {
+            if (srcIndex == dstIndex)
+            {
+                return;
+            }
+            int delta = (int)Mathf.Sign(dstIndex - srcIndex);
+            bool isDown = delta > 0;
+            List<int> moveOrder = new List<int>();
+            for (int cur = srcIndex; cur != dstIndex; cur += delta)
+            {
+                // When moving elements down, we actually move the one below it up.
+                int index = cur + (isDown ? 1 : 0);
+                moveOrder.Add(index);
+            }
+            SwapEventElements(moveOrder);
+        }
+
         private static void SwapElements<T>(IList<T> array, int index1, int index2)
         {
             var temp = array[index1];
@@ -436,6 +565,11 @@ namespace CyanTrigger
                 return GetVariableOptions(type, index, actionIndex);
             }
 
+            bool IsVariableValidForEvent(int actionIndex, string guid, string name)
+            {
+                return IsVariableValid(index, actionIndex, guid, name);
+            }
+
             void OnEventActionsChanged()
             {
                 OnActionsChanged(index);
@@ -446,7 +580,8 @@ namespace CyanTrigger
                 _eventActionTrees[index] = new CyanTriggerActionTreeView(
                     actionListProperty, 
                     OnEventActionsChanged, 
-                    GetVariableOptionsForEvent);
+                    GetVariableOptionsForEvent,
+                    IsVariableValidForEvent);
                 _eventActionTrees[index].ExpandAll();
             }
             else
@@ -455,6 +590,7 @@ namespace CyanTrigger
                 actionTree.Elements = actionListProperty;
                 actionTree.GetVariableOptions = GetVariableOptionsForEvent;
                 actionTree.OnActionChanged = OnEventActionsChanged;
+                actionTree.IsVariableValid = IsVariableValidForEvent;
             }
         }
 
@@ -471,63 +607,127 @@ namespace CyanTrigger
             _scopeTreeRoot[eventIndex].CreateStructure(actionListProperty);
         }
 
-        private void OnVariableAddedOrRemoved()
+        private void OnVariableAddedOrRemoved(List<string> removedIds)
         {
+            if (removedIds != null && removedIds.Count > 0)
+            {
+                var removedHash = new HashSet<string>(removedIds);
+                var removedNames = new HashSet<string>();
+                for (int index = 0; index < _eventActionTrees.Length; ++index)
+                {
+                    if (_eventActionTrees[index] != null)
+                    {
+                        _eventActionTrees[index].DeleteVariables(removedHash, removedNames);
+                    }
+                }
+            }
+
+            _serializedObject.ApplyModifiedProperties();
+
+            _resetVariableInputs = true;
+        }
+
+        private void OnGlobalVariableRenamed(string oldName, string newName, string guid)
+        {
+            Dictionary<string, string> updatedGuids = new Dictionary<string, string>
+            {
+                {guid, newName},
+            };
+            
+            for (int index = 0; index < _eventActionTrees.Length; ++index)
+            {
+                if (_eventActionTrees[index] != null)
+                {
+                    _eventActionTrees[index].UpdateVariableNames(updatedGuids);
+                }
+            }
+            
             _serializedObject.ApplyModifiedProperties();
             
             _resetVariableInputs = true;
         }
 
-        private void AddEvent(CyanTriggerActionInfoHolder infoHolder)
+        private SerializedProperty AddEvent(CyanTriggerActionInfoHolder actionInfo)
         {
             _eventsProperty.arraySize++;
             SerializedProperty newEvent = _eventsProperty.GetArrayElementAtIndex(_eventsProperty.arraySize - 1);
-            SerializedProperty eventInstance = newEvent.FindPropertyRelative(nameof(CyanTriggerEvent.eventInstance));
-            SetActionData(infoHolder, eventInstance);
-            
-            SerializedProperty actionInstances = newEvent.FindPropertyRelative(nameof(CyanTriggerEvent.actionInstances));
-            actionInstances.ClearArray();
-            SerializedProperty eventOptions = newEvent.FindPropertyRelative(nameof(CyanTriggerEvent.eventOptions));
-            SerializedProperty userGate = eventOptions.FindPropertyRelative(nameof(CyanTriggerEventOptions.userGate));
-            userGate.intValue = 0;
-            SerializedProperty userGateExtraData = 
-                eventOptions.FindPropertyRelative(nameof(CyanTriggerEventOptions.userGateExtraData));
-            userGateExtraData.ClearArray();
-            SerializedProperty broadcast = eventOptions.FindPropertyRelative(nameof(CyanTriggerEventOptions.broadcast));
-            broadcast.intValue = 0;
-            SerializedProperty delay = eventOptions.FindPropertyRelative(nameof(CyanTriggerEventOptions.delay));
-            delay.floatValue = 0;
-            
-            // TODO clear custom name as well
+            CyanTriggerSerializedPropertyUtils.InitializeEventProperties(actionInfo, newEvent);
 
             ResizeEventArrays(_eventsProperty.arraySize);
-            
-            // TODO figure out duplicating events
-        }
 
-        private void SetActionData(CyanTriggerActionInfoHolder infoHolder, SerializedProperty actionProperty)
-        {
-            infoHolder.SetActionData(actionProperty);
+            return newEvent;
         }
+        
+        private void DuplicateEvent(int eventIndex)
+        {
+            if (eventIndex < 0 || eventIndex >= _eventInstanceRenderData.Length ||
+                _eventInstanceRenderData[eventIndex] == null)
+            {
+                return;
+            }
+            
+            CyanTriggerActionInfoHolder actionInfo = _eventInstanceRenderData[eventIndex].ActionInfo;
+            int lastElement = _eventsProperty.arraySize++;
+            var srcEvent = _eventsProperty.GetArrayElementAtIndex(eventIndex);
+            var newEvent = _eventsProperty.GetArrayElementAtIndex(lastElement);
+            
+            // Clear info before creating data for the property.
+            CyanTriggerSerializedPropertyUtils.InitializeEventProperties(actionInfo, newEvent);
+            
+            // Resize arrays, which also creates the action tree for this new event.
+            ResizeEventArrays(_eventsProperty.arraySize);
+
+            var srcActionTree = _eventActionTrees[eventIndex];
+            var dstActionTree = _eventActionTrees[lastElement];
+            
+            CyanTriggerSerializedPropertyUtils.CopyEventProperties(actionInfo, srcEvent, newEvent);
+           
+            MoveEventToIndex(_eventsProperty.arraySize - 1, eventIndex + 1);
+            
+            // Copy tree's expanded values after elements have been moved and trees rebuilt.
+            dstActionTree.SetExpandedApplyingStartId(srcActionTree.GetExpandedWithoutStartId());
+            
+            _serializedObject.ApplyModifiedProperties();
+            
+            ResetValues();
+            
+            UpdateVariableScope();
+        }
+        
+        
 
         private void UpdateUserVariableOptions()
         {
             _userVariableOptions.Clear();
+            _userVariables.Clear();
 
             CyanTriggerEditorVariableOptionList allVariables = new CyanTriggerEditorVariableOptionList(typeof(CyanTriggerVariable));
             _userVariableOptions.Add(allVariables.Type, allVariables);
 
             void AddOptionToAllTypes(CyanTriggerEditorVariableOption option)
             {
+                _userVariables.Add(option.ID, option.Name);
+                
                 // Todo, figure if this breaks anything
                 if (!option.IsReadOnly)
                 {
                     allVariables.VariableOptions.Add(option);
                 }
 
-                Type t = option.Type;
-                do
+                HashSet<Type> foundTypes = new HashSet<Type>();
+                Queue<Type> typeQueue = new Queue<Type>();
+
+                Type type = option.Type;
+                if (type == typeof(IUdonEventReceiver))
                 {
+                    type = typeof(UdonBehaviour);
+                }
+                typeQueue.Enqueue(type);
+                foundTypes.Add(type);
+
+                while (typeQueue.Count > 0)
+                {
+                    Type t = typeQueue.Dequeue();
                     if (!_userVariableOptions.TryGetValue(t, out CyanTriggerEditorVariableOptionList options))
                     {
                         options = new CyanTriggerEditorVariableOptionList(t);
@@ -535,24 +735,40 @@ namespace CyanTrigger
                     }
 
                     options.VariableOptions.Add(option);
+                    
+                    foreach (var interfaceType in t.GetInterfaces())
+                    {
+                        if (!foundTypes.Contains(interfaceType))
+                        {
+                            typeQueue.Enqueue(interfaceType);
+                            foundTypes.Add(interfaceType);
+                        }
+                    }
 
-                    if (t != typeof(object) && t.BaseType == null && option.Type.IsInterface)
+                    Type baseType = t.BaseType;
+                    if (baseType != null && !foundTypes.Contains(baseType))
                     {
-                        t = typeof(object);
+                        typeQueue.Enqueue(baseType);
+                        foundTypes.Add(baseType);
                     }
-                    else
-                    {
-                        t = t.BaseType;
-                    }
-                } while (t != null && t != option.Type);
+                }
             }
             
-            foreach (var variable in _cyanTriggerDataInstance.variables)
+            for (int var = 0; var < _variableDataProperty.arraySize; ++var)
             {
-                Type varType = variable.type.type;
-
+                SerializedProperty variableProperty = _variableDataProperty.GetArrayElementAtIndex(var);
+                
+                string name = variableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.name)).stringValue;
+                string id = variableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.variableID)).stringValue;
+                
+                SerializedProperty typeProperty =
+                    variableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.type));
+                SerializedProperty typeDefProperty =
+                    typeProperty.FindPropertyRelative(nameof(CyanTriggerSerializableType.typeDef));
+                Type varType = Type.GetType(typeDefProperty.stringValue);
+                
                 CyanTriggerEditorVariableOption option = new CyanTriggerEditorVariableOption
-                    {ID = variable.variableID, Name = variable.name, Type = varType};
+                    {ID = id, Name = name, Type = varType};
                 AddOptionToAllTypes(option);
             }
             
@@ -602,16 +818,49 @@ namespace CyanTrigger
             AddOptionToAllTypes(localPlayer);
         }
 
-        public List<CyanTriggerEditorVariableOption> GetVariableOptions(Type varType, int eventIndex, int actionIndex)
+        private bool IsVariableValid(int eventIndex, int actionIndex, string guid, string name)
+        {
+            // TODO verify expected type
+
+            bool isPrevVariable = CyanTriggerCustomNodeOnVariableChanged.IsPrevVariable(name, guid);
+            // event variables
+            if (string.IsNullOrEmpty(guid) || isPrevVariable)
+            {
+                CyanTriggerActionInfoHolder curActionInfo = _eventInstanceRenderData[eventIndex].ActionInfo;
+                
+                SerializedProperty eventInstance = _eventInstanceRenderData[eventIndex].Property;
+                foreach (var def in curActionInfo.GetVariableOptions(eventInstance))
+                {
+                    if (def.Name == name || (isPrevVariable && def.ID == guid))
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+            
+            if (_userVariables.ContainsKey(guid))
+            {
+                return true;
+            }
+
+            // Go through action provided variables
+            return _scopeTreeRoot[eventIndex].IsVariableValid(actionIndex, guid);
+        }
+
+        private List<CyanTriggerEditorVariableOption> GetVariableOptions(Type varType, int eventIndex, int actionIndex)
         {
             // TODO cache this better
             List<CyanTriggerEditorVariableOption> options = new List<CyanTriggerEditorVariableOption>();
 
             // Get event variables
             CyanTriggerActionInfoHolder curActionInfo = _eventInstanceRenderData[eventIndex].ActionInfo;
-            foreach (var def in curActionInfo.GetVariableOptions())
+            
+            SerializedProperty eventInstance = _eventInstanceRenderData[eventIndex].Property;
+            foreach (var def in curActionInfo.GetVariableOptions(eventInstance))
             {
-                if (def.Type.IsSubclassOf(varType) || def.Type == varType)
+                if (varType.IsAssignableFrom(def.Type))
                 {
                     options.Add(def);
                 }
@@ -623,8 +872,11 @@ namespace CyanTrigger
                 options.AddRange(list.VariableOptions);
             }
 
-            options.AddRange(_scopeTreeRoot[eventIndex].GetVariableOptions(varType, actionIndex).Reverse());
-            
+            if (_scopeTreeRoot[eventIndex] != null)
+            {
+                options.AddRange(_scopeTreeRoot[eventIndex].GetVariableOptions(varType, actionIndex).Reverse());
+            }
+
             // TODO add items that can be casted or tostring'ed
 
             return options;
@@ -653,73 +905,235 @@ namespace CyanTrigger
             return varMatchName;
         }
 
-        private void RenderHeader()
+        private void RenderWarningsAndErrors()
         {
-            // EditorGUILayout.Space();
-        }
+            UdonBehaviour udonBehaviour = _cyanTriggerSerializableInstance?.udonBehaviour;
+            if (udonBehaviour == null || !(udonBehaviour.programSource is CyanTriggerProgramAsset programAsset))
+            {
+                return;
+            }
 
-        private void RenderExtraOptions()
-        {
-            bool renderAnimatorSettings = false;
-            bool renderInteractSettings = false;
+            var warnings = programAsset.warningMessages;
+
+            if (warnings == null)
+            {
+                warnings = new List<string>();
+            }
+
+            var errors = programAsset.errorMessages;
+            if (errors == null)
+            {
+                errors = new List<string>();
+            }
             
-            // Add animation options
-            if (_cyanTriggerSerializableInstance.udonBehaviour != null &&
-                _cyanTriggerSerializableInstance.udonBehaviour.GetComponent<Animator>() != null)
+            if (warnings.Count > 0 || errors.Count > 0)
             {
-                renderAnimatorSettings = true;
-            }
+                EditorGUILayout.BeginVertical(CyanTriggerEditorGUIUtil.HelpBoxStyle);
 
-            foreach (var eventType in _cyanTriggerDataInstance.events)
-            {
-                string directEvent = eventType.eventInstance.actionType.directEvent;
-                if (!string.IsNullOrEmpty(directEvent) && directEvent.Equals("Event_Interact"))
+                if (warnings.Count > 0)
                 {
-                    renderInteractSettings = true;
-                    break;
-                }
-            }
-
-            if (renderAnimatorSettings || renderInteractSettings)
-            {
-                EditorGUILayout.BeginVertical(_style);
-
-                // TODO come up with a better name here...
-                EditorGUILayout.LabelField(new GUIContent("Other Settings", ""));
-                
-                if (renderAnimatorSettings)
-                {
-                    SerializedProperty applyAnimatorMoveProperty =
-                        _dataInstanceProperty.FindPropertyRelative(
-                            nameof(CyanTriggerDataInstance.applyAnimatorMove));
-                    EditorGUILayout.PropertyField(applyAnimatorMoveProperty,AnimatorMoveContent);
+                    EditorGUILayout.LabelField("Warnings:");
+                    EditorGUILayout.LabelField(string.Join("\n", warnings), CyanTriggerEditorGUIUtil.WarningTextStyle);
                 }
                 
-                
-                if (renderInteractSettings)
+                if (errors.Count > 0)
                 {
-                    SerializedProperty interactTextProperty =
-                        _serializedProperty.FindPropertyRelative(
-                            nameof(CyanTriggerSerializableInstance.interactText));
-                    SerializedProperty interactProximityProperty =
-                        _serializedProperty.FindPropertyRelative(
-                            nameof(CyanTriggerSerializableInstance.proximity));
-                    
-                    EditorGUILayout.PropertyField(interactTextProperty, InteractTextContent);
-
-                    interactProximityProperty.floatValue = EditorGUILayout.Slider(ProximityContent,
-                        interactProximityProperty.floatValue, 0f, 100f);
+                    EditorGUILayout.LabelField("Errors:");
+                    EditorGUILayout.LabelField(string.Join("\n", errors), CyanTriggerEditorGUIUtil.ErrorTextStyle);
                 }
                 
                 EditorGUILayout.EndVertical();
-                
                 EditorGUILayout.Space();
             }
         }
         
+        private void RenderMainComment()
+        {
+            SerializedProperty commentProperty =
+                _dataInstanceProperty.FindPropertyRelative(nameof(CyanTriggerDataInstance.comment));
+            SerializedProperty commentTextProperty =
+                commentProperty.FindPropertyRelative(nameof(CyanTriggerComment.comment));
+
+            if (!string.IsNullOrEmpty(commentTextProperty.stringValue) || _editingCommentId == CyanTriggerCommentId)
+            {
+                EditorGUILayout.BeginVertical(CyanTriggerEditorGUIUtil.HelpBoxStyle);
+            
+                RenderCommentSection(commentTextProperty, CyanTriggerCommentId);
+                
+                EditorGUILayout.EndVertical();
+                EditorGUILayout.Space();
+            }
+        }
+
+        private void RenderCommentSection(SerializedProperty commentProperty, int index)
+        {
+            string comment = commentProperty.stringValue;
+            // Draw comment editor
+            if (_editingCommentId == index && !_editCommentButtonPressed)
+            {
+                EditorGUILayout.BeginHorizontal();
+                GUILayout.Space(5);
+                
+                Event cur = Event.current;
+                bool wasEscape = (cur.type == EventType.KeyDown && cur.keyCode == KeyCode.Escape);
+
+                GUI.SetNextControlName(CommentControlName);
+                string newComment = EditorGUILayout.TextArea(comment, EditorStyles.textArea);
+                if (newComment != comment)
+                {
+                    commentProperty.stringValue = newComment;
+                }
+
+                bool completeButton = GUILayout.Button(CyanTriggerEditorGUIUtil.CommentCompleteIcon, new GUIStyle(), GUILayout.Width(16));
+                
+                GUILayout.Space(5);
+                EditorGUILayout.EndHorizontal();
+                
+                if (!_focusedCommentEditor)
+                {
+                    _focusedCommentEditor = true;
+                    EditorGUI.FocusTextInControl(CommentControlName);
+                }
+
+                if (wasEscape || completeButton)
+                {
+                    if (newComment.Length > 0 && newComment.Trim().Length == 0)
+                    {
+                        commentProperty.stringValue = "";
+                    }
+                
+                    _editingCommentId = InvalidCommentId;
+                    GUI.FocusControl(null);
+                }
+            }
+            else if (!string.IsNullOrEmpty(comment))
+            {
+                EditorGUILayout.BeginHorizontal();
+                GUILayout.Space(5);
+
+                EditorGUILayout.LabelField("// " +comment, CyanTriggerEditorGUIUtil.CommentStyle);
+
+                GUILayout.Space(5);
+                EditorGUILayout.EndHorizontal();
+            }
+        }
+
+        private void RenderExtraOptions()
+        {
+            // Check for all settings that should be shown
+            bool renderInteractSettings = false;
+            bool renderUpdateOrderSetting = false;
+            if (_cyanTriggerDataInstance?.events != null)
+            {
+                foreach (var eventType in _cyanTriggerDataInstance.events)
+                {
+                    string directEvent = eventType.eventInstance.actionType.directEvent;
+                    if (string.IsNullOrEmpty(directEvent))
+                    {
+                        continue;
+                    }
+                    
+                    if (directEvent.Equals("Event_Interact"))
+                    {
+                        renderInteractSettings = true;
+                    }
+
+                    if (directEvent.Equals("Event_Update") || 
+                        directEvent.Equals("Event_LateUpdate") || 
+                        directEvent.Equals("Event_FixedUpdate") ||
+                        directEvent.Equals("Event_PostLateUpdate"))
+                    {
+                        renderUpdateOrderSetting = true;
+                    }
+                    
+                    // TODO check for other event types
+                }
+            }
+
+            // If no settings should show, don't show this section at all.
+            if (!(renderInteractSettings || renderUpdateOrderSetting))
+            {
+                return;
+            }
+            
+            EditorGUILayout.BeginVertical(CyanTriggerEditorGUIUtil.HelpBoxStyle);
+            
+            // TODO persist showing other settings
+            
+            CyanTriggerPropertyEditor.DrawFoldoutListHeader(
+                new GUIContent("Other Settings"),
+                ref _showOtherSettings,
+                false,
+                0,
+                null,
+                false,
+                null,
+                false,
+                false
+            );
+
+            if (!_showOtherSettings)
+            {
+                EditorGUILayout.EndVertical();
+                EditorGUILayout.Space();
+                return;
+            }
+            
+            // Update order
+            {
+                if (renderUpdateOrderSetting)
+                {
+                    SerializedProperty updateOrderProperty =
+                        _dataInstanceProperty.FindPropertyRelative(nameof(CyanTriggerDataInstance.updateOrder));
+                
+                    EditorGUILayout.PropertyField(updateOrderProperty, UpdateOrderContent);
+                }
+            }
+
+            // Add interact options
+            if (renderInteractSettings)
+            {
+                SerializedProperty interactTextProperty =
+                    _serializedProperty.FindPropertyRelative(
+                        nameof(CyanTriggerSerializableInstance.interactText));
+                SerializedProperty interactProximityProperty =
+                    _serializedProperty.FindPropertyRelative(
+                        nameof(CyanTriggerSerializableInstance.proximity));
+                    
+                EditorGUILayout.PropertyField(interactTextProperty, InteractTextContent);
+
+                interactProximityProperty.floatValue = EditorGUILayout.Slider(ProximityContent,
+                    interactProximityProperty.floatValue, 0f, 100f);
+            }
+
+            EditorGUILayout.EndVertical();
+            EditorGUILayout.Space();
+        }
+        
         private void RenderVariables()
         {
-            EditorGUILayout.BeginVertical(_style);
+            EditorGUILayout.BeginVertical(CyanTriggerEditorGUIUtil.HelpBoxStyle);
+
+            // TODO allow dragging objects/components here to add them as variables
+            CyanTriggerPropertyEditor.DrawFoldoutListHeader(
+                new GUIContent("Variables"),
+                ref _showVariablesSection,
+                false,
+                0,
+                null,
+                false,
+                null,
+                false,
+                false
+                );
+            
+            if (!_showVariablesSection)
+            {
+                EditorGUILayout.EndVertical();
+                EditorGUILayout.Space();
+                
+                return;
+            }
             
             _variableTreeView.DoLayoutTree();
             
@@ -728,9 +1142,67 @@ namespace CyanTrigger
                 _resetVariableInputs = true;
             }
 
+            // bool shouldShowSyncMode = false;
+            // foreach (var variable in _cyanTriggerSerializableInstance.triggerDataInstance.variables)
+            // {
+            //     if (variable.sync != CyanTriggerVariableSyncMode.NotSynced)
+            //     {
+            //         shouldShowSyncMode = true;
+            //         break;
+            //     }
+            // }
+            
+            // Sync mode
+            //if (shouldShowSyncMode)
+            {
+                UdonBehaviour udonBehaviour = _cyanTriggerSerializableInstance?.udonBehaviour;
+                
+                SerializedProperty programSyncModeProperty =
+                    _dataInstanceProperty.FindPropertyRelative(nameof(CyanTriggerDataInstance.programSyncMode));
+
+                EditorGUILayout.PropertyField(programSyncModeProperty, ProgramSyncModeContent);
+                CyanTriggerProgramSyncMode syncMode = (CyanTriggerProgramSyncMode) programSyncModeProperty.intValue;
+
+                if (syncMode == CyanTriggerProgramSyncMode.Continuous)
+                {
+                    EditorGUILayout.HelpBox("Synced variables will automatically be synced with users in the room periodically. This will happen multiple times per second, even if no data changes.", MessageType.Info);
+                }
+                else if (syncMode == CyanTriggerProgramSyncMode.Manual)
+                {
+                    EditorGUILayout.HelpBox("Synced variables will only be synced with users in the room after UdonBehaviour.RequestSerialization is called.", MessageType.Info);
+                }
+                else if (syncMode == CyanTriggerProgramSyncMode.ManualWithAutoRequest)
+                {
+                    EditorGUILayout.HelpBox("Modifying a synced variable will automatically request serialization at the end of the event. Note that with fast changing values, only the latest value will be synced with users in the room.", MessageType.Info);
+                }
+
+                if (udonBehaviour != null)
+                {
+                    UdonBehaviour[] behaviours = udonBehaviour.GetComponents<UdonBehaviour>();
+                    VRCObjectSync[] syncs = udonBehaviour.GetComponents<VRCObjectSync>();
+
+                    bool positionSynced = syncs.Length > 0;
+                    bool manual = false;
+                    foreach (var udon in behaviours)
+                    {
+#pragma warning disable 618
+                        positionSynced |= udon.SynchronizePosition;
+#pragma warning restore 618
+                        manual |= udon.Reliable;
+                    }
+                    
+                    if (manual && positionSynced)
+                    {
+                        EditorGUILayout.HelpBox("This object contains an UdonBehaviour with Manual sync and ObjectSync to sync position. These are incompatible and the object's position will not sync. If an object has ObjectSync, all Udon need to be on Continuous Sync. It is recommended to use multiple objects with the position sync'ed object using Continuous Sync and another object with Manual Sync to sync variables.", MessageType.Error);
+                    }
+                }
+            }
+            
             EditorGUILayout.EndVertical();
             
             EditorGUILayout.Space();
+
+            CheckResetVariableInputs();
         }
 
         private void RenderEvents()
@@ -757,21 +1229,21 @@ namespace CyanTrigger
 
             for (int curEvent = 0; curEvent < eventLength; ++curEvent)
             {
-                EditorGUILayout.BeginVertical(_style);
+                EditorGUILayout.BeginVertical(CyanTriggerEditorGUIUtil.HelpBoxStyle);
 
                 SerializedProperty eventProperty = _eventsProperty.GetArrayElementAtIndex(curEvent);
                 SerializedProperty eventInfo = eventProperty.FindPropertyRelative(nameof(CyanTriggerEvent.eventInstance));
+                SerializedProperty expandedProperty = eventProperty.FindPropertyRelative(nameof(CyanTriggerEvent.expanded));
                 
                 if (_eventInstanceRenderData[curEvent] == null)
                 {
-                    _eventInstanceRenderData[curEvent] = new CyanTriggerActionTreeView.ActionInstanceRenderData
+                    _eventInstanceRenderData[curEvent] = new CyanTriggerActionInstanceRenderData
                     {
                         Property = eventInfo,
-                        ActionInfo = CyanTriggerActionInfoHolder.GetActionInfoHolderFromProperties(eventInfo),
                     };
                     
                     // TODO, do this better?
-                    _eventOptionRenderData[curEvent] = new CyanTriggerActionTreeView.ActionInstanceRenderData()
+                    _eventOptionRenderData[curEvent] = new CyanTriggerActionInstanceRenderData()
                     {
                         // Currently only for user gate
                         InputLists = new ReorderableList[1],
@@ -782,7 +1254,7 @@ namespace CyanTrigger
                 CyanTriggerActionInfoHolder curActionInfo = _eventInstanceRenderData[curEvent].ActionInfo;
                 TriggerModifyAction modifyAction = RenderEventHeader(curEvent, eventProperty, curActionInfo);
 
-                if (!_hiddenEvents[curEvent])
+                if (expandedProperty.boolValue)
                 {
                     RenderEventOptions(curEvent, eventProperty, curActionInfo);
 
@@ -791,7 +1263,15 @@ namespace CyanTrigger
                     RenderEventActions(curEvent);
                 }
 
-                if (modifyAction == TriggerModifyAction.Delete)
+                EditorGUILayout.EndVertical();
+
+                Rect eventRect = GUILayoutUtility.GetLastRect();
+
+                if (modifyAction == TriggerModifyAction.None)
+                {
+                    HandleEventRightClick(eventRect, curEvent);
+                }
+                else if (modifyAction == TriggerModifyAction.Delete)
                 {
                     toRemove.Add(curEvent);
                 }
@@ -803,8 +1283,6 @@ namespace CyanTrigger
                 {
                     toMoveUp.Add(curEvent + 1);
                 }
-
-                EditorGUILayout.EndVertical();
 
                 EditorGUILayout.Space();
             }
@@ -828,56 +1306,77 @@ namespace CyanTrigger
             CyanTriggerActionInfoHolder actionInfo)
         {
             SerializedProperty eventInfo = eventProperty.FindPropertyRelative(nameof(CyanTriggerEvent.eventInstance));
-            
-            Rect rect = EditorGUILayout.BeginHorizontal(GUILayout.Height(16f));
+            SerializedProperty expandedProperty = eventProperty.FindPropertyRelative(nameof(CyanTriggerEvent.expanded));
 
-            Rect foldoutRect = new Rect(rect.x + 10, rect.y, 10, rect.height);
-            _hiddenEvents[index] = !EditorGUI.Foldout(foldoutRect, !_hiddenEvents[index], GUIContent.none);
+            float headerRowHeight = 16f;
+            Rect rect = EditorGUILayout.BeginHorizontal(GUILayout.Height(headerRowHeight));
+
+            Rect foldoutRect = new Rect(rect.x + 14, rect.y, 6, rect.height);
+            bool expanded = expandedProperty.boolValue;
+            bool newExpand = EditorGUI.Foldout(foldoutRect, expanded, GUIContent.none, true);
+            if (newExpand != expanded)
+            {
+                expandedProperty.boolValue = newExpand;
+                expanded = newExpand;
+            }
             
             float spaceBetween = 5;
-            float initialSpace = foldoutRect.width + 10;
+            float initialSpace = foldoutRect.width + 14;
             float initialOffset = foldoutRect.xMax;
 
             float baseWidth = (rect.width - initialSpace - spaceBetween * 2) / 3.0f;
             float opButtonWidth = (baseWidth - 2 * spaceBetween) / 3.0f;
 
+            Rect removeRect = new Rect(rect.xMax - opButtonWidth, rect.y, opButtonWidth, rect.height);
+            Rect downRect = new Rect(removeRect.x - spaceBetween - opButtonWidth, rect.y, opButtonWidth,
+                rect.height);
+            Rect upRect = new Rect(downRect.x - spaceBetween - opButtonWidth, rect.y, opButtonWidth, rect.height);
+
+            void DrawContentInCenterOfRect(Rect contentRect, GUIContent content, GUIStyle style = null)
+            {
+                if (style == null)
+                {
+                    style = GUI.skin.label;
+                }
+                
+                Vector2 size = style.CalcSize(content);
+                GUI.Label(new Rect(contentRect.center.x - size.x * 0.5f, 
+                    contentRect.center.y - size.y * 0.5f, size.x, size.y), content, style);
+            }
+            
             // Draw modify buttons (move up, down, delete)
             TriggerModifyAction modifyAction = TriggerModifyAction.None;
             {
-                Rect removeRect = new Rect(rect.xMax - opButtonWidth, rect.y, opButtonWidth, rect.height);
-                Rect downRect = new Rect(removeRect.x - spaceBetween - opButtonWidth, rect.y, opButtonWidth,
-                    rect.height);
-                Rect upRect = new Rect(downRect.x - spaceBetween - opButtonWidth, rect.y, opButtonWidth, rect.height);
-
                 EditorGUI.BeginDisabledGroup(index == 0);
-                if (GUI.Button(upRect, "▲"))
+                if (GUI.Button(upRect, GUIContent.none))
                 {
                     modifyAction = TriggerModifyAction.MoveUp;
                 }
+                DrawContentInCenterOfRect(upRect, new GUIContent("▲", "Move Event Up"));
 
                 EditorGUI.EndDisabledGroup();
 
                 EditorGUI.BeginDisabledGroup(index == _eventsProperty.arraySize - 1);
-                if (GUI.Button(downRect, "▼"))
+                if (GUI.Button(downRect, GUIContent.none))
                 {
                     modifyAction = TriggerModifyAction.MoveDown;
                 }
+                DrawContentInCenterOfRect(downRect, new GUIContent("▼", "Move Event Down"));
 
                 EditorGUI.EndDisabledGroup();
 
-                if (GUI.Button(removeRect, "✖"))
+                if (GUI.Button(removeRect, GUIContent.none))
                 {
                     modifyAction = TriggerModifyAction.Delete;
                 }
+                DrawContentInCenterOfRect(removeRect, new GUIContent("✖", "Delete Event"));
             }
 
             // Draw hidden event header
-            if (_hiddenEvents[index])
+            if (!expanded)
             {
                 GUILayout.Space(EditorGUIUtility.singleLineHeight);
 
-                // TODO get custom name here
-                
                 float eventWidth = rect.width - initialOffset - opButtonWidth * 3 - spaceBetween * 2;
                 Rect eventLabelRect = new Rect(initialOffset, rect.y, eventWidth, rect.height);
 
@@ -903,20 +1402,41 @@ namespace CyanTrigger
             Rect typeVariantRect = new Rect(typeRect.xMax + spaceBetween, rect.y, baseWidth, rect.height);
 
             bool valid = actionInfo.IsValid();
-            if (GUI.Button(typeRect, actionInfo.GetDisplayName(), new GUIStyle(EditorStyles.popup)))
+
+            void UpdateEventActionInfo(CyanTriggerActionInfoHolder newActionInfo)
+            {
+                if (actionInfo.Equals(newActionInfo))
+                {
+                    return;
+                }
+                
+                var oldVariables = actionInfo.GetVariables();
+                var newVariables = actionInfo.GetVariables();
+                var nameHash = new HashSet<string>();
+                foreach (var variable in oldVariables)
+                {
+                    nameHash.Add(variable.displayName);
+                }
+                foreach (var variable in newVariables)
+                {
+                    nameHash.Remove(variable.displayName);
+                }
+                
+                _eventActionTrees[index].DeleteVariables(new HashSet<string>(), nameHash);
+                
+                CyanTriggerSerializedPropertyUtils.SetActionData(newActionInfo, eventInfo, false);
+                _eventInstanceRenderData[index].ActionInfo = newActionInfo;
+            }
+            
+            if (GUI.Button(typeRect, actionInfo.GetDisplayName(), EditorStyles.popup))
             {
                 void UpdateEvent(CyanTriggerSettingsFavoriteItem newEventInfo)
                 {
                     var data = newEventInfo.data;
                     var newActionInfo =
                         CyanTriggerActionInfoHolder.GetActionInfoHolder(data.guid, data.directEvent);
-                    if (actionInfo.Equals(newActionInfo))
-                    {
-                        return;
-                    }
-
-                    SetActionData(newActionInfo, eventInfo);
-                    _eventInstanceRenderData[index].ActionInfo = newActionInfo;
+                    
+                    UpdateEventActionInfo(newActionInfo);
                 }
 
                 CyanTriggerSearchWindowManager.Instance.DisplayEventsFavoritesSearchWindow(UpdateEvent, true);
@@ -924,7 +1444,7 @@ namespace CyanTrigger
 
             int variantCount = CyanTriggerActionGroupDefinitionUtil.GetEventVariantCount(actionInfo);
             EditorGUI.BeginDisabledGroup(!valid || variantCount <= 1);
-            if (GUI.Button(typeVariantRect, actionInfo.GetVariantName(), new GUIStyle(EditorStyles.popup)))
+            if (GUI.Button(typeVariantRect, actionInfo.GetVariantName(), EditorStyles.popup))
             {
                 GenericMenu menu = new GenericMenu();
                 
@@ -932,9 +1452,7 @@ namespace CyanTrigger
                 {
                     menu.AddItem(new GUIContent(actionVariant.GetVariantName()), false, (t) =>
                     {
-                        var newActionInfo = (CyanTriggerActionInfoHolder) t;
-                        SetActionData(newActionInfo, eventInfo);
-                        _eventInstanceRenderData[index].ActionInfo = newActionInfo;
+                        UpdateEventActionInfo((CyanTriggerActionInfoHolder) t);
                     }, actionVariant);
                 }
                 
@@ -958,22 +1476,57 @@ namespace CyanTrigger
             Rect subHeaderRect = EditorGUILayout.BeginHorizontal(GUILayout.Height(20f));
             GUILayout.Space(20f);
 
-            subHeaderRect.x += initialSpace;
-            subHeaderRect.width -= initialSpace;
+            subHeaderRect.x = initialOffset;
 
-            float width = (subHeaderRect.width - spaceBetween * 2) / 3f;
-            Rect gateRect = new Rect(subHeaderRect.x, subHeaderRect.y, width, subHeaderRect.height);
-            Rect broadcastRect = new Rect(gateRect.xMax + spaceBetween, subHeaderRect.y, width, subHeaderRect.height);
+            Rect gateRect = new Rect(subHeaderRect.x, subHeaderRect.y, baseWidth, subHeaderRect.height);
+            Rect broadcastRect = new Rect(gateRect.xMax + spaceBetween, subHeaderRect.y, baseWidth, subHeaderRect.height);
 
             EditorGUI.PropertyField(gateRect, userGateProperty, GUIContent.none);
             
             string[] broadcastOptions = {"Local", "Send To Owner", "Send To All"};
-            broadcastProperty.intValue = EditorGUI.Popup(broadcastRect, broadcastProperty.intValue, broadcastOptions);
-            
-            // TODO find something to put in this space. 
+            int broadcastIndex = broadcastProperty.intValue;
+            int newBroadcastIndex = EditorGUI.Popup(broadcastRect, broadcastIndex, broadcastOptions);
+            if (broadcastIndex != newBroadcastIndex)
+            {
+                broadcastProperty.intValue = newBroadcastIndex;
+            }
+
+            {
+                Rect menuRect = new Rect(removeRect.x, subHeaderRect.y, opButtonWidth, headerRowHeight);
+                Rect duplicateRect = new Rect(menuRect.x - spaceBetween - opButtonWidth, subHeaderRect.y, opButtonWidth,
+                    headerRowHeight);
+                Rect commentRect = new Rect(duplicateRect.x - spaceBetween - opButtonWidth, subHeaderRect.y, opButtonWidth, 
+                    headerRowHeight);
+
+                if (GUI.Button(menuRect, GUIContent.none))
+                {
+                    ShowEventOptionsMenu(index);
+                }
+
+#if !UNITY_2019_3_OR_NEWER               
+                menuRect.yMin += 4;
+#endif
+                DrawContentInCenterOfRect(menuRect, CyanTriggerEditorGUIUtil.EventMenuIcon);
+                
+                if (GUI.Button(duplicateRect, GUIContent.none))
+                {
+                    DuplicateEvent(index);
+                }
+                DrawContentInCenterOfRect(duplicateRect, CyanTriggerEditorGUIUtil.EventDuplicateIcon);
+
+                EditorGUI.BeginDisabledGroup(_editingCommentId != InvalidCommentId);
+                if (GUI.Button(commentRect, GUIContent.none))
+                {
+                    _editCommentButtonPressed = true;
+                    _editingCommentId = index;
+                    _focusedCommentEditor = false;
+                }
+                EditorGUI.EndDisabledGroup();
+                
+                DrawContentInCenterOfRect(commentRect, CyanTriggerEditorGUIUtil.EventCommentContent);
+            }
             
             EditorGUILayout.EndHorizontal();
-
             
             return modifyAction;
         }
@@ -1021,55 +1574,127 @@ namespace CyanTrigger
                 new GUIContent("Delay in Seconds",
                     "This event will be delayed for the given seconds before performing any actions."));
 
-            // TODO align label width compared to propertyEditor width
+            // Handle "Event_Custom" specially to display the name parameter here
             if (actionInfo.definition != null && actionInfo.definition.fullName.Equals("Event_Custom"))
             {
                 EditorGUILayout.PropertyField(nameProperty, new GUIContent("Name", "The name of this event."));
-                nameProperty.stringValue = CyanTriggerNameHelpers.SanitizeName(nameProperty.stringValue);
-                if (string.IsNullOrEmpty(nameProperty.stringValue))
+                string name = nameProperty.stringValue;
+                string sanitizedName = CyanTriggerNameHelpers.SanitizeName(name);
+                
+                if (string.IsNullOrEmpty(sanitizedName))
                 {
-                    nameProperty.stringValue = UnnamedCustomName;
+                    sanitizedName = UnnamedCustomName;
+                }
+
+                if (name != sanitizedName)
+                {
+                    nameProperty.stringValue = sanitizedName;
                 }
             }
 
-            // TODO event inputs? using ActionInfo (Custom?)
-            
-            // TODO surround inputs in box to separate from actions and everything else
-            // TODO allow collapsing event inputs?
-            CyanTriggerPropertyEditor.DrawActionInstanceInputEditors(
-                _eventInstanceRenderData[eventIndex],
-                GetThisEventVariables, 
-                Rect.zero, 
-                true);
-
-
-            // TODO clean up visuals here. This is kind of ugly
-            CyanTriggerEditorVariableOption[] eventVariableOptions = actionInfo.GetVariableOptions();
-            if (eventVariableOptions.Length > 0)
+            SerializedProperty eventInstance =
+                eventProperty.FindPropertyRelative(nameof(CyanTriggerEvent.eventInstance));
+            // Render event comment 
             {
-                EditorGUILayout.BeginVertical(_style);
-                // TODO add foldout
-                EditorGUILayout.LabelField("Event Variables");
-
-                foreach (var variable in eventVariableOptions)
-                {
-                    Rect variableRect = EditorGUILayout.BeginHorizontal();
-                    GUIContent variableLabel = new GUIContent(
-                        CyanTriggerNameHelpers.GetTypeFriendlyName(variable.Type) + " " + variable.Name);
-                    Vector2 dim = GUI.skin.label.CalcSize(variableLabel);
-                    variableRect.height = 16;
-                    variableRect.x = variableRect.xMax - dim.x;
-                    variableRect.width = dim.x;
-                    EditorGUI.LabelField(variableRect, variableLabel);
-                    EditorGUILayout.EndHorizontal();
-                    GUILayout.Space(variableRect.height);
-                }
-
-                EditorGUILayout.EndVertical();
+                SerializedProperty eventComment =
+                    eventInstance.FindPropertyRelative(nameof(CyanTriggerActionInstance.comment));
+                SerializedProperty eventCommentProperty =
+                    eventComment.FindPropertyRelative(nameof(CyanTriggerComment.comment));
+                
+                RenderCommentSection(eventCommentProperty, eventIndex);
             }
 
-            // TODO Allow users to define custom event variables?
-            // (Inline variables should be defined in the code rather than at the top...)
+            CyanTriggerActionVariableDefinition[] variableDefinitions = actionInfo.GetVariables();
+            CyanTriggerEditorVariableOption[] eventVariableOptions = actionInfo.GetVariableOptions(eventInstance);
+            if (variableDefinitions.Length + eventVariableOptions.Length > 0)
+            {
+                GUILayout.Space(4);
+
+                var eventRenderData = _eventInstanceRenderData[eventIndex];
+                bool expanded = eventRenderData.IsExpanded;
+                CyanTriggerPropertyEditor.DrawFoldoutListHeader(
+                    new GUIContent(actionInfo.GetActionRenderingDisplayName() + " Inputs"),
+                    ref expanded,
+                    false,
+                    0,
+                    null,
+                    false,
+                    null,
+                    false,
+                    true
+                );
+
+                eventRenderData.IsExpanded = expanded;
+
+                if (expanded)
+                {
+                    // Draw an outline around the element to emphasize what you are editing.
+                    var boxStyle = new GUIStyle
+                    {
+                        border = new RectOffset(2, 2, 2, 2), 
+                        normal = { background = CyanTriggerImageResources.EventInputBackground},
+                        padding = new RectOffset(8,8,2,5),
+#if UNITY_2019_3_OR_NEWER
+                        margin = new RectOffset(4, 4, 0, 0),
+#else
+                        margin = new RectOffset(5, 5, 0, 0)
+#endif
+                    };
+                    
+                    EditorGUILayout.BeginVertical(boxStyle);
+                    
+                    // Show variable inputs
+                    if (variableDefinitions.Length > 0)
+                    {
+                        CyanTriggerPropertyEditor.DrawActionInstanceInputEditors(
+                            eventRenderData,
+                            GetThisEventVariables, 
+                            Rect.zero, 
+                            true);
+                        
+                        // TODO figure out a better method here. This is hacky and I hate it.
+                        if (eventRenderData.ActionInfo.definition?.definition ==
+                            CyanTriggerCustomNodeOnVariableChanged.NodeDefinition)
+                        {
+                            CyanTriggerCustomNodeOnVariableChanged.SetVariableExtraData(
+                                eventInstance, 
+                                _cyanTriggerDataInstance.variables);
+                        }
+                    }
+                    
+                    // Display variables provided by the event.
+                    if (eventVariableOptions.Length > 0)
+                    {
+                        GUILayout.Space(2);
+                        
+                        // TODO clean up visuals here. This is kind of ugly
+                        EditorGUILayout.BeginVertical(CyanTriggerEditorGUIUtil.HelpBoxStyle);
+                        EditorGUILayout.LabelField("Event Variables");
+
+                        foreach (var variable in eventVariableOptions)
+                        {
+                            Rect variableRect = EditorGUILayout.BeginHorizontal();
+                            GUIContent variableLabel = new GUIContent(
+                                CyanTriggerNameHelpers.GetTypeFriendlyName(variable.Type) + " " + variable.Name);
+                            Vector2 dim = GUI.skin.label.CalcSize(variableLabel);
+                            variableRect.height = 16;
+                            variableRect.x = variableRect.xMax - dim.x;
+                            variableRect.width = dim.x;
+                            EditorGUI.LabelField(variableRect, variableLabel);
+                            EditorGUILayout.EndHorizontal();
+                            GUILayout.Space(variableRect.height);
+                        }
+
+                        EditorGUILayout.EndVertical();
+                    }
+                    
+                    EditorGUILayout.EndVertical();
+                }
+                GUILayout.Space(7);
+            }
+            
+            // TODO if CustomAction or Custom Event, add option for defining event input variables
+            // (General CyanTrigger Inline variables should be defined in the code rather than at the top...)
         }
 
         private void RenderEventActions(int eventIndex)
@@ -1079,8 +1704,143 @@ namespace CyanTrigger
                 Debug.LogWarning("Event action tree is null for event "+eventIndex);
                 UpdateOrCreateActionTreeForEvent(eventIndex);
                 _eventActionTrees[eventIndex].ExpandAll();
+                UpdateActionTreeViewProperties();
             }
             _eventActionTrees[eventIndex].DoLayoutTree();
+        }
+
+        private void HandleEventRightClick(Rect eventRect, int eventIndex)
+        {
+            Event current = Event.current;
+            if(current.type == EventType.ContextClick && eventRect.Contains(current.mousePosition))
+            {
+                ShowEventOptionsMenu(eventIndex);
+                current.Use(); 
+            }
+        }
+
+        private void ShowEventOptionsMenu(int eventIndex)
+        {
+            /*
+            Move Event to Top
+            Move Event to Bottom
+            Open All Scope
+            Close All Scope
+             */
+
+
+            GenericMenu menu = new GenericMenu();
+                
+            GUIContent moveEventUpContent = new GUIContent("Move Event Up");
+            GUIContent moveEventDownContent = new GUIContent("Move Event Down");
+            if (eventIndex > 0)
+            {
+                menu.AddItem(moveEventUpContent, false, () =>
+                {
+                    SwapEventElements(new List<int> {eventIndex});
+                    _serializedObject.ApplyModifiedProperties();
+                });
+                // TODO Move to top, 
+            }
+            else
+            {
+                menu.AddDisabledItem(moveEventUpContent, false);
+            }
+            if (eventIndex + 1 < _eventsProperty.arraySize)
+            {
+                menu.AddItem(moveEventDownContent, false, () =>
+                {
+                    SwapEventElements(new List<int> {eventIndex + 1});
+                    _serializedObject.ApplyModifiedProperties();
+                });
+                // TODO move to Bottom
+            }
+            else
+            {
+                menu.AddDisabledItem(moveEventDownContent, false);
+            }
+
+            SerializedProperty eventProperty = _eventsProperty.GetArrayElementAtIndex(eventIndex);
+            SerializedProperty expandedProperty = eventProperty.FindPropertyRelative(nameof(CyanTriggerEvent.expanded));
+            void ToggleEventExpanded()
+            {
+                expandedProperty.boolValue = !expandedProperty.boolValue;
+                expandedProperty.serializedObject.ApplyModifiedProperties();
+            }
+
+            GUIContent eventExpandOption = expandedProperty.boolValue
+                ? new GUIContent("Minimize Event", "")
+                : new GUIContent("Maximize Event", "");
+            menu.AddItem(eventExpandOption, false, ToggleEventExpanded);
+
+            void SetActionEditorExpandState(bool value)
+            {
+                SerializedProperty actions = eventProperty.FindPropertyRelative(nameof(CyanTriggerEvent.actionInstances));
+
+                for (int i = 0; i < actions.arraySize; ++i)
+                {
+                    SerializedProperty action = actions.GetArrayElementAtIndex(i);
+                    SerializedProperty expanded = action.FindPropertyRelative(nameof(CyanTriggerEvent.expanded));
+                    expanded.boolValue = value;
+                }
+                eventProperty.serializedObject.ApplyModifiedProperties();
+                _eventActionTrees[eventIndex].RefreshHeight();
+            }
+            
+            menu.AddItem(new GUIContent("Open all Action Editors"), false, () => SetActionEditorExpandState(true));
+            menu.AddItem(new GUIContent("Close all Action Editors"), false, () => SetActionEditorExpandState(false));
+
+            
+            // Add or edit comment for the event
+            SerializedProperty eventInstance =
+                eventProperty.FindPropertyRelative(nameof(CyanTriggerEvent.eventInstance));
+            SerializedProperty eventComment =
+                eventInstance.FindPropertyRelative(nameof(CyanTriggerActionInstance.comment));
+            SerializedProperty eventCommentProperty =
+                eventComment.FindPropertyRelative(nameof(CyanTriggerComment.comment));
+            GUIContent commentContent = new GUIContent(string.IsNullOrEmpty(eventCommentProperty.stringValue)
+                ? "Add Comment"
+                : "Edit Comment");
+            menu.AddItem(commentContent, false, () =>
+            {
+                _editingCommentId = eventIndex;
+                _focusedCommentEditor = false;
+            });
+            
+                
+            menu.AddSeparator("");
+            
+            menu.AddItem(new GUIContent("Duplicate Event"), false, () =>
+            {
+                DuplicateEvent(eventIndex);
+            });
+            
+            menu.AddSeparator("");
+            
+            menu.AddItem(new GUIContent("Delete Event"), false, () =>
+            {
+                RemoveEvents(new List<int> {eventIndex});
+                _serializedObject.ApplyModifiedProperties();
+            });
+
+            if (_eventActionTrees[eventIndex] != null)
+            {
+                GUIContent clearAllActionsContent = new GUIContent("Clear All Actions");
+                if (_eventActionTrees[eventIndex].Elements.arraySize > 0)
+                {
+                    menu.AddItem(clearAllActionsContent, false, () =>
+                    {
+                        _eventActionTrees[eventIndex].Elements.ClearArray();
+                        _serializedObject.ApplyModifiedProperties();
+                    });
+                }
+                else
+                {
+                    menu.AddDisabledItem(clearAllActionsContent, false);
+                }
+            }
+
+            menu.ShowAsContext();
         }
         
         private void RenderAddEventButton()
@@ -1098,7 +1858,6 @@ namespace CyanTrigger
 
                 CyanTriggerSearchWindowManager.Instance.DisplayEventsFavoritesSearchWindow(AddFavoriteEvent, true);
             }
-            // TODO duplicate event option?
             
             EditorGUILayout.EndHorizontal();
 
@@ -1140,6 +1899,7 @@ namespace CyanTrigger
             new List<CyanTriggerEditorVariableOption>();
         private readonly List<int> _prevIndex = new List<int>();
         private readonly List<int> _startIndex = new List<int>();
+
         public IEnumerable<CyanTriggerEditorVariableOption> GetVariableOptions(Type varType, int index)
         {
             if (index < 0 || index >= _startIndex.Count)
@@ -1151,7 +1911,7 @@ namespace CyanTrigger
             while (ind != -1)
             {
                 var variable = _variableOptions[ind];
-                if (variable.Type.IsSubclassOf(varType) || variable.Type == varType)
+                if (varType.IsAssignableFrom(variable.Type))
                 {
                     yield return variable;
                 }
@@ -1160,6 +1920,29 @@ namespace CyanTrigger
             }
         }
 
+        // TODO validate expected name or type
+        public bool IsVariableValid(int index, string guid)
+        {
+            if (index < 0 || index >= _startIndex.Count)
+            {
+                return false;
+            }
+            int ind = _startIndex[index];
+
+            while (ind != -1)
+            {
+                var variable = _variableOptions[ind];
+                if (variable.ID == guid)
+                {
+                    return true;
+                }
+                
+                ind = _prevIndex[ind];
+            }
+
+            return false;
+        }
+        
 
         public void CreateStructure(SerializedProperty actionList)
         {
@@ -1198,6 +1981,292 @@ namespace CyanTrigger
                         _variableOptions.Add(variable);
                     }
                 }
+            }
+        }
+    }
+
+    // TODO move this to its own file
+    public static class CyanTriggerImageResources
+    {
+        public static readonly Color LineColorDark = EditorGUIUtility.isProSkin ? 
+            new Color(0, 0, 0, 0.5f) : 
+            new Color(0.5f, 0.5f, 0.5f, 0.5f);
+
+        public static readonly Color LineColor = EditorGUIUtility.isProSkin ?
+            new Color(0.1f, 0.1f, 0.1f, 0.5f) :
+            new Color(0.5f, 0.5f, 0.5f, 0.5f);
+
+        public static readonly Color BackgroundColor = EditorGUIUtility.isProSkin ? 
+            new Color(0.25f, 0.25f, 0.25f, 0.5f) : 
+#if UNITY_2019_3_OR_NEWER
+            new Color(0.75f, 0.75f, 0.75f, 0.25f);
+#else
+            new Color(1f, 1f, 1f, 0.25f);
+#endif
+
+        private static Texture2D _actionTreeOutlineTop;
+        public static Texture2D ActionTreeOutlineTop
+        {
+            get
+            {
+                if (_actionTreeOutlineTop == null)
+                {
+                    _actionTreeOutlineTop = CreateTexture(3, 3, (x, y) => x == 1 && y <= 1 ? Color.clear : LineColor);
+                }
+                return _actionTreeOutlineTop;
+            }
+        }
+        
+        private static Texture2D _actionTreeWarningOutline;
+        public static Texture2D ActionTreeWarningOutline
+        {
+            get
+            {
+                if (_actionTreeWarningOutline == null)
+                {
+                    _actionTreeWarningOutline = CreateTexture(3, 3, (x, y) => x == 1 && y == 1 ? Color.clear : CyanTriggerEditorGUIUtil.WarningColor);
+                }
+                return _actionTreeWarningOutline;
+            }
+        }
+        
+        private static Texture2D _actionTreeErrorOutline;
+        public static Texture2D ActionTreeErrorOutline
+        {
+            get
+            {
+                if (_actionTreeErrorOutline == null)
+                {
+                    _actionTreeErrorOutline = CreateTexture(3, 3, (x, y) => x == 1 && y == 1 ? Color.clear : CyanTriggerEditorGUIUtil.ErrorColor);
+                }
+                return _actionTreeErrorOutline;
+            }
+        }
+        
+        private static Texture2D _actionTreeGrayBox;
+        public static Texture2D ActionTreeGrayBox
+        {
+            get
+            {
+                if (_actionTreeGrayBox == null)
+                {
+                    _actionTreeGrayBox = CreateTexture(1,1, (x, y) => LineColor);
+                }
+                return _actionTreeGrayBox;
+            }
+        }
+        
+        private static Texture2D _eventInputBackground;
+        public static Texture2D EventInputBackground
+        {
+            get
+            {
+                if (_eventInputBackground == null)
+                {
+                    _eventInputBackground = CreateTexture(5,5, (x, y) =>
+                    {
+                        if (x == 4 || y == 4 || x == 0 || y == 0)
+                        {
+                            return LineColorDark;
+                        }
+
+                        if (x == 3 || y == 3 || x == 1 || y == 1)
+                        {
+                            return LineColor;
+                        }
+
+                        return BackgroundColor;
+                    });
+                }
+                return _eventInputBackground;
+            }
+        }
+            
+        private static Texture2D CreateTexture(int width, int height, Func<int, int, Color> getColor)
+        {
+            Texture2D ret = new Texture2D(width, height)
+            {
+                alphaIsTransparency = true,
+                filterMode = FilterMode.Point
+            };
+            for (int y = 0; y < ret.height; ++y)
+            {
+                for (int x = 0; x < ret.width; ++x)
+                {
+                    ret.SetPixel(x, y, getColor(x, y));
+                }
+            }
+            ret.Apply();
+            return ret;
+        }
+    }
+    
+    // TODO move this to its own file
+    public static class CyanTriggerEditorGUIUtil
+    {
+        public static readonly Color ErrorColor = EditorGUIUtility.isProSkin 
+            ? new Color(1, 0.337f, 0.278f)
+            : new Color(0.851f, 0.078f, 0);
+
+        public static readonly Color WarningColor = new Color(244f / 255f, 152f / 255f, 16f / 255f);
+        public static readonly Color WarningTextColor = new Color(244f / 255f, 102f / 255f, 0f);
+
+        public static readonly Color CommentColor = EditorGUIUtility.isProSkin 
+            ? new Color(133f / 255f, 196f / 255f, 108f / 255f)
+            : new Color(36f / 255f, 135f / 255f, 0);
+
+        public readonly static GUIStyle HelpBoxStyle = EditorStyles.helpBox;
+        
+        private static GUIStyle _foldoutStyle;
+        public static GUIStyle FoldoutStyle
+        {
+            get
+            {
+                if (_foldoutStyle == null)
+                {
+                    _foldoutStyle = "IN Foldout";
+                }
+                return _foldoutStyle;
+            }
+        }
+        
+        private static GUIStyle _treeViewLabelStyle;
+        public static GUIStyle TreeViewLabelStyle
+        {
+            get
+            {
+                if (_treeViewLabelStyle == null)
+                {
+                    _treeViewLabelStyle = new GUIStyle("TV Line");
+                    _treeViewLabelStyle.wordWrap = true;
+                }
+                return _treeViewLabelStyle;
+            }
+        }
+        
+        private static GUIStyle _commentStyle;
+        public static GUIStyle CommentStyle
+        {
+            get
+            {
+                if (_commentStyle == null)
+                {
+                    _commentStyle = new GUIStyle(TreeViewLabelStyle);
+                    _commentStyle.normal.textColor = CommentColor;
+
+                }
+                return _commentStyle;
+            }
+        }
+        
+        private static GUIStyle _warningTextStyle;
+        public static GUIStyle WarningTextStyle
+        {
+            get
+            {
+                if (_warningTextStyle == null)
+                {
+                    _warningTextStyle = new GUIStyle(EditorStyles.textArea);
+                    _warningTextStyle.normal.textColor = WarningTextColor;
+                }
+                return _warningTextStyle;
+            }
+        }
+        
+        private static GUIStyle _errorTextStyle;
+        public static GUIStyle ErrorTextStyle
+        {
+            get
+            {
+                if (_errorTextStyle == null)
+                {
+                    _errorTextStyle = new GUIStyle(EditorStyles.textArea);
+                    _errorTextStyle.normal.textColor = ErrorColor;
+                }
+                return _errorTextStyle;
+            }
+        }
+
+
+        private static GUIContent _openActionEditorIcon;
+        public static GUIContent OpenActionEditorIcon
+        {
+            get
+            {
+                if (_openActionEditorIcon == null)
+                {
+                    _openActionEditorIcon = EditorGUIUtility.TrIconContent("winbtn_win_max_h", "Open Action Editor");
+                }
+                return _openActionEditorIcon;
+            }
+        }
+        
+        private static GUIContent _closeActionEditorIcon;
+        public static GUIContent CloseActionEditorIcon
+        {
+            get
+            {
+                if (_closeActionEditorIcon == null)
+                {
+                    _closeActionEditorIcon = EditorGUIUtility.TrIconContent("winbtn_win_min_h", "Close Action Editor");
+                }
+                return _closeActionEditorIcon;
+            }
+        }
+        
+        private static GUIContent _commentCompleteIcon;
+        public static GUIContent CommentCompleteIcon
+        {
+            get
+            {
+                if (_commentCompleteIcon == null)
+                {
+                    _commentCompleteIcon = EditorGUIUtility.TrIconContent("FilterSelectedOnly", "Close comment editor");
+                }
+                return _commentCompleteIcon;
+            }
+        }
+
+        private static GUIContent _eventMenuIcon;
+        public static GUIContent EventMenuIcon
+        {
+            get
+            {
+                if (_eventMenuIcon == null)
+                {
+#if UNITY_2019_3_OR_NEWER
+                    _eventMenuIcon = EditorGUIUtility.TrIconContent("_Menu", "View Event Options");
+#else
+                    _eventMenuIcon = EditorGUIUtility.TrIconContent("LookDevPaneOption", "View Event Options");
+#endif
+                }
+                return _eventMenuIcon;
+            }
+        }
+        
+        private static GUIContent _eventDuplicateIcon;
+        public static GUIContent EventDuplicateIcon
+        {
+            get
+            {
+                if (_eventDuplicateIcon == null)
+                {
+                    _eventDuplicateIcon = EditorGUIUtility.TrIconContent("TreeEditor.Duplicate", "Duplicate Event");
+                }
+                return _eventDuplicateIcon;
+            }
+        }
+        
+        private static GUIContent _eventCommentContent;
+        public static GUIContent EventCommentContent
+        {
+            get
+            {
+                if (_eventCommentContent == null)
+                {
+                    _eventCommentContent = new GUIContent("//", "Edit Comment");
+                }
+                return _eventCommentContent;
             }
         }
     }

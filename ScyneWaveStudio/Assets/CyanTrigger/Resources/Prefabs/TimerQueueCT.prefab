@@ -48,8 +48,9 @@ MonoBehaviour:
     proximity: 2
     interactText: Use
     triggerDataInstance:
-      version: 2
-      applyAnimatorMove: 1
+      version: 3
+      updateOrder: 0
+      programSyncMode: 0
       events:
       - name: Add
         eventInstance:
@@ -58,6 +59,9 @@ MonoBehaviour:
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         actionInstances:
         - actionType:
             directEvent: CyanTriggerVariable_SystemSingle
@@ -76,6 +80,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: UnityEngineTime.__get_time__SystemSingle
             guid: 
@@ -87,6 +94,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle
             guid: 
@@ -110,6 +120,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32__.Set__SystemInt32__SystemInt32
             guid: 
@@ -127,6 +140,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
             guid: 
@@ -150,6 +166,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -173,6 +192,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_Division__SystemInt32_SystemInt32__SystemInt32
             guid: 
@@ -196,11 +218,17 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_While
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Condition
             guid: 
@@ -212,6 +240,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBDAAAAFMAaABvAHUAbABkAFMAdwBhAHAAVQBwAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean
             guid: 
@@ -235,6 +266,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionFailIfFalse
             guid: 
@@ -246,6 +280,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_SystemSingle
             guid: 
@@ -263,6 +300,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_SystemSingle
             guid: 
@@ -280,6 +320,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingleArray.__Get__SystemInt32__SystemSingle
             guid: 
@@ -303,6 +346,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingleArray.__Get__SystemInt32__SystemSingle
             guid: 
@@ -326,6 +372,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
             guid: 
@@ -349,16 +398,25 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionBody
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -382,6 +440,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32__.Set__SystemInt32__SystemInt32
             guid: 
@@ -399,6 +460,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_Division__SystemInt32_SystemInt32__SystemInt32
             guid: 
@@ -422,6 +486,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -445,21 +512,31 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         eventOptions:
           userGate: 0
           userGateExtraData: []
           broadcast: 0
           delay: 0
+        expanded: 1
       - name: Remove
         eventInstance:
           actionType:
@@ -467,6 +544,9 @@ MonoBehaviour:
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         actionInstances:
         - actionType:
             directEvent: SystemInt32__.Set__SystemInt32__SystemInt32
@@ -485,11 +565,17 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_While
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Condition
             guid: 
@@ -501,6 +587,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBDAAAAHMAaABvAHUAbABkAFIAZQBtAG8AdgBlAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
             guid: 
@@ -524,6 +613,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionFailIfFalse
             guid: 
@@ -535,6 +627,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_SystemString
             guid: 
@@ -552,6 +647,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemStringArray.__Get__SystemInt32__SystemString
             guid: 
@@ -575,6 +673,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemString.__op_Inequality__SystemString_SystemString__SystemBoolean
             guid: 
@@ -598,6 +699,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionFailIfFalse
             guid: 
@@ -609,6 +713,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_VRCUdonCommonInterfacesIUdonEventReceiver
             guid: 
@@ -626,6 +733,9 @@ MonoBehaviour:
               objEncoded: Lg==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: VRCUdonCommonInterfacesIUdonEventReceiverArray.__Get__SystemInt32__VRCUdonCommonInterfacesIUdonEventReceiver
             guid: 
@@ -649,6 +759,9 @@ MonoBehaviour:
               objEncoded: Lg==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
             guid: 
@@ -672,16 +785,25 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionBody
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
             guid: 
@@ -705,21 +827,33 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_If
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Condition
             guid: 
@@ -731,6 +865,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBDQAAAGwAbwBjAEcAdAByAEUAcQBDAG8AdQBuAHQABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
             guid: 
@@ -754,31 +891,49 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionBody
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Return
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -802,11 +957,15 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         eventOptions:
           userGate: 0
           userGateExtraData: []
           broadcast: 0
           delay: 0
+        expanded: 1
       - name: RemoveAt
         eventInstance:
           actionType:
@@ -814,6 +973,9 @@ MonoBehaviour:
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         actionInstances:
         - actionType:
             directEvent: SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32
@@ -838,11 +1000,17 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_If
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Condition
             guid: 
@@ -854,6 +1022,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBCQAAAGMAbwB1AG4AdABaAGUAcgBvAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
             guid: 
@@ -877,31 +1048,49 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionBody
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Return
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32__.Set__SystemInt32__SystemInt32
             guid: 
@@ -919,6 +1108,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -942,6 +1134,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -965,6 +1160,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -988,11 +1186,17 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_While
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Condition
             guid: 
@@ -1004,6 +1208,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBCgAAAGwAbwBjADIARQBxAEwAbwBjADEABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
             guid: 
@@ -1027,16 +1234,25 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionBody
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -1060,6 +1276,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32__.Set__SystemInt32__SystemInt32
             guid: 
@@ -1077,6 +1296,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -1100,6 +1322,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -1123,21 +1348,31 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         eventOptions:
           userGate: 0
           userGateExtraData: []
           broadcast: 0
           delay: 0
+        expanded: 1
       - name: SetIfBest
         eventInstance:
           actionType:
@@ -1145,12 +1380,18 @@ MonoBehaviour:
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         actionInstances:
         - actionType:
             directEvent: CyanTriggerSpecial_If
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Condition
             guid: 
@@ -1162,6 +1403,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBDQAAAHQAbQBwAEcAdAByAEUAcQBDAG8AdQBuAHQABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
             guid: 
@@ -1185,36 +1429,57 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionBody
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Return
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_If
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Condition
             guid: 
@@ -1226,6 +1491,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBFAAAAHQAaQBtAGUAVABtAHAARwByAHQARQBxAFQAaQBtAGUAQgBlAHMAdAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_SystemSingle
             guid: 
@@ -1243,6 +1511,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingleArray.__Get__SystemInt32__SystemSingle
             guid: 
@@ -1266,6 +1537,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_SystemSingle
             guid: 
@@ -1283,6 +1557,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingleArray.__Get__SystemInt32__SystemSingle
             guid: 
@@ -1306,6 +1583,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
             guid: 
@@ -1329,31 +1609,49 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionBody
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Return
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32__.Set__SystemInt32__SystemInt32
             guid: 
@@ -1371,11 +1669,15 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         eventOptions:
           userGate: 0
           userGateExtraData: []
           broadcast: 0
           delay: 0
+        expanded: 1
       - name: GetNextChild
         eventInstance:
           actionType:
@@ -1383,6 +1685,9 @@ MonoBehaviour:
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         actionInstances:
         - actionType:
             directEvent: SystemInt32__.Set__SystemInt32__SystemInt32
@@ -1401,6 +1706,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_Multiplication__SystemInt32_SystemInt32__SystemInt32
             guid: 
@@ -1424,6 +1732,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -1447,6 +1758,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
             guid: 
@@ -1470,6 +1784,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -1493,6 +1810,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32__.Set__SystemInt32__SystemInt32
             guid: 
@@ -1510,11 +1830,15 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         eventOptions:
           userGate: 0
           userGateExtraData: []
           broadcast: 0
           delay: 0
+        expanded: 1
       - name: SetLoc
         eventInstance:
           actionType:
@@ -1522,6 +1846,9 @@ MonoBehaviour:
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         actionInstances:
         - actionType:
             directEvent: VRCUdonCommonInterfacesIUdonEventReceiverArray.__Set__SystemInt32_VRCUdonCommonInterfacesIUdonEventReceiver__SystemVoid
@@ -1546,6 +1873,9 @@ MonoBehaviour:
               objEncoded: Lg==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemStringArray.__Set__SystemInt32_SystemString__SystemVoid
             guid: 
@@ -1575,6 +1905,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingleArray.__Set__SystemInt32_SystemSingle__SystemVoid
             guid: 
@@ -1598,11 +1931,15 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         eventOptions:
           userGate: 0
           userGateExtraData: []
           broadcast: 0
           delay: 0
+        expanded: 1
       - name: CopyLoc
         eventInstance:
           actionType:
@@ -1610,6 +1947,9 @@ MonoBehaviour:
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         actionInstances:
         - actionType:
             directEvent: VRCUdonCommonInterfacesIUdonEventReceiverArray.__Get__SystemInt32__VRCUdonCommonInterfacesIUdonEventReceiver
@@ -1634,6 +1974,9 @@ MonoBehaviour:
               objEncoded: Lg==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemStringArray.__Get__SystemInt32__SystemString
             guid: 
@@ -1657,6 +2000,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingleArray.__Get__SystemInt32__SystemSingle
             guid: 
@@ -1680,11 +2026,15 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         eventOptions:
           userGate: 0
           userGateExtraData: []
           broadcast: 0
           delay: 0
+        expanded: 1
       - name: CopyFromLoc
         eventInstance:
           actionType:
@@ -1692,6 +2042,9 @@ MonoBehaviour:
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         actionInstances:
         - actionType:
             directEvent: CyanTriggerVariable_VRCUdonCommonInterfacesIUdonEventReceiver
@@ -1710,6 +2063,9 @@ MonoBehaviour:
               objEncoded: Lg==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: VRCUdonCommonInterfacesIUdonEventReceiverArray.__Get__SystemInt32__VRCUdonCommonInterfacesIUdonEventReceiver
             guid: 
@@ -1733,6 +2089,9 @@ MonoBehaviour:
               objEncoded: Lg==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: VRCUdonCommonInterfacesIUdonEventReceiverArray.__Set__SystemInt32_VRCUdonCommonInterfacesIUdonEventReceiver__SystemVoid
             guid: 
@@ -1756,6 +2115,9 @@ MonoBehaviour:
               objEncoded: Lg==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_SystemSingle
             guid: 
@@ -1773,6 +2135,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingleArray.__Get__SystemInt32__SystemSingle
             guid: 
@@ -1796,6 +2161,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingleArray.__Set__SystemInt32_SystemSingle__SystemVoid
             guid: 
@@ -1819,6 +2187,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_SystemString
             guid: 
@@ -1836,6 +2207,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemStringArray.__Get__SystemInt32__SystemString
             guid: 
@@ -1859,6 +2233,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemStringArray.__Set__SystemInt32_SystemString__SystemVoid
             guid: 
@@ -1882,11 +2259,15 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         eventOptions:
           userGate: 0
           userGateExtraData: []
           broadcast: 0
           delay: 0
+        expanded: 1
       - name: CopyFromLoc
         eventInstance:
           actionType:
@@ -1894,12 +2275,18 @@ MonoBehaviour:
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         actionInstances:
         - actionType:
             directEvent: CyanTriggerSpecial_While
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_Condition
             guid: 
@@ -1911,6 +2298,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBCwAAAHMAaABvAHUAbABkAEMAaABlAGMAawAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean
             guid: 
@@ -1934,6 +2324,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionFailIfFalse
             guid: 
@@ -1945,6 +2338,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_SystemSingle
             guid: 
@@ -1962,6 +2358,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: UnityEngineTime.__get_time__SystemSingle
             guid: 
@@ -1973,6 +2372,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_SystemSingle
             guid: 
@@ -1990,6 +2392,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingleArray.__Get__SystemInt32__SystemSingle
             guid: 
@@ -2013,6 +2418,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACAAAAAABQ==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
             guid: 
@@ -2036,16 +2444,25 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_ConditionBody
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_VRCUdonCommonInterfacesIUdonEventReceiver
             guid: 
@@ -2063,6 +2480,9 @@ MonoBehaviour:
               objEncoded: Lg==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: VRCUdonCommonInterfacesIUdonEventReceiverArray.__Get__SystemInt32__VRCUdonCommonInterfacesIUdonEventReceiver
             guid: 
@@ -2086,6 +2506,9 @@ MonoBehaviour:
               objEncoded: Lg==
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerVariable_SystemString
             guid: 
@@ -2103,6 +2526,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemStringArray.__Get__SystemInt32__SystemString
             guid: 
@@ -2126,6 +2552,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAAAAAACgBAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
             guid: 
@@ -2149,6 +2578,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: SystemInt32__.Set__SystemInt32__SystemInt32
             guid: 
@@ -2166,6 +2598,9 @@ MonoBehaviour:
               objEncoded: Ai8AAAAAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiAAAAAAAYAAAAAAU=
               unityObjects: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTrigger.__SendCustomEvent__CyanTrigger__SystemString
             guid: 
@@ -2189,21 +2624,31 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: CyanTriggerSpecial_BlockEnd
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: 
         eventOptions:
           userGate: 0
           userGateExtraData: []
           broadcast: 0
           delay: 0
+        expanded: 1
       variables:
       - isVariable: 0
         name: EventGraph
@@ -2306,6 +2751,8 @@ MonoBehaviour:
         type:
           typeDef: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
         sync: 0
+      comment:
+        comment: 
     udonBehaviour: {fileID: 8498692164131828074}
 --- !u!114 &8498692164131828074
 MonoBehaviour:
@@ -2325,6 +2772,7 @@ MonoBehaviour:
   proximity: 2
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
+  Reliable: 0
   serializedProgramAsset: {fileID: 11400000, guid: 9c3fe766e23cdaf44ab47a294c1fd584,
     type: 2}
   programSource: {fileID: 11400000, guid: aaa95946b38d3474e986547f2220617c, type: 2}

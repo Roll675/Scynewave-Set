@@ -73,7 +73,18 @@ namespace CyanTrigger
             var startInput = compileState.GetDataFromVariableInstance(-1, 0, actionInstance.inputs[0], intType, false);
             var endInput = compileState.GetDataFromVariableInstance(-1, 1, actionInstance.inputs[1], intType, false);
             var stepInput = compileState.GetDataFromVariableInstance(-1, 2, actionInstance.inputs[2], intType, false);
-            
+
+            if (!actionInstance.inputs[2].isVariable && ((int) actionInstance.inputs[2].data.obj) == 0)
+            {
+                compileState.LogError("For loop has step value of 0!");
+            }
+            if (actionInstance.inputs[2].isVariable && 
+                string.IsNullOrEmpty(actionInstance.inputs[2].name) && 
+                string.IsNullOrEmpty(actionInstance.inputs[2].variableID))
+            {
+                compileState.LogError("For loop has empty variable for step value!");
+            }
+
             string variableGuid = GetVariableGuid(actionInstance, 0);
             var userVariable = program.data.GetUserDefinedVariable(variableGuid);
 

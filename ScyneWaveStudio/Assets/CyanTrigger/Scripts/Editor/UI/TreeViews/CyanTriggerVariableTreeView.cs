@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.AnimatedValues;
 using UnityEditor.IMGUI.Controls;
 using UnityEditorInternal;
 using UnityEngine;
+using VRC.Udon;
 using VRC.Udon.Graph;
 
 namespace CyanTrigger
@@ -21,11 +21,13 @@ namespace CyanTrigger
         private const float SpaceBetweenRowEditor = 6;
         private const float SpaceBetweenRowEditorSides = 6;
         
-        private readonly AnimBool _showVariables;
-        private readonly Action _onVariableAddedOrRemoved;
+        private readonly Action<List<string>> _onVariableAddedOrRemoved;
+        private readonly Action<string, string, string> _onVariableRenamed;
         private readonly Func<string, string, string> _getUniqueVariableName;
 
         private bool _delayRefreshRowHeight = false;
+
+        private bool _shouldVerifyVariables;
         
         private static MultiColumnHeader CreateColumnHeader()
         {
@@ -64,20 +66,65 @@ namespace CyanTrigger
 
         public CyanTriggerVariableTreeView(
             SerializedProperty elements, 
-            Action onVariableAddedOrRemoved,
-            Func<string, string, string> getUniqueVariableName) 
+            Action<List<string>> onVariableAddedOrRemoved,
+            Func<string, string, string> getUniqueVariableName,
+            Action<string, string, string> onVariableRenamed) 
             : base (elements, CreateColumnHeader(), GetElementScopeDelta, GetElementDisplayName)
         {
             showBorder = true;
             rowHeight = DefaultRowHeight;
             showAlternatingRowBackgrounds = true;
             useScrollView = false;
-            _showVariables = new AnimBool(true);
             _onVariableAddedOrRemoved = onVariableAddedOrRemoved;
             _getUniqueVariableName = getUniqueVariableName;
-            _showVariables.valueChanged.AddListener(Repaint);
+            _onVariableRenamed = onVariableRenamed;
             
             Reload();
+        }
+
+        protected override void OnBuildRoot(CyanTriggerScopedTreeItem root)
+        {
+            // On rebuild, assume lists need to be recreated.
+            foreach (var data in GetData())
+            {
+                data.Item1.List = null;
+            }
+            
+            _shouldVerifyVariables = true;
+        }
+
+        private void VerifyVariables()
+        {
+            int size = Elements.arraySize;
+            for (int cur = 0; cur < size; ++cur)
+            {
+                SerializedProperty variableProperty = Elements.GetArrayElementAtIndex(cur);
+                SerializedProperty typeProperty =
+                    variableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.type));
+                SerializedProperty typeDefProperty =
+                    typeProperty.FindPropertyRelative(nameof(CyanTriggerSerializableType.typeDef));
+                Type type = Type.GetType(typeDefProperty.stringValue);
+                SerializedProperty dataProperty = variableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.data));
+                
+                object obj = CyanTriggerSerializableObject.ObjectFromSerializedProperty(dataProperty);
+                bool dirty = false;
+                obj = CyanTriggerPropertyEditor.CreateInitialValueForType(type, obj, ref dirty);
+
+                if (dirty)
+                {
+                    if(type.IsArray && typeof(UnityEngine.Object).IsAssignableFrom(type.GetElementType()))
+                    {
+                        var array = (Array) obj;
+                    
+                        Array destinationArray = Array.CreateInstance(type.GetElementType(), array.Length);
+                        Array.Copy(array, destinationArray, array.Length);
+                
+                        obj = destinationArray;
+                    }
+                
+                    CyanTriggerSerializableObject.UpdateSerializedProperty(dataProperty, obj);
+                }
+            }
         }
 
         private VariableExpandData GetOrCreateExpandData(int id)
@@ -94,32 +141,18 @@ namespace CyanTrigger
 
         public void DoLayoutTree()
         {
-            bool showView = _showVariables.target;
+            bool isUndo = (Event.current.commandName == "UndoRedoPerformed");
             
-            // TODO allow dragging objects/components here to add them as variables
-            CyanTriggerPropertyEditor.DrawFoldoutListHeader(
-                new GUIContent("Variables"),
-                ref showView,
-                false,
-                Elements.arraySize,
-                null,
-                false,
-                null,
-                false,
-                false
-                );
-            _showVariables.target = showView;
-            
-            if (!EditorGUILayout.BeginFadeGroup(_showVariables.faded))
+            if (Size != Elements.arraySize || isUndo)
             {
-                EditorGUILayout.EndFadeGroup();
-                return;
-            }
-            
-            if (Size != Elements.arraySize)
-            {
-                _onVariableAddedOrRemoved?.Invoke();
+                _onVariableAddedOrRemoved?.Invoke(null);
                 Reload();
+            }
+
+            if (_shouldVerifyVariables)
+            {
+                _shouldVerifyVariables = false;
+                VerifyVariables();
             }
             
             Rect treeRect = EditorGUILayout.BeginVertical();
@@ -130,15 +163,16 @@ namespace CyanTrigger
             
             var listActionFooterIcons = new[]
             {
-                EditorGUIUtility.TrIconContent("Favorite", "Choose to add to list"), //CustomSorting
-                EditorGUIUtility.TrIconContent("Toolbar Plus More", "Choose to add to list"),
+                EditorGUIUtility.TrIconContent("Favorite", "Choose to add to list"),
+                EditorGUIUtility.TrIconContent("Toolbar Plus", "Choose to add to list"),
                 EditorGUIUtility.TrIconContent("TreeEditor.Duplicate", "Duplicate selected item"),
                 EditorGUIUtility.TrIconContent("Toolbar Minus", "Remove selection from list")
             };
             
             bool hasSelection = HasSelection();
             CyanTriggerPropertyEditor.DrawButtonFooter(
-                listActionFooterIcons, new Action[]
+                listActionFooterIcons, 
+                new Action[]
                 {
                     AddNewVariableFromFavoriteList,
                     AddNewVariableFromAllList,
@@ -153,7 +187,6 @@ namespace CyanTrigger
             OnGUI(treeRect);
             
             EditorGUILayout.EndVertical();
-            EditorGUILayout.EndFadeGroup();
             
             if (_delayRefreshRowHeight)
             {
@@ -212,14 +245,14 @@ namespace CyanTrigger
             var guid = variableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.variableID)).stringValue;
             string newName = _getUniqueVariableName(args.newName, guid);
             
-            if (args.newName.Equals(args.originalName))
+            if (newName.Equals(args.originalName))
             {
                 return;
             }
             
             variableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.name)).stringValue = newName;
             Items[index].displayName = newName;
-            _onVariableAddedOrRemoved?.Invoke();
+            _onVariableRenamed?.Invoke(args.originalName, newName, guid);
         }
 
         protected override bool CanDuplicate(IEnumerable<int> items)
@@ -268,15 +301,28 @@ namespace CyanTrigger
             _delayRefreshRowHeight = true;
         }
 
-        protected override void OnItemsRemoved()
+        protected override void OnItemsRemoved(List<CyanTriggerScopedTreeItem> removedItems)
         {
-            _onVariableAddedOrRemoved?.Invoke();
+            base.OnItemsRemoved(removedItems);
+            List<string> guids = new List<string>();
+            foreach (var item in removedItems)
+            {
+                if (item.Index >= ItemElements.Length || ItemElements[item.Index] == null)
+                {
+                    continue;
+                }
+
+                var guidProp = ItemElements[item.Index].FindPropertyRelative(nameof(CyanTriggerVariable.variableID));
+                guids.Add(guidProp.stringValue);
+            }
+            
+            _onVariableAddedOrRemoved?.Invoke(guids);
         }
 
-        protected override void RowGUI (RowGUIArgs args)
+        protected override void OnRowGUI(RowGUIArgs args)
         {
             var item = (CyanTriggerScopedTreeItem) args.item;
-            
+
             // Only draw variable fields when not renaming the variable
             if (!args.isRenaming)
             {
@@ -286,7 +332,7 @@ namespace CyanTrigger
                 SerializedProperty typeDefProperty =
                     typeProperty.FindPropertyRelative(nameof(CyanTriggerSerializableType.typeDef));
                 Type type = Type.GetType(typeDefProperty.stringValue);
-
+            
                 for (int i = 0; i < args.GetNumVisibleColumns(); ++i)
                 {
                     Rect cellRect = args.GetCellRect(i);
@@ -314,8 +360,6 @@ namespace CyanTrigger
                     GUIContent content = new GUIContent(item.displayName, item.displayName);
                     CyanTriggerNameHelpers.TruncateContent(content, cellRect);
                     EditorGUI.LabelField(cellRect, content);
-                    //args.rowRect = cellRect;
-                    //base.RowGUI(args);
                     break;
                 }
                 case 1: // Type
@@ -328,6 +372,7 @@ namespace CyanTrigger
                 }
                 case 2: // Value
                 {
+                    // TODO check for application playing and update displayed value.
                     SerializedProperty dataProperty = variableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.data));
                     
                     if (!CyanTriggerPropertyEditor.TypeHasSingleLineEditor(type))
@@ -349,10 +394,43 @@ namespace CyanTrigger
                 {
                     SerializedProperty syncProperty = variableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.sync));
                     
-                    // TODO verify what items can and can't be synced.
-                    // TODO force set to not synced if is not a value type
-                    EditorGUI.BeginDisabledGroup(!type.IsValueType || type == typeof(ParticleSystem.MinMaxCurve));
-                    EditorGUI.PropertyField(cellRect, syncProperty, GUIContent.none);
+                    // New UI using the Sync beta
+                    bool canSync = UdonNetworkTypes.CanSync(type);
+                    EditorGUI.BeginDisabledGroup(!canSync);
+
+                    int selected = 0;
+                    CyanTriggerVariableSyncMode cur = (CyanTriggerVariableSyncMode)syncProperty.intValue;
+                    
+                    List<CyanTriggerVariableSyncMode> syncOptions = new List<CyanTriggerVariableSyncMode>();
+                    syncOptions.Add(CyanTriggerVariableSyncMode.NotSynced);
+                    if (canSync)
+                    {
+                        syncOptions.Add(CyanTriggerVariableSyncMode.Synced);
+                    }
+                    if (UdonNetworkTypes.CanSyncLinear(type))
+                    {
+                        syncOptions.Add(CyanTriggerVariableSyncMode.SyncedLinear);
+                    }
+                    if (UdonNetworkTypes.CanSyncSmooth(type))
+                    {
+                        syncOptions.Add(CyanTriggerVariableSyncMode.SyncedSmooth);
+                    }
+
+                    string[] options = new string[syncOptions.Count];
+                    for (int option = 0; option < options.Length; ++option)
+                    {
+                        options[option] = syncOptions[option].ToString();
+                        if (cur == syncOptions[option])
+                        {
+                            selected = option;
+                        }
+                    }
+
+                    int newSelected = EditorGUI.Popup(cellRect, selected, options);
+                    if (newSelected != selected)
+                    {
+                        syncProperty.intValue = (int) syncOptions[newSelected];
+                    }
                     EditorGUI.EndDisabledGroup();
                     
                     break;
@@ -443,37 +521,13 @@ namespace CyanTrigger
         private void AddNewVariable(string variableName, Type type, object data = default, bool rename = true)
         {
             Elements.arraySize++;
-            SerializedProperty newVariableProperty =
-                Elements.GetArrayElementAtIndex(Elements.arraySize - 1);
+            SerializedProperty newVariableProperty = Elements.GetArrayElementAtIndex(Elements.arraySize - 1);
 
-            SerializedProperty idProperty =
-                newVariableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.variableID));
-            idProperty.stringValue = Guid.NewGuid().ToString();
-
-            SerializedProperty nameProperty = newVariableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.name));
-            nameProperty.stringValue = _getUniqueVariableName(variableName, idProperty.stringValue);
-
-            SerializedProperty syncProperty = newVariableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.sync));
-            syncProperty.enumValueIndex = (int) CyanTriggerSyncMode.NotSynced;
-
-            SerializedProperty typeProperty = newVariableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.type));
-            SerializedProperty typeDefProperty =
-                typeProperty.FindPropertyRelative(nameof(CyanTriggerSerializableType.typeDef));
-            typeDefProperty.stringValue = type.AssemblyQualifiedName;
-
-            SerializedProperty dataProperty = newVariableProperty.FindPropertyRelative(nameof(CyanTriggerVariable.data));
-
-            if (data == null)
-            {
-                CyanTriggerSerializableObject.UpdateSerializedProperty(dataProperty,
-                    type.IsValueType ? Activator.CreateInstance(type) : null);
-            }
-            else
-            {
-                CyanTriggerSerializableObject.UpdateSerializedProperty(dataProperty, data);
-            }
-
-            _onVariableAddedOrRemoved?.Invoke();
+            string id = Guid.NewGuid().ToString();
+            variableName = _getUniqueVariableName(variableName, id);
+            CyanTriggerSerializedPropertyUtils.SetVariableData(newVariableProperty, variableName, type, data, id);
+            
+            _onVariableAddedOrRemoved?.Invoke(null);
 
             if (rename)
             {
@@ -493,6 +547,12 @@ namespace CyanTrigger
             var data = CyanTriggerSerializableObject.ObjectFromSerializedProperty(dataProperty);
             
             AddNewVariable(nameProperty.stringValue, type, data, false);
+        }
+        
+        protected override void OnElementRemapped(VariableExpandData element, int prevIndex, int newIndex)
+        {
+            element.List = null;
+            _onVariableAddedOrRemoved?.Invoke(null);
         }
     }
 }

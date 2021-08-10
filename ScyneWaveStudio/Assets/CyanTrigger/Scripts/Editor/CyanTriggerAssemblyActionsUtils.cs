@@ -45,12 +45,12 @@ namespace CyanTrigger
         
         public static List<CyanTriggerAssemblyInstruction> CopyVariables(
             CyanTriggerAssemblyDataType srcVariable,
-            CyanTriggerAssemblyDataType destVariable)
+            CyanTriggerAssemblyDataType dstVariable)
         {
             List<CyanTriggerAssemblyInstruction> actions = new List<CyanTriggerAssemblyInstruction>();
 
             actions.Add(CyanTriggerAssemblyInstruction.PushVariable(srcVariable));
-            actions.Add(CyanTriggerAssemblyInstruction.PushVariable(destVariable));
+            actions.Add(CyanTriggerAssemblyInstruction.PushVariable(dstVariable));
             actions.Add(CyanTriggerAssemblyInstruction.Copy());
             
             return actions;
@@ -97,12 +97,10 @@ namespace CyanTrigger
             actions.Add(pushTempBool);
             actions.Add(CyanTriggerAssemblyInstruction.JumpIfFalse(nop));
             
-            // Copy values of prev into actual
-            actions.AddRange(CopyVariables(variable, variable.previousVariable));
-            
-            // call method OnVariableChanged_<variableName>
-            // TODO make helper method for this
-            actions.AddRange(JumpToFunction(program, "OnVariableChanged_"+variable.name));
+            // call method for variable changed
+            // Copying into the old value is handled in the callback itself.
+            string methodName = CyanTriggerCustomNodeOnVariableChanged.GetVariableChangeEventName(variable.name);
+            actions.AddRange(JumpToFunction(program, methodName));
             
             // push nop
             actions.Add(nop);
@@ -217,9 +215,21 @@ namespace CyanTrigger
                     typeof(Networking).GetProperty(
                         nameof(Networking.IsMaster), 
                         BindingFlags.Static | BindingFlags.Public).GetGetMethod());
-                CyanTriggerAssemblyInstruction isMasterExtern = 
-                    CyanTriggerAssemblyInstruction.CreateExtern(isMasterMethodName);
-                instructions.Add(isMasterExtern);
+                instructions.Add(CyanTriggerAssemblyInstruction.CreateExtern(isMasterMethodName));
+                
+                // Jump to end if false
+                instructions.Add(pushTempBoolAction);
+                instructions.Add(CyanTriggerAssemblyInstruction.JumpIfFalse(nop));
+            }
+            else if (userGate == CyanTriggerUserGate.InstanceOwner)
+            {
+                instructions.Add(pushTempBoolAction);
+
+                string isInstanceOwnerMethodName = CyanTriggerDefinitionResolver.GetMethodSignature(
+                    typeof(Networking).GetProperty(
+                        nameof(Networking.IsInstanceOwner), 
+                        BindingFlags.Static | BindingFlags.Public).GetGetMethod());
+                instructions.Add(CyanTriggerAssemblyInstruction.CreateExtern(isInstanceOwnerMethodName));
                 
                 // Jump to end if false
                 instructions.Add(pushTempBoolAction);
@@ -500,71 +510,6 @@ namespace CyanTrigger
             return actions;
         }
         
-        
-        
-        
-        
-        public static List<CyanTriggerAssemblyInstruction> OnAnimatorMove(
-            CyanTriggerAssemblyProgram program, 
-            CyanTriggerAssemblyDataType animatorVar)
-        {
-            //CyanTriggerAssemblyData data = program.data;
-
-            List<CyanTriggerAssemblyInstruction> actions = new List<CyanTriggerAssemblyInstruction>();
-
-            CyanTriggerAssemblyInstruction pushAnimatorAction = 
-                CyanTriggerAssemblyInstruction.PushVariable(animatorVar);
-
-            actions.Add(pushAnimatorAction);
-            actions.Add(CyanTriggerAssemblyInstruction.CreateExtern(
-                CyanTriggerDefinitionResolver.GetMethodSignature(
-                    typeof(Animator).GetMethod(nameof(Animator.ApplyBuiltinRootMotion)))));
-            
-            // TODO Fix this so that user have the option of setting root motion or not
-            // Root motion does not work as expected
-            
-            /*
-            CyanTriggerAssemblyDataType transformVar = program.data.GetThisConst(typeof(Transform));
-            CyanTriggerAssemblyInstruction pushTransformAction = 
-                CyanTriggerAssemblyInstruction.PushVariable(transformVar);
-
-            CyanTriggerAssemblyDataType tempVectorVariable = data.RequestTempVariable(typeof(Vector3));
-            CyanTriggerAssemblyInstruction pushTempVectorAction = 
-                CyanTriggerAssemblyInstruction.PushVariable(tempVectorVariable);
-
-            CyanTriggerAssemblyDataType tempRotationVariable = data.RequestTempVariable(typeof(Quaternion));
-            CyanTriggerAssemblyInstruction pushTempRotationAction = 
-                CyanTriggerAssemblyInstruction.PushVariable(tempRotationVariable);
-
-
-            // Get target position
-            actions.Add(pushAnimatorAction);
-            actions.Add(pushTempVectorAction);
-            actions.Add(CyanTriggerAssemblyInstruction.CreateExtern(
-                CyanTriggerDefinitionResolver.GetMethodSignature(
-                    typeof(Animator).GetProperty(nameof(Animator.targetPosition)).GetMethod)));
-
-            // Get target Rotation
-            actions.Add(pushAnimatorAction);
-            actions.Add(pushTempRotationAction);
-            actions.Add(CyanTriggerAssemblyInstruction.CreateExtern(
-                CyanTriggerDefinitionResolver.GetMethodSignature(
-                    typeof(Animator).GetProperty(nameof(Animator.targetRotation)).GetMethod)));
-
-            // Set position and rotation
-            actions.Add(pushTransformAction);
-            actions.Add(pushTempVectorAction);
-            actions.Add(pushTempRotationAction);
-            actions.Add(CyanTriggerAssemblyInstruction.CreateExtern(
-                CyanTriggerDefinitionResolver.GetMethodSignature(
-                    typeof(Transform).GetMethod(nameof(Transform.SetPositionAndRotation)))));
-
-            data.ReleaseTempVariable(tempVectorVariable);
-            data.ReleaseTempVariable(tempRotationVariable);
-
-            */
-            return actions;
-        }
 
         public static List<CyanTriggerAssemblyInstruction> GetLocalPlayer(CyanTriggerAssemblyProgram program)
         {
@@ -580,6 +525,20 @@ namespace CyanTrigger
             return actions;
         }
 
+        public static List<CyanTriggerAssemblyInstruction> RequestSerializationVariable(
+            CyanTriggerAssemblyProgram program)
+        {
+            List<CyanTriggerAssemblyInstruction> actions = new List<CyanTriggerAssemblyInstruction>();
+
+            var thisUdon = program.data.GetThisConst(typeof(IUdonEventReceiver));
+            actions.Add(CyanTriggerAssemblyInstruction.PushVariable(thisUdon));
+            
+            actions.Add(CyanTriggerAssemblyInstruction.CreateExtern(
+                CyanTriggerDefinitionResolver.GetMethodSignature(
+                    typeof(UdonBehaviour).GetMethod(nameof(UdonBehaviour.RequestSerialization)))));
+            
+            return actions;
+        }
         
         
         #region Debug

@@ -9,6 +9,10 @@ namespace CyanTrigger
         private CyanTrigger _cyanTrigger;
         private CyanTriggerSerializableInstanceEditor _editor;
         
+#if CYAN_TRIGGER_DEBUG
+        private bool _showHash;
+#endif
+        
         private void OnEnable()
         {
             if (EditorApplication.isPlaying)
@@ -17,9 +21,10 @@ namespace CyanTrigger
             }
             
             _cyanTrigger = (CyanTrigger)target;
+            _cyanTrigger.Verify();
             CreateEditor();
 
-            //EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
         }
         
         private void OnDisable()
@@ -29,19 +34,25 @@ namespace CyanTrigger
                 return;
             }
             
-            _editor?.Dispose();
+            DisposeEditor();
             
-            //EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
+            EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
         }
 
         private void CreateEditor()
         {
-            _editor?.Dispose();
+            DisposeEditor();
 
             var triggerInstance = _cyanTrigger.triggerInstance;
             var instanceProperty = serializedObject.FindProperty(nameof(CyanTriggerScriptableObject.triggerInstance));
 
             _editor = new CyanTriggerSerializableInstanceEditor(instanceProperty, triggerInstance, this);
+        }
+
+        private void DisposeEditor()
+        {
+            _editor?.Dispose();
+            _editor = null;
         }
         
         public override void OnInspectorGUI()
@@ -56,29 +67,51 @@ namespace CyanTrigger
                 EditorGUILayout.EndVertical();
                 return;
             }
+
+            if (_editor == null)
+            {
+                if (!CyanTriggerActionInfoHolder.GetActionInfoHolder(null, "Event_Custom").IsValid())
+                {
+                    return;
+                }
+
+                CreateEditor();
+            }
             
             _editor.OnInspectorGUI();
             
             EditorGUILayout.BeginVertical(GUILayout.MaxWidth(EditorGUIUtility.currentViewWidth - 30));
-            EditorGUILayout.BeginHorizontal();
-            GUILayout.Space(4);
             
             if (GUILayout.Button("Compile Triggers"))
             {
                 CyanTriggerSerializerManager.RecompileAllTriggers(true);
             }
             
-            GUILayout.Space(4);
-            EditorGUILayout.EndHorizontal();
+            CyanTriggerSettingsWindow.DrawHeader("CyanTrigger");
+         
+#if CYAN_TRIGGER_DEBUG   
+            _showHash = EditorGUILayout.Foldout(_showHash, "Trigger Hash", true);
+            if (_showHash)
+            {
+                EditorGUI.BeginDisabledGroup(true);
+
+                EditorGUILayout.TextArea(
+                    CyanTriggerInstanceDataHash.HashCyanTriggerInstanceData(_cyanTrigger.triggerInstance
+                        .triggerDataInstance));
+                EditorGUILayout.TextArea(
+                    CyanTriggerInstanceDataHash.GetProgramUniqueStringForCyanTrigger(_cyanTrigger.triggerInstance
+                        .triggerDataInstance));
+
+                EditorGUI.EndDisabledGroup();
+            }
+#endif
+            
             EditorGUILayout.EndVertical();
         }
         
         private void OnPlayModeStateChanged(PlayModeStateChange state)
         {
-            if (state == PlayModeStateChange.EnteredEditMode || state == PlayModeStateChange.EnteredPlayMode)
-            {
-                CreateEditor();
-            }
+            DisposeEditor();
         }
     }
 }

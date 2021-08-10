@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using UnityEngine;
 
 namespace CyanTrigger
 {
@@ -11,7 +10,9 @@ namespace CyanTrigger
         public List<CyanTriggerAssemblyInstruction> actions;
         public string name;
         public bool export;
-
+        
+        public List<CyanTriggerAssemblyInstruction> endActions;
+        
         public CyanTriggerAssemblyInstruction endNop;
         
         public CyanTriggerAssemblyMethod(string name, bool export)
@@ -19,6 +20,7 @@ namespace CyanTrigger
             this.name = name;
             this.export = export;
             actions = new List<CyanTriggerAssemblyInstruction>();
+            endActions = new List<CyanTriggerAssemblyInstruction>();
 
             endNop = CyanTriggerAssemblyInstruction.Nop();
         }
@@ -31,6 +33,16 @@ namespace CyanTrigger
         public void AddActions(List<CyanTriggerAssemblyInstruction> actions)
         {
             this.actions.AddRange(actions);
+        }
+        
+        public void AddEndAction(CyanTriggerAssemblyInstruction action)
+        {
+            endActions.Add(action);
+        }
+
+        public void AddEndAction(List<CyanTriggerAssemblyInstruction> actions)
+        {
+            endActions.AddRange(actions);
         }
 
         public void PushInitialEndVariable(CyanTriggerAssemblyData data)
@@ -73,7 +85,7 @@ namespace CyanTrigger
                 {
                     if (!methodsToStartAddress.ContainsKey(jumpLabel))
                     {
-                        throw new Exception("JumpLabel missing: " + jumpLabel);
+                        throw new MissingJumpLabelException(jumpLabel);
                     }
                     action.UpdateAddress(methodsToStartAddress[jumpLabel]);
                 }
@@ -82,6 +94,8 @@ namespace CyanTrigger
 
         public void Finish()
         {
+            actions.AddRange(endActions);
+            
             actions.Add(endNop);
         }
 
@@ -118,6 +132,16 @@ namespace CyanTrigger
             }
             
             return method;
+        }
+
+        public class MissingJumpLabelException : Exception
+        {
+            public string MissingLabel;
+            
+            public MissingJumpLabelException(string label) : base("JumpLabel missing: " + label)
+            {
+                MissingLabel = label;
+            }
         }
     }
 }

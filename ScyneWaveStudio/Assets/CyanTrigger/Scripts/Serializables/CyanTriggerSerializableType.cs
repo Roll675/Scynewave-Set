@@ -28,7 +28,7 @@ namespace CyanTrigger
 
         private void DeserializeType()
         {
-            if (_type == null && !string.IsNullOrEmpty(typeDef))
+            if (!string.IsNullOrEmpty(typeDef))
             {
                 _type = GetTypeFromDef();
             }

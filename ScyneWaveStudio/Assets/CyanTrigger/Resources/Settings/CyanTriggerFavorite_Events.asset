@@ -104,6 +104,26 @@ MonoBehaviour:
       directEvent: 
       guid: 
     scopeDelta: -1
+  - item: Stations
+    data:
+      directEvent: 
+      guid: 
+    scopeDelta: 1
+  - item: OnStationEntered
+    data:
+      directEvent: Event_OnStationEntered
+      guid: 
+    scopeDelta: 0
+  - item: OnStationExited
+    data:
+      directEvent: Event_OnStationExited
+      guid: 
+    scopeDelta: 0
+  - item: _ScopeEnd New Folder
+    data:
+      directEvent: 
+      guid: 
+    scopeDelta: -1
   - item: Input
     data:
       directEvent: 
@@ -172,6 +192,11 @@ MonoBehaviour:
   - item: FixedUpdate
     data:
       directEvent: Event_FixedUpdate
+      guid: 
+    scopeDelta: 0
+  - item: PostLateUpdate
+    data:
+      directEvent: Event_PostLateUpdate
       guid: 
     scopeDelta: 0
   - item: _ScopeEnd New Folder
@@ -289,6 +314,11 @@ MonoBehaviour:
       directEvent: Event_OnParticleCollision
       guid: 
     scopeDelta: 0
+  - item: OnParticleTrigger
+    data:
+      directEvent: Event_OnParticleTrigger
+      guid: 
+    scopeDelta: 0
   - item: _ScopeEnd New Folder
     data:
       directEvent: 
@@ -309,6 +339,11 @@ MonoBehaviour:
       directEvent: Event_OnPreSerialization
       guid: 
     scopeDelta: 0
+  - item: OnPostSerialization
+    data:
+      directEvent: Event_OnPostSerialization
+      guid: 
+    scopeDelta: 0
   - item: OnDeserialization
     data:
       directEvent: Event_OnDeserialization
@@ -317,6 +352,11 @@ MonoBehaviour:
   - item: OnOwnershipTransferred
     data:
       directEvent: Event_OnOwnershipTransferred
+      guid: 
+    scopeDelta: 0
+  - item: OnOwnershipRequest
+    data:
+      directEvent: Event_OnOwnershipRequest
       guid: 
     scopeDelta: 0
   - item: _ScopeEnd New Folder

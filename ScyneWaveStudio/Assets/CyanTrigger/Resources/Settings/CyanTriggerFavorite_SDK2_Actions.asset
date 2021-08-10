@@ -104,6 +104,16 @@ MonoBehaviour:
       directEvent: VRCSDKBaseVRCPlayerApi.__SetJumpImpulse__SystemSingle__SystemVoid
       guid: 
     scopeDelta: 0
+  - item: VRCPlayerApi.DamagePlayer
+    data:
+      directEvent: 
+      guid: 9cfe9ed9-dba6-4a1b-824e-d6d89668527f
+    scopeDelta: 0
+  - item: VRCPlayerApi.HealPlayer
+    data:
+      directEvent: 
+      guid: 87ea8003-6eec-4432-bb8f-29ccdb2eb304
+    scopeDelta: 0
   - item: _ScopeEnd New Folder
     data:
       directEvent: 

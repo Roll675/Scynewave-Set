@@ -30,18 +30,44 @@ namespace CyanTrigger
         // TODO add errors and warnings to udon behaviour
         private readonly List<string> _logWarningMessages = new List<string>();
         private readonly List<string> _logErrorMessages = new List<string>();
+
+        private bool _autoRequestSerialization = false;
+        private CyanTriggerAssemblyInstruction _autoRequestSerializationNop;
         
+        public static void PreBatchCompile()
+        {
+            // TODO clear processed programs
+        }
+
+        public static void PostBatchCompile()
+        {
+            // TODO clear processed programs
+        }
         
+        // TODO cache processed custom programs statically so that work isn't repeated between trigger compiles.
+        
+
         public static bool CompileCyanTrigger(
             CyanTriggerDataInstance trigger,
             CyanTriggerProgramAsset triggerProgramAsset,
             string triggerHash = "")
         {
+            // Don't try to compile the default program.
+            if (triggerHash == CyanTriggerSerializedProgramManager.DefaultProgramAssetGuid)
+            {
+                triggerProgramAsset.SetCompiledData(triggerHash, "", null, null, null, null, null);
+                return true;
+            }
+            
             try
             {
                 if (trigger == null || trigger.variables == null || trigger.events == null)
                 {
-                    triggerProgramAsset.SetCompiledData("", "", null, null, null);
+                    List<string> errors = new List<string>()
+                    {
+                        "Failed to compile because trigger, variables, or events were null.",
+                    };
+                    triggerProgramAsset.SetCompiledData("", "", null, null, null, null, errors);
                     return false;
                 }
 
@@ -49,15 +75,27 @@ namespace CyanTrigger
                 {
                     triggerHash = CyanTriggerInstanceDataHash.HashCyanTriggerInstanceData(trigger);
                 }
-                new CyanTriggerCompiler(trigger, triggerHash).ApplyProgram(triggerProgramAsset);
+
+                CyanTriggerCompiler compiler = new CyanTriggerCompiler(trigger, triggerHash);
+                compiler.ApplyProgram(triggerProgramAsset);
+
+                if (compiler._logErrorMessages.Count > 0)
+                {
+                    triggerProgramAsset.SetCompiledData("", "", null, null, null, 
+                        compiler._logWarningMessages, compiler._logErrorMessages);
+                    return false;
+                }
 
                 return true;
             }
             catch (Exception e)
             {
                 Debug.LogError(e.Message + "\n" + e.StackTrace);
-                
-                triggerProgramAsset.SetCompiledData("", "", null, null, null);
+                List<string> errors = new List<string>()
+                {
+                    "Failed to compile due to error: " + e.Message,
+                };
+                triggerProgramAsset.SetCompiledData("", "", null, null, null,null, errors);
                 
                 return false;
             }
@@ -70,18 +108,22 @@ namespace CyanTrigger
                 CyanTriggerInstanceDataHash.HashCyanTriggerInstanceData(_cyanTriggerDataInstance) :
                 triggerHash;
             
-            _code = new CyanTriggerAssemblyCode();
+            _code = new CyanTriggerAssemblyCode(trigger.updateOrder);
             _data = new CyanTriggerAssemblyData();
             _program = new CyanTriggerAssemblyProgram(_code, _data);
             _variableReferences = new CyanTriggerDataReferences();
-            
+
+            _autoRequestSerialization = _cyanTriggerDataInstance.programSyncMode ==
+                                        CyanTriggerProgramSyncMode.ManualWithAutoRequest;
+            _autoRequestSerializationNop = CyanTriggerAssemblyInstruction.Nop();
+
             // Always create these first.
             _data.CreateSpecialAddressVariables();
             
-            AddUserDefinedVariables();
-            
             _data.AddThisVariables();
             
+            AddUserDefinedVariables();
+
             AddExtraMethods();
 
             ProcessAllEventsAndActions();
@@ -95,14 +137,44 @@ namespace CyanTrigger
         {
             _program.Finish();
             
+            // Automatic RequestSerialization
+            if (_autoRequestSerialization)
+            {
+                var requestActions = CyanTriggerAssemblyActionsUtils.RequestSerializationVariable(_program);
+                foreach (CyanTriggerAssemblyMethod method in _cyanTriggerMethods)
+                {
+                    bool shouldAddRequestSerialization = false;
+                    foreach (CyanTriggerAssemblyInstruction instruction in method.actions)
+                    {
+                        if (instruction == _autoRequestSerializationNop)
+                        {
+                            shouldAddRequestSerialization = true;
+                            break;
+                        }
+                    }
+
+                    if (shouldAddRequestSerialization)
+                    {
+                        method.AddActions(requestActions);
+                    }
+                }
+            }
+            
             foreach (CyanTriggerAssemblyMethod method in _cyanTriggerMethods)
             {
                 method?.PushMethodEndReturnJump(_data);
             }
-            
-            _program.ApplyAddresses();
+
+            try
+            {
+                _program.ApplyAddresses();
+            }
+            catch (CyanTriggerAssemblyMethod.MissingJumpLabelException e)
+            {
+                LogError("Missing Custom Event name: \"" + e.MissingLabel +"\"");
+            }
         }
- 
+
         public void ApplyProgram(CyanTriggerProgramAsset programAsset)
         {
             if (programAsset == null)
@@ -118,7 +190,9 @@ namespace CyanTrigger
                 _program.Export(), 
                 _data.GetHeapDefaultValues(),
                 _variableReferences,
-                _cyanTriggerDataInstance);
+                _cyanTriggerDataInstance,
+                _logWarningMessages,
+                _logErrorMessages);
         }
 
         private void LogWarning(string warning)
@@ -135,34 +209,37 @@ namespace CyanTrigger
         
         private void AddUserDefinedVariables()
         {
-            HashSet<string> variablesWithCallbacks =
-                CyanTriggerCustomNodeOnVariableChanged.GetVariablesWithOnChangedCallback(_cyanTriggerDataInstance.events);
+            bool allValid = false;
+            HashSet<string> variablesWithCallbacks = CyanTriggerCustomNodeOnVariableChanged
+                .GetVariablesWithOnChangedCallback(_cyanTriggerDataInstance.events, ref allValid);
+
+            if (!allValid)
+            {
+                throw new Exception("OnVariableChanged event does not have a selected variable!");
+            }
                
             foreach (var variable in _cyanTriggerDataInstance.variables)
             {
+                if (string.IsNullOrEmpty(variable.name))
+                {
+                    LogError("Global Variable with no name!");
+                    continue;
+                }
+                if (char.IsDigit(variable.name[0]))
+                {
+                    LogError("Global Variable's name starts with a digit! Please ensure the first character is a letter or underscore: "+ variable.name);
+                    continue;
+                }
+                
                 bool hasCallback = variablesWithCallbacks.Contains(variable.variableID);
                 _data.AddUserDefinedVariable(variable.name, variable.variableID, variable.type.type, variable.sync, hasCallback);
                 
                 _variableReferences.userVariables.Add(variable.name, variable.type.type);
             }
-
-            var method = CyanTriggerCustomNodeOnVariableChanged.HandleVariables(_program, _cyanTriggerDataInstance);
-            if (method != null)
-            {
-                AddMethod(method);
-            }
         }
 
         private void AddExtraMethods()
         {
-            if (_cyanTriggerDataInstance.applyAnimatorMove)
-            {
-                CyanTriggerAssemblyMethod udonMethod = GetOrAddMethod("_onAnimatorMove");
-                CyanTriggerAssemblyDataType animatorVar = _program.data.CreateReferenceVariable(typeof(Animator));
-                _variableReferences.animatorSymbol = animatorVar.name;
-                udonMethod.AddActions(CyanTriggerAssemblyActionsUtils.OnAnimatorMove(_program, animatorVar));
-            }
-
             // Get the local player in start
             {
                 CyanTriggerAssemblyMethod udonMethod = GetOrAddMethod("_start");
@@ -363,6 +440,15 @@ namespace CyanTrigger
             if (baseEvent == "Event_Custom")
             {
                 baseEvent = customName;
+                
+                if (string.IsNullOrEmpty(customName))
+                {
+                    LogError("Custom Event with no name!");
+                }
+                else if (char.IsDigit(customName[0]))
+                {
+                    LogError("Custom Event's name starts with a digit! Please ensure the first character is a letter or underscore: "+ customName);
+                }
             }
             else
             {
@@ -466,6 +552,12 @@ namespace CyanTrigger
                     
                     GetDataFromVariableInstance = (multiVarIndex, varIndex, variableInstance, type, output) => 
                         GetDataFromVariableInstance(eventIndex, -1, multiVarIndex, varIndex, variableInstance, type, output),
+                    
+                    CheckVariableChanged = (method, variablesToCheckChanges) => 
+                        CheckVariablesChanged(method, variablesToCheckChanges),
+                    
+                    LogWarning = LogWarning,
+                    LogError = LogError,
                 });
                 return;
             }
@@ -503,6 +595,12 @@ namespace CyanTrigger
                     GetDataFromVariableInstance = (multiVarIndex, varIndex, variableInstance, type, output) =>
                         GetDataFromVariableInstance(eventIndex, actionIndex, multiVarIndex, varIndex, variableInstance,
                             type, output),
+                    
+                    CheckVariableChanged = (method, variablesToCheckChanges) => 
+                        CheckVariablesChanged(method, variablesToCheckChanges),
+                    
+                    LogWarning = LogWarning,
+                    LogError = LogError,
                 };
                 
                 customDefinition.AddActionToProgram(compileState);
@@ -608,27 +706,7 @@ namespace CyanTrigger
                 actionMethod.AddAction(CyanTriggerAssemblyInstruction.CreateExtern(actionType.directEvent));
             }
             
-            
-            for (int curVar = 0; curVar < actionInstance.inputs.Length; ++curVar)
-            {
-                var def = variableDefinitions[curVar];
-                if ((def.variableType & CyanTriggerActionVariableTypeDefinition.VariableOutput) == 0)
-                {
-                    continue;
-                }
-                
-                var input = (curVar == 0 && multiVarIndex != -1) ?
-                    actionInstance.multiInput[multiVarIndex] :
-                    actionInstance.inputs[curVar];
-                
-                CyanTriggerAssemblyDataType srcVariable = GetOutputDataFromVariableInstance(_data, input);
-                if (srcVariable == null)
-                {
-                    continue;
-                }
-                
-                actionMethod.AddActions(CyanTriggerAssemblyActionsUtils.OnVariableChangedCheck(_program, srcVariable));
-            }
+            CheckVariablesChanged(multiVarIndex, actionInstance, actionMethod, variableDefinitions, null);
         }
         
         private void CallActionSingle(
@@ -684,6 +762,18 @@ namespace CyanTrigger
             
 
             // Copy saved variables back
+            CheckVariablesChanged(multiVarIndex, actionInstance, actionMethod, variableDefinitions, actionTranslation);
+        }
+
+        private void CheckVariablesChanged(
+            int multiVarIndex,
+            CyanTriggerActionInstance actionInstance,
+            CyanTriggerAssemblyMethod actionMethod,
+            CyanTriggerActionVariableDefinition[] variableDefinitions,
+            CyanTriggerEventTranslation actionTranslation = null)
+        {
+            List<CyanTriggerAssemblyDataType> variablesToCheckChanges = new List<CyanTriggerAssemblyDataType>();
+            List<CyanTriggerAssemblyDataType> translationVariables = new List<CyanTriggerAssemblyDataType>();
             for (int curVar = 0; curVar < actionInstance.inputs.Length; ++curVar)
             {
                 var def = variableDefinitions[curVar];
@@ -696,16 +786,55 @@ namespace CyanTrigger
                     actionInstance.multiInput[multiVarIndex] :
                     actionInstance.inputs[curVar];
                 
-                CyanTriggerAssemblyDataType destVariable = GetOutputDataFromVariableInstance(_data, input);
-                if (destVariable == null)
+                CyanTriggerAssemblyDataType dstVariable = GetOutputDataFromVariableInstance(_data, input);
+                if (dstVariable == null)
                 {
                     continue;
                 }
-                CyanTriggerAssemblyDataType srcVariable =
-                    _data.GetVariableNamed(actionTranslation.TranslatedVariables[curVar].TranslatedName);
                 
-                actionMethod.AddActions(CyanTriggerAssemblyActionsUtils.CopyVariables(srcVariable, destVariable));
-                actionMethod.AddActions(CyanTriggerAssemblyActionsUtils.OnVariableChangedCheck(_program, destVariable));
+                variablesToCheckChanges.Add(dstVariable);
+                
+                if (actionTranslation != null)
+                {
+                    CyanTriggerAssemblyDataType srcVariable =
+                        _data.GetVariableNamed(actionTranslation.TranslatedVariables[curVar].TranslatedName);
+                    translationVariables.Add(srcVariable);
+                }
+            }
+
+            CheckVariablesChanged(actionMethod, variablesToCheckChanges, translationVariables);
+        }
+
+        private void CheckVariablesChanged(
+            CyanTriggerAssemblyMethod actionMethod,
+            List<CyanTriggerAssemblyDataType> variablesToCheckChanges,
+            List<CyanTriggerAssemblyDataType> translationVariables = null)
+        {
+            // Ensure copy actions happen before variable changed checks
+            if (translationVariables != null && translationVariables.Count == variablesToCheckChanges.Count)
+            {
+                for (int cur = 0; cur < translationVariables.Count; ++cur)
+                {
+                    var srcVariable = translationVariables[cur];
+                    var dstVariable = variablesToCheckChanges[cur];
+                    actionMethod.AddActions(CyanTriggerAssemblyActionsUtils.CopyVariables(srcVariable, dstVariable));
+                }
+            }
+
+            bool isSynced = false;
+            foreach (var dstVariable in variablesToCheckChanges)
+            {
+                if (dstVariable.sync != CyanTriggerVariableSyncMode.NotSynced)
+                {
+                    isSynced = true;
+                }
+                actionMethod.AddActions(CyanTriggerAssemblyActionsUtils.OnVariableChangedCheck(_program, dstVariable));
+            }
+
+            if (isSynced && _autoRequestSerialization)
+            {
+                // Signal that we want to generate code to request serialization at the end of this method.
+                actionMethod.AddAction(_autoRequestSerializationNop);
             }
         }
 
@@ -780,12 +909,6 @@ namespace CyanTrigger
                 return data.GetOrCreateVariableConstant(type, input.data.obj, false);
             }
 
-            // TODO remove
-            if (input.variableID != null && input.variableID.StartsWith("this_"))
-            {
-                input.variableID = "_" + input.variableID;
-            }
-            
             // These methods should automatically verify if the variable exists.
             if (input.variableID != null && CyanTriggerAssemblyData.IsIdThisVariable(input.variableID))
             {
@@ -808,30 +931,24 @@ namespace CyanTrigger
             return variable;
         }
         
-        private static CyanTriggerAssemblyDataType GetOutputDataFromVariableInstance(
+        private CyanTriggerAssemblyDataType GetOutputDataFromVariableInstance(
             CyanTriggerAssemblyData data,
             CyanTriggerActionVariableInstance input)
         {
             if (!input.isVariable)
             {
-                Debug.LogWarning("Trying to copy from a constant value");
+                LogWarning("Trying to copy from a constant value");
                 return null;
             }
             if (string.IsNullOrEmpty(input.variableID))
             {
-                Debug.LogWarning("Output Variable is missing");
+                LogWarning("Output Variable is missing");
                 return null;
             }
-            
-            // TODO remove
-            if (input.variableID != null && input.variableID.StartsWith("this_"))
-            {
-                input.variableID = "_" + input.variableID;
-            }
-            
+
             if (CyanTriggerAssemblyData.IsIdThisVariable(input.variableID))
             {
-                Debug.LogWarning("Cannot use this with output variables");
+                LogWarning("Cannot use this with output variables");
                 return null;
             }
             
@@ -876,61 +993,70 @@ namespace CyanTrigger
                 LogWarning("Program is null for action group! " + actionGroupDefinition.name);
                 return;
             }
-            
-            _processedActionGroupDefinitions.Add(actionGroupDefinition);
-            
-            CyanTriggerAssemblyProgram actionProgram = program.Clone();
-            CyanTriggerAssemblyProgramUtil.ProcessProgramForCyanTriggers(actionProgram);
 
-            CyanTriggerProgramTranslation programTranslation =
-                CyanTriggerAssemblyProgramUtil.AddNamespace(
-                    actionProgram, 
-                    "_action_group_" + _actionDefinitionTranslations.Count);
-
-            Dictionary<string, CyanTriggerItemTranslation> methodMap = 
-                new Dictionary<string, CyanTriggerItemTranslation>();
-            Dictionary<string, CyanTriggerItemTranslation> variableMap = 
-                new Dictionary<string, CyanTriggerItemTranslation>();
-
-            foreach (var method in programTranslation.TranslatedMethods)
+            try
             {
-                methodMap.Add(method.BaseName, method);
-            }
-            foreach (var variable in programTranslation.TranslatedVariables)
-            {
-                variableMap.Add(variable.BaseName, variable);
-            }
-            
-            _program.MergeProgram(actionProgram);
-            
-            foreach (var action in actionGroupDefinition.exposedActions)
-            {
-                CyanTriggerEventTranslation eventTranslation = new CyanTriggerEventTranslation();
-                _actionDefinitionTranslations.Add(action, eventTranslation);
-                
-                eventTranslation.TranslatedAction = methodMap[action.eventEntry];
-                eventTranslation.TranslatedVariables = new CyanTriggerItemTranslation[action.variables.Length];
+                _processedActionGroupDefinitions.Add(actionGroupDefinition);
 
-                for (int cur = 0; cur < action.variables.Length; ++cur)
+                CyanTriggerAssemblyProgram actionProgram = program.Clone();
+                CyanTriggerAssemblyProgramUtil.ProcessProgramForCyanTriggers(actionProgram);
+
+                CyanTriggerProgramTranslation programTranslation =
+                    CyanTriggerAssemblyProgramUtil.AddNamespace(
+                        actionProgram,
+                        "__action_group_" + _actionDefinitionTranslations.Count);
+
+                Dictionary<string, CyanTriggerItemTranslation> methodMap =
+                    new Dictionary<string, CyanTriggerItemTranslation>();
+                Dictionary<string, CyanTriggerItemTranslation> variableMap =
+                    new Dictionary<string, CyanTriggerItemTranslation>();
+
+                foreach (var method in programTranslation.TranslatedMethods)
                 {
-                    eventTranslation.TranslatedVariables[cur] = variableMap[action.variables[cur].udonName];
+                    methodMap.Add(method.BaseName, method);
                 }
-                
-                eventTranslation.ActionJumpVariableName = variableMap[
-                    CyanTriggerAssemblyData.GetSpecialVariableName(CyanTriggerAssemblyData
-                        .CyanTriggerSpecialVariableName.ActionJumpAddress)].TranslatedName;
 
-                List<CyanTriggerItemTranslation> eventInputTranslation = new List<CyanTriggerItemTranslation>();
-                var eventVariables = CyanTriggerAssemblyData.GetEventVariableTypes(action.baseEventName);
-                if (eventVariables != null)
+                foreach (var variable in programTranslation.TranslatedVariables)
                 {
-                    foreach (var variable in eventVariables)
+                    variableMap.Add(variable.BaseName, variable);
+                }
+
+                _program.MergeProgram(actionProgram);
+
+                foreach (var action in actionGroupDefinition.exposedActions)
+                {
+                    CyanTriggerEventTranslation eventTranslation = new CyanTriggerEventTranslation();
+                    _actionDefinitionTranslations.Add(action, eventTranslation);
+
+                    eventTranslation.TranslatedAction = methodMap[action.eventEntry];
+                    eventTranslation.TranslatedVariables = new CyanTriggerItemTranslation[action.variables.Length];
+
+                    for (int cur = 0; cur < action.variables.Length; ++cur)
                     {
-                        eventInputTranslation.Add(variableMap[variable.Item1]);
+                        eventTranslation.TranslatedVariables[cur] = variableMap[action.variables[cur].udonName];
                     }
+
+                    eventTranslation.ActionJumpVariableName = variableMap[
+                        CyanTriggerAssemblyData.GetSpecialVariableName(CyanTriggerAssemblyData
+                            .CyanTriggerSpecialVariableName.ActionJumpAddress)].TranslatedName;
+
+                    List<CyanTriggerItemTranslation> eventInputTranslation = new List<CyanTriggerItemTranslation>();
+                    var eventVariables = CyanTriggerAssemblyData.GetEventVariableTypes(action.baseEventName);
+                    if (eventVariables != null)
+                    {
+                        foreach (var variable in eventVariables)
+                        {
+                            eventInputTranslation.Add(variableMap[variable.Item1]);
+                        }
+                    }
+
+                    eventTranslation.EventTranslatedVariables = eventInputTranslation.ToArray();
                 }
-                
-                eventTranslation.EventTranslatedVariables = eventInputTranslation.ToArray();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Failed to process custom action: " + actionGroupDefinition.name +" " + e);
+                _processedActionGroupDefinitions.Remove(actionGroupDefinition);
             }
         }
     }
@@ -965,7 +1091,7 @@ namespace CyanTrigger
                     variable.Name, 
                     variable.ID,
                     variable.Type, 
-                    CyanTriggerSyncMode.NotSynced,
+                    CyanTriggerVariableSyncMode.NotSynced,
                     false);
                 program.data.GetUserDefinedVariable(variable.ID).export = false;
                 
@@ -1034,6 +1160,15 @@ namespace CyanTrigger
         public CyanTriggerItemTranslation[] TranslatedMethods;
         public CyanTriggerItemTranslation[] TranslatedVariables;
     }
+
+    public class CyanTriggerProgramTranslated
+    {
+        public CyanTriggerAssemblyProgram Program;
+        public Dictionary<string, CyanTriggerItemTranslation> MethodMap = 
+            new Dictionary<string, CyanTriggerItemTranslation>();
+        public Dictionary<string, CyanTriggerItemTranslation> VariableMap = 
+            new Dictionary<string, CyanTriggerItemTranslation>();
+    }
     
     public class CyanTriggerCompileState
     {
@@ -1046,5 +1181,10 @@ namespace CyanTrigger
         // multi index, variable index, variable instance, expected type
         public Func<int, int, CyanTriggerActionVariableInstance, Type, bool, CyanTriggerAssemblyDataType> 
             GetDataFromVariableInstance;
+        
+        public Action<CyanTriggerAssemblyMethod, List<CyanTriggerAssemblyDataType>> CheckVariableChanged;
+
+        public Action<string> LogWarning;
+        public Action<string> LogError;
     }
 }

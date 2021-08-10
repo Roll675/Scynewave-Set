@@ -8,6 +8,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 using VRC.Udon.Common.Interfaces;
+using Object = UnityEngine.Object;
 
 namespace CyanTrigger
 {
@@ -16,6 +17,10 @@ namespace CyanTrigger
         private const float FoldoutListHeaderHeight = 16;
         private const float FoldoutListHeaderAreaHeight = 19;
         
+        private static GUIStyle _footerButtonStyle;
+        private static GUIStyle _footerBackgroundStyle;
+        private static GUIStyle _headerBackgroundStyle;
+
         public static void DrawEditor(SerializedProperty dataProperty, Rect rect, GUIContent variableName, Type type, bool layout = false)
         {
             //EditorGUI.BeginProperty(rect, GUIContent.none, dataProperty);
@@ -122,6 +127,29 @@ namespace CyanTrigger
             return height;
         }
 
+        public static object CreateInitialValueForType(Type variableType, object variableValue, ref bool dirty)
+        {
+            if(!variableType.IsInstanceOfType(variableValue))
+            {
+                if(variableType.IsValueType)
+                {
+                    variableValue = Activator.CreateInstance(variableType);
+                    dirty = true;
+                }
+                else if (variableType.IsArray)
+                {
+                    variableValue = Array.CreateInstance(variableType.GetElementType(), 0);
+                    dirty = true;
+                }
+                else
+                {
+                    variableValue = null;
+                }
+            }
+
+            return variableValue;
+        }
+        
         public static object DisplayPropertyEditor(
             Rect rect, 
             GUIContent content, 
@@ -135,25 +163,14 @@ namespace CyanTrigger
                 Debug.LogWarning("Trying to display an array type using the object method!");
                 return variableValue;
             }
-            
-            if(!variableType.IsInstanceOfType(variableValue))
-            {
-                if(variableType.IsValueType)
-                {
-                    variableValue = Activator.CreateInstance(variableType);
-                    dirty = true;
-                }
-                else
-                {
-                    variableValue = null;
-                }
-            }
+
+            variableValue = CreateInitialValueForType(variableType, variableValue, ref dirty);
 
             if (layout)
             {
                 EditorGUILayout.BeginHorizontal();
             }
-            
+
             EditorGUI.BeginChangeCheck();
             
             if(typeof(UnityEngine.Object).IsAssignableFrom(variableType))
@@ -488,10 +505,36 @@ namespace CyanTrigger
 
             return vector4Value;
         }
-        
+
+
+
+        private static Vector3 _cachedQuaterionEulerVector;
         private static Quaternion DisplayQuaternionEditor(Rect rect, GUIContent symbol, Quaternion quaternionValue, bool layout)
         {
-            return Quaternion.Euler(DisplayVector3Editor(rect, symbol, quaternionValue.eulerAngles, layout));
+            int controlIndex = GUIUtility.GetControlID(FocusType.Passive);
+
+            // Vector3 property editors create 4 controls. Check if current control is within this range.
+            bool IsCurrentControl()
+            {
+                return controlIndex < GUIUtility.keyboardControl && 
+                       GUIUtility.keyboardControl <= controlIndex + 4;
+            }
+
+            Vector3 euler = quaternionValue.eulerAngles;
+            if (IsCurrentControl())
+            {
+                euler = _cachedQuaterionEulerVector;
+            }
+
+            euler = DisplayVector3Editor(rect, symbol, euler, layout);
+            quaternionValue = Quaternion.Euler(euler);
+            
+            if (IsCurrentControl())
+            {
+                _cachedQuaterionEulerVector = euler;
+            }
+            
+            return quaternionValue;
             /*
             Vector4 quaternionVector4 = new Vector4(quaternionValue.x, quaternionValue.y, quaternionValue.z, quaternionValue.w);
             quaternionVector4 = DisplayVector4Editor(rect, symbol, quaternionVector4, layout);
@@ -648,6 +691,8 @@ namespace CyanTrigger
                 return;
             }
             
+            Debug.Assert(variableValue != null, "Cannot create list if value is null!");
+            
             ReorderableList listInstance = list = new ReorderableList(
                 variableValue, 
                 variableType, 
@@ -734,8 +779,9 @@ namespace CyanTrigger
                     reorderableList.list = values;
                 },
                 // Only allow drag for GameObject or Component fields
-                (typeof(GameObject).IsAssignableFrom(variableType) ||
-                 typeof(Component).IsAssignableFrom(variableType)),
+                typeof(GameObject).IsAssignableFrom(variableType) ||
+                 typeof(Component).IsAssignableFrom(variableType) ||
+                 typeof(IUdonEventReceiver).IsAssignableFrom(variableType),
                 dragObjects =>
                 {
                     if (reorderableList == null)
@@ -743,27 +789,23 @@ namespace CyanTrigger
                         return;
                     }
                     
-                    int startIndex = reorderableList.list.Count;
-                    int size = reorderableList.list.Count + dragObjects.Length;
+                    List<Object> objects = GetGameObjectsOrComponentsFromDraggedObjects(dragObjects, variableType);
+
+                    if (objects.Count == 0)
+                    {
+                        return;
+                    }
+                    
+                    int startSize = reorderableList.list.Count;
+                    int size = startSize + objects.Count;
                     Array values = Array.CreateInstance(variableType, size);
                     for (int i = 0; i < reorderableList.list.Count; ++i)
                     {
                         values.SetValue(reorderableList.list[i], i);
                     }
-                    
-                    bool isGameObject = typeof(GameObject).IsAssignableFrom(variableType);
-                    
-                    for (int i = 0; i < dragObjects.Length; i++)
+                    for (int i = 0; i < objects.Count; ++i)
                     {
-                        if (isGameObject)
-                        {
-                            values.SetValue(dragObjects[i], startIndex + i);
-                        }
-                        else
-                        {
-                            // TODO handle multiple components
-                            values.SetValue(dragObjects[i].GetComponent(variableType), startIndex + i);
-                        }
+                        values.SetValue(objects[i], startSize + i);
                     }
 
                     reorderableList.list = values;
@@ -832,6 +874,47 @@ namespace CyanTrigger
 
             return variableValue;
         }
+
+        public static List<Object> GetGameObjectsOrComponentsFromDraggedObjects(Object[] dragObjects, Type type)
+        {
+            List<Object> objects = new List<Object>();
+            bool isGameObject = typeof(GameObject).IsAssignableFrom(type);
+            bool isComponent = typeof(Component).IsAssignableFrom(type) ||
+                               typeof(IUdonEventReceiver).IsAssignableFrom(type);
+                    
+            for (int i = 0; i < dragObjects.Length; i++)
+            {
+                var obj = dragObjects[i];
+                if (isGameObject)
+                {
+                    if (obj is GameObject gameObject)
+                    {
+                        objects.Add(gameObject);
+                    }
+                    else if (obj is Component component)
+                    {
+                        objects.Add(component.gameObject);
+                    }
+                }
+                else if (isComponent)
+                {
+                    if (obj is Component component)
+                    {
+                        objects.Add(component);
+                    }
+                    else if (obj is GameObject gameObject)
+                    {
+                        var components = gameObject.GetComponents(type);
+                        if (components.Length > 0)
+                        {
+                            objects.AddRange(components);
+                        }
+                    }
+                }
+            }
+
+            return objects;
+        }
         
         public static void DrawFoldoutListHeader(
             GUIContent content,
@@ -840,7 +923,7 @@ namespace CyanTrigger
             int currentSize,
             Action<int> onSizeChanged,
             bool allowItemDrag,
-            Action<GameObject[]> onItemDragged,
+            Action<Object[]> onItemDragged,
             bool showError = false,
             bool showHeaderBackground = true,
             bool layout = true,
@@ -852,12 +935,16 @@ namespace CyanTrigger
                 foldMainRect = EditorGUILayout.BeginHorizontal();
             }
             
-            Rect foldoutRect = new Rect(foldMainRect.x + 16, foldMainRect.y + 1, foldMainRect.width - 16, FoldoutListHeaderHeight);
+            Rect foldoutRect = new Rect(foldMainRect.x + 17, foldMainRect.y + 1, foldMainRect.width - 18, FoldoutListHeaderHeight);
             Rect header = new Rect(foldMainRect);
             header.height = foldoutRect.height + 4;
             if (showHeaderBackground && Event.current.type == EventType.Repaint)
             {
-                ((GUIStyle) "RL Header").Draw(header, false, false, false, false);
+                if (_headerBackgroundStyle == null)
+                {
+                    _headerBackgroundStyle = "RL Header";
+                }
+                _headerBackgroundStyle.Draw(header, false, false, false, false);
             }
             
             Rect sizeRect = new Rect(foldoutRect);
@@ -874,12 +961,31 @@ namespace CyanTrigger
                 content.image = EditorGUIUtility.FindTexture("Error");
             }
             
+            // Check dragged objects before foldout as it will become "used" after
+            Event evt = Event.current;
+            if (allowItemDrag &&
+                visibilityState && 
+                header.Contains(evt.mousePosition))
+            {
+                if (evt.type == EventType.DragUpdated)
+                {
+                    DragAndDrop.visualMode = DragAndDropVisualMode.Copy;
+                }
+                if (evt.type == EventType.DragPerform)
+                {
+                    Object[] dragObjects = DragAndDrop.objectReferences.ToArray();
+                    onItemDragged?.Invoke(dragObjects);
+                    DragAndDrop.AcceptDrag();
+                    evt.Use();
+                }
+            }
+            
             CyanTriggerNameHelpers.TruncateContent(content, foldoutRect);
             bool show = EditorGUI.Foldout(foldoutRect, visibilityState, content, true);
             // Just clicked the arrow, unfocus any elements, which could have been the size component
             if (!show && visibilityState)
             {
-                GUI.FocusControl(null);    
+                GUI.FocusControl(null);
             }
             visibilityState = show;
 
@@ -903,38 +1009,35 @@ namespace CyanTrigger
                     onSizeChanged?.Invoke(size);
                 }
             }
-
-            Event evt = Event.current;
-            if (allowItemDrag &&
-                visibilityState && 
-                header.Contains(evt.mousePosition))
-            {
-                if (evt.type == EventType.DragUpdated || evt.type == EventType.Repaint)
-                {
-                    DragAndDrop.visualMode = DragAndDropVisualMode.Copy;
-                }
-                if (evt.type == EventType.DragPerform)
-                {
-                    // TODO properly handle types. Not everything will be a gameobject
-                    GameObject[] dragObjects = DragAndDrop.objectReferences.OfType<GameObject>().ToArray();
-                    onItemDragged?.Invoke(dragObjects);
-                    
-                    DragAndDrop.AcceptDrag();
-                    evt.Use();
-                }
-            }
-
+            
             if (layout)
             {
                 EditorGUILayout.EndHorizontal();
-                GUILayout.Space(header.height-1);
+                float offset = 0;
+#if !UNITY_2019_3_OR_NEWER
+                offset = -3;
+#endif
+                GUILayout.Space(header.height + offset);
             }
         }
 
         public static void DrawButtonFooter(GUIContent[] icons, Action[] buttons, bool[] shouldDisable)
         {
+            if (_footerButtonStyle == null)
+            {
+                _footerButtonStyle = "RL FooterButton";
+                _footerBackgroundStyle = "RL Footer";
+            }
+            
+            
             Rect footerRect = EditorGUILayout.BeginHorizontal();
             float xMax = footerRect.xMax;
+#if UNITY_2019_3_OR_NEWER
+            xMax -= 8;
+            footerRect.height = 16;
+#else
+            footerRect.height = 11;
+#endif
             float x = xMax - 8f;
             const float buttonWidth = 25;
             x -= buttonWidth * icons.Length;
@@ -942,15 +1045,21 @@ namespace CyanTrigger
                     
             if (Event.current.type == EventType.Repaint)
             {
-                ((GUIStyle) "RL Footer").Draw(footerRect, false, false, false, false);
+                _footerBackgroundStyle.Draw(footerRect, false, false, false, false);
             }
+
+#if !UNITY_2019_3_OR_NEWER
+            footerRect.y -= 3f;
+#endif
             
             for (int i = 0; i < icons.Length; ++i)
             {
-                Rect buttonRect = new Rect(x + 4f + buttonWidth * i, footerRect.y - 3f, buttonWidth, 13f);
+                Rect buttonRect = new Rect(x + 4f + buttonWidth * i, footerRect.y, buttonWidth, 13f);
+
                         
                 EditorGUI.BeginDisabledGroup(shouldDisable[i]);
-                GUIStyle style = "RL FooterButton";
+                
+                GUIStyle style = _footerButtonStyle;
                 if (icons[i].image == null)
                 {
                     style = new GUIStyle { alignment = TextAnchor.LowerCenter, fontSize = 8};
@@ -964,7 +1073,7 @@ namespace CyanTrigger
             }
                     
             EditorGUILayout.EndHorizontal();
-            GUILayout.Space(13);
+            GUILayout.Space(footerRect.height + 4);
         }
 
         public static Rect DrawErrorIcon(Rect rect, string reason)
@@ -985,7 +1094,7 @@ namespace CyanTrigger
         }
 
         public static float GetHeightForActionInstanceInputEditors(
-            CyanTriggerActionTreeView.ActionInstanceRenderData actionInstanceRenderData,
+            CyanTriggerActionInstanceRenderData actionInstanceRenderData,
             Func<Type, List<CyanTriggerEditorVariableOption>> getVariableOptionsForType)
         {
             var actionProperty = actionInstanceRenderData.Property;
@@ -1083,11 +1192,13 @@ namespace CyanTrigger
         }
 
         public static void DrawActionInstanceInputEditors(
-            CyanTriggerActionTreeView.ActionInstanceRenderData actionInstanceRenderData,
+            CyanTriggerActionInstanceRenderData actionInstanceRenderData,
             Func<Type, List<CyanTriggerEditorVariableOption>> getVariableOptionsForType,
             Rect rect = default,
             bool layout = false)
         {
+            actionInstanceRenderData.ContainsNull = false;
+            
             var actionProperty = actionInstanceRenderData.Property;
             var variableDefinitions = actionInstanceRenderData.ActionInfo.GetVariables();
             var inputListProperty = actionProperty.FindPropertyRelative(nameof(CyanTriggerActionInstance.inputs));
@@ -1150,7 +1261,7 @@ namespace CyanTrigger
         }
 
         private static void DrawActionVariableInstanceInputEditor(
-            CyanTriggerActionTreeView.ActionInstanceRenderData actionInstanceRenderData,
+            CyanTriggerActionInstanceRenderData actionInstanceRenderData,
             int inputIndex,
             SerializedProperty variableProperty,
             CyanTriggerActionVariableDefinition variableDefinition,
@@ -1162,12 +1273,7 @@ namespace CyanTrigger
 
             GUIContent variableDisplayName =
                 new GUIContent(variableDefinition.displayName, variableDefinition.description);
-
-            SerializedProperty dataProperty =
-                variableProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.data));
-            SerializedProperty isVariableProperty =
-                variableProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.isVariable));
-
+            
             rect.height = GetHeightForActionVariableInstanceInputEditor(
                 variableDefinition,
                 variableProperty,
@@ -1193,11 +1299,13 @@ namespace CyanTrigger
                 EditorGUILayout.Space();
             }
 
+            SerializedProperty isVariableProperty =
+                variableProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.isVariable));
+
             bool isVariable = isVariableProperty.boolValue;
             RenderActionInputInLine(
                 variableDefinition,
                 variableProperty,
-                //variableInstance,
                 getVariableOptionsForType,
                 inputRect,
                 true,
@@ -1209,6 +1317,8 @@ namespace CyanTrigger
             {
                 actionInstanceRenderData.NeedsRedraws = true;
             }
+
+            actionInstanceRenderData.ContainsNull |= InputContainsNullVariableOrValue(variableProperty);
             
             if (layout)
             {
@@ -1220,6 +1330,9 @@ namespace CyanTrigger
                 propertyType.IsArray && 
                 !isVariableProperty.boolValue) // Or is a type that is multiline editor
             {
+                SerializedProperty dataProperty =
+                    variableProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.data));
+                
                 inputRect.y += EditorGUIUtility.singleLineHeight + 5;
                 inputRect.height = rect.height - EditorGUIUtility.singleLineHeight;
 
@@ -1246,7 +1359,7 @@ namespace CyanTrigger
         }
 
         private static void CreateActionVariableInstanceMultiInputEditor(
-            CyanTriggerActionTreeView.ActionInstanceRenderData actionInstanceRenderData,
+            CyanTriggerActionInstanceRenderData actionInstanceRenderData,
             int inputIndex,
             SerializedProperty variableProperty,
             CyanTriggerActionVariableDefinition variableDefinition,
@@ -1285,7 +1398,7 @@ namespace CyanTrigger
         }
         
         public static void DrawActionVariableInstanceMultiInputEditor(
-            CyanTriggerActionTreeView.ActionInstanceRenderData actionInstanceRenderData,
+            CyanTriggerActionInstanceRenderData actionInstanceRenderData,
             int inputIndex,
             SerializedProperty variableProperty,
             CyanTriggerActionVariableDefinition variableDefinition,
@@ -1340,30 +1453,28 @@ namespace CyanTrigger
                         CyanTriggerSerializableObject.UpdateSerializedProperty(dataProperty, null);
                     }
                 },
-                true,
+                // Only allow drag for GameObject or Component fields
+                typeof(GameObject).IsAssignableFrom(propertyType) ||
+                typeof(Component).IsAssignableFrom(propertyType) ||
+                typeof(IUdonEventReceiver).IsAssignableFrom(propertyType),
                 dragObjects =>
                 {
+                    List<Object> objects = GetGameObjectsOrComponentsFromDraggedObjects(dragObjects, propertyType);
+
                     int startIndex = variableProperty.arraySize;
-                    variableProperty.arraySize += dragObjects.Length;
-
-                    bool isGameObject = typeof(GameObject).IsAssignableFrom(propertyType);
-
-                    for (int i = 0; i < dragObjects.Length; i++)
+                    variableProperty.arraySize += objects.Count;
+                    for (int i = 0; i < objects.Count; ++i)
                     {
                         SerializedProperty property = variableProperty.GetArrayElementAtIndex(startIndex + i);
+                        SerializedProperty isVarProperty =
+                            property.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.isVariable));
+                        isVarProperty.boolValue = false;
                         SerializedProperty dataProperty =
                             property.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.data));
-
-                        if (isGameObject)
-                        {
-                            CyanTriggerSerializableObject.UpdateSerializedProperty(dataProperty, dragObjects[i]);
-                        }
-                        else
-                        {
-                            CyanTriggerSerializableObject.UpdateSerializedProperty(dataProperty,
-                                dragObjects[i].GetComponent(propertyType));
-                        }
+                        
+                        CyanTriggerSerializableObject.UpdateSerializedProperty(dataProperty, objects[i]);
                     }
+                    variableProperty.serializedObject.ApplyModifiedProperties();
                 },
                 false,
                 true,
@@ -1374,12 +1485,12 @@ namespace CyanTrigger
             {
                 if (layout)
                 {
+                    GUILayout.Space(2);
                     actionInstanceRenderData.InputLists[inputIndex].DoLayoutList();
                 }
                 else
                 {
                     inputRect.y += FoldoutListHeaderAreaHeight;
-                    // inputRect.height = rect.height - FoldoutListHeaderAreaHeight;
                     actionInstanceRenderData.InputLists[inputIndex].DoList(inputRect);
                 }
             }
@@ -1387,7 +1498,15 @@ namespace CyanTrigger
             if (prevExpand != actionInstanceRenderData.ExpandedInputs[inputIndex] ||
                 arraySize != variableProperty.arraySize)
             {
+                arraySize = variableProperty.arraySize;
                 actionInstanceRenderData.NeedsRedraws = true;
+            }
+
+            actionInstanceRenderData.ContainsNull |= arraySize == 0;
+            for (int curInput = 0; curInput < arraySize && !actionInstanceRenderData.ContainsNull; ++curInput)
+            {
+                var inputProp = variableProperty.GetArrayElementAtIndex(curInput);
+                actionInstanceRenderData.ContainsNull |= InputContainsNullVariableOrValue(inputProp);
             }
 
             // TODO figure out how to get the list here.
@@ -1420,7 +1539,6 @@ namespace CyanTrigger
         private static void RenderActionInputInLine(
             CyanTriggerActionVariableDefinition variableDefinition,
             SerializedProperty variableProperty,
-            //CyanTriggerActionVariableInstance variableInstance,
             Func<Type, List<CyanTriggerEditorVariableOption>> getVariableOptionsForType,
             Rect rect,
             bool displayLabel,
@@ -1443,7 +1561,9 @@ namespace CyanTrigger
                 (variableDefinition.variableType & CyanTriggerActionVariableTypeDefinition.Constant) != 0;
             bool allowsVariables =
                 (variableDefinition.variableType & CyanTriggerActionVariableTypeDefinition.VariableInput) != 0;
-
+            bool outputVar = 
+                (variableDefinition.variableType & CyanTriggerActionVariableTypeDefinition.VariableOutput) != 0;
+            
             // TODO verify this isn't possible. What
             if (!allowsCustomValues && !allowsVariables)
             {
@@ -1478,9 +1598,23 @@ namespace CyanTrigger
             //     labelRect = CyanTriggerPropertyEditor.DrawErrorIcon(labelRect, valid.ToString());
             // }
             
-            // TODO get proper name if name is missing. 
             if (displayLabel)
             {
+                string propertyTypeFriendlyName = CyanTriggerNameHelpers.GetTypeFriendlyName(propertyType);
+                if (string.IsNullOrEmpty(labelContent.text))
+                {
+                    labelContent.text = (outputVar? "out " : "") + propertyTypeFriendlyName;
+                }
+                if (string.IsNullOrEmpty(labelContent.tooltip))
+                {
+                    labelContent.tooltip = $"{labelContent.text} ({propertyTypeFriendlyName})";
+                }
+                if (outputVar)
+                {
+                    labelContent.tooltip += " - The contents of this variable will be modified.";
+                }
+                
+                // TODO show indicator if variable will be edited
                 EditorGUI.LabelField(labelRect, labelContent);
             }
             else
@@ -1523,8 +1657,6 @@ namespace CyanTrigger
                 List<CyanTriggerEditorVariableOption> visibleOptions = new List<CyanTriggerEditorVariableOption>();
                 options.Add("None");
                 
-                bool outputVar = (variableDefinition.variableType &
-                                  CyanTriggerActionVariableTypeDefinition.VariableOutput) != 0;
                 
                 foreach (var varOption in varOptions)
                 {
@@ -1540,8 +1672,14 @@ namespace CyanTrigger
                         selected = options.Count;
                     }
                     visibleOptions.Add(varOption);
-                    options.Add(varOption.Name);
+
+                    string optionName = propertyType != varOption.Type
+                        ? $"{varOption.Name} ({CyanTriggerNameHelpers.GetTypeFriendlyName(varOption.Type)})"
+                        : varOption.Name;
+                    options.Add(optionName);
                 }
+                
+                // TODO add option for new global variable or new local variable which creates the variable before this action
 
                 selected = EditorGUI.Popup(customRect, selected, options.ToArray());
 
@@ -1569,6 +1707,26 @@ namespace CyanTrigger
             {
                 // Cannot edit arrays here, please call RenderActionInputArray directly
             }
+        }
+
+        public static bool InputContainsNullVariableOrValue(SerializedProperty variableProperty)
+        {
+            SerializedProperty isVariableProperty =
+                variableProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.isVariable));
+
+            if (isVariableProperty.boolValue)
+            {
+                SerializedProperty idProperty =
+                    variableProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.variableID));
+                SerializedProperty nameProperty =
+                    variableProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.name));
+
+                return string.IsNullOrEmpty(idProperty.stringValue) && string.IsNullOrEmpty(nameProperty.stringValue);
+            }
+            
+            SerializedProperty dataProperty =
+                variableProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.data));
+            return CyanTriggerSerializableObject.ObjectFromSerializedProperty(dataProperty) == null;
         }
     }
 }

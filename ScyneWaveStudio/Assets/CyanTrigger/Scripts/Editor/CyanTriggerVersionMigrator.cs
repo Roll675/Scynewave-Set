@@ -1,4 +1,6 @@
 ﻿
+using UnityEngine;
+
 namespace CyanTrigger
 {
     public static class CyanTriggerVersionMigrator
@@ -6,7 +8,7 @@ namespace CyanTrigger
         // Returns true if the trigger was migrated.
         public static bool MigrateTrigger(CyanTriggerDataInstance cyanTrigger)
         {
-            if (cyanTrigger == null)
+            if (cyanTrigger == null || cyanTrigger.variables == null || cyanTrigger.events == null)
             {
                 return false;
             }
@@ -26,11 +28,45 @@ namespace CyanTrigger
                 MigrateTriggerToVersion2(cyanTrigger);
             }
 
+            if (cyanTrigger.version == 2)
+            {
+                cyanTrigger.version = 3;
+                migrated = true;
+                MigrateTriggerToVersion3(cyanTrigger);
+            }
+            
             // TODO add more version migrations as data changes
+
+            // Remember to update CyanTriggerDataInstance.DataVersion when data versioning has changed!
+            Debug.Assert(cyanTrigger.version == CyanTriggerDataInstance.DataVersion);
 
             return migrated;
         }
 
+        #region Version 3 Migration
+
+        /*
+         Version 3 changes
+         - Removed OnAnimatorMove (No changes needed)
+         - Added oldValue option to OnVariableChanged that requires storing variable id
+         */
+        private static void MigrateTriggerToVersion3(CyanTriggerDataInstance cyanTrigger)
+        {
+            foreach (var eventTrigger in cyanTrigger.events)
+            {
+                if (eventTrigger.eventInstance.actionType.directEvent ==
+                    CyanTriggerCustomNodeOnVariableChanged.OnVariableChangedEventName)
+                {
+                    CyanTriggerCustomNodeOnVariableChanged.MigrateEvent(
+                        eventTrigger.eventInstance,
+                        cyanTrigger.variables);
+                }
+            }
+        }
+
+
+        #endregion
+        
         #region Version 2 Migration
         /*
          Version 2 changes

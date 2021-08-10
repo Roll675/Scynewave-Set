@@ -50,7 +50,11 @@ namespace CyanTrigger
             // Remove non-exported public variables
             foreach(string publicVariableSymbol in new List<string>(publicVariables.VariableSymbols))
             {
-                if(!symbolTable.HasExportedSymbol(publicVariableSymbol))
+                // Symbol table doesn't have the variable name 
+                // The type for the symbol doesn't match the type currently in the public variable table.
+                if(!symbolTable.HasExportedSymbol(publicVariableSymbol) || 
+                   (publicVariables.TryGetVariableType(publicVariableSymbol, out var type) && 
+                    type != symbolTable.GetSymbolType(publicVariableSymbol)))
                 {
                     //Debug.Log("Removing Reference: " + publicVariableSymbol);
                     publicVariables.RemoveVariable(publicVariableSymbol);
@@ -129,6 +133,7 @@ namespace CyanTrigger
                 usedVariables.Add(variable.name);
 
                 object value = variable.data.obj;
+                value = VerifyVariableData(type, value, () => $"Global variable \"{variable.name}\" contains invalid data for type {type.Name}. Data: {value}. Replacing with default value. Please check the CyanTrigger on object {VRC.Tools.GetGameObjectPath(udonBehaviour.gameObject)}");
                 
                 SetUdonVariable(
                     udonBehaviour, 
@@ -139,7 +144,7 @@ namespace CyanTrigger
                     ref dirty);
 
                 // Variable had a callback. Ensure that previous value is equal to default value.
-                string prevVarName = CyanTriggerAssemblyData.GetPreviousUserVarName(variable.name);
+                string prevVarName = CyanTriggerCustomNodeOnVariableChanged.GetOldVariableName(variable.name);
                 if (symbolTable.HasExportedSymbol(prevVarName))
                 {
                     usedVariables.Add(prevVarName);
@@ -155,85 +160,84 @@ namespace CyanTrigger
             
             foreach (var publicVar in ActionDataIndices)
             {
-                try
-                {
-                    object data = null;
-                    Type type = publicVar.symbolType;
+                object data = null;
+                Type type = publicVar.symbolType;
 
-                    var eventInstance = cyanTriggerDataInstance
-                        .events[publicVar.eventIndex];
-                    CyanTriggerActionInstance actionInstance;
-                    
-                    if (publicVar.actionIndex < 0)
+                var eventInstance = cyanTriggerDataInstance
+                    .events[publicVar.eventIndex];
+                CyanTriggerActionInstance actionInstance;
+
+                string message = $"Event[{publicVar.eventIndex}]";
+                
+                if (publicVar.actionIndex < 0)
+                {
+                    // TODO figure out event organization here
+                    actionInstance = eventInstance.eventInstance;
+                }
+                else
+                {
+                    actionInstance = eventInstance.actionInstances[publicVar.actionIndex];
+                    message += $".Action[{publicVar.actionIndex}]";
+                }
+
+                // TODO figure out a way to get modified data from custom udon node definitions.
+                if (actionInstance != null)
+                {
+                    CyanTriggerActionVariableInstance variableInstance;
+                    if (publicVar.multiVariableIndex != -1)
                     {
-                        // TODO figure out event organization here
-                        actionInstance = eventInstance.eventInstance;
+                        variableInstance = actionInstance.multiInput[publicVar.multiVariableIndex];
+                        message += $".Input[0][{publicVar.multiVariableIndex}]";
                     }
                     else
                     {
-                        actionInstance = eventInstance.actionInstances[publicVar.actionIndex];
+                        variableInstance = actionInstance.inputs[publicVar.variableIndex];
+                        message += $".Input[{publicVar.variableIndex}]";
                     }
 
-                    // TODO figure out a way to get modified data from custom udon node definitions.
-                    if (actionInstance != null)
-                    {
-                        CyanTriggerActionVariableInstance variableInstance;
-                        if (publicVar.multiVariableIndex != -1)
-                        {
-                            variableInstance = actionInstance.multiInput[publicVar.multiVariableIndex];
-                        }
-                        else
-                        {
-                            variableInstance = actionInstance.inputs[publicVar.variableIndex];
-                        }
-
-                        data = variableInstance.data.obj;
-                    }
-                    
-                    // TODO fix this. This is too hacky.
-                    if (type == typeof(CyanTrigger))
-                    {
-                        type = typeof(IUdonEventReceiver);
-                        if (data is CyanTrigger trigger)
-                        {
-                            data = trigger.triggerInstance.udonBehaviour;
-                        }
-                    }
-
-                    // TODO find a better way here...
-                    if (publicVar.variableIndex == 1 && 
-                        actionInstance.actionType.directEvent == CyanTriggerCustomNodeSetComponentActive.FullName )
-                    {
-                        string varType = data as string;
-                        if (CyanTriggerNodeDefinitionManager.TryGetComponentType(varType, out var componentType))
-                        {
-                            data = componentType.AssemblyQualifiedName;
-                        }
-                    }
-                    
-#if CYAN_TRIGGER_DEBUG
-                    Type expectedType = symbolTable.GetSymbolType(publicVar.symbolName);
-                    if (expectedType != type)
-                    {
-                        Debug.LogWarning("Type for symbol does not match public variable type. " + expectedType +", " + type);
-                    }
-#endif
-                    
-                    usedVariables.Add(publicVar.symbolName);
-                    
-                    SetUdonVariable(
-                        udonBehaviour, 
-                        publicVariables, 
-                        publicVar.symbolName, 
-                        type, 
-                        data,
-                        ref dirty);
+                    data = variableInstance.data.obj;
                 }
-                catch (Exception ex)
+                
+                // TODO fix this. This is too hacky.
+                if (type == typeof(CyanTrigger))
                 {
-                    Debug.LogError("Could not set default variable for trigger: " +publicVar);
-                    Debug.LogError(ex);
+                    type = typeof(IUdonEventReceiver);
+                    if (data is CyanTrigger trigger)
+                    {
+                        data = trigger.triggerInstance.udonBehaviour;
+                    }
                 }
+
+                // TODO find a better way here...
+                if (publicVar.variableIndex == 1 && 
+                    actionInstance.actionType.directEvent == CyanTriggerCustomNodeSetComponentActive.FullName )
+                {
+                    string varType = data as string;
+                    if (CyanTriggerNodeDefinitionManager.TryGetComponentType(varType, out var componentType))
+                    {
+                        data = componentType.AssemblyQualifiedName;
+                    }
+                }
+                
+#if CYAN_TRIGGER_DEBUG
+                Type expectedType = symbolTable.GetSymbolType(publicVar.symbolName);
+                if (expectedType != type)
+                {
+                    Debug.LogWarning("Type for symbol does not match public variable type. " + expectedType +", " + type);
+                }
+#endif
+                
+                usedVariables.Add(publicVar.symbolName);
+                
+                data = VerifyVariableData(type, data, () => $"{message} contains invalid data for type {type.Name}. Data: {data}. Replacing with default value. Please check the CyanTrigger on object {VRC.Tools.GetGameObjectPath(udonBehaviour.gameObject)}");
+
+                SetUdonVariable(
+                    udonBehaviour, 
+                    publicVariables, 
+                    publicVar.symbolName, 
+                    type, 
+                    data,
+                    ref dirty);
             }
             
 #if CYAN_TRIGGER_DEBUG
@@ -248,6 +252,22 @@ namespace CyanTrigger
 #endif
         }
 
+        private static object VerifyVariableData(
+            Type symbolType,
+            object value,
+            Func<string> getMessage)
+        {
+            bool badData = false;
+            object other = CyanTriggerPropertyEditor.CreateInitialValueForType(symbolType, value, ref badData);
+            if (badData)
+            {
+                Debug.LogError(getMessage());
+                value = other;
+            }
+
+            return value;
+        }
+
         private static void SetUdonVariable(
             UdonBehaviour udonBehaviour, 
             IUdonVariableTable publicVariables, 
@@ -256,15 +276,18 @@ namespace CyanTrigger
             object value, 
             ref bool dirty)
         {
+            value = VerifyVariableData(symbolType, value, () => $"Variable \"{exportedSymbol}\" contains invalid data for type {symbolType.Name}. Data: {value}. Replacing with default value. Please check the CyanTrigger on object {VRC.Tools.GetGameObjectPath(udonBehaviour.gameObject)}");
+            
             bool hasVariable = publicVariables.TryGetVariableValue(exportedSymbol, out object variableValue);
 
             if (value == null || (value is UnityEngine.Object unityValue && unityValue == null))
             {
-                if (hasVariable)
+                if (hasVariable && variableValue != null)
                 {
                     dirty = true;
                     //Debug.Log(exportedSymbol +" was changed! " + variableValue +" to " +value);
 
+                    //Debug.Log("Setting object dirty after removing variable: " + VRC.Tools.GetGameObjectPath(udonBehaviour.gameObject) +" " +exportedSymbol);
                     EditorUtility.SetDirty(udonBehaviour);
  
                     Undo.RecordObject(udonBehaviour, "Modify Public Variable");
@@ -287,6 +310,7 @@ namespace CyanTrigger
                 dirty = true;
                 //Debug.Log(exportedSymbol +" was changed! " + variableValue +" to " +value);
 
+                //Debug.Log("Setting object dirty after updating variable: " + VRC.Tools.GetGameObjectPath(udonBehaviour.gameObject));
                 EditorUtility.SetDirty(udonBehaviour);
  
                 Undo.RecordObject(udonBehaviour, "Modify Public Variable");

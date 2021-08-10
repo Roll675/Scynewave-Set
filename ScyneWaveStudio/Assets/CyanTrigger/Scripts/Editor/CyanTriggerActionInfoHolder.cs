@@ -237,7 +237,16 @@ namespace CyanTrigger
                 CyanTriggerActionGroupDefinitionUtil.TryGetActionGroupDefinition(action, out this.actionGroup);
             }
         }
-        
+
+        public CyanTriggerActionType GetActionType()
+        {
+            return new CyanTriggerActionType
+            {
+                guid = action?.guid,
+                directEvent = definition?.fullName
+            };
+        }
+
         public string GetDisplayName()
         {
             if (definition != null)
@@ -354,7 +363,7 @@ namespace CyanTrigger
             */
         }
 
-        public CyanTriggerEditorVariableOption[] GetVariableOptions()
+        public CyanTriggerEditorVariableOption[] GetVariableOptions(SerializedProperty eventProperty)
         {
             var def = definition;
             if (action != null)
@@ -366,8 +375,14 @@ namespace CyanTrigger
             {
                 return new CyanTriggerEditorVariableOption[0];
             }
-            
+
             List<CyanTriggerEditorVariableOption> variables = new List<CyanTriggerEditorVariableOption>();
+            var options = GetCustomEditorVariableOptions(eventProperty);
+            if (options != null)
+            {
+                return options;
+            }
+            
             foreach (var (varName, varType) in def.GetEventVariables(/* output only UdonNodeParameter.ParameterType */))
             {
                 variables.Add(new CyanTriggerEditorVariableOption 
@@ -417,7 +432,7 @@ namespace CyanTrigger
                 actionListProperty.GetArrayElementAtIndex(actionListProperty.arraySize - 1);
             properties.Add(newActionProperty);
             
-            SetActionData(newActionProperty);
+            CyanTriggerSerializedPropertyUtils.SetActionData(this, newActionProperty);
             
             // If scope, add appropriate end point
             if (includeDependencies &&
@@ -433,230 +448,6 @@ namespace CyanTrigger
             }
 
             return properties;
-        }
-        
-        public void SetActionData(SerializedProperty actionProperty)
-        {
-            SerializedProperty actionTypeProperty =
-                actionProperty.FindPropertyRelative(nameof(CyanTriggerActionInstance.actionType));
-            SerializedProperty directEvent =
-                actionTypeProperty.FindPropertyRelative(nameof(CyanTriggerActionType.directEvent));
-            SerializedProperty guidProperty =
-                actionTypeProperty.FindPropertyRelative(nameof(CyanTriggerActionType.guid));
-            SerializedProperty inputsProperty =
-                actionProperty.FindPropertyRelative(nameof(CyanTriggerActionInstance.inputs));
-            SerializedProperty multiInputsProperty =
-                actionProperty.FindPropertyRelative(nameof(CyanTriggerActionInstance.multiInput));
-            multiInputsProperty.ClearArray();
-
-            if (action != null)
-            {
-                guidProperty.stringValue = action.guid;
-                directEvent.stringValue = null;
-                SetPropertyInputDefaults(inputsProperty, multiInputsProperty, action.variables);
-            }
-
-            if (definition != null)
-            {
-                guidProperty.stringValue = null;
-                directEvent.stringValue = definition.fullName;
-
-                SetPropertyInputDefaults(inputsProperty, multiInputsProperty, definition.variableDefinitions);
-                
-                if (customDefinition != null && customDefinition.HasCustomVariableInitialization())
-                {
-                    customDefinition.InitializeVariableProperties(inputsProperty, multiInputsProperty);
-                }
-            }
-            
-            actionProperty.serializedObject.ApplyModifiedProperties();
-        }
-
-        private static void SetPropertyInputDefaults(
-            SerializedProperty inputsProperty, 
-            SerializedProperty multiInputsProperty,
-            CyanTriggerActionVariableDefinition[] variableDefinitions)
-        {
-            inputsProperty.ClearArray();
-            inputsProperty.arraySize = variableDefinitions.Length;
-            
-            for (int cur = 0; cur < variableDefinitions.Length; ++cur)
-            {
-                var variableDef = variableDefinitions[cur];
-                Type type = variableDef.type.type;
-                
-                SerializedProperty inputProperty;
-                if (cur == 0 && (variableDef.variableType & CyanTriggerActionVariableTypeDefinition.AllowsMultiple) != 0)
-                {
-                    if (type == typeof(VRCPlayerApi))
-                    {
-                        multiInputsProperty.arraySize = 1;
-                        inputProperty = multiInputsProperty.GetArrayElementAtIndex(cur);
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                }
-                else
-                {
-                    inputProperty = inputsProperty.GetArrayElementAtIndex(cur);
-                }
-                    
-                SerializedProperty dataProperty =
-                    inputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.data));
-                SerializedProperty isVariableProperty =
-                    inputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.isVariable));
-                    
-                var data = variableDef.defaultValue?.obj;
-                if (data == null)
-                {
-                    if(type.IsValueType)
-                    {
-                        data = Activator.CreateInstance(type);
-                    }
-                    else if (type.IsArray)
-                    {
-                        data = Array.CreateInstance(type, 0);
-                    } 
-                    else if (type == typeof(string))
-                    {
-                        data = "";
-                    }
-                }
-
-                if ((variableDef.variableType & CyanTriggerActionVariableTypeDefinition.Constant) == 0)
-                {
-                    isVariableProperty.boolValue = true;
-                }
-
-                if (type == typeof(VRCPlayerApi))
-                {
-                    isVariableProperty.boolValue = true;
-                    SerializedProperty nameProperty =
-                        inputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.name));
-                    SerializedProperty idProperty =
-                        inputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.variableID));
-
-                    nameProperty.stringValue = CyanTriggerAssemblyData.LocalPlayerName;
-                    idProperty.stringValue = CyanTriggerAssemblyData.LocalPlayerGUID;
-                }
-                
-                CyanTriggerSerializableObject.UpdateSerializedProperty(dataProperty, data);
-            }
-        }
-
-        public void CopyDataAndRemapVariables(
-            SerializedProperty srcProperty,
-            SerializedProperty dstProperty, 
-            Dictionary<string, string> variableGuidMap)
-        {
-            SerializedProperty srcInputsProperty =
-                srcProperty.FindPropertyRelative(nameof(CyanTriggerActionInstance.inputs));
-            SerializedProperty dstInputsProperty =
-                dstProperty.FindPropertyRelative(nameof(CyanTriggerActionInstance.inputs));
-            SerializedProperty srcMultiInputsProperty =
-                srcProperty.FindPropertyRelative(nameof(CyanTriggerActionInstance.multiInput));
-            SerializedProperty dstMultiInputsProperty =
-                dstProperty.FindPropertyRelative(nameof(CyanTriggerActionInstance.multiInput));
-
-            int startIndex = 0;
-            int endIndex = srcInputsProperty.arraySize;
-            
-            // If defines custom variables, get old guid and add mapping
-            if (customDefinition != null && customDefinition.DefinesCustomEditorVariableOptions())
-            {
-                var srcOptions = customDefinition.GetCustomEditorVariableOptions(srcInputsProperty);
-                var dstOptions = customDefinition.GetCustomEditorVariableOptions(dstInputsProperty);
-
-                Debug.Assert(srcOptions.Length == dstOptions.Length,
-                    "Duplicated property has different custom variable option sizes! src: " + srcOptions.Length +
-                    ", dst: " + dstOptions.Length);
-
-                for (int cur = 0; cur < srcOptions.Length; ++cur)
-                {
-                    string srcGuid = srcOptions[cur].ID;
-                    string dstGuid = dstOptions[cur].ID;
-                    variableGuidMap.Add(srcGuid, dstGuid);
-                }
-
-                // Ensure that variable data is not overwritten when copied
-                if (customDefinition is CyanTriggerCustomNodeVariableProvider variableProvider)
-                {
-                    (startIndex, endIndex) = variableProvider.GetDefinitionVariableRange();
-                }
-            }
-
-            // Copy all data from the source property to the destination.
-            // Ensure that variable guids are remapped properly.
-            SetPropertyInputDefaults(
-                srcInputsProperty, 
-                dstInputsProperty, 
-                srcMultiInputsProperty,
-                dstMultiInputsProperty,
-                variableGuidMap, 
-                startIndex, 
-                endIndex);
-        }
-
-        private static void SetPropertyInputDefaults(
-            SerializedProperty srcInputProperties,
-            SerializedProperty dstInputProperties,
-            SerializedProperty srcMultiInputProperties,
-            SerializedProperty dstMultiInputProperties,
-            Dictionary<string, string> variableGuidMap,
-            int startIndex,
-            int endIndex)
-        {
-            void CopyInputProperty(SerializedProperty srcInputProperty, SerializedProperty dstInputProperty)
-            {
-                SerializedProperty srcDataProperty =
-                    srcInputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.data));
-                SerializedProperty srcIsVariableProperty =
-                    srcInputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.isVariable));
-                SerializedProperty srcGuidProperty =
-                    srcInputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.variableID));
-                SerializedProperty srcNameProperty =
-                    srcInputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.name));
-                
-                SerializedProperty dstDataProperty =
-                    dstInputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.data));
-                SerializedProperty dstIsVariableProperty =
-                    dstInputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.isVariable));
-                SerializedProperty dstGuidProperty =
-                    dstInputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.variableID));
-                SerializedProperty dstNameProperty =
-                    dstInputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.name));
-
-                dstIsVariableProperty.boolValue = srcIsVariableProperty.boolValue;
-                dstNameProperty.stringValue = srcNameProperty.stringValue;
-                
-                CyanTriggerSerializableObject.CopySerializedProperty(srcDataProperty, dstDataProperty);
-                
-                // Remap the variable if it was duplicated
-                string srcGuid = srcGuidProperty.stringValue;
-                if (!variableGuidMap.TryGetValue(srcGuid, out var dstGuid))
-                {
-                    dstGuid = srcGuid;
-                }
-                dstGuidProperty.stringValue = dstGuid;
-            }
-            
-            dstInputProperties.arraySize = srcInputProperties.arraySize;
-            for (int cur = startIndex; cur < endIndex; ++cur)
-            {
-                SerializedProperty srcInputProperty = srcInputProperties.GetArrayElementAtIndex(cur);
-                SerializedProperty dstInputProperty = dstInputProperties.GetArrayElementAtIndex(cur);
-                CopyInputProperty(srcInputProperty, dstInputProperty);
-            }
-            
-            dstMultiInputProperties.arraySize = srcMultiInputProperties.arraySize;
-            for (int cur = 0; cur < srcMultiInputProperties.arraySize; ++cur)
-            {
-                SerializedProperty srcInputProperty = srcMultiInputProperties.GetArrayElementAtIndex(cur);
-                SerializedProperty dstInputProperty = dstMultiInputProperties.GetArrayElementAtIndex(cur);
-                CopyInputProperty(srcInputProperty, dstInputProperty);
-            }
         }
 
         public string GetActionRenderingDisplayName(SerializedProperty actionProperty)

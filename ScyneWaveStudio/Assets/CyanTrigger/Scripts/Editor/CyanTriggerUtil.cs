@@ -233,11 +233,18 @@ namespace CyanTrigger
 
         public static CyanTriggerDataInstance CopyCyanTriggerDataInstance(CyanTriggerDataInstance data, bool copyData)
         {
+            if (data == null)
+            {
+                return null;
+            }
+            
             CyanTriggerDataInstance ret = new CyanTriggerDataInstance()
             {
-                applyAnimatorMove = data.applyAnimatorMove,
+                version = data.version,
                 events = new CyanTriggerEvent[data.events.Length],
                 variables = new CyanTriggerVariable[data.variables.Length],
+                programSyncMode = data.programSyncMode,
+                updateOrder = data.updateOrder
             };
 
             for (int cur = 0; cur < ret.events.Length; ++cur)

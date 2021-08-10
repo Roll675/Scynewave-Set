@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEditor;
+#if UNITY_2019_3_OR_NEWER
+using UnityEditor.Experimental.GraphView;
+#else
 using UnityEditor.Experimental.UIElements.GraphView;
+#endif
 using UnityEngine;
 
 namespace CyanTrigger
@@ -57,6 +61,18 @@ namespace CyanTrigger
         {
             if (entry.userData is CyanTriggerSettingsFavoriteItem favoritedItem && OnDefinitionSelected != null)
             {
+                if (CyanTriggerSearchWindow.WasEventRightClick)
+                {
+                    GenericMenu menu = new GenericMenu();
+                    menu.AddItem(new GUIContent("Add Item"), false, () =>
+                    {
+                        OnDefinitionSelected.Invoke(favoritedItem);
+                    });
+                
+                    menu.ShowAsContext();
+                    return false;
+                }
+                
                 OnDefinitionSelected.Invoke(favoritedItem);
                 return true;
             }

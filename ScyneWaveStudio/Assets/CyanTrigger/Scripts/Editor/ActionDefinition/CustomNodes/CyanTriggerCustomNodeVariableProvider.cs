@@ -168,6 +168,27 @@ namespace CyanTrigger
 
             inputsProperty.serializedObject.ApplyModifiedProperties();
         }
+
+        public void CopyVariableName(SerializedProperty srcInputs, SerializedProperty dstInputs)
+        {
+            int initialVarCount = GetNodeDefinition().parameters.Count;
+            int startIndex = ShowDefinedVariablesAtBeginning() ? initialVarCount : 0;
+            (string, Type)[] variables = GetVariables();
+
+            int index = 0;
+            for (int input = startIndex; index < variables.Length; ++input, ++index)
+            {
+                SerializedProperty srcInputProperty = srcInputs.GetArrayElementAtIndex(input);
+                SerializedProperty srcNameDataProperty =
+                    srcInputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.data));
+                
+                SerializedProperty dstInputProperty = dstInputs.GetArrayElementAtIndex(input);
+                SerializedProperty dstNameDataProperty =
+                    dstInputProperty.FindPropertyRelative(nameof(CyanTriggerActionVariableInstance.data));
+                
+                CyanTriggerSerializableObject.CopySerializedProperty(srcNameDataProperty, dstNameDataProperty);
+            }
+        }
         
         protected string GetUserDefinedVariableName(CyanTriggerActionInstance actionInstance, int index)
         {

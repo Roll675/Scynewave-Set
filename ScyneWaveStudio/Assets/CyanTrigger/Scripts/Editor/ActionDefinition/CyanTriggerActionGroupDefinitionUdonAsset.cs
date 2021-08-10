@@ -118,6 +118,18 @@ namespace CyanTrigger
             
             IUdonProgram program = udonProgramAsset.SerializedProgramAsset.RetrieveProgram();
             
+            // Verify program has actions expected?
+            if (!VerifyProgramActions(program))
+            {
+                udonProgramAsset.RefreshProgram();
+                program = udonProgramAsset.SerializedProgramAsset.RetrieveProgram();
+                if (!VerifyProgramActions(program))
+                {
+                    Debug.LogError("CyanTrigger Custom Action Definition is invalid! " + name);
+                    return null;
+                }
+            }
+            
             return CyanTriggerAssemblyProgramUtil.CreateProgram(program);
         }
 

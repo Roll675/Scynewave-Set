@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
+#if UNITY_2019_3_OR_NEWER
+using UnityEditor.Experimental.GraphView;
+#else
 using UnityEditor.Experimental.UIElements.GraphView;
+#endif
 using UnityEngine;
 
 namespace CyanTrigger
@@ -25,13 +30,13 @@ namespace CyanTrigger
             "UnityEngine",
             "VRC",
             "Other",
-            "Recent", // TODO?
+            //"Recent", // TODO?
         };
         
         private static readonly List<(string, string)> _shortcutRegistries = new List<(string, string)>()
         {
             // ("UnityEngine","Debug"),
-            // ("VRC", "UdonBehaviour")
+            ("VRC", "UdonBehaviour")
         };
 
         public static void ResetCache()
@@ -55,6 +60,17 @@ namespace CyanTrigger
             }
             if (entry.userData is CyanTriggerActionInfoHolder actionInfo && OnDefinitionSelected != null)
             {
+                if (CyanTriggerSearchWindow.WasEventRightClick)
+                {
+                    GenericMenu menu = new GenericMenu();
+                    menu.AddItem(new GUIContent("Add Action"), false, () =>
+                    {
+                        OnDefinitionSelected.Invoke(actionInfo);
+                    });
+                
+                    menu.ShowAsContext();
+                    return false;
+                }
                 OnDefinitionSelected.Invoke(actionInfo);
                 return true;
             }
@@ -71,19 +87,24 @@ namespace CyanTrigger
                 _blankIcon.Apply();
             }
 
-            if (_vrcActionDefinitions == null)
+            // if (_vrcActionDefinitions == null)
+            // {
+            //     GetVrcActionDefinitions();
+            // }
+
+            if (_registryCache != null && _registryCache.Count > 0)
             {
-                GetVrcActionDefinitions();
+                return _registryCache;
             }
             
-            if (_registryCache != null && _registryCache.Count > 0) return _registryCache;
+            GetVrcActionDefinitions();
             
             _registryCache = new List<SearchTreeEntry>();
             _registryCache.Add(new SearchTreeGroupEntry(new GUIContent("Action Search"), 0));
             _registryCache.AddRange(_vrcActionDefinitions);
 
-            _registryCache.Add(new SearchTreeGroupEntry(new GUIContent("User Actions"), 1));
-            _registryCache.AddRange(GetUserDefinedActions());
+            // _registryCache.Add(new SearchTreeGroupEntry(new GUIContent("User Actions"), 1));
+            // _registryCache.AddRange(GetUserDefinedActions());
 
             return _registryCache;
         }
@@ -99,6 +120,36 @@ namespace CyanTrigger
                 categorizedNodes.Add(category, new Dictionary<string, List<CyanTriggerActionInfoHolder>>());
             }
 
+            Dictionary<string, string> secondaryToPrimaryLookup = new Dictionary<string, string>();
+            
+            void AddNodeToSorting(string primaryKey, string secondaryKey, CyanTriggerActionInfoHolder actionInfo)
+            {
+                if (!categorizedNodes.TryGetValue(primaryKey, out var primaryCategories))
+                {
+                    primaryCategories = new Dictionary<string, List<CyanTriggerActionInfoHolder>>();
+                    categorizedNodes.Add(primaryKey, primaryCategories);
+                }
+                
+                if (!primaryCategories.TryGetValue(secondaryKey, out var nodeList))
+                {
+                    nodeList = new List<CyanTriggerActionInfoHolder>();
+                    primaryCategories.Add(secondaryKey, nodeList);
+                }
+
+                if (!secondaryToPrimaryLookup.TryGetValue(secondaryKey, out string curPri))
+                {
+                    secondaryToPrimaryLookup.Add(secondaryKey, primaryKey);
+                } 
+#if CYAN_TRIGGER_DEBUG
+                // else if (curPri != primaryKey)
+                // {
+                //     Debug.LogWarning("Secondary Key matches multiple primary! " + secondaryKey +": " + primaryKey +" != " +curPri);
+                // }
+#endif
+                
+                nodeList.Add(actionInfo);
+            }
+
             foreach (var nodeDefinition in CyanTriggerNodeDefinitionManager.GetDefinitions())
             {
                 if (CyanTriggerNodeDefinitionManager.DefinitionIsHidden(nodeDefinition.fullName))
@@ -112,23 +163,36 @@ namespace CyanTrigger
                 {
                     continue;
                 }
-
+                
+                var actionInfo = CyanTriggerActionInfoHolder.GetActionInfoHolder(nodeDefinition);
+                if (!actionInfo.IsValid())
+                {
+#if CYAN_TRIGGER_DEBUG
+                    Debug.LogWarning("[CyanTriggerActionSearchWindow] Invalid action info: " + nodeDefinition.fullName);
+#endif
+                    continue;
+                }
+                
                 string primaryKey = sortings[0];
                 string secondaryKey = sortings[1];
 
-                if (!categorizedNodes.TryGetValue(primaryKey, out var primaryCategories))
-                {
-                    primaryCategories = new Dictionary<string, List<CyanTriggerActionInfoHolder>>();
-                    categorizedNodes.Add(primaryKey, primaryCategories);
-                }
-                
-                if (!primaryCategories.TryGetValue(secondaryKey, out var nodeList))
-                {
-                    nodeList = new List<CyanTriggerActionInfoHolder>();
-                    primaryCategories.Add(secondaryKey, nodeList);
-                }
+                AddNodeToSorting(primaryKey, secondaryKey, actionInfo);
+            }
 
-                nodeList.Add(CyanTriggerActionInfoHolder.GetActionInfoHolder(nodeDefinition));
+            // Get user defined so they add to the proper categories
+            {
+                foreach (var actionInfo in CyanTriggerActionGroupDefinitionUtil.GetActionInfoHolders())
+                {
+                    string displayName = actionInfo.GetDisplayName();
+
+                    if (secondaryToPrimaryLookup.TryGetValue(displayName, out string primaryKey))
+                    {
+                        // Add in two locations so that you can find custom with the vrc methods.
+                        AddNodeToSorting(primaryKey, displayName, actionInfo);
+                    }
+                    
+                    AddNodeToSorting("Custom Actions", displayName + " (Custom)", actionInfo);
+                }
             }
             
             // Add shortcuts
@@ -184,6 +248,9 @@ namespace CyanTrigger
                 // Skip empty lists
                 if (pairs.Count == 0)
                 {
+#if CYAN_TRIGGER_DEBUG
+                    Debug.LogWarning("[CyanTriggerActionSearchWindow] Skipping empty pair: "+topName);
+#endif
                     continue;
                 }
                 
@@ -221,8 +288,8 @@ namespace CyanTrigger
             // Lazy
             if (nodeDefinition.definitionType == CyanTriggerNodeDefinition.UdonDefinitionType.Type)
             {
-                //return new [] {"Type", "Type"};
-                return new [] {"Type", "Type " + nodeDefinition.typeFriendlyName};
+                return new [] {"Type", "Type"};
+                //return new [] {"Type", "Type " + nodeDefinition.typeFriendlyName};
             }
             if (nodeDefinition.definitionType == CyanTriggerNodeDefinition.UdonDefinitionType.CyanTriggerVariable)
             {
@@ -248,6 +315,13 @@ namespace CyanTrigger
             {
                 return new [] {"UnityEngine", nodeDefinition.typeFriendlyName};
             }
+
+            // TODO find these and figure out if they need to be implemented.
+            if (nodeDefinition.typeFriendlyName == "Void")
+            {
+                return null;
+            }
+            
             // Cinemachine, TMPro, and ??? go under Other
             return new [] {"Other", nodeDefinition.typeFriendlyName};
         }

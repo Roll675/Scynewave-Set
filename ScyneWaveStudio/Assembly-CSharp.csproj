@@ -233,6 +233,7 @@
      <None Include="Assets\Mochie\ScreenFX Shader\SFXKeyDefines.cginc" />
      <None Include="Assets\VRCSDK\Sample Assets\Shaders\Mobile\VRChat-Mobile-BumpedSpecular.shader" />
      <None Include="Assets\Mochie\Uber Shader\Uber X (Outline).shader" />
+     <None Include="Assets\CyanTriggerExamples\GeneralExamples\Shaders\UnlitDoubleSidedOverlay.shader" />
      <None Include="Assets\VRCSDK\Sample Assets\Shaders\Mobile\VRChat-Mobile-BumpedDiffuse.shader" />
      <None Include="Assets\Mochie\ScreenFX Shader\SFX X.shader" />
      <None Include="Assets\VRCSDK\Sample Assets\Shaders\Mirror.shader" />

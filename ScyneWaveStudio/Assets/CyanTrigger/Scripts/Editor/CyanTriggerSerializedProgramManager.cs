@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Profiling;
-using VRC.SDKBase;
 
 namespace CyanTrigger
 {
@@ -32,8 +30,8 @@ namespace CyanTrigger
         private readonly Dictionary<string, CyanTriggerProgramAsset> _programAssets =
             new Dictionary<string, CyanTriggerProgramAsset>();
 
-        public CyanTriggerProgramAsset DefaultProgramAsset { get; }
-
+        public CyanTriggerProgramAsset DefaultProgramAsset => _defaultProgramAsset;
+        private CyanTriggerProgramAsset _defaultProgramAsset;
 
         public static string GetExpectedProgramName(string guid)
         {
@@ -58,7 +56,7 @@ namespace CyanTrigger
         public static AssetDeleteResult OnWillDeleteAsset(string assetPath, RemoveAssetOptions options)
         {
             // Skip, since there is nothing to update
-            if (_instance == null)
+            if (_instance == null || _instance._programAssets.Count == 0)
             {
                 return AssetDeleteResult.DidNotDelete;
             }
@@ -85,14 +83,17 @@ namespace CyanTrigger
                 return;
             }
 
+            LoadSerializedData();
+        }
+
+        private static IEnumerable<FileInfo> GetAllSerializedCyanTriggerFileInfo()
+        {
             DirectoryInfo directory = new DirectoryInfo(Application.dataPath + "/" + SerializedUdonPath);
             if (!directory.Exists)
             {
                 directory.Create();
             }
             
-            string filePath = "Assets/" + SerializedUdonPath + "/";
-            string defaultAsset = GetExpectedProgramName(DefaultProgramAssetGuid);
             foreach (var item in directory.EnumerateFiles())
             {
                 if (!item.Extension.Equals(".asset"))
@@ -100,6 +101,17 @@ namespace CyanTrigger
                     continue;
                 }
                 
+                yield return item;
+            }
+        }
+        
+        public void LoadSerializedData()
+        {
+            string defaultAsset = GetExpectedProgramName(DefaultProgramAssetGuid);
+            string filePath = "Assets/" + SerializedUdonPath + "/";
+            
+            foreach (var item in GetAllSerializedCyanTriggerFileInfo())
+            {
                 string fileName = filePath + item.Name;
                 var serializedTrigger = AssetDatabase.LoadAssetAtPath<CyanTriggerProgramAsset>(fileName);
                 if (serializedTrigger == null)
@@ -110,22 +122,59 @@ namespace CyanTrigger
 
                 if (item.Name == defaultAsset)
                 {
-                    DefaultProgramAsset = serializedTrigger;
+                    _defaultProgramAsset = serializedTrigger;
                     continue;
+                }
+
+                // Handle cases where duplicates exist, eg collab
+                if (_programAssets.ContainsKey(serializedTrigger.triggerHash))
+                {
+                    serializedTrigger.InvalidateData();
                 }
                 
                 _programAssets.Add(serializedTrigger.triggerHash, serializedTrigger);
             }
 
-            if (DefaultProgramAsset == null)
+            if (_defaultProgramAsset == null)
             {
-                DefaultProgramAsset = CreateTriggerProgramAsset(DefaultProgramAssetGuid);
+                _defaultProgramAsset = CreateTriggerProgramAsset(DefaultProgramAssetGuid);
+            }
+            _defaultProgramAsset.SetCyanTriggerData(null, DefaultProgramAssetGuid);
+        }
+
+        public void ClearSerializedData()
+        {
+            _defaultProgramAsset = null;
+            _programAssets.Clear();
+
+            try
+            {
+                AssetDatabase.StartAssetEditing();
+                
+                string filePath = "Assets/" + SerializedUdonPath + "/";
+                foreach (var item in GetAllSerializedCyanTriggerFileInfo())
+                {
+                    string fileName = filePath + item.Name;
+                    var serializedTrigger = AssetDatabase.LoadAssetAtPath<CyanTriggerProgramAsset>(fileName);
+                    if (serializedTrigger == null)
+                    {
+                        continue;
+                    }
+
+                    AssetDatabase.DeleteAsset(fileName);
+                }
+            }
+            finally
+            {
+                AssetDatabase.StopAssetEditing();
             }
         }
 
         public void ApplyTriggerPrograms(List<CyanTrigger> triggers, bool force = false)
         {
             Profiler.BeginSample("CyanTriggerSerializedProgramManager.ApplyTriggerPrograms");
+
+            CyanTriggerCompiler.PreBatchCompile();
             
             Dictionary<string, List<CyanTrigger>> hashToTriggers = new Dictionary<string, List<CyanTrigger>>();
             foreach (var trigger in triggers)
@@ -163,6 +212,7 @@ namespace CyanTrigger
                 if (programAsset.triggerHash != key)
                 {
                     _programAssets.Remove(key);
+                    _programAssets.Remove(programAsset.triggerHash);
                     _programAssets.Add(programAsset.triggerHash, programAsset);
                 }
             }
@@ -210,29 +260,44 @@ namespace CyanTrigger
                     }
                     
                     _programAssets.Add(triggerHash, programAsset);
-                    programAsset.SetCyanTriggerData(firstTrigger.triggerInstance.triggerDataInstance, triggerHash);
                     recompile = true;
                 }
-
+                
+                if (programAsset == DefaultProgramAsset)
+                {
+                    Debug.LogError("Trying to use default program asset for CyanTrigger!");
+                    continue;
+                }
+                
                 if (recompile)
                 {
+                    string prevKey = programAsset.triggerHash;
+                    programAsset.SetCyanTriggerData(firstTrigger.triggerInstance.triggerDataInstance, triggerHash);
                     bool success = programAsset.CompileTrigger();
                     if (!success)
                     {
                         PrintError("Failed to compile CyanTrigger on objects: ", curTriggers);
                         
+                        if (prevKey != null)
+                        {
+                            _programAssets.Remove(prevKey);
+                        }
                         _programAssets.Remove(programAsset.triggerHash);
-                        programAsset.SetCyanTriggerData(null, programAsset.name);
+                        programAsset.InvalidateData();
                         _programAssets.Add(programAsset.triggerHash, programAsset);
+                        
+                        foreach (var trigger in curTriggers)
+                        {
+                            PairTriggerToProgram(trigger, programAsset, false);
+                        }
                         
                         continue;
                     }
-                }
 
-                if (programAsset == DefaultProgramAsset)
-                {
-                    Debug.LogError("Trying to use default program asset for CyanTrigger!");
-                    continue;
+                    if (programAsset.warningMessages.Count > 0)
+                    {
+                        PrintWarning("CyanTriggers compiled with warnings: ", curTriggers);
+                    }
                 }
 
                 if (triggerHash != programAsset.triggerHash)
@@ -247,10 +312,12 @@ namespace CyanTrigger
                 }
             }
             
+            CyanTriggerCompiler.PostBatchCompile();
+            
             Profiler.EndSample();
         }
 
-        private static void PairTriggerToProgram(CyanTrigger trigger, CyanTriggerProgramAsset programAsset)
+        private static void PairTriggerToProgram(CyanTrigger trigger, CyanTriggerProgramAsset programAsset, bool shouldApply = true)
         {
             try
             {
@@ -271,7 +338,15 @@ namespace CyanTrigger
                     dirty = true;
                 }
 
-                programAsset.ApplyCyanTriggerToUdon(data, udon, ref dirty);
+                if (shouldApply)
+                {
+                    programAsset.ApplyCyanTriggerToUdon(data, udon, ref dirty);
+                }
+                else
+                {
+                    // Clear all public variables on the udon behaviour
+                    CyanTriggerProgramAsset.ClearPublicUdonVariables(udon, ref dirty);
+                }
 
                 if (dirty)
                 {
@@ -281,7 +356,7 @@ namespace CyanTrigger
             }
             catch (Exception e)
             {
-                Debug.LogError("Failed to apply prefab for CyanTrigger: " +
+                Debug.LogError("Failed to apply program for CyanTrigger: " +
                                VRC.Tools.GetGameObjectPath(trigger.gameObject));
                 Debug.LogError(e);
             }
@@ -289,13 +364,28 @@ namespace CyanTrigger
 
         private static void PrintError(string message, List<CyanTrigger> triggers)
         {
+            Debug.LogError(message + ObjectPathsString(triggers));
+        }
+        
+        private static void PrintWarning(string message, List<CyanTrigger> triggers)
+        {
+            Debug.LogWarning(message + ObjectPathsString(triggers));
+        }
+
+        private static string ObjectPathsString(List<CyanTrigger> triggers)
+        {
             string objectPaths = "";
             foreach (var trigger in triggers)
             {
                 objectPaths += VRC.Tools.GetGameObjectPath(trigger.gameObject) + "\n";
             }
-            
-            Debug.LogError(message  + objectPaths);
+
+            if (triggers.Count > 1)
+            {
+                objectPaths = "<View full message to see all objects>\n" + objectPaths;
+            }
+
+            return objectPaths;
         }
     }
 }

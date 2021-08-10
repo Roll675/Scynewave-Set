@@ -1,8 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+#if UNITY_2019_3_OR_NEWER
+using UnityEditor.Experimental.GraphView;
+#else
 using UnityEditor.Experimental.UIElements.GraphView;
+#endif
 using UnityEngine;
 using VRC.Udon.Graph;
 
@@ -62,7 +65,7 @@ namespace CyanTrigger
         public void DisplayVariableSearchWindow(Vector2 pos, Action<UdonNodeDefinition> onSelect)
         {
             _variableSearchWindow.OnDefinitionSelected = onSelect;
-            SearchWindow.Open(new SearchWindowContext(pos), _variableSearchWindow);
+            CyanTriggerSearchWindow.Open(new SearchWindowContext(pos), _variableSearchWindow);
         }
         
         public void DisplayActionSearchWindow(Action<CyanTriggerActionInfoHolder> onSelect)
@@ -73,7 +76,7 @@ namespace CyanTrigger
         public void DisplayActionSearchWindow(Vector2 pos, Action<CyanTriggerActionInfoHolder> onSelect)
         {
             _actionSearchWindow.OnDefinitionSelected = onSelect;
-            SearchWindow.Open(new SearchWindowContext(pos), _actionSearchWindow);
+            CyanTriggerSearchWindow.Open(new SearchWindowContext(pos), _actionSearchWindow);
         }
         
         public void DisplayEventSearchWindow(Action<CyanTriggerActionInfoHolder> onSelect)
@@ -84,7 +87,7 @@ namespace CyanTrigger
         public void DisplayEventSearchWindow(Vector2 pos, Action<CyanTriggerActionInfoHolder> onSelect)
         {
             _eventSearchWindow.OnDefinitionSelected = onSelect;
-            SearchWindow.Open(new SearchWindowContext(pos), _eventSearchWindow);
+            CyanTriggerSearchWindow.Open(new SearchWindowContext(pos), _eventSearchWindow);
         }
         
         public void DisplayFocusedSearchWindow(
@@ -113,7 +116,7 @@ namespace CyanTrigger
         
         private void TryOpenFocusedSearch()
         {
-            if (SearchWindow.Open(new SearchWindowContext(_searchWindowPosition, 400f), _focusedSearchWindow))
+            if (CyanTriggerSearchWindow.Open(new SearchWindowContext(_searchWindowPosition, 400f), _focusedSearchWindow))
             {
                 EditorApplication.update -= TryOpenFocusedSearch;
             }
@@ -132,7 +135,7 @@ namespace CyanTrigger
             _favoritesSearchWindow.FavoriteList =
                 CyanTriggerSettingsFavoriteManager.Instance.FavoriteVariables.FavoriteItems;
             
-            SearchWindow.Open(new SearchWindowContext(pos), _favoritesSearchWindow);
+            CyanTriggerSearchWindow.Open(new SearchWindowContext(pos), _favoritesSearchWindow);
         }
         
         public void DisplayEventsFavoritesSearchWindow(Action<CyanTriggerSettingsFavoriteItem> onSelect, bool displayAll = false)
@@ -155,7 +158,7 @@ namespace CyanTrigger
                     CyanTriggerSettingsFavoriteManager.Instance.FavoriteEvents.FavoriteItems;
             }
             
-            SearchWindow.Open(new SearchWindowContext(pos), _favoritesSearchWindow);
+            CyanTriggerSearchWindow.Open(new SearchWindowContext(pos), _favoritesSearchWindow);
         }
         
         public void DisplayActionFavoritesSearchWindow(Action<CyanTriggerSettingsFavoriteItem> onSelect)
@@ -170,7 +173,7 @@ namespace CyanTrigger
             _favoritesSearchWindow.FavoriteList = 
                 CyanTriggerSettingsFavoriteManager.Instance.FavoriteActions.FavoriteItems;
             
-            SearchWindow.Open(new SearchWindowContext(pos), _favoritesSearchWindow);
+            CyanTriggerSearchWindow.Open(new SearchWindowContext(pos), _favoritesSearchWindow);
         }
         
         public void DisplaySDK2ActionFavoritesSearchWindow(Action<CyanTriggerSettingsFavoriteItem> onSelect)
@@ -185,7 +188,7 @@ namespace CyanTrigger
             _favoritesSearchWindow.FavoriteList = 
                 CyanTriggerSettingsFavoriteManager.Instance.Sdk2Actions.FavoriteItems;
             
-            SearchWindow.Open(new SearchWindowContext(pos), _favoritesSearchWindow);
+            CyanTriggerSearchWindow.Open(new SearchWindowContext(pos), _favoritesSearchWindow);
         }
     }
 }

@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using VRC.Udon;
+using VRC.Udon.Common.Interfaces;
 using VRC.Udon.Editor;
 using VRC.Udon.Graph;
 
@@ -20,12 +22,25 @@ namespace CyanTrigger
 
         private static readonly Dictionary<string, Type> ComponentTypes = new Dictionary<string, Type>();
 
+        private static readonly HashSet<string> IgnoredDefinitions = new HashSet<string>(
+            new[]
+            {
+                "Event_OnVariableChange", // CyanTrigger's version is called Event_OnVariableChanged (note the 'd' at the end)
+            });
+        
         private static readonly HashSet<string> HiddenDefinitions = new HashSet<string>(
-        new [] {
-            "CyanTriggerSpecial_BlockEnd",
-            "CyanTriggerSpecial_Condition",
-            "CyanTriggerSpecial_ConditionBody",
-        });
+            new [] {
+                "CyanTriggerSpecial_BlockEnd",
+                "CyanTriggerSpecial_Condition",
+                "CyanTriggerSpecial_ConditionBody",
+            });
+        
+        private static readonly HashSet<string> PreventDirectChildrenDefinitions = new HashSet<string>(
+            new [] {
+                "CyanTriggerSpecial_If",
+                "CyanTriggerSpecial_ElseIf",
+                "CyanTriggerSpecial_While",
+            });
         
         
         static CyanTriggerNodeDefinitionManager()
@@ -43,7 +58,16 @@ namespace CyanTrigger
             List<CyanTriggerNodeDefinition> definedNodes = new List<CyanTriggerNodeDefinition>();
             foreach (var definition in definitions)
             {
-                var nodeDef = AddDefinition(definition);
+                CyanTriggerNodeDefinition nodeDef;
+                if (definition.fullName.StartsWith("Type_"))
+                {
+                    nodeDef = AddCustomNodeDefinition(new CyanTriggerCustomNodeType(definition));
+                }
+                else
+                {
+                    nodeDef = AddDefinition(definition);
+                }
+
                 if (nodeDef != null)
                 {
                     definedNodes.Add(nodeDef);
@@ -65,6 +89,11 @@ namespace CyanTrigger
                     if (type == null) continue;
                     allTypes.Add(type);
                 }
+
+                if (definition.definitionType == CyanTriggerNodeDefinition.UdonDefinitionType.Type)
+                {
+                    allTypes.Add(definition.baseType);
+                }
             }
 
             foreach (var type in allTypes)
@@ -77,6 +106,10 @@ namespace CyanTrigger
                 
                 UsableTypes.Add(type);
             }
+            
+            // Force add this so that you can have a CyanTrigger variable type.
+            // TODO figure out implications of having this as it may make future work with parameters difficult.
+            // UsableTypes.Add(typeof(CyanTrigger));
             
             UsableTypes.Sort((type1, type2) => type1.FullName.CompareTo(type2.FullName));
             Type componentType = typeof(Component);
@@ -96,6 +129,10 @@ namespace CyanTrigger
                     ComponentTypes.Add(typeName, type);
                 }
             }
+
+            // Nodes only include type IUdonEventReceiver and not UdonBehaviour directly.
+            Type udonType = typeof(UdonBehaviour);
+            ComponentTypes.Add(udonType.Name, udonType);
         }
 
         private static void AddCustomNodeDefinitions()
@@ -117,26 +154,39 @@ namespace CyanTrigger
             }
         }
 
-        private static void AddCustomNodeDefinition(CyanTriggerCustomUdonNodeDefinition customDefinition)
+        private static CyanTriggerNodeDefinition AddCustomNodeDefinition(
+            CyanTriggerCustomUdonNodeDefinition customDefinition)
         {
             UdonNodeDefinition definition = customDefinition.GetNodeDefinition();
             if (CustomNodes.ContainsKey(definition.fullName))
             {
-                Debug.LogWarning("Custom node already contains node for " +definition.type +" " +definition.fullName);
-                return;
+#if CYAN_TRIGGER_DEBUG
+                if (!definition.fullName.StartsWith("Type_"))
+                {
+                    Debug.LogWarning("Custom node already contains node for " +definition.type +" " +definition.fullName);                    
+                }
+#endif
+                return null;
             }
             
             CustomNodes.Add(definition.fullName, customDefinition);
-            AddDefinition(definition);
+            var def = AddDefinition(definition);
 
             if (customDefinition.CreatesScope())
             {
                 ScopedDefinitions.Add(definition.fullName);
             }
+
+            return def;
         }
         
         private static CyanTriggerNodeDefinition AddDefinition(UdonNodeDefinition definition)
         {
+            if (IgnoredDefinitions.Contains(definition.fullName))
+            {
+                return null;
+            }
+            
             CyanTriggerNodeDefinition nodeDef = new CyanTriggerNodeDefinition(definition);
 
             if (nodeDef.definitionType == CyanTriggerNodeDefinition.UdonDefinitionType.VrcSpecial ||
@@ -257,6 +307,11 @@ namespace CyanTrigger
         public static bool DefinitionIsHidden(string definitionName)
         {
             return HiddenDefinitions.Contains(definitionName);
+        }
+        
+        public static bool DefinitionPreventsDirectChildren(string definitionName)
+        {
+            return PreventDirectChildrenDefinitions.Contains(definitionName);
         }
 
         public static bool TryGetComponentType(string componentName, out Type componentType)

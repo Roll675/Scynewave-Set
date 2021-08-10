@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using VRC.Udon.Graph;
 
 namespace CyanTrigger
@@ -53,17 +54,16 @@ namespace CyanTrigger
         {
             var actionInstance = compileState.ActionInstance;
             var actionMethod = compileState.ActionMethod;
-            var program = compileState.Program;
-
-            actionMethod.AddAction(CyanTriggerAssemblyInstruction.PushVariable(
-                compileState.GetDataFromVariableInstance(-1, 0, actionInstance.inputs[0], _type, false)));
+            
+            var dataVar =
+                compileState.GetDataFromVariableInstance(-1, 0, actionInstance.inputs[0], _type, false);
             var outputVar =
                 compileState.GetDataFromVariableInstance(-1, 1, actionInstance.inputs[1], _type, true);
-                //CyanTriggerCompiler.GetDataFromVariableInstance(program.data, actionInstance.inputs[1], _type, true);
-            actionMethod.AddAction(CyanTriggerAssemblyInstruction.PushVariable(outputVar));
-            actionMethod.AddAction(CyanTriggerAssemblyInstruction.Copy());
             
-            actionMethod.AddActions(CyanTriggerAssemblyActionsUtils.OnVariableChangedCheck(program, outputVar));
+            actionMethod.AddActions(CyanTriggerAssemblyActionsUtils.CopyVariables(dataVar, outputVar));
+            
+            var changedVariables = new List<CyanTriggerAssemblyDataType> { outputVar };
+            compileState.CheckVariableChanged(actionMethod, changedVariables);
         }
     }
 }

@@ -48,8 +48,9 @@ MonoBehaviour:
     proximity: 2
     interactText: Use
     triggerDataInstance:
-      version: 2
-      applyAnimatorMove: 1
+      version: 3
+      updateOrder: 0
+      programSyncMode: 0
       events:
       - name: 
         eventInstance:
@@ -58,6 +59,9 @@ MonoBehaviour:
             guid: 
           inputs: []
           multiInput: []
+          expanded: 0
+          comment:
+            comment: At the start of the world, set the player's locomotion settings.
         actionInstances:
         - actionType:
             directEvent: VRCSDKBaseVRCPlayerApi.__SetWalkSpeed__SystemSingle__SystemVoid
@@ -82,6 +86,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: VRCSDKBaseVRCPlayerApi.__SetStrafeSpeed__SystemSingle__SystemVoid
             guid: 
@@ -105,6 +112,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: VRCSDKBaseVRCPlayerApi.__SetRunSpeed__SystemSingle__SystemVoid
             guid: 
@@ -128,6 +138,9 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         - actionType:
             directEvent: VRCSDKBaseVRCPlayerApi.__SetJumpImpulse__SystemSingle__SystemVoid
             guid: 
@@ -151,11 +164,15 @@ MonoBehaviour:
             data:
               objEncoded: Lg==
               unityObjects: []
+          expanded: 0
+          comment:
+            comment: 
         eventOptions:
           userGate: 0
           userGateExtraData: []
           broadcast: 0
           delay: 0
+        expanded: 1
       variables:
       - isVariable: 0
         name: WalkSpeed
@@ -193,6 +210,8 @@ MonoBehaviour:
         type:
           typeDef: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
         sync: 0
+      comment:
+        comment: 
     udonBehaviour: {fileID: 651717064792176196}
 --- !u!114 &651717064792176196
 MonoBehaviour:
@@ -212,6 +231,7 @@ MonoBehaviour:
   proximity: 2
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
+  Reliable: 0
   serializedProgramAsset: {fileID: 11400000, guid: 9c3fe766e23cdaf44ab47a294c1fd584,
     type: 2}
   programSource: {fileID: 11400000, guid: aaa95946b38d3474e986547f2220617c, type: 2}

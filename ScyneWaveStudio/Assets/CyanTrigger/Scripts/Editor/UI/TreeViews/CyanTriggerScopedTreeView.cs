@@ -27,17 +27,15 @@ namespace CyanTrigger
         public SerializedProperty Elements
         {
             get => _elements;
-            set
-            {
-                _elements = value;
-                Reload();
-            }
+            set => _elements = value;
         }
 
         protected CyanTriggerScopedTreeItem[] Items;
         protected SerializedProperty[] ItemElements;
         private readonly Func<SerializedProperty, int> _getElementScopeDelta;
         private readonly Func<SerializedProperty, string> _getElementDisplayName;
+
+        private Action<Rect, TreeViewItem> _setGUIDragInsertRect;
         
         public int Size { get; private set; }
         public int VisualSize { get; private set; }
@@ -75,6 +73,16 @@ namespace CyanTrigger
             multiColumnHeader = header;
             _getElementScopeDelta = getElementScopeDelta;
             _getElementDisplayName = getElementDisplayName;
+
+            InitializeReflectionItems();
+            
+            Reload();
+        }
+
+        private void InitializeReflectionItems()
+        {
+            Func<TreeViewItem, int> getItemControlID = (item) => 0;
+            Func<int> getDropTargetControlID = () => 0;
             
             // Get TreeViewController and allow deselection on clicking nothing
             FieldInfo info = typeof(TreeView).GetField("m_TreeView", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -86,9 +94,38 @@ namespace CyanTrigger
                 {
                     deselectInfo.SetValue(item, true);
                 }
+
+                MethodInfo GetItemControlIDInfo = item.GetType().GetMethod("GetItemControlID", BindingFlags.Static | BindingFlags.NonPublic);
+                getItemControlID = viewItem => (int)GetItemControlIDInfo.Invoke(null, new object[] {viewItem});
+            }
+            FieldInfo draggingInfo = typeof(TreeView).GetField("m_Dragging", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (draggingInfo != null)
+            {
+                var dragging = draggingInfo.GetValue(this);
+                MethodInfo guiInsertRectProperty = dragging.GetType().GetMethod("GetDropTargetControlID");
+                getDropTargetControlID = () => (int) guiInsertRectProperty.Invoke(dragging, new object[0]);
             }
             
-            Reload();
+            FieldInfo guiInfo = typeof(TreeView).GetField("m_GUI", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (guiInfo != null)
+            {
+                var treeGUI = guiInfo.GetValue(this);
+                FieldInfo guiInsertRectProperty = treeGUI.GetType().GetField("m_DraggingInsertionMarkerRect",
+                    BindingFlags.NonPublic | BindingFlags.Instance);
+                
+                _setGUIDragInsertRect = (rect, item) =>
+                {
+                    if (getItemControlID(item) != getDropTargetControlID())
+                    {
+                        return;
+                    }
+                    
+                    float foldoutIndent = GetFoldoutIndent(item) + 3;
+                    rect = new Rect(rect.x + foldoutIndent + CyanTriggerEditorGUIUtil.FoldoutStyle.fixedWidth, rect.yMax - 4,
+                        rect.width - foldoutIndent, rect.height);
+                    guiInsertRectProperty.SetValue(treeGUI, rect);
+                };
+            }
         }
 
         public int GetItemIndex(TreeViewItem item)
@@ -108,12 +145,20 @@ namespace CyanTrigger
 
         protected override bool CanBeParent(TreeViewItem item)
         {
+            // Required to fix bug that breaks drag and drop from anywhere blocking top half of any property inspector.
+            if (Event.current.type == EventType.DragUpdated || 
+                Event.current.type == EventType.DragExited || 
+                Event.current.type == EventType.DragPerform)
+            {
+                return true;
+            }
+            
             CyanTriggerScopedTreeItem customItem = (CyanTriggerScopedTreeItem) item;
             return customItem.HasScope;
         }
 
         // Override to reject for other reasons. 
-        protected virtual bool ShouldRejectDragAndDrop(DragAndDropArgs args)
+        protected virtual bool ShouldRejectDragAndDrop(DragAndDropArgs args, CyanTriggerScopedTreeItem parent)
         {
             return false;
         }
@@ -131,7 +176,16 @@ namespace CyanTrigger
         protected override DragAndDropVisualMode HandleDragAndDrop(DragAndDropArgs args)
         {
             // TODO provide interface for dragging to other tree items.
-            if (DragAndDrop.GetGenericData(kDragAndDropObjectDataKey) != this)
+            var dragData = DragAndDrop.GetGenericData(kDragAndDropObjectDataKey);
+            if (dragData == null)
+            {
+                // TODO? This could be anything. 
+                return DragAndDropVisualMode.None;
+            }
+
+            Type myTreeViewType = GetType();
+            // Not a treeview or not the same type of treeview
+            if (!(dragData is CyanTriggerScopedTreeView treeView) || treeView.GetType() != myTreeViewType)
             {
                 return DragAndDropVisualMode.None;
             }
@@ -147,12 +201,43 @@ namespace CyanTrigger
                 parent = (CyanTriggerScopedTreeItem)rootItem;
             }
 
+            if (!parent.HasScope && args.dragAndDropPosition == DragAndDropPosition.UponItem)
+            {
+                CyanTriggerScopedTreeItem par = (CyanTriggerScopedTreeItem)parent.parent;
+                args.dragAndDropPosition = DragAndDropPosition.BetweenItems;
+                args.insertAtIndex = par.children.IndexOf(parent) + 1;
+                parent = par;
+            }
+            
+            if (ShouldRejectDragAndDrop(args, parent))
+            {
+                return DragAndDropVisualMode.Rejected;
+            }
+            
+            if (treeView != this)
+            {
+                if (!IsOverridden(myTreeViewType, nameof(GetProperties)) ||
+                    !IsOverridden(myTreeViewType, nameof(DuplicateProperties)))
+                {
+                    return DragAndDropVisualMode.Rejected;
+                }
+                
+                if (args.performDrop)
+                {
+                    MoveItemsFromOtherTree(treeView, draggedIds, parent, args.dragAndDropPosition, args.insertAtIndex);
+                }
+
+                return DragAndDropVisualMode.Move;
+            }
+            
+
+            HashSet<int> ids = new HashSet<int>(draggedIds);
             // Reject movement where a parent would be put underneath itself
             {
                 CyanTriggerScopedTreeItem temp = parent;
                 while (temp != null)
                 {
-                    if (IsSelected(temp.id))
+                    if (ids.Contains(temp.id))
                     {
                         return DragAndDropVisualMode.Rejected;
                     }
@@ -160,14 +245,10 @@ namespace CyanTrigger
                     temp = (CyanTriggerScopedTreeItem)temp.parent;
                 }
             }
-
-            if (ShouldRejectDragAndDrop(args))
-            {
-                return DragAndDropVisualMode.Rejected;
-            }
-
+            
             if (args.performDrop)
             {
+                SetSelection(draggedIds);
                 MoveElements(draggedIds, parent, args.dragAndDropPosition, args.insertAtIndex);
             }
             return DragAndDropVisualMode.Move;
@@ -179,6 +260,8 @@ namespace CyanTrigger
             DragAndDropPosition dragPosition, 
             int insertPosition)
         {
+            SetExpanded(parent.id, true);
+            
             List<int> movedItems = new List<int>();
             foreach (int id in movedIds)
             {
@@ -227,26 +310,26 @@ namespace CyanTrigger
             
             int movedItems = 0;
             int origInsert = insertIndex;
-                
+
             foreach (int id in movedIds)
             {
                 int index = GetItemIndex(id);
                 CyanTriggerScopedTreeItem item = Items[index];
                     
                 int idIndex = index;
-                if (idIndex > origInsert)
+                if (idIndex >= origInsert)
                 {
                     idIndex += movedItems;
                 }
-                
+
                 int totalMoved = item.ScopeEndIndex - index + 1;
-                    
+                
                 for (int child = 0; child < totalMoved; ++child)
                 {
                     int from = idIndex;
                     int to = insertIndex;
 
-                    if (idIndex > insertIndex)
+                    if (idIndex >= insertIndex)
                     {
                         from += child;
                         to += child;
@@ -255,11 +338,21 @@ namespace CyanTrigger
                     {
                         --to;
                     }
-                    
-                    Elements.MoveArrayElement(from, to);
+
+                    if (from != to)
+                    {
+                        Elements.MoveArrayElement(from, to);
+                    }
                 }
 
-                ((CyanTriggerScopedTreeItem) item.parent).ScopeEndIndex -= totalMoved;
+                // loop through through all parents to update scope ends
+                CyanTriggerScopedTreeItem ancestor = GetClosestAncestor(item, parent);
+                CyanTriggerScopedTreeItem temp = (CyanTriggerScopedTreeItem) item.parent;
+                while (temp != ancestor)
+                {
+                    temp.ScopeEndIndex -= totalMoved;
+                    temp = (CyanTriggerScopedTreeItem) temp.parent;
+                }
 
                 if (idIndex < insertIndex)
                 {
@@ -363,12 +456,31 @@ namespace CyanTrigger
                     expanded.Add(mapping[index]);    
                 }
             }
+            OnElementsRemapped(mapping, prevIdStart);
             SetSelection(selection, TreeViewSelectionOptions.FireSelectionChanged);
             SetExpanded(expanded);
-            OnElementsRemapped(mapping, prevIdStart);
         }
 
         protected virtual void OnElementsRemapped(int[] mapping, int prevIdStart) { }
+
+        public IList<int> GetExpandedWithoutStartId()
+        {
+            IList<int> expand = GetExpanded();
+            for (int index = 0; index < expand.Count; ++index)
+            {
+                expand[index] -= _idStartIndex;
+            }
+            return expand;
+        }
+
+        public void SetExpandedApplyingStartId(IList<int> expand)
+        {
+            for (int index = 0; index < expand.Count; ++index)
+            {
+                expand[index] += _idStartIndex;
+            }
+            SetExpanded(expand);
+        }
 
         // Remove selected and child elements
         public void RemoveSelected()
@@ -394,10 +506,9 @@ namespace CyanTrigger
                 parent.children.Remove(item);
             }
 
-            // Selection is cleared as selection was removed from the tree
-            SetSelection(new List<int>(), TreeViewSelectionOptions.FireSelectionChanged);
-            UpdateExpandedAndSelection();
-
+            List<CyanTriggerScopedTreeItem> removedItems = new List<CyanTriggerScopedTreeItem>();
+            List<int> idsToRemove = new List<int>();
+            
             // update serialized properties to remove the node and everything between it and the end scope node.
             foreach (int id in selected)
             {
@@ -408,41 +519,85 @@ namespace CyanTrigger
                     continue;
                 }
 
-                Elements.DeleteArrayElementAtIndex(index);
+                removedItems.Add(item);
+                idsToRemove.Add(index);
                 
                 if (item.ScopeEndIndex != index)
                 {
                     int scope = 1;
 
+                    int tmpIndex = index;
+                    ++index;
                     while (index < Elements.arraySize)
                     {
                         int scopeDelta = _getElementScopeDelta(Elements.GetArrayElementAtIndex(index));
-                        Elements.DeleteArrayElementAtIndex(index);
+                        idsToRemove.Add(tmpIndex);
                         scope += scopeDelta;
                         if (scope == 0)
                         {
                             break;
                         }
+
+                        if (Items[index] != null)
+                        {
+                            removedItems.Add(Items[index]);
+                        }
+                        ++index;
                     }
                 }
             }
 
-            OnItemsRemoved();
+            OnItemsRemoved(removedItems);
+
+            // Selection is cleared as selection was removed from the tree
+            SetSelection(new List<int>(), TreeViewSelectionOptions.FireSelectionChanged);
+            UpdateExpandedAndSelection();
+            
+            foreach (var id in idsToRemove)
+            {
+                Elements.DeleteArrayElementAtIndex(id);
+            }
+            
             _elements.serializedObject.ApplyModifiedProperties();
             Reload();
         }
         
-        protected virtual void OnItemsRemoved() { }
+        protected virtual void OnItemsRemoved(List<CyanTriggerScopedTreeItem> removedItems) { }
         
         protected override bool CanStartDrag(CanStartDragArgs args) => true;
         
         protected override void SetupDragAndDrop(SetupDragAndDropArgs args)
         {
             DragAndDrop.PrepareStartDrag();
-            DragAndDrop.SetGenericData(kDragAndDropDataKey, args.draggedItemIDs);
+            DragAndDrop.SetGenericData(kDragAndDropDataKey, new List<int>(args.draggedItemIDs));
             DragAndDrop.SetGenericData(kDragAndDropObjectDataKey, this);
             DragAndDrop.objectReferences = new Object[0];
             DragAndDrop.StartDrag("Drag Elements");
+        }
+
+        protected CyanTriggerScopedTreeItem GetClosestAncestor(
+            CyanTriggerScopedTreeItem n1,
+            CyanTriggerScopedTreeItem n2)
+        {
+            // Get N1 to the same depth as n2
+            while (n1.depth > n2.depth)
+            {
+                n1 = (CyanTriggerScopedTreeItem) n1.parent;
+            }
+            // Get N2 to the same depth as n1
+            while (n2.depth > n1.depth)
+            {
+                n2 = (CyanTriggerScopedTreeItem) n2.parent;
+            }
+
+            // Keep crawling up until you find the same node.
+            while (n1 != n2)
+            {
+                n1 = (CyanTriggerScopedTreeItem) n1.parent;
+                n2 = (CyanTriggerScopedTreeItem) n2.parent;
+            }
+
+            return n1;
         }
 
         protected override TreeViewItem BuildRoot()
@@ -510,6 +665,53 @@ namespace CyanTrigger
             HandleRightClick(rect);
         }
 
+        protected override void RowGUI(RowGUIArgs args)
+        {
+            if (Event.current.type == EventType.Repaint)
+            {
+                _setGUIDragInsertRect(args.rowRect, args.item);
+            }
+            
+            OnRowGUI(args);
+        }
+
+        protected virtual void OnRowGUI(RowGUIArgs args)
+        {
+            base.RowGUI(args);
+        }
+        
+        // Manually override drawing alternating rows since it does not properly handle rows with different heights.
+        protected override void BeforeRowsGUI()
+        {
+            DrawAlternatingRowBackgrounds();
+        }
+        
+        public void DrawAlternatingRowBackgrounds()
+        {
+            if (Event.current.rawType != EventType.Repaint)
+                return;
+            float height = treeViewRect.height + state.scrollPos.y;
+            DefaultStyles.backgroundOdd.Draw(new Rect(0.0f, 0.0f, 100000f, height), false, false, false, false);
+            int firstRowVisible = 0;
+            int count = GetRows().Count;
+            Rect position = new Rect(0.0f, 0.0f, 0.0f, rowHeight);
+            int row = firstRowVisible;
+            while ((double) position.yMax < (double) height)
+            {
+                if (row < count)
+                    position = GetRowRect(row);
+                else if (row > 0)
+                    position.y += position.height;
+                position.width = 100000f;
+                
+                if (row % 2 != 1)
+                {
+                    DefaultStyles.backgroundEven.Draw(position, false, false, false, false);
+                }
+                ++row;
+            }
+        }
+
         protected override void KeyEvent()
         {
             if (Event.current.type != EventType.KeyDown)
@@ -553,6 +755,16 @@ namespace CyanTrigger
             throw new NotImplementedException();
         }
 
+        protected virtual List<SerializedProperty> GetProperties(IEnumerable<int> items)
+        {
+            return new List<SerializedProperty>();
+        }
+        
+        protected virtual List<SerializedProperty> DuplicateProperties(IEnumerable<SerializedProperty> items)
+        {
+            throw new NotImplementedException();
+        }
+
         protected virtual void DuplicateSelectedItems()
         {
             List<int> sortedItems = new List<int>(GetSelection());
@@ -575,8 +787,21 @@ namespace CyanTrigger
             SetSelection(new List<int>());
             Reload();
 
-            List<int> draggedItems = new List<int>();
-            foreach (int id in dupedIds)
+            var dupedRootIds = GetRootItemsFromList(dupedIds);
+            SetSelection(dupedRootIds, TreeViewSelectionOptions.FireSelectionChanged);
+            
+            // Move items into nested position and not at the end of the root
+            if (parentId != -1)
+            {
+                MoveElements(dupedRootIds, Items[GetItemIndex(parentId)], DragAndDropPosition.UponItem, 0);
+            }
+            _elements.serializedObject.ApplyModifiedProperties();
+        }
+
+        protected List<int> GetRootItemsFromList(List<int> itemsToMove)
+        {
+            List<int> rootItems = new List<int>();
+            foreach (int id in itemsToMove)
             {
                 int index = GetItemIndex(id);
                 var item = Items[index];
@@ -584,18 +809,58 @@ namespace CyanTrigger
                 // Only find items at the root
                 if (item != null && item.parent.id == -1)
                 {
-                    draggedItems.Add(id);
+                    rootItems.Add(id);
                 }
             }
-            SetSelection(draggedItems, TreeViewSelectionOptions.FireSelectionChanged);
-            
-            // Move items into nested position and not at the end of the root
-            if (parentId != -1)
-            {
-                MoveElements(draggedItems, Items[GetItemIndex(parentId)], DragAndDropPosition.UponItem, 0);
-            }
+
+            return rootItems;
         }
-        
+
+        private void MoveItemsFromOtherTree(
+            CyanTriggerScopedTreeView srcTree, 
+            List<int> draggedIds, 
+            CyanTriggerScopedTreeItem parent,
+            DragAndDropPosition dragPosition, 
+            int insertPosition)
+        {
+            // Duplicate elements into new tree.
+            // Move duplicate elements from bottom to expected location.
+            // Remove elements from source tree.
+            
+            var properties = srcTree.GetProperties(draggedIds);
+            if (properties == null || properties.Count == 0)
+            {
+                return;
+            }
+
+            int startIndex = Elements.arraySize;
+            // Count is zero, prevent insertPosition from causing -1 exception
+            if (startIndex == 0)
+            {
+                insertPosition = 0;
+            }
+            
+            int count = DuplicateProperties(properties).Count;
+
+            //Elements.serializedObject.ApplyModifiedProperties();
+
+            SetSelection(new List<int>());
+            Reload();
+            
+            List<int> movedIds = new List<int>();
+            for (int i = startIndex; i < startIndex + count; ++i)
+            {
+                movedIds.Add(i + IdStartIndex);
+            }
+            
+            var rootIds = GetRootItemsFromList(movedIds);
+            SetSelection(movedIds);
+            MoveElements(rootIds, parent, dragPosition, insertPosition);
+
+            srcTree.SetSelection(draggedIds);
+            srcTree.RemoveSelected();
+        }
+
         protected virtual bool ShowRightClickMenu()
         {
             return true;
@@ -605,9 +870,14 @@ namespace CyanTrigger
         {
             return true;
         }
-        
+
         protected virtual void GetRightClickMenuOptions(GenericMenu menu, Event currentEvent)
         {
+            GUIContent deselectContent = new GUIContent("Deselect", "Deselect the current selection");
+            GUIContent duplicateContent = new GUIContent("Duplicate", "Duplicate the current selected items");
+            GUIContent deleteContent = new GUIContent("Delete", "Duplicate the current selected items");
+            GUIContent renameContent = new GUIContent("Rename", "Rename current item");
+
             IList<int> selection = GetSelection();
             
             // Rename
@@ -624,29 +894,41 @@ namespace CyanTrigger
 
                 if (canRenameItem)
                 {
-                    menu.AddItem(new GUIContent("Rename"), false, () => BeginRename(renameItem));
+                    menu.AddItem(renameContent, false, () => BeginRename(renameItem));
                 }
                 else
                 {
-                    menu.AddDisabledItem(new GUIContent("Rename"));
+                    menu.AddDisabledItem(renameContent);
                 }
             }
-            
-            menu.AddItem(new GUIContent("Deselect"), false, () =>
-            {
-                SetSelection(new int[0], TreeViewSelectionOptions.FireSelectionChanged);
-            });
-            
-            if (CanDuplicate(selection))
-            {
-                menu.AddItem(new GUIContent("Duplicate"), false, DuplicateSelectedItems);
-            }
 
-            menu.AddItem(new GUIContent("Delete"), false, () =>
+            if (selection.Count > 0)
             {
-                RemoveSelected();
-                Elements.serializedObject.ApplyModifiedProperties();
-            });
+                menu.AddItem(deselectContent, false, () =>
+                {
+                    SetSelection(new int[0], TreeViewSelectionOptions.FireSelectionChanged);
+                });
+                
+                if (CanDuplicate(selection))
+                {
+                    menu.AddItem(duplicateContent, false, DuplicateSelectedItems);
+                }
+
+                menu.AddItem(deleteContent, false, () =>
+                {
+                    RemoveSelected();
+                    Elements.serializedObject.ApplyModifiedProperties();
+                });
+            }
+            else
+            {
+                menu.AddDisabledItem(deselectContent, false);
+                if (CanDuplicate(selection))
+                {
+                    menu.AddDisabledItem(duplicateContent, false);
+                }
+                menu.AddDisabledItem(deleteContent, false);
+            }
         }
         
         private void HandleRightClick(Rect rect)
@@ -666,6 +948,15 @@ namespace CyanTrigger
  
                 current.Use(); 
             }
+        }
+        
+        private static bool IsOverridden(Type type, string methodName)
+        {
+            MethodInfo method = type.GetMethod(methodName, BindingFlags.Instance | BindingFlags.NonPublic);
+            if (method != null)
+                return method.GetBaseDefinition().DeclaringType != method.DeclaringType;
+            Debug.LogError((object) ("IsOverridden: method name not found: " + methodName + " (check spelling against method declaration)"));
+            return false;
         }
     }
 }

@@ -96,6 +96,11 @@ namespace CyanTrigger
 
         public static string SanitizeName(string originalName)
         {
+            if (originalName.Length > 0 && char.IsDigit(originalName[0]))
+            {
+                originalName = "_" + originalName;
+            }
+            
             string name = Regex.Replace(originalName, @"[^a-zA-Z0-9_]", "").Trim();
             if (string.IsNullOrEmpty(name))
             {

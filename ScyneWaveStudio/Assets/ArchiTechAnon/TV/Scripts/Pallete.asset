@@ -18,9 +18,7 @@ MonoBehaviour:
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: f71cd4ba60b09a8498bcd9bc35ee7dd0, type: 3}
   behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
-  compileErrors:
-  - '[<color=#FF00FF>UdonSharp</color>] Assets/ArchiTechAnon/TV/Scripts/Pallete.cs(8,4):
-    System.Exception: User type Pallete could not be found'
+  compileErrors: []
   hasInteractEvent: 0
   serializationData:
     SerializedFormat: 2
@@ -293,7 +291,13 @@ MonoBehaviour:
       Entry: 7
       Data: 16|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
-      Entry: 6
+      Entry: 7
+      Data: 17|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: ArchiTech.Pallete, Assembly-CSharp
+    - Name: 
+      Entry: 8
       Data: 
     - Name: declarationType
       Entry: 3
@@ -318,13 +322,13 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 18|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 18|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
+      Data: 19|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
       Data: OR
@@ -333,7 +337,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 19|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+      Data: 20|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
       Data: Overrides the default values above. Useful for definining a pallete in

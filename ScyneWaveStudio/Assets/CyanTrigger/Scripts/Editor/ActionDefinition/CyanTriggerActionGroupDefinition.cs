@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using VRC.Udon.Common.Interfaces;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -118,6 +120,39 @@ namespace CyanTrigger
         public virtual bool IsEditorModifiable()
         {
             return false;
+        }
+
+        public bool VerifyProgramActions(IUdonProgram program)
+        {
+            HashSet<string> entryPoints = new HashSet<string>(program.EntryPoints.GetExportedSymbols());
+            
+            var symbolTable = program.SymbolTable;
+            var symbols = symbolTable.GetExportedSymbols();
+            Dictionary<string, Type> variables = new Dictionary<string, Type>();
+
+            for (int cur = 0; cur < symbols.Length; ++cur)
+            {
+                string symbolName = symbols[cur];
+                variables.Add(symbolName, symbolTable.GetSymbolType(symbolName));
+            }
+
+            foreach (var action in exposedActions)
+            {
+                if (!entryPoints.Contains(action.eventEntry))
+                {
+                    return false;
+                }
+
+                foreach (var variable in action.variables)
+                {
+                    if (!variables.TryGetValue(variable.udonName, out Type type) || variable.type.type != type)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
         public virtual void AddNewEvent(SerializedProperty eventListProperty)

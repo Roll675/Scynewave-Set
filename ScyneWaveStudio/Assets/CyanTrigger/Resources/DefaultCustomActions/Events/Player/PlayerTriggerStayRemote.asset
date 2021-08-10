@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: PlayerTriggerStayRemote
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: ac5ab84387cccd945ba6589fcf65ba7c,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 641ea5381f606b64eb8bd4925839ecf3,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    \r\n    __Boolean_0: %SystemBoolean, null\r\n   
-    __Boolean_1: %SystemBoolean, null\r\n    __VRCPlayerApi_0: %VRCSDKBaseVRCPlayerApi,
+  udonAssembly: ".data_start\r\n\r\n    \r\n    __Boolean_0: %SystemBoolean, null\r\n
+    \   __Boolean_1: %SystemBoolean, null\r\n    __VRCPlayerApi_0: %VRCSDKBaseVRCPlayerApi,
     null\r\n    onPlayerTriggerStayPlayer: %VRCSDKBaseVRCPlayerApi, null\r\n    __instance_0:
-    %VRCUdonUdonBehaviour, this\r\n    __eventName_0: %SystemString, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
-    .export _onPlayerTriggerStay\r\n    \r\n    _onPlayerTriggerStay:\r\n    \r\n       
-    PUSH, onPlayerTriggerStayPlayer\r\n        PUSH, __VRCPlayerApi_0\r\n       
-    COPY\r\n        PUSH, __VRCPlayerApi_0\r\n        PUSH, __Boolean_1\r\n       
-    EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean\"\r\n        PUSH,
-    __Boolean_1\r\n        PUSH, __Boolean_0\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n       
-    PUSH, __Boolean_0\r\n        JUMP_IF_FALSE, 0x00000074\r\n        PUSH, __instance_0\r\n       
-    PUSH, __eventName_0\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n       
-    JUMP, 0x00000074\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+    %VRCUdonUdonBehaviour, this\r\n    __eventName_0: %SystemString, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n
+    \   .export _onPlayerTriggerStay\r\n    \r\n    _onPlayerTriggerStay:\r\n    \r\n
+    \       PUSH, onPlayerTriggerStayPlayer\r\n        PUSH, __VRCPlayerApi_0\r\n
+    \       COPY\r\n        PUSH, __VRCPlayerApi_0\r\n        PUSH, __Boolean_1\r\n
+    \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean\"\r\n        PUSH,
+    __Boolean_1\r\n        PUSH, __Boolean_0\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n
+    \       PUSH, __Boolean_0\r\n        JUMP_IF_FALSE, 0x00000074\r\n        PUSH,
+    __instance_0\r\n        PUSH, __eventName_0\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n
+    \       JUMP, 0x00000074\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -49,8 +49,7 @@ MonoBehaviour:
       - 476fe120-3f4d-45ce-bceb-7a3a67bfa43e
       nodeValues:
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
     - fullName: VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
       uid: 476fe120-3f4d-45ce-bceb-7a3a67bfa43e
       position: {x: 543.2396, y: 239.059}
@@ -71,8 +70,7 @@ MonoBehaviour:
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
     - fullName: Event_OnPlayerTriggerStay
       uid: 93a3cda1-f4dd-4b5a-9fc4-eb2d77ef7e58
       position: {x: -106.00005, y: 245.85004}

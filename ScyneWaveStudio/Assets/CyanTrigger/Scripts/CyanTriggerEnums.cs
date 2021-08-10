@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 namespace CyanTrigger
 {
-    public enum CyanTriggerSyncMode
+    public enum CyanTriggerVariableSyncMode
     {
         NotSynced = 0,
         Synced = 1,
@@ -19,6 +16,7 @@ namespace CyanTrigger
         Master = 2,
         UserAllowList = 3,
         UserDenyList = 4,
+        InstanceOwner = 5,
     }
 
     public enum CyanTriggerBroadcast
@@ -30,5 +28,15 @@ namespace CyanTrigger
         // TODO research buffering using the networking patch.
         // AllBufferOne,
         // AllBuffered
+    }
+    
+    public enum CyanTriggerProgramSyncMode
+    { 
+        Continuous = 0,
+        Manual = 1,
+        ManualWithAutoRequest = 2,
+        
+        // TODO
+        // ManualWithPeriodicRequest = 3
     }
 }

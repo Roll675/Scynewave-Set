@@ -1,4 +1,6 @@
 ﻿using System;
+using VRC.Udon;
+using VRC.Udon.Common.Interfaces;
 using VRC.Udon.Graph;
 
 namespace CyanTrigger
@@ -12,15 +14,17 @@ namespace CyanTrigger
         {
             Type = type;
             string friendlyName = CyanTriggerNameHelpers.GetTypeFriendlyName(Type);
-            string fullName = CyanTriggerNameHelpers.SanitizeName(Type.FullName);
-            if (type.IsArray)
+            string fullName = GetFullnameForType(Type);
+            
+            // TODO verify this doesn't break anything for for Udon types.
+            if (Type == typeof(IUdonEventReceiver))
             {
-                fullName += "Array";
+                Type = typeof(UdonBehaviour);
             }
             
             _definition = new UdonNodeDefinition(
                 "Variable " + friendlyName,
-                "CyanTriggerVariable_" + fullName,
+                fullName,
                 Type,
                 new []
                 {
@@ -36,6 +40,17 @@ namespace CyanTrigger
                 new object[0],
                 true
             );
+        }
+
+        public static string GetFullnameForType(Type type)
+        {
+            string fullName = CyanTriggerNameHelpers.SanitizeName(type.FullName);
+            if (type.IsArray)
+            {
+                fullName += "Array";
+            }
+
+            return "CyanTriggerVariable_" + fullName;
         }
         
         public override UdonNodeDefinition GetNodeDefinition()

@@ -18,9 +18,7 @@ MonoBehaviour:
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: efe97c645c76b7e42bc6eb27009209c4, type: 3}
   behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
-  compileErrors:
-  - '[<color=#FF00FF>UdonSharp</color>] Assets/USharpVideo/Scripts/EmissiveUpdater.cs(9,4):
-    System.Exception: User type EmissiveUpdater could not be found'
+  compileErrors: []
   hasInteractEvent: 0
   serializationData:
     SerializedFormat: 2

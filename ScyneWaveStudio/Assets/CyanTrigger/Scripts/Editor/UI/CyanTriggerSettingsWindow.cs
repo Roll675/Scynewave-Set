@@ -9,6 +9,11 @@ namespace CyanTrigger
 {
     public class CyanTriggerSettingsWindow : EditorWindow
     {
+        private const string VersionFileName = "version";
+        private const string WikiURL = "https://github.com/CyanLaser/CyanTrigger/wiki";
+        private const string DiscordURL = "https://discord.gg/stPkhM2T6C";
+        private const string PatreonURL = "https://www.patreon.com/CyanLaser";
+        
         private static readonly GUIContent FavoriteVariablesLabel = new GUIContent("Favorite Variables");
         private static readonly GUIContent FavoriteEventsLabel = new GUIContent("Favorite Events");
         private static readonly GUIContent FavoriteActionsLabel = new GUIContent("Favorite Actions");
@@ -19,7 +24,9 @@ namespace CyanTrigger
 
         private static readonly GUIContent ActionDetailedViewLabel = new GUIContent("Show Action Parameters",
             "When enabled, all parameters in each CyanTrigger action will be displayed with the action type. This can clutter the UI, but gives enough detail to fully understand the action without expanding it.");
-        
+
+        private static string _version;
+
         private static GUIStyle _style;
         
         private CyanTriggerSettingsData _settingsData;
@@ -47,7 +54,7 @@ namespace CyanTrigger
         private Vector2 _scrollPosition;
 
         [MenuItem ("Window/CyanTrigger/CyanTrigger Settings")]
-        static void ShowWindow ()
+        public static void ShowWindow()
         {
             var window = GetWindow<CyanTriggerSettingsWindow> ();
             window.titleContent = new GUIContent ("CyanTrigger Settings");
@@ -106,7 +113,7 @@ namespace CyanTrigger
         
         void OnGUI()
         {
-            _style = new GUIStyle(EditorStyles.helpBox);
+            _style = EditorStyles.helpBox;
             
             _settingsSerializedObject.Update();
             _variablesSerializedObject.Update();
@@ -127,7 +134,10 @@ namespace CyanTrigger
             EditorGUILayout.BeginVertical(GUILayout.MaxWidth(EditorGUIUtility.currentViewWidth - 30));
             
             EditorGUILayout.Space();
-            DrawHeader();
+            DrawHeader("CyanTrigger Settings");
+            EditorGUILayout.Space();
+
+            DrawActionSection();
             EditorGUILayout.Space();
 
             bool uiShouldUpdate = DrawUISettings();
@@ -148,8 +158,14 @@ namespace CyanTrigger
 
             _settingsSerializedObject.ApplyModifiedProperties();
             _variablesSerializedObject.ApplyModifiedProperties();
-            _eventsSerializedObject.ApplyModifiedProperties();
             _actionsSerializedObject.ApplyModifiedProperties();
+            bool eventsChanged = _eventsSerializedObject.ApplyModifiedProperties();
+            
+            if (eventsChanged)
+            {
+                CyanTriggerEventSearchWindow.ResetCache();
+            }
+            
 
             if (uiShouldUpdate)
             {
@@ -157,13 +173,72 @@ namespace CyanTrigger
             }
         }
 
-        private void DrawHeader()
+        public static void DrawHeader(string title)
         {
-            EditorGUILayout.Space();
-            EditorGUILayout.BeginVertical(_style);
+            if (string.IsNullOrEmpty(_version))
+            {
+                _version = Resources.Load<TextAsset>(VersionFileName).text.Trim();
+            }
             
-            EditorGUILayout.LabelField("CyanTrigger Settings");
-            // TODO draw other items such as patreon icon, discord, etc...
+            EditorGUILayout.Space();
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+            
+            EditorGUILayout.LabelField(title, EditorStyles.boldLabel);
+            GUILayout.Label(" Version: " + _version);
+            GUILayout.Label(" Created by CyanLaser");
+
+            DrawLinks();
+            
+            EditorGUILayout.EndVertical();
+        }
+        
+        private static void DrawLinks()
+        {
+            Rect buttonAreaRect = EditorGUILayout.BeginHorizontal();
+            buttonAreaRect.height = 16;
+            const float spaceBetween = 5;
+            float width = (buttonAreaRect.width - spaceBetween * 2) / 3;
+
+            Rect button1 = new Rect(buttonAreaRect.x, buttonAreaRect.y, width, buttonAreaRect.height);
+            Rect button2 = new Rect(button1.xMax + spaceBetween, buttonAreaRect.y, width, buttonAreaRect.height);
+            Rect button3 = new Rect(button2.xMax + spaceBetween, buttonAreaRect.y, width, buttonAreaRect.height);
+            
+            if (GUI.Button(button1, "Wiki"))
+            {
+                Application.OpenURL(WikiURL);
+            }
+
+            if (GUI.Button(button2, "Discord"))
+            {
+                Application.OpenURL(DiscordURL);
+            }
+
+            if (GUI.Button(button3, "Patreon"))
+            {
+                Application.OpenURL(PatreonURL);
+            }
+            
+            // TODO GitHub or Youtube tutorials link
+
+            EditorGUILayout.EndHorizontal();
+            GUILayout.Space(buttonAreaRect.height);
+        }
+
+        private static void DrawActionSection()
+        {
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+            
+            EditorGUILayout.LabelField("Actions");
+            
+            if (GUILayout.Button(new GUIContent("Compile Triggers", "Compile all CyanTriggers in the scene.")))
+            {
+                CyanTriggerSerializerManager.RecompileAllTriggers(true);
+            }
+            
+            if (GUILayout.Button(new GUIContent("Clear Serialized Data", "Clear all the serialized CyanTrigger data. the serialized data is reused between scenes, but sometimes more can be generated than needed.")))
+            {
+                CyanTriggerSerializedProgramManager.Instance.ClearSerializedData();
+            }
             
             EditorGUILayout.EndVertical();
         }

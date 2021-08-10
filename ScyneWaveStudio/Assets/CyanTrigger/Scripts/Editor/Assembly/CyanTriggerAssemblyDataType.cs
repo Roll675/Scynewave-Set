@@ -9,7 +9,7 @@ namespace CyanTrigger
         public Type type;
         public bool export;
         public object defaultValue;
-        public CyanTriggerSyncMode sync;
+        public CyanTriggerVariableSyncMode sync;
         public bool hasCallback;
         public CyanTriggerAssemblyDataType previousVariable;
         public string guid;
