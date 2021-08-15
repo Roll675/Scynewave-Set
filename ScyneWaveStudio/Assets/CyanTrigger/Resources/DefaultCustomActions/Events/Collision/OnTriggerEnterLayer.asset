@@ -12,37 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: OnTriggerEnterLayer
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 7e0c12b5f79416f46a7652774cddc488,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 01425e816009ff64d8daa2c1c531c481,
     type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export CollisionMask\r\n    \r\n    __Boolean_0:
     %SystemBoolean, null\r\n    __Object_0: %UnityEngineObject, null\r\n    __Object_1:
-    %UnityEngineObject, null\r\n    onTriggerEnterOther: %UnityEngineCollider, null\r\n
-    \   __var_0: %SystemObject, null\r\n    __Boolean_1: %SystemBoolean, null\r\n
-    \   __Int32_0: %SystemInt32, null\r\n    __Int32_1: %SystemInt32, null\r\n    __Int32_2:
-    %SystemInt32, null\r\n    __Int32_3: %SystemInt32, null\r\n    __instance_0: %UnityEngineLayerMask,
-    null\r\n    __Int32_4: %SystemInt32, null\r\n    __Int32_5: %SystemInt32, null\r\n
-    \   __instance_1: %UnityEngineGameObject, this\r\n    __instance_2: %UnityEngineCollider,
-    null\r\n    __instance_3: %VRCUdonUdonBehaviour, this\r\n    __eventName_0: %SystemString,
-    null\r\n    CollisionMask: %UnityEngineLayerMask, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n
-    \   .export _onTriggerEnter\r\n    \r\n    _onTriggerEnter:\r\n    \r\n        PUSH,
-    onTriggerEnterOther\r\n        PUSH, __Object_0\r\n        COPY\r\n        PUSH,
-    __var_0\r\n        PUSH, __Object_1\r\n        COPY\r\n        PUSH, __Object_0\r\n
-    \       PUSH, __Object_1\r\n        PUSH, __Boolean_0\r\n        EXTERN, \"UnityEngineCollider.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
-    \       PUSH, __Boolean_0\r\n        JUMP_IF_FALSE, 0x00000060\r\n        JUMP,
-    0x0000014C\r\n        PUSH, CollisionMask\r\n        PUSH, __Int32_2\r\n        EXTERN,
-    \"UnityEngineLayerMask.__get_value__SystemInt32\"\r\n        PUSH, onTriggerEnterOther\r\n
-    \       PUSH, __instance_2\r\n        COPY\r\n        PUSH, __instance_2\r\n        PUSH,
-    __instance_1\r\n        EXTERN, \"UnityEngineCollider.__get_gameObject__UnityEngineGameObject\"\r\n
-    \       PUSH, __instance_1\r\n        PUSH, __Int32_5\r\n        EXTERN, \"UnityEngineGameObject.__get_layer__SystemInt32\"\r\n
-    \       PUSH, __Int32_4\r\n        PUSH, __Int32_5\r\n        PUSH, __Int32_3\r\n
-    \       EXTERN, \"SystemInt32.__op_LeftShift__SystemInt32_SystemInt32__SystemInt32\"\r\n
-    \       PUSH, __Int32_2\r\n        PUSH, __Int32_3\r\n        PUSH, __Int32_0\r\n
-    \       EXTERN, \"SystemInt32.__op_LogicalAnd__SystemInt32_SystemInt32__SystemInt32\"\r\n
-    \       PUSH, __Int32_0\r\n        PUSH, __Int32_1\r\n        PUSH, __Boolean_1\r\n
-    \       EXTERN, \"SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __Boolean_1\r\n        JUMP_IF_FALSE, 0x0000014C\r\n        PUSH,
-    __instance_3\r\n        PUSH, __eventName_0\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n
-    \       JUMP, 0x0000014C\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+    %UnityEngineObject, null\r\n    onTriggerEnterOther: %UnityEngineCollider, null\r\n   
+    __var_0: %SystemObject, null\r\n    __Boolean_1: %SystemBoolean, null\r\n   
+    __Int32_0: %SystemInt32, null\r\n    __Int32_1: %SystemInt32, null\r\n    __Int32_2:
+    %SystemInt32, null\r\n    __Int32_3: %SystemInt32, null\r\n    __instance_0:
+    %UnityEngineLayerMask, null\r\n    __Int32_4: %SystemInt32, null\r\n    __Int32_5:
+    %SystemInt32, null\r\n    __instance_1: %UnityEngineGameObject, this\r\n    __instance_2:
+    %UnityEngineCollider, null\r\n    __instance_3: %VRCUdonUdonBehaviour, this\r\n   
+    __eventName_0: %SystemString, null\r\n    CollisionMask: %UnityEngineLayerMask,
+    null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export _onTriggerEnter\r\n   
+    \r\n    _onTriggerEnter:\r\n    \r\n        PUSH, onTriggerEnterOther\r\n       
+    PUSH, __Object_0\r\n        COPY\r\n        PUSH, __var_0\r\n        PUSH, __Object_1\r\n       
+    COPY\r\n        PUSH, __Object_0\r\n        PUSH, __Object_1\r\n        PUSH,
+    __Boolean_0\r\n        EXTERN, \"UnityEngineCollider.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n       
+    PUSH, __Boolean_0\r\n        JUMP_IF_FALSE, 0x00000060\r\n        JUMP, 0x0000014C\r\n       
+    PUSH, CollisionMask\r\n        PUSH, __Int32_2\r\n        EXTERN, \"UnityEngineLayerMask.__get_value__SystemInt32\"\r\n       
+    PUSH, onTriggerEnterOther\r\n        PUSH, __instance_2\r\n        COPY\r\n       
+    PUSH, __instance_2\r\n        PUSH, __instance_1\r\n        EXTERN, \"UnityEngineCollider.__get_gameObject__UnityEngineGameObject\"\r\n       
+    PUSH, __instance_1\r\n        PUSH, __Int32_5\r\n        EXTERN, \"UnityEngineGameObject.__get_layer__SystemInt32\"\r\n       
+    PUSH, __Int32_4\r\n        PUSH, __Int32_5\r\n        PUSH, __Int32_3\r\n       
+    EXTERN, \"SystemInt32.__op_LeftShift__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    PUSH, __Int32_2\r\n        PUSH, __Int32_3\r\n        PUSH, __Int32_0\r\n       
+    EXTERN, \"SystemInt32.__op_LogicalAnd__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    PUSH, __Int32_0\r\n        PUSH, __Int32_1\r\n        PUSH, __Boolean_1\r\n       
+    EXTERN, \"SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __Boolean_1\r\n        JUMP_IF_FALSE, 0x0000014C\r\n        PUSH, __instance_3\r\n       
+    PUSH, __eventName_0\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n       
+    JUMP, 0x0000014C\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -71,9 +71,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|CollisionMask
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: UnityEngineCollider.__get_gameObject__UnityEngineGameObject
@@ -146,7 +148,8 @@ MonoBehaviour:
       - f52bd47a-1472-443e-a6f8-5599d644cbaf
       nodeValues:
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
     - fullName: VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
       uid: f52bd47a-1472-443e-a6f8-5599d644cbaf
       position: {x: 969, y: -173.24002}
@@ -190,7 +193,8 @@ MonoBehaviour:
       - 378bd80b-7b77-4d57-abee-7f6412a5f84d
       nodeValues:
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
     - fullName: UnityEngineCollider.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
       uid: 3c7a55c1-ba9f-478e-986d-53e7bc92919e
       position: {x: -158.37653, y: -45.891582}

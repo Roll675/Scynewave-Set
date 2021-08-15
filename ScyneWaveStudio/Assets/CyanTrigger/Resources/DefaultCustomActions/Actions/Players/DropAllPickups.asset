@@ -12,31 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: DropAllPickups
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 071fac04521d11d4b80a81311ae62a17,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 82edd85230659c44b86411bb86a2932f,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    \r\n    __object_0: %SystemObject, null\r\n
-    \   __result_0: %SystemBoolean, null\r\n    __instance_1: %VRCSDK3ComponentsVRCPickup,
+  udonAssembly: ".data_start\r\n\r\n    \r\n    __object_0: %SystemObject, null\r\n   
+    __result_0: %SystemBoolean, null\r\n    __instance_1: %VRCSDK3ComponentsVRCPickup,
     null\r\n    __instance_0: %VRCSDKBaseVRCPlayerApi, null\r\n    __hand_0: %VRCSDKBaseVRC_PickupPickupHand,
     null\r\n    __object_1: %SystemObject, null\r\n    __result_1: %SystemBoolean,
     null\r\n    __instance_3: %VRCSDK3ComponentsVRCPickup, null\r\n    __instance_2:
     %VRCSDKBaseVRCPlayerApi, null\r\n    __hand_1: %VRCSDKBaseVRC_PickupPickupHand,
-    null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export DropPickup\r\n    \r\n
-    \   DropPickup:\r\n    \r\n        PUSH, __instance_0\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
-    \       PUSH, __instance_0\r\n        PUSH, __hand_0\r\n        PUSH, __object_0\r\n
-    \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetPickupInHand__VRCSDKBaseVRC_PickupPickupHand__VRCSDKBaseVRC_Pickup\"\r\n
-    \       PUSH, __object_0\r\n        PUSH, __result_0\r\n        EXTERN, \"VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean\"\r\n
-    \       PUSH, __result_0\r\n        JUMP_IF_FALSE, 0x00000084\r\n        PUSH,
-    __object_0\r\n        PUSH, __instance_1\r\n        COPY\r\n        PUSH, __object_0\r\n
-    \       EXTERN, \"VRCSDK3ComponentsVRCPickup.__Drop__SystemVoid\"\r\n        JUMP,
-    0x00000084\r\n        PUSH, __instance_0\r\n        PUSH, __instance_2\r\n        COPY\r\n
-    \       PUSH, __instance_0\r\n        PUSH, __hand_1\r\n        PUSH, __object_1\r\n
-    \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetPickupInHand__VRCSDKBaseVRC_PickupPickupHand__VRCSDKBaseVRC_Pickup\"\r\n
-    \       PUSH, __object_1\r\n        PUSH, __result_1\r\n        EXTERN, \"VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean\"\r\n
-    \       PUSH, __result_1\r\n        JUMP_IF_FALSE, 0x00000120\r\n        PUSH,
-    __instance_0\r\n        PUSH, __instance_2\r\n        COPY\r\n        PUSH, __object_1\r\n
-    \       PUSH, __instance_3\r\n        COPY\r\n        PUSH, __object_1\r\n        EXTERN,
-    \"VRCSDK3ComponentsVRCPickup.__Drop__SystemVoid\"\r\n        JUMP, 0x00000120\r\n
-    \       JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+    null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export DropPickup\r\n   
+    \r\n    DropPickup:\r\n    \r\n        PUSH, __instance_0\r\n        EXTERN,
+    \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n       
+    PUSH, __instance_0\r\n        PUSH, __hand_0\r\n        PUSH, __object_0\r\n       
+    EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetPickupInHand__VRCSDKBaseVRC_PickupPickupHand__VRCSDKBaseVRC_Pickup\"\r\n       
+    PUSH, __object_0\r\n        PUSH, __result_0\r\n        EXTERN, \"VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean\"\r\n       
+    PUSH, __result_0\r\n        JUMP_IF_FALSE, 0x00000084\r\n        PUSH, __object_0\r\n       
+    PUSH, __instance_1\r\n        COPY\r\n        PUSH, __object_0\r\n        EXTERN,
+    \"VRCSDK3ComponentsVRCPickup.__Drop__SystemVoid\"\r\n        JUMP, 0x00000084\r\n       
+    PUSH, __instance_0\r\n        PUSH, __instance_2\r\n        COPY\r\n        PUSH,
+    __instance_0\r\n        PUSH, __hand_1\r\n        PUSH, __object_1\r\n       
+    EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetPickupInHand__VRCSDKBaseVRC_PickupPickupHand__VRCSDKBaseVRC_Pickup\"\r\n       
+    PUSH, __object_1\r\n        PUSH, __result_1\r\n        EXTERN, \"VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean\"\r\n       
+    PUSH, __result_1\r\n        JUMP_IF_FALSE, 0x00000120\r\n        PUSH, __instance_0\r\n       
+    PUSH, __instance_2\r\n        COPY\r\n        PUSH, __object_1\r\n        PUSH,
+    __instance_3\r\n        COPY\r\n        PUSH, __object_1\r\n        EXTERN, \"VRCSDK3ComponentsVRCPickup.__Drop__SystemVoid\"\r\n       
+    JUMP, 0x00000120\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 

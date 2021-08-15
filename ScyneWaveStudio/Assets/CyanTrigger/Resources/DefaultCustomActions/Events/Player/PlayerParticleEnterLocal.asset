@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: PlayerParticleEnterLocal
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 3ce5e875347b79d4aad471046a3ef941,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 7cb096ce7bb8aed419d7164e4dfb5250,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    \r\n    __Boolean_0: %SystemBoolean, null\r\n
-    \   __VRCPlayerApi_0: %VRCSDKBaseVRCPlayerApi, null\r\n    onPlayerParticleCollisionPlayer:
-    %VRCSDKBaseVRCPlayerApi, null\r\n    __instance_0: %VRCUdonUdonBehaviour, this\r\n
-    \   __eventName_0: %SystemString, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n
-    \   .export _onPlayerParticleCollision\r\n    \r\n    _onPlayerParticleCollision:\r\n
-    \   \r\n        PUSH, onPlayerParticleCollisionPlayer\r\n        PUSH, __VRCPlayerApi_0\r\n
-    \       COPY\r\n        PUSH, __VRCPlayerApi_0\r\n        PUSH, __Boolean_0\r\n
-    \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean\"\r\n        PUSH,
-    __Boolean_0\r\n        JUMP_IF_FALSE, 0x0000005C\r\n        PUSH, __instance_0\r\n
-    \       PUSH, __eventName_0\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n
-    \       JUMP, 0x0000005C\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+  udonAssembly: ".data_start\r\n\r\n    \r\n    __Boolean_0: %SystemBoolean, null\r\n   
+    __VRCPlayerApi_0: %VRCSDKBaseVRCPlayerApi, null\r\n    onPlayerParticleCollisionPlayer:
+    %VRCSDKBaseVRCPlayerApi, null\r\n    __instance_0: %VRCUdonUdonBehaviour, this\r\n   
+    __eventName_0: %SystemString, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
+    .export _onPlayerParticleCollision\r\n    \r\n    _onPlayerParticleCollision:\r\n   
+    \r\n        PUSH, onPlayerParticleCollisionPlayer\r\n        PUSH, __VRCPlayerApi_0\r\n       
+    COPY\r\n        PUSH, __VRCPlayerApi_0\r\n        PUSH, __Boolean_0\r\n       
+    EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean\"\r\n        PUSH,
+    __Boolean_0\r\n        JUMP_IF_FALSE, 0x0000005C\r\n        PUSH, __instance_0\r\n       
+    PUSH, __eventName_0\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n       
+    JUMP, 0x0000005C\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -67,7 +67,8 @@ MonoBehaviour:
       - 7da2a44a-5084-4c82-b629-72a796271bf4
       nodeValues:
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
     updateOrder: 0
   graphElementData:
   - type: 5

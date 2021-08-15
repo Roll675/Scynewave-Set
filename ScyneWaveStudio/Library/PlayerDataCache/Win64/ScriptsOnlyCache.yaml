@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp-Editor.dll:
     - CyanTrigger.CyanTriggerActionGroupDefinitionUdonAsset
     - CyanTrigger.CyanTriggerProgramAsset
+    - CyanTrigger.CyanTriggerSettingsData
     - VRCSdkControlPanel
     Assembly-CSharp.dll:
     - CyanTrigger.CyanTrigger
@@ -24,6 +25,7 @@ ScriptsOnlyBuild:
     - Cinemachine.NoiseSettings
     GitHub.Unity.45.dll:
     - GitHub.Unity.ApplicationCache
+    - GitHub.Unity.BranchesCache
     - GitHub.Unity.EnvironmentCache
     - GitHub.Unity.GitAheadBehindCache
     - GitHub.Unity.GitLocksCache

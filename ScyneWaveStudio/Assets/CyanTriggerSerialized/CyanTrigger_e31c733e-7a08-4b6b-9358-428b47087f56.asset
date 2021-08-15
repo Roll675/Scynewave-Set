@@ -14,38 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedUdonProgramAsset: {fileID: 11400000, guid: 2f01cea85fdbb00449430f114de821f2,
     type: 2}
-  udonAssembly: ".data_start\r\n  .export _this_gameobject\r\n  .export _this_transform\r\n
-    \ .export _this_udonbehaviour\r\n  .export _6_ref_UnityEngineAnimator\r\n  .export
-    _8_ref_UnityEngineGameObject\r\n  .export _9_ref_SystemBoolean\r\n  .export _10_ref_UnityEngineGameObject\r\n
-    \ .export _11_ref_SystemBoolean\r\n  .export _12_ref_UnityEngineGameObject\r\n
-    \ .export _13_ref_UnityEngineGameObject\r\n  uint_return_address: %SystemUInt32,
-    null\r\n  uint_int_end_address: %SystemUInt32, null\r\n  _this_gameobject: %UnityEngineGameObject,
+  udonAssembly: ".data_start\r\n  .export _this_gameobject\r\n  .export _this_transform\r\n 
+    .export _this_udonbehaviour\r\n  .export __7_ref_UnityEngineGameObject\r\n  .export
+    __8_ref_SystemBoolean\r\n  .export __9_ref_UnityEngineGameObject\r\n  .export
+    __10_ref_SystemBoolean\r\n  .export __11_ref_UnityEngineGameObject\r\n  .export
+    __12_ref_UnityEngineGameObject\r\n  uint_return_address: %SystemUInt32, null\r\n 
+    uint_int_end_address: %SystemUInt32, null\r\n  _this_gameobject: %UnityEngineGameObject,
     this\r\n  _this_transform: %UnityEngineTransform, this\r\n  _this_udonbehaviour:
     %VRCUdonCommonInterfacesIUdonEventReceiver, null\r\n  _this_local_player: %VRCSDKBaseVRCPlayerApi,
-    null\r\n  _6_ref_UnityEngineAnimator: %UnityEngineAnimator, null\r\n  _7_jump_return_0_SystemUInt32:
-    %SystemUInt32, null\r\n  _8_ref_UnityEngineGameObject: %UnityEngineGameObject,
-    this\r\n  _9_ref_SystemBoolean: %SystemBoolean, null\r\n  _10_ref_UnityEngineGameObject:
-    %UnityEngineGameObject, this\r\n  _11_ref_SystemBoolean: %SystemBoolean, null\r\n
-    \ _12_ref_UnityEngineGameObject: %UnityEngineGameObject, this\r\n  _13_ref_UnityEngineGameObject:
-    %UnityEngineGameObject, this\r\n.data_end\r\n\n.code_start\r\n  .export _onAnimatorMove\r\n
-    \ _onAnimatorMove:\r\n    PUSH, uint_int_end_address\r\n    PUSH, _6_ref_UnityEngineAnimator\r\n
-    \   EXTERN, \"UnityEngineAnimator.__ApplyBuiltinRootMotion__SystemVoid\"\r\n    PUSH,
-    uint_return_address\r\n    COPY\r\n    JUMP_INDIRECT, uint_return_address\r\n\r\n
-    \ .export _start\r\n  _start:\r\n    PUSH, uint_int_end_address\r\n    PUSH, _this_local_player\r\n
-    \   EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
-    \   PUSH, uint_return_address\r\n    COPY\r\n    JUMP_INDIRECT, uint_return_address\r\n\r\n
-    \ .export _interact\r\n  _interact:\r\n    PUSH, uint_int_end_address\r\n    PUSH,
-    _7_jump_return_0_SystemUInt32\r\n    JUMP, 0x0000008C\r\n    PUSH, uint_return_address\r\n
-    \   COPY\r\n    JUMP_INDIRECT, uint_return_address\r\n\r\n  __intern_event_0_actions:\r\n
-    \   PUSH, uint_int_end_address\r\n    PUSH, _8_ref_UnityEngineGameObject\r\n    PUSH,
-    _9_ref_SystemBoolean\r\n    EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
-    \   PUSH, _10_ref_UnityEngineGameObject\r\n    PUSH, _11_ref_SystemBoolean\r\n
-    \   EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
-    \   PUSH, _12_ref_UnityEngineGameObject\r\n    PUSH, _11_ref_SystemBoolean\r\n
-    \   EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
-    \   PUSH, _13_ref_UnityEngineGameObject\r\n    PUSH, _11_ref_SystemBoolean\r\n
-    \   EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
-    \   PUSH, uint_return_address\r\n    COPY\r\n    JUMP_INDIRECT, uint_return_address\r\n\r\n.code_end\r\n"
+    null\r\n  __6_jump_return_0_SystemUInt32: %SystemUInt32, null\r\n  __7_ref_UnityEngineGameObject:
+    %UnityEngineGameObject, this\r\n  __8_ref_SystemBoolean: %SystemBoolean, null\r\n 
+    __9_ref_UnityEngineGameObject: %UnityEngineGameObject, this\r\n  __10_ref_SystemBoolean:
+    %SystemBoolean, null\r\n  __11_ref_UnityEngineGameObject: %UnityEngineGameObject,
+    this\r\n  __12_ref_UnityEngineGameObject: %UnityEngineGameObject, this\r\n.data_end\r\n\n.code_start\r\n 
+    .export _start\r\n  _start:\r\n    PUSH, uint_int_end_address\r\n    PUSH, _this_local_player\r\n   
+    EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n   
+    PUSH, uint_return_address\r\n    COPY\r\n    JUMP_INDIRECT, uint_return_address\r\n\r\n 
+    .export _interact\r\n  _interact:\r\n    PUSH, uint_int_end_address\r\n    PUSH,
+    __6_jump_return_0_SystemUInt32\r\n    JUMP, 0x00000060\r\n    PUSH, uint_return_address\r\n   
+    COPY\r\n    JUMP_INDIRECT, uint_return_address\r\n\r\n  __intern_event_0_actions:\r\n   
+    PUSH, uint_int_end_address\r\n    PUSH, __7_ref_UnityEngineGameObject\r\n   
+    PUSH, __8_ref_SystemBoolean\r\n    EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n   
+    PUSH, __9_ref_UnityEngineGameObject\r\n    PUSH, __10_ref_SystemBoolean\r\n   
+    EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n   
+    PUSH, __11_ref_UnityEngineGameObject\r\n    PUSH, __10_ref_SystemBoolean\r\n   
+    EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n   
+    PUSH, __12_ref_UnityEngineGameObject\r\n    PUSH, __10_ref_SystemBoolean\r\n   
+    EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n   
+    PUSH, uint_return_address\r\n    COPY\r\n    JUMP_INDIRECT, uint_return_address\r\n\r\n.code_end\r\n"
   assemblyError: 
   triggerHash: AEAB30AB70872CC46625DB097888FAF3
   serializationData:
@@ -57,33 +53,60 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: warningMessages
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: errorMessages
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: cyanTriggerDataInstance
       Entry: 7
-      Data: 0|CyanTrigger.CyanTriggerDataInstance, Assembly-CSharp
+      Data: 2|CyanTrigger.CyanTriggerDataInstance, Assembly-CSharp
     - Name: version
       Entry: 3
       Data: 0
-    - Name: applyAnimatorMove
-      Entry: 5
-      Data: true
+    - Name: updateOrder
+      Entry: 3
+      Data: 0
+    - Name: programSyncMode
+      Entry: 3
+      Data: 0
     - Name: events
       Entry: 7
-      Data: 1|CyanTrigger.CyanTriggerEvent[], Assembly-CSharp
+      Data: 3|CyanTrigger.CyanTriggerEvent[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 2|CyanTrigger.CyanTriggerEvent, Assembly-CSharp
+      Data: 4|CyanTrigger.CyanTriggerEvent, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 
     - Name: eventInstance
       Entry: 7
-      Data: 3|CyanTrigger.CyanTriggerActionInstance, Assembly-CSharp
+      Data: 5|CyanTrigger.CyanTriggerActionInstance, Assembly-CSharp
     - Name: actionType
       Entry: 7
-      Data: 4|CyanTrigger.CyanTriggerActionType, Assembly-CSharp
+      Data: 6|CyanTrigger.CyanTriggerActionType, Assembly-CSharp
     - Name: directEvent
       Entry: 1
       Data: Event_Interact
@@ -95,7 +118,7 @@ MonoBehaviour:
       Data: 
     - Name: inputs
       Entry: 7
-      Data: 5|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
+      Data: 7|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -107,7 +130,7 @@ MonoBehaviour:
       Data: 
     - Name: multiInput
       Entry: 7
-      Data: 6|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
+      Data: 8|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -116,22 +139,28 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: comment
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: actionInstances
       Entry: 7
-      Data: 7|CyanTrigger.CyanTriggerActionInstance[], Assembly-CSharp
+      Data: 9|CyanTrigger.CyanTriggerActionInstance[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 8|CyanTrigger.CyanTriggerActionInstance, Assembly-CSharp
+      Data: 10|CyanTrigger.CyanTriggerActionInstance, Assembly-CSharp
     - Name: actionType
       Entry: 7
-      Data: 9|CyanTrigger.CyanTriggerActionType, Assembly-CSharp
+      Data: 11|CyanTrigger.CyanTriggerActionType, Assembly-CSharp
     - Name: directEvent
       Entry: 1
       Data: UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid
@@ -143,13 +172,13 @@ MonoBehaviour:
       Data: 
     - Name: inputs
       Entry: 7
-      Data: 10|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
+      Data: 12|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 11|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
+      Data: 13|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
     - Name: isVariable
       Entry: 5
       Data: false
@@ -167,7 +196,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
+      Data: 14|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
     - Name: isVariable
       Entry: 5
       Data: false
@@ -179,13 +208,13 @@ MonoBehaviour:
       Data: 
     - Name: data
       Entry: 7
-      Data: 13|CyanTrigger.CyanTriggerSerializableObject, Assembly-CSharp
+      Data: 15|CyanTrigger.CyanTriggerSerializableObject, Assembly-CSharp
     - Name: objEncoded
       Entry: 1
       Data: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAEF
     - Name: unityObjects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[UnityEngine.Object, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Object, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -210,13 +239,13 @@ MonoBehaviour:
       Data: 
     - Name: multiInput
       Entry: 7
-      Data: 15|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
+      Data: 17|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 16|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
+      Data: 18|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
     - Name: isVariable
       Entry: 5
       Data: false
@@ -238,15 +267,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: comment
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 17|CyanTrigger.CyanTriggerActionInstance, Assembly-CSharp
+      Data: 19|CyanTrigger.CyanTriggerActionInstance, Assembly-CSharp
     - Name: actionType
       Entry: 7
-      Data: 18|CyanTrigger.CyanTriggerActionType, Assembly-CSharp
+      Data: 20|CyanTrigger.CyanTriggerActionType, Assembly-CSharp
     - Name: directEvent
       Entry: 1
       Data: UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid
@@ -258,13 +293,13 @@ MonoBehaviour:
       Data: 
     - Name: inputs
       Entry: 7
-      Data: 19|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
+      Data: 21|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 20|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
+      Data: 22|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
     - Name: isVariable
       Entry: 5
       Data: false
@@ -282,7 +317,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 21|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
+      Data: 23|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
     - Name: isVariable
       Entry: 5
       Data: false
@@ -294,13 +329,13 @@ MonoBehaviour:
       Data: 
     - Name: data
       Entry: 7
-      Data: 22|CyanTrigger.CyanTriggerSerializableObject, Assembly-CSharp
+      Data: 24|CyanTrigger.CyanTriggerSerializableObject, Assembly-CSharp
     - Name: objEncoded
       Entry: 1
       Data: Ai8AAAAAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAALAAF
     - Name: unityObjects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[UnityEngine.Object, UnityEngine.CoreModule]],
+      Data: 25|System.Collections.Generic.List`1[[UnityEngine.Object, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -325,46 +360,10 @@ MonoBehaviour:
       Data: 
     - Name: multiInput
       Entry: 7
-      Data: 24|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
+      Data: 26|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 3
-    - Name: 
-      Entry: 7
-      Data: 25|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
-    - Name: isVariable
-      Entry: 5
-      Data: false
-    - Name: name
-      Entry: 1
-      Data: 
-    - Name: variableID
-      Entry: 1
-      Data: 
-    - Name: data
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 26|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
-    - Name: isVariable
-      Entry: 5
-      Data: false
-    - Name: name
-      Entry: 1
-      Data: 
-    - Name: variableID
-      Entry: 1
-      Data: 
-    - Name: data
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 7
       Data: 27|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
@@ -384,10 +383,52 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 28|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
+    - Name: isVariable
+      Entry: 5
+      Data: false
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: variableID
+      Entry: 1
+      Data: 
+    - Name: data
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 29|CyanTrigger.CyanTriggerActionVariableInstance, Assembly-CSharp
+    - Name: isVariable
+      Entry: 5
+      Data: false
+    - Name: name
+      Entry: 1
+      Data: 
+    - Name: variableID
+      Entry: 1
+      Data: 
+    - Name: data
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: comment
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -400,13 +441,13 @@ MonoBehaviour:
       Data: 
     - Name: eventOptions
       Entry: 7
-      Data: 28|CyanTrigger.CyanTriggerEventOptions, Assembly-CSharp
+      Data: 30|CyanTrigger.CyanTriggerEventOptions, Assembly-CSharp
     - Name: userGate
       Entry: 3
       Data: 0
     - Name: userGateExtraData
       Entry: 7
-      Data: 29|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
+      Data: 31|CyanTrigger.CyanTriggerActionVariableInstance[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -425,6 +466,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -436,7 +480,7 @@ MonoBehaviour:
       Data: 
     - Name: variables
       Entry: 7
-      Data: 30|CyanTrigger.CyanTriggerVariable[], Assembly-CSharp
+      Data: 32|CyanTrigger.CyanTriggerVariable[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -446,28 +490,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: comment
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: variableReferences
       Entry: 7
-      Data: 31|CyanTrigger.CyanTriggerDataReferences, Assembly-CSharp-Editor
+      Data: 33|CyanTrigger.CyanTriggerDataReferences, Assembly-CSharp-Editor
     - Name: ActionDataIndices
       Entry: 7
-      Data: 32|System.Collections.Generic.List`1[[CyanTrigger.CyanTriggerActionDataReferenceIndex,
+      Data: 34|System.Collections.Generic.List`1[[CyanTrigger.CyanTriggerActionDataReferenceIndex,
         Assembly-CSharp-Editor]], mscorlib
     - Name: 
       Entry: 12
       Data: 6
     - Name: 
       Entry: 7
-      Data: 33|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
+      Data: 35|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
     - Name: symbolName
       Entry: 1
-      Data: _8_ref_UnityEngineGameObject
+      Data: __7_ref_UnityEngineGameObject
     - Name: symbolType
       Entry: 7
-      Data: 34|System.RuntimeType, mscorlib
+      Data: 36|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: UnityEngine.GameObject, UnityEngine.CoreModule
@@ -491,13 +538,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 35|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
+      Data: 37|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
     - Name: symbolName
       Entry: 1
-      Data: _9_ref_SystemBoolean
+      Data: __8_ref_SystemBoolean
     - Name: symbolType
       Entry: 7
-      Data: 36|System.RuntimeType, mscorlib
+      Data: 38|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: System.Boolean, mscorlib
@@ -521,13 +568,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 37|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
+      Data: 39|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
     - Name: symbolName
       Entry: 1
-      Data: _10_ref_UnityEngineGameObject
+      Data: __9_ref_UnityEngineGameObject
     - Name: symbolType
       Entry: 9
-      Data: 34
+      Data: 36
     - Name: eventIndex
       Entry: 3
       Data: 0
@@ -545,13 +592,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 38|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
+      Data: 40|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
     - Name: symbolName
       Entry: 1
-      Data: _11_ref_SystemBoolean
+      Data: __10_ref_SystemBoolean
     - Name: symbolType
       Entry: 9
-      Data: 36
+      Data: 38
     - Name: eventIndex
       Entry: 3
       Data: 0
@@ -569,13 +616,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 39|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
+      Data: 41|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
     - Name: symbolName
       Entry: 1
-      Data: _12_ref_UnityEngineGameObject
+      Data: __11_ref_UnityEngineGameObject
     - Name: symbolType
       Entry: 9
-      Data: 34
+      Data: 36
     - Name: eventIndex
       Entry: 3
       Data: 0
@@ -593,13 +640,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 40|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
+      Data: 42|CyanTrigger.CyanTriggerActionDataReferenceIndex, Assembly-CSharp-Editor
     - Name: symbolName
       Entry: 1
-      Data: _13_ref_UnityEngineGameObject
+      Data: __12_ref_UnityEngineGameObject
     - Name: symbolType
       Entry: 9
-      Data: 34
+      Data: 36
     - Name: eventIndex
       Entry: 3
       Data: 0
@@ -622,15 +669,15 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: animatorSymbol
-      Entry: 1
-      Data: _6_ref_UnityEngineAnimator
+      Entry: 6
+      Data: 
     - Name: userVariables
       Entry: 7
-      Data: 41|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Type,
+      Data: 43|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Type,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 42|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 44|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -649,18 +696,18 @@ MonoBehaviour:
       Data: 
     - Name: heapDefaultValues
       Entry: 7
-      Data: 43|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.ValueTuple`2[[System.Object,
+      Data: 45|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.ValueTuple`2[[System.Object,
         mscorlib],[System.Type, mscorlib]], mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 44|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 46|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 12
-      Data: 14
+      Data: 13
     - Name: 
       Entry: 7
       Data: 
@@ -676,7 +723,7 @@ MonoBehaviour:
       Data: 
     - Name: Item2
       Entry: 7
-      Data: 45|System.RuntimeType, mscorlib
+      Data: 47|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: System.UInt32, mscorlib
@@ -701,7 +748,7 @@ MonoBehaviour:
         mscorlib
     - Name: Item1
       Entry: 7
-      Data: 46|System.UInt32, mscorlib
+      Data: 48|System.UInt32, mscorlib
     - Name: 
       Entry: 3
       Data: 16777200
@@ -710,7 +757,7 @@ MonoBehaviour:
       Data: 
     - Name: Item2
       Entry: 9
-      Data: 45
+      Data: 47
     - Name: 
       Entry: 8
       Data: 
@@ -732,7 +779,7 @@ MonoBehaviour:
       Data: 
     - Name: Item2
       Entry: 9
-      Data: 34
+      Data: 36
     - Name: 
       Entry: 8
       Data: 
@@ -754,7 +801,7 @@ MonoBehaviour:
       Data: 
     - Name: Item2
       Entry: 7
-      Data: 47|System.RuntimeType, mscorlib
+      Data: 49|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: UnityEngine.Transform, UnityEngine.CoreModule
@@ -782,7 +829,7 @@ MonoBehaviour:
       Data: 
     - Name: Item2
       Entry: 7
-      Data: 48|System.RuntimeType, mscorlib
+      Data: 50|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VRC.Udon.Common.Interfaces.IUdonEventReceiver, VRC.Udon.Common
@@ -810,7 +857,7 @@ MonoBehaviour:
       Data: 
     - Name: Item2
       Entry: 7
-      Data: 49|System.RuntimeType, mscorlib
+      Data: 51|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VRC.SDKBase.VRCPlayerApi, VRCSDKBase
@@ -828,51 +875,23 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: _6_ref_UnityEngineAnimator
-    - Name: $v
-      Entry: 7
-      Data: System.ValueTuple`2[[System.Object, mscorlib],[System.Type, mscorlib]],
-        mscorlib
-    - Name: Item1
-      Entry: 6
-      Data: 
-    - Name: Item2
-      Entry: 7
-      Data: 50|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: UnityEngine.Animator, UnityEngine.AnimationModule
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: _7_jump_return_0_SystemUInt32
+      Data: __6_jump_return_0_SystemUInt32
     - Name: $v
       Entry: 7
       Data: System.ValueTuple`2[[System.Object, mscorlib],[System.Type, mscorlib]],
         mscorlib
     - Name: Item1
       Entry: 7
-      Data: 51|System.UInt32, mscorlib
+      Data: 52|System.UInt32, mscorlib
     - Name: 
       Entry: 3
-      Data: 112
+      Data: 68
     - Name: 
       Entry: 8
       Data: 
     - Name: Item2
       Entry: 9
-      Data: 45
+      Data: 47
     - Name: 
       Entry: 8
       Data: 
@@ -884,29 +903,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: _8_ref_UnityEngineGameObject
-    - Name: $v
-      Entry: 7
-      Data: System.ValueTuple`2[[System.Object, mscorlib],[System.Type, mscorlib]],
-        mscorlib
-    - Name: Item1
-      Entry: 6
-      Data: 
-    - Name: Item2
-      Entry: 9
-      Data: 34
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: _9_ref_SystemBoolean
+      Data: __7_ref_UnityEngineGameObject
     - Name: $v
       Entry: 7
       Data: System.ValueTuple`2[[System.Object, mscorlib],[System.Type, mscorlib]],
@@ -928,7 +925,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: _10_ref_UnityEngineGameObject
+      Data: __8_ref_SystemBoolean
     - Name: $v
       Entry: 7
       Data: System.ValueTuple`2[[System.Object, mscorlib],[System.Type, mscorlib]],
@@ -938,7 +935,7 @@ MonoBehaviour:
       Data: 
     - Name: Item2
       Entry: 9
-      Data: 34
+      Data: 38
     - Name: 
       Entry: 8
       Data: 
@@ -950,7 +947,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: _11_ref_SystemBoolean
+      Data: __9_ref_UnityEngineGameObject
     - Name: $v
       Entry: 7
       Data: System.ValueTuple`2[[System.Object, mscorlib],[System.Type, mscorlib]],
@@ -972,7 +969,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: _12_ref_UnityEngineGameObject
+      Data: __10_ref_SystemBoolean
     - Name: $v
       Entry: 7
       Data: System.ValueTuple`2[[System.Object, mscorlib],[System.Type, mscorlib]],
@@ -982,7 +979,7 @@ MonoBehaviour:
       Data: 
     - Name: Item2
       Entry: 9
-      Data: 34
+      Data: 38
     - Name: 
       Entry: 8
       Data: 
@@ -994,7 +991,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: _13_ref_UnityEngineGameObject
+      Data: __11_ref_UnityEngineGameObject
     - Name: $v
       Entry: 7
       Data: System.ValueTuple`2[[System.Object, mscorlib],[System.Type, mscorlib]],
@@ -1004,7 +1001,29 @@ MonoBehaviour:
       Data: 
     - Name: Item2
       Entry: 9
-      Data: 34
+      Data: 36
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: __12_ref_UnityEngineGameObject
+    - Name: $v
+      Entry: 7
+      Data: System.ValueTuple`2[[System.Object, mscorlib],[System.Type, mscorlib]],
+        mscorlib
+    - Name: Item1
+      Entry: 6
+      Data: 
+    - Name: Item2
+      Entry: 9
+      Data: 36
     - Name: 
       Entry: 8
       Data: 

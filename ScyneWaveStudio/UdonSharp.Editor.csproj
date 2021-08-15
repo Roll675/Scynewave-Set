@@ -302,49 +302,49 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Microsoft.CodeAnalysis">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/Microsoft.CodeAnalysis.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/Microsoft.CodeAnalysis.dll</HintPath>
  </Reference>
  <Reference Include="Microsoft.CodeAnalysis.CSharp">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.Common">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.Common.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.Common.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.EditorBindings">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.EditorBindings.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.EditorBindings.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.Graph">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.Graph.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.Graph.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.Security">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.Security.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.Security.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.Compiler">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.Compiler.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.Compiler.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.UAssembly">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.UAssembly.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.UAssembly.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.ClientBindings">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.ClientBindings.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.ClientBindings.dll</HintPath>
  </Reference>
  <Reference Include="VRCSDK3">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDK3.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDK3.dll</HintPath>
  </Reference>
  <Reference Include="VRCSDKBase">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDKBase.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDKBase.dll</HintPath>
  </Reference>
  <Reference Include="VRCSDKBase-Editor">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDKBase-Editor.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDKBase-Editor.dll</HintPath>
  </Reference>
  <Reference Include="System.Collections.Immutable">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Collections.Immutable.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Collections.Immutable.dll</HintPath>
  </Reference>
  <Reference Include="0Harmony">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/SceneAA/0Harmony.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/SceneAA/0Harmony.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -707,16 +707,16 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Drawing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.TestRunner">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

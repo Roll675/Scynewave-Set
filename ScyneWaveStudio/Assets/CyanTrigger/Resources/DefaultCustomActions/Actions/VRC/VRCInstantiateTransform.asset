@@ -12,31 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: VRCInstantiateTransform
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 8e43b6d66280dc74ab829a80bc23470b,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 064c56e6f764cf449941cd832ae01f8e,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    .export transform\r\n    .export gameObject\r\n
-    \   .export outGameObject\r\n    \r\n    __clone_0: %UnityEngineGameObject, this\r\n
-    \   __original_0: %UnityEngineGameObject, this\r\n    __instance_0: %UnityEngineTransform,
+  udonAssembly: ".data_start\r\n\r\n    .export transform\r\n    .export gameObject\r\n   
+    .export outGameObject\r\n    \r\n    __clone_0: %UnityEngineGameObject, this\r\n   
+    __original_0: %UnityEngineGameObject, this\r\n    __instance_0: %UnityEngineTransform,
     this\r\n    __position_0: %UnityEngineVector3, null\r\n    __rotation_0: %UnityEngineQuaternion,
     null\r\n    __instance_1: %UnityEngineGameObject, this\r\n    __instance_2: %UnityEngineTransform,
     this\r\n    __instance_3: %UnityEngineTransform, this\r\n    transform: %UnityEngineTransform,
     this\r\n    gameObject: %UnityEngineGameObject, this\r\n    outGameObject: %UnityEngineGameObject,
-    this\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export Spawn\r\n    \r\n
-    \   Spawn:\r\n    \r\n        PUSH, gameObject\r\n        PUSH, __original_0\r\n
-    \       COPY\r\n        PUSH, __original_0\r\n        PUSH, __clone_0\r\n        EXTERN,
-    \"VRCInstantiate.__Instantiate__UnityEngineGameObject__UnityEngineGameObject\"\r\n
-    \       PUSH, gameObject\r\n        PUSH, __original_0\r\n        COPY\r\n        PUSH,
-    __clone_0\r\n        PUSH, outGameObject\r\n        COPY\r\n        PUSH, __clone_0\r\n
-    \       PUSH, outGameObject\r\n        COPY\r\n        PUSH, outGameObject\r\n
-    \       PUSH, __instance_1\r\n        COPY\r\n        PUSH, __instance_1\r\n        PUSH,
-    __instance_0\r\n        EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
-    \       PUSH, transform\r\n        PUSH, __instance_2\r\n        COPY\r\n        PUSH,
-    __instance_2\r\n        PUSH, __position_0\r\n        EXTERN, \"UnityEngineTransform.__get_position__UnityEngineVector3\"\r\n
-    \       PUSH, transform\r\n        PUSH, __instance_3\r\n        COPY\r\n        PUSH,
-    __instance_3\r\n        PUSH, __rotation_0\r\n        EXTERN, \"UnityEngineTransform.__get_rotation__UnityEngineQuaternion\"\r\n
-    \       PUSH, __instance_0\r\n        PUSH, __position_0\r\n        PUSH, __rotation_0\r\n
-    \       EXTERN, \"UnityEngineTransform.__SetPositionAndRotation__UnityEngineVector3_UnityEngineQuaternion__SystemVoid\"\r\n
-    \       JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+    this\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export Spawn\r\n    \r\n   
+    Spawn:\r\n    \r\n        PUSH, gameObject\r\n        PUSH, __original_0\r\n       
+    COPY\r\n        PUSH, __original_0\r\n        PUSH, __clone_0\r\n        EXTERN,
+    \"VRCInstantiate.__Instantiate__UnityEngineGameObject__UnityEngineGameObject\"\r\n       
+    PUSH, gameObject\r\n        PUSH, __original_0\r\n        COPY\r\n        PUSH,
+    __clone_0\r\n        PUSH, outGameObject\r\n        COPY\r\n        PUSH, __clone_0\r\n       
+    PUSH, outGameObject\r\n        COPY\r\n        PUSH, outGameObject\r\n       
+    PUSH, __instance_1\r\n        COPY\r\n        PUSH, __instance_1\r\n        PUSH,
+    __instance_0\r\n        EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n       
+    PUSH, transform\r\n        PUSH, __instance_2\r\n        COPY\r\n        PUSH,
+    __instance_2\r\n        PUSH, __position_0\r\n        EXTERN, \"UnityEngineTransform.__get_position__UnityEngineVector3\"\r\n       
+    PUSH, transform\r\n        PUSH, __instance_3\r\n        COPY\r\n        PUSH,
+    __instance_3\r\n        PUSH, __rotation_0\r\n        EXTERN, \"UnityEngineTransform.__get_rotation__UnityEngineQuaternion\"\r\n       
+    PUSH, __instance_0\r\n        PUSH, __position_0\r\n        PUSH, __rotation_0\r\n       
+    EXTERN, \"UnityEngineTransform.__SetPositionAndRotation__UnityEngineVector3_UnityEngineQuaternion__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -68,9 +68,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|transform
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Variable_UnityEngineGameObject
@@ -89,9 +91,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|gameObject
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Get_Variable
@@ -186,9 +190,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|outGameObject
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Set_Variable
@@ -206,7 +212,8 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: 
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
     - fullName: Get_Variable
       uid: b90bf1e0-f484-4fbe-a9cb-9fc33f371205
       position: {x: 946.112, y: 352.85043}

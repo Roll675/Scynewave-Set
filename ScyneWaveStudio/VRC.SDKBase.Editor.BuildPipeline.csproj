@@ -252,139 +252,139 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="GitHub.Api.45">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
  </Reference>
  <Reference Include="GitHub.Logging">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
  </Reference>
  <Reference Include="GitHub.Unity.45">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
  </Reference>
  <Reference Include="GitHub.UnityShim">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
  </Reference>
  <Reference Include="sfw.net">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
  </Reference>
  <Reference Include="0Harmony">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/SceneAA/0Harmony.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/SceneAA/0Harmony.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.Compiler">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.Compiler.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.Compiler.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.EditorBindings">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.EditorBindings.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.EditorBindings.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.Graph">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.Graph.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.Graph.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.UAssembly">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.UAssembly.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.UAssembly.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.VRCGraphModules">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.VRCGraphModules.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.VRCGraphModules.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.VRCTypeResolverModules">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.VRCTypeResolverModules.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/Editor/External/VRC.Udon.VRCTypeResolverModules.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.ClientBindings">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.ClientBindings.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.ClientBindings.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.Common">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.Common.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.Common.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.Security">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.Security.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.Security.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.VM">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.VM.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.VM.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.VRCWrapperModules">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.VRCWrapperModules.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.VRCWrapperModules.dll</HintPath>
  </Reference>
  <Reference Include="VRC.Udon.Wrapper">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.Wrapper.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/Udon/External/VRC.Udon.Wrapper.dll</HintPath>
  </Reference>
  <Reference Include="AWSSDK.CognitoIdentity">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/AWSSDK/AWSSDK.CognitoIdentity.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/AWSSDK/AWSSDK.CognitoIdentity.dll</HintPath>
  </Reference>
  <Reference Include="AWSSDK.Core">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/AWSSDK/AWSSDK.Core.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/AWSSDK/AWSSDK.Core.dll</HintPath>
  </Reference>
  <Reference Include="AWSSDK.S3">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/AWSSDK/AWSSDK.S3.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/AWSSDK/AWSSDK.S3.dll</HintPath>
  </Reference>
  <Reference Include="AWSSDK.SecurityToken">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/AWSSDK/AWSSDK.SecurityToken.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/AWSSDK/AWSSDK.SecurityToken.dll</HintPath>
  </Reference>
  <Reference Include="DotZLib">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/DotZLib/DotZLib.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/DotZLib/DotZLib.dll</HintPath>
  </Reference>
  <Reference Include="Blake2Sharp">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/librsync/Blake2Sharp.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/librsync/Blake2Sharp.dll</HintPath>
  </Reference>
  <Reference Include="librsync.net">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/librsync/librsync.net.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/librsync/librsync.net.dll</HintPath>
  </Reference>
  <Reference Include="Collections.Pooled">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/Collections.Pooled.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/Collections.Pooled.dll</HintPath>
  </Reference>
  <Reference Include="System.Buffers">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Buffers.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Buffers.dll</HintPath>
  </Reference>
  <Reference Include="System.Collections.Immutable">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Collections.Immutable.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Collections.Immutable.dll</HintPath>
  </Reference>
  <Reference Include="System.Memory">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Memory.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Memory.dll</HintPath>
  </Reference>
  <Reference Include="System.Numerics.Vectors">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Numerics.Vectors.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Numerics.Vectors.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.CompilerServices.Unsafe">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/Managed/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Dependencies/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="VRCCore-Editor">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCCore-Editor.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCCore-Editor.dll</HintPath>
  </Reference>
  <Reference Include="VRCSDK3-Editor">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDK3-Editor.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDK3-Editor.dll</HintPath>
  </Reference>
  <Reference Include="VRCSDK3">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDK3.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDK3.dll</HintPath>
  </Reference>
  <Reference Include="VRCSDKBase-Editor">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDKBase-Editor.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDKBase-Editor.dll</HintPath>
  </Reference>
  <Reference Include="VRCSDKBase">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDKBase.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Assets/VRCSDK/Plugins/VRCSDKBase.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="clipper_library">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.cinemachine@2.8.0/Runtime/ThirdParty/clipper_library.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.cinemachine@2.8.0/Runtime/ThirdParty/clipper_library.dll</HintPath>
  </Reference>
  <Reference Include="log4netPlastic">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.collab-proxy@1.6.0/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.collab-proxy@1.6.0/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Plastic.Antlr3.Runtime">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.collab-proxy@1.6.0/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.collab-proxy@1.6.0/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Plastic.Newtonsoft.Json">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.collab-proxy@1.6.0/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.collab-proxy@1.6.0/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="unityplastic">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.collab-proxy@1.6.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/PackageCache/com.unity.collab-proxy@1.6.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -747,10 +747,10 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Drawing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/github/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/GitHub/Scynewave-Set/ScyneWaveStudio/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

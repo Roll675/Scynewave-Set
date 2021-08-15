@@ -15,7 +15,7 @@ MonoBehaviour:
   serializedUdonProgramAsset: {fileID: 11400000, guid: 5b6d11240bea3a547a9fb21f1e698430,
     type: 2}
   udonAssembly: 
-  assemblyError: 
+  assemblyError: Failed to compile because trigger, variables, or events were null.
   triggerHash: 
   serializationData:
     SerializedFormat: 2
@@ -26,6 +26,24 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: warningMessages
+      Entry: 6
+      Data: 
+    - Name: errorMessages
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: Failed to compile because trigger, variables, or events were null.
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: cyanTriggerDataInstance
       Entry: 6
       Data: 
@@ -34,11 +52,11 @@ MonoBehaviour:
       Data: 
     - Name: heapDefaultValues
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.ValueTuple`2[[System.Object,
+      Data: 1|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.ValueTuple`2[[System.Object,
         mscorlib],[System.Type, mscorlib]], mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 2|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8

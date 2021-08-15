@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: AnimatorBoolToggle
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 35e303bf4d84be745bbdf4219d440456,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 52b0b4ccd4e006044bb045838ac2ee58,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    .export Parameter\r\n    .export Animator\r\n
-    \   \r\n    __instance_0: %UnityEngineAnimator, null\r\n    __name_0: %SystemString,
+  udonAssembly: ".data_start\r\n\r\n    .export Parameter\r\n    .export Animator\r\n   
+    \r\n    __instance_0: %UnityEngineAnimator, null\r\n    __name_0: %SystemString,
     null\r\n    __value_0: %SystemBoolean, null\r\n    __Boolean_0: %SystemBoolean,
     null\r\n    __instance_1: %UnityEngineAnimator, null\r\n    __name_1: %SystemString,
     null\r\n    Parameter: %SystemString, null\r\n    Animator: %UnityEngineAnimator,
-    null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export AnimatorBool\r\n    \r\n
-    \   AnimatorBool:\r\n    \r\n        PUSH, Animator\r\n        PUSH, __instance_0\r\n
-    \       COPY\r\n        PUSH, Parameter\r\n        PUSH, __name_0\r\n        COPY\r\n
-    \       PUSH, Animator\r\n        PUSH, __instance_1\r\n        COPY\r\n        PUSH,
-    Parameter\r\n        PUSH, __name_1\r\n        COPY\r\n        PUSH, __instance_1\r\n
-    \       PUSH, __name_1\r\n        PUSH, __Boolean_0\r\n        EXTERN, \"UnityEngineAnimator.__GetBool__SystemString__SystemBoolean\"\r\n
-    \       PUSH, __Boolean_0\r\n        PUSH, __value_0\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n
-    \       PUSH, __instance_0\r\n        PUSH, __name_0\r\n        PUSH, __value_0\r\n
-    \       EXTERN, \"UnityEngineAnimator.__SetBool__SystemString_SystemBoolean__SystemVoid\"\r\n
-    \       JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+    null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export AnimatorBool\r\n   
+    \r\n    AnimatorBool:\r\n    \r\n        PUSH, Animator\r\n        PUSH, __instance_0\r\n       
+    COPY\r\n        PUSH, Parameter\r\n        PUSH, __name_0\r\n        COPY\r\n       
+    PUSH, Animator\r\n        PUSH, __instance_1\r\n        COPY\r\n        PUSH,
+    Parameter\r\n        PUSH, __name_1\r\n        COPY\r\n        PUSH, __instance_1\r\n       
+    PUSH, __name_1\r\n        PUSH, __Boolean_0\r\n        EXTERN, \"UnityEngineAnimator.__GetBool__SystemString__SystemBoolean\"\r\n       
+    PUSH, __Boolean_0\r\n        PUSH, __value_0\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n       
+    PUSH, __instance_0\r\n        PUSH, __name_0\r\n        PUSH, __value_0\r\n       
+    EXTERN, \"UnityEngineAnimator.__SetBool__SystemString_SystemBoolean__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -50,9 +50,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Parameter
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Variable_UnityEngineAnimator
@@ -71,9 +73,11 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Animator
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Event_Custom
@@ -124,7 +128,8 @@ MonoBehaviour:
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
     - fullName: UnityEngineAnimator.__SetBool__SystemString_SystemBoolean__SystemVoid
       uid: de393bd8-4167-4575-84df-39c4b755903d
       position: {x: 677.5093, y: 143.13496}
@@ -139,7 +144,8 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: 
       - unityObjectValue: {fileID: 0}
-        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
     updateOrder: 0
   graphElementData:
   - type: 5
